@@ -28,11 +28,10 @@ For non-core contributors, you will need to follow these steps:
 Using Test Case Data
 ====================
 
-Visit the following URL for the test case resource you would like to use:
-
-http://mozilla.github.io/qa-testcase-data/<relative path to test case>
+Visit http://mozilla.github.io/qa-testcase-data/ with a relative path at the end of the URL that matches
+the relative path of the test case data in this repository.
 
 Example:
 
 * **Github Location**: https://github.com/mozilla/qa-testcase-data/blob/gh-pages/Video/multi2.ogg
-* **Test Case URL**: http://mozilla.github.io/qa-testcase-data/Video/multi2.ogg
+* **Test Case Data URL**: http://mozilla.github.io/qa-testcase-data/Video/multi2.ogg
