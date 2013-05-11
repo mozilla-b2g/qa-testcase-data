@@ -1,7 +1,7 @@
 Introduction
 ============
 
-QA Test Case data is a repository that holds manual test case data for Desktop
+QA Test Case Data is a repository that holds manual test case data for Desktop
 Firefox, Firefox for Android, and Firefox OS.
 
 Developing Test Case Data
