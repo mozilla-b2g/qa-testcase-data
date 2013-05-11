@@ -1,0 +1,176 @@
+﻿<html>
+	<head>
+		<title>Data Channel Test</title>
+	</head>
+	<script type="text/javascript">
+
+	var RTCPeerConnection = null;
+	var localPC = null;
+	var remotePC = null;
+	var localDC = null;
+	var remoteDC = null;
+
+	if(navigator.userAgent.match("(Chrome)")) {
+		RTCPeerConnection = webkitRTCPeerConnection;
+	} else {
+		RTCPeerConnection = mozRTCPeerConnection;
+	}
+
+	function DCDump(name, dc) {
+		console.log("Data Channel dump for " + name);
+		console.log("Label: " + dc.label);
+		console.log("Reliable: " + dc.reliable);
+		console.log("Ready State: " + dc.readyState);
+		console.log("Buffered Amount: " + dc.bufferedAmount);
+		console.log("Binary Type: " + dc.binaryType);
+	}
+
+	function setup() {
+		localPC = new RTCPeerConnection({"iceServers":[{"url":"stun:23.21.150.121"}]});
+		remotePC = new RTCPeerConnection({"iceServers":[{"url":"stun:23.21.150.121"}]});
+
+		localPC.ondatachannel = function(event) {
+			console.log("Local PC ondatachannel event unexpectedly fired");
+		};
+
+		remotePC.ondatachannel = function(event) {
+			console.log("Remote PC ondatachannel event fired");
+			remoteDC = event.channel;
+			DCDump("Remote DC Representation", remoteDC);
+
+			remoteDC.onopen = function(arg) {
+				console.log("Remote DC Representation onopen fired with " + arg);
+				console.log(arg);
+				DCDump("Remote DC Representation in onopen", remoteDC);
+			};
+
+			remoteDC.onerror = function(arg) {
+				console.log("Remote DC Representation onerror fired with " + arg);
+				console.log(arg);
+				DCDump("Remote DC Representation in onerror", remoteDC);
+			};
+
+			remoteDC.onclose = function(arg) {
+				console.log("Remote DC Representation onclose fired with " + arg);
+				console.log(arg);
+				DCDump("Remote DC Representation in onclose", remoteDC);
+			};
+
+			remoteDC.onmessage = function(arg) {
+				console.log("Remote DC Representation onmessage fired with " + arg);
+				console.log(arg);
+				DCDump("Remote DC Representation in onmessage", remoteDC);
+			};
+		};
+
+		localDC = localPC.createDataChannel("local", {});
+
+		localDC.onopen = function(arg) {
+			console.log("Local DC onopen fired with " + arg);
+			console.log(arg);
+			DCDump("Local DC in onopen", localDC);
+		};
+
+		localDC.onerror = function(arg) {
+			console.log("local DC onerror fired with " + arg);
+			console.log(arg);
+			DCDump("local DC in onerror", localDC);
+		};
+
+		localDC.onclose = function(arg) {
+			console.log("local DC onclose fired with " + arg);
+			console.log(arg);
+			DCDump("local DC in onclose", localDC);
+		};
+
+		localDC.onmessage = function(arg) {
+			console.log("local DC onmessage fired with " + arg);
+			console.log(arg);
+			DCDump("local DC in onmessage", localDC);
+		};
+
+		DCDump("Local DC", localDC);
+	}
+
+	function handshake() {
+		console.log("calling create offer on local pc");
+		localPC.createOffer(function(localSdp) {
+			console.log("local pc createOffer successful with: " + localSdp);
+			localPC.setLocalDescription(localSdp, function() {
+				console.log("local pc setLocalDescription successful");
+				remotePC.setRemoteDescription(localSdp, function() {
+					console.log("remote pc setRemoteDescription successful");
+					remotePC.createAnswer(function(remoteSdp) {
+						console.log("remote pc createAnswer successful with: " + remoteSdp);
+						remotePC.setLocalDescription(remoteSdp, function() {
+							console.log("remote pc setLocalDescription successful");
+							localPC.setRemoteDescription(remoteSdp, function() {
+								console.log("local pc setRemoteDescription successful");
+							}, function(err) {
+								console.log("local pc setRemoteDescription failed with: " + err);
+							});
+						}, function(err) {
+							console.log("remote pc setLocalDescription failed with: " + err);
+						});
+					}, function(err) {
+						console.log("remote pc createAnswer failed with: " + err);
+					});
+				}, function(err) {
+					console.log("remote pc setRemoteDescription failed with: " + err);
+				});
+			}, function(err) {
+				console.log("local pc setLocalDescription failed with: " + err);
+			});
+		}, function(err) {
+			console.log("local pc createOffer failed with: " + err);
+		});
+	}
+
+	window.addEventListener("DOMContentLoaded", function() {
+		setup();
+
+		document.getElementById('handshake').onclick = function() {
+			handshake();
+		};
+
+		document.getElementById('LocalDCSendStringMessage').onclick = function() {
+			var message = document.getElementById('StringMessage').value;			
+			console.log("local pc calling send with " + message);
+			localDC.send(message);
+		};
+
+		document.getElementById('RemoteDCSendStringMessage').onclick = function() {
+			var message = document.getElementById('StringMessage').value;
+			console.log("remote pc calling send with " + message);
+			remoteDC.send(message);
+		};
+
+		document.getElementById('LocalDCSendBlobMessage').onclick = function() {
+			var blob = document.getElementById('FileToSend').files[0];
+			console.log("local pc sending blob with " + blob);
+			localDC.send(blob);
+		};
+	});
+
+	</script>
+	<body>
+		<div>
+			<input type="submit" value="Setup Handshake" id="handshake">
+		</div>
+		<div>
+			<input type="text" id="StringMessage">
+			<input type="submit" value="Local DC Send String Message" id="LocalDCSendStringMessage">
+			<input type="submit" value="Remote DC Send String Message" id="RemoteDCSendStringMessage">
+		</div>
+		<div>
+			<input type="text" id="BufferLimit">
+			<input type="submit" value="Local DC Send Buffer Message" id="LocalDCSendBufferMessage">
+			<input type="submit" value="Remote DC Send Buffer Message" id="RemoteDCSendBufferMessage">
+		</div>
+		<div>
+			<input type="file" id="FileToSend">
+			<input type="submit" value="Local DC Send Blob Message" id="LocalDCSendBlobMessage">
+			<input type="submit" value="Remote DC Send Blob Message" id="RemoteDCSendBlobMessage">
+		</div>
+	</body>
+</html>

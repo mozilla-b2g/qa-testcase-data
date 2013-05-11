@@ -1,0 +1,136 @@
+﻿<video id="localVideo" controls></video>
+<video id="remoteVideo" controls></video>
+<script type="text/javascript">
+
+var RTCPeerConnection = null;
+
+if(navigator.userAgent.match("(Chrome)")) {
+	RTCPeerConnection = webkitRTCPeerConnection;
+} else {
+	RTCPeerConnection = mozRTCPeerConnection;
+}
+
+var localPC = new RTCPeerConnection();
+var remotePC = new RTCPeerConnection();
+var localCallbackStream = null;
+var remoteCallbackStream = null;
+
+console.log(localPC);
+console.log(remotePC);
+
+localPC.onaddstream = function(evt) {
+	localCallbackStream = evt.stream;
+	dumpTracksFromStream("onaddstream local stream", localCallbackStream);
+	dumpTracksFromStream("onaddstream local remoteStreams", localPC.remoteStreams[0]);
+	var localVideo = document.getElementById('localVideo');
+	localVideo.mozSrcObject = evt.stream;
+	localVideo.play();
+};
+
+remotePC.onaddstream = function(evt) {
+	remoteCallbackStream = evt.stream;
+	dumpTracksFromStream("onaddstream remote stream", remoteCallbackStream);
+	dumpTracksFromStream("onaddstream remote remoteStreams", remotePC.remoteStreams[0]);
+	var remoteVideo = document.getElementById('remoteVideo');
+	remoteVideo.mozSrcObject = evt.stream;
+	remoteVideo.play();
+};
+
+localPC.onicecandidate = function(evt) {
+	var localIce = evt.candidate;
+	console.log("local pc onicecandidate fired with: " + localIce);
+};
+
+remotePC.onicecandidate = function(evt) {
+	var remoteIce = evt.candidate;
+	console.log("remote pc onicecandidate fired with: " + remoteIce);
+};
+
+function dumpTracksFromStream(name, resultStream) {
+	console.log("Dumping tracks for " + name);
+
+	audioTracks = resultStream.getAudioTracks();
+	videoTracks = resultStream.getVideoTracks();
+
+	console.log("Video tracks length: " + videoTracks.length);
+	console.log("Video track: " + videoTracks[0]);
+	
+	console.log("Audio tracks length: " + audioTracks.length);
+	console.log("Audio track: " + audioTracks[0]);
+
+	if(videoTracks[0]) {
+		console.log("Video Track kind: " + videoTracks[0].kind);
+		console.log("Video Track id: " + videoTracks[0].id);
+		console.log("Video Track label: " + videoTracks[0].label);
+	}
+
+	if(audioTracks[0]) {
+		console.log("Audio Track kind: " + audioTracks[0].kind);
+		console.log("Audio Track id: " + audioTracks[0].id);
+		console.log("Audio Track label: " + audioTracks[0].label);
+	}
+}
+
+function handshake(onSuccess) {
+	localPC.createOffer(function(localSdp) {
+		console.log("local pc createOffer successful with: " + localSdp);
+		console.log(localSdp);
+		localPC.setLocalDescription(localSdp, function() {
+			console.log("local pc setLocalDescription successful");
+			remotePC.setRemoteDescription(localSdp, function() {
+				console.log("remote pc setRemoteDescription successful");
+				remotePC.createAnswer(function(remoteSdp) {
+					console.log("remote pc createAnswer successful with: " + remoteSdp);
+					console.log(remoteSdp);
+					remotePC.setLocalDescription(remoteSdp, function() {
+						console.log("remote pc setLocalDescription successful");
+						localPC.setRemoteDescription(remoteSdp, function() {
+							console.log("local pc setRemoteDescription successful");
+							onSuccess();
+						}, function(err) {
+							console.log("local pc setRemoteDescription failed with: " + err);
+						});
+					}, function(err) {
+						console.log("remote pc setLocalDescription failed with: " + err);
+					});
+				}, function(err) {
+					console.log("remote pc createAnswer failed with: " + err);
+				});
+			}, function(err) {
+				console.log("remote pc setRemoteDescription failed with: " + err);
+			});
+		}, function(err) {
+			console.log("local pc setLocalDescription failed with: " + err);
+		});
+	}, function(err) {
+		console.log("local pc createOffer failed with: " + err.message);
+		console.log(err);
+	})
+}
+
+navigator.mozGetUserMedia({video: true}, function(localStream1) {
+	navigator.mozGetUserMedia({video: true}, function(remoteStream1) {
+		localPC.addStream(localStream1);
+		dumpTracksFromStream("before handshake, first local stream", localPC.localStreams[0]);
+		remotePC.addStream(remoteStream1);
+		dumpTracksFromStream("before handshake, remote local stream", remotePC.localStreams[0]);
+		
+		navigator.mozGetUserMedia({audio: true}, function(localStream2) {
+			navigator.mozGetUserMedia({audio: true}, function(remoteStream2) {
+				localPC.addStream(localStream2);
+				dumpTracksFromStream("before handshake, first local stream", localPC.localStreams[0]);
+				dumpTracksFromStream("before handshake, second local stream", localPC.localStreams[1]);
+				remotePC.addStream(remoteStream2);
+				dumpTracksFromStream("before handshake, first remote local stream", remotePC.localStreams[0]);
+				dumpTracksFromStream("before handshake, second remote local stream", remotePC.localStreams[1]);
+				handshake(function() {
+					console.log("Handshake complete");
+				});
+			}, function(err) {});
+		}, function(err) {});
+	}, function(err) {
+	});
+}, function(err) {
+});
+
+</script>

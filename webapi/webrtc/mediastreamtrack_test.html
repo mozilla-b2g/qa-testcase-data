@@ -1,0 +1,35 @@
+﻿<script type="text/javascript">
+var resultStream = null;
+var audioTracks = null;
+var videoTracks = null;
+
+function requestAndDumpTracks() {
+	audioTracks = resultStream.getAudioTracks();
+	videoTracks = resultStream.getVideoTracks();
+
+	console.log("Video tracks length: " + videoTracks.length);
+	console.log("Video track: " + videoTracks[0]);
+	
+	console.log("Audio tracks length: " + audioTracks.length);
+	console.log("Audio track: " + audioTracks[0]);
+
+	if(videoTracks[0]) {
+		console.log("Video Track kind: " + videoTracks[0].kind);
+		console.log("Video Track id: " + videoTracks[0].id);
+		console.log("Video Track label: " + videoTracks[0].label);
+	}
+
+	if(audioTracks[0]) {
+		console.log("Audio Track kind: " + audioTracks[0].kind);
+		console.log("Audio Track id: " + audioTracks[0].id);
+		console.log("Audio Track label: " + audioTracks[0].label);
+	}
+}
+
+navigator.mozGetUserMedia({video: true, audio: true}, function(stream) {
+	resultStream = stream;
+	requestAndDumpTracks();
+}, function(err) {
+	console.log(err);
+});
+</script>
