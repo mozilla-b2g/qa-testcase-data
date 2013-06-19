@@ -62,23 +62,28 @@
     </div>
     <div>
       <h3>Upload Single File with Video & Audio Filters</h3>
-      <input id="uploadSingleFileVideoAudioFilter" type="file" accept="video/*|audio/*">
+      <input id="uploadSingleFileVideoAudioFilter" type="file" accept="video/*,audio/*">
       <input type="submit" onclick="writeBlob('uploadSingleFileVideoAudioFilter');">
     </div>
     <div>
       <h3>Upload Multiple Files with Image & Video Filters</h3>
-      <input id="uploadMultipleFileImageVideoFilter" type="file" accept="image/*|video/*" multiple>
+      <input id="uploadMultipleFileImageVideoFilter" type="file" accept="image/*,video/*" multiple>
       <input type="submit" onclick="writeBlob('uploadMultipleFileImageVideoFilter');">
     </div>
     <div>
       <h3>Upload Single File with Audio & Image PNG Filters</h3>
-      <input id="uploadSingleFileAudioImagePNGFilter" type="file" accept="audio/*|image/png">
+      <input id="uploadSingleFileAudioImagePNGFilter" type="file" accept="audio/*,image/png">
       <input type="submit" onclick="writeBlob('uploadSingleFileAudioImagePNGFilter');">
     </div>
     <div>
       <h3>Upload Single File with Text RTF & Text HTML Filters</h3>
-      <input id="uploadSingleFileTextRTFTextHTMLFilter" type="file" accept="text/rtf|text/html">
+      <input id="uploadSingleFileTextRTFTextHTMLFilter" type="file" accept="text/rtf,text/html">
       <input type="submit" onclick="writeBlob('uploadSingleFileTextRTFTextHTMLFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Video, Audio, & Image Filters</h3>
+      <input id="uploadSingleFileVideoAudioImageFilter" type="file" accept="video/*,audio/*,image/*">
+      <input type="submit" onclick="writeBlob('uploadSingleFileVideoAudioImageFilter');">
     </div>
     <div id="blobDownload">
       <h3>Uploaded Files</h3>
