@@ -1,87 +1,87 @@
 ﻿<html>
-	<head>
-		<script type='text/javascript'>
-			function writeBlob(uploadFileElementId) {
-				var uploadFileElement = document.getElementById(uploadFileElementId);
-				var blobDownloadElement = document.getElementById('blobDownload');
+  <head>
+    <script type='text/javascript'>
+      function writeBlob(uploadFileElementId) {
+        var uploadFileElement = document.getElementById(uploadFileElementId);
+        var blobDownloadElement = document.getElementById('blobDownload');
 
-				for(uploadFile of uploadFileElement.files) {
-					var blobURL = URL.createObjectURL(uploadFile);
-					var hrefElement = document.createElement('a');
-					var breakLine = document.createElement('br');
+        for(uploadFile of uploadFileElement.files) {
+          var blobURL = URL.createObjectURL(uploadFile);
+          var hrefElement = document.createElement('a');
+          var breakLine = document.createElement('br');
 
-					hrefElement.setAttribute('href', blobURL);
-					hrefElement.textContent = 'Download ' + uploadFile.name + ' with size ' + uploadFile.size + ' of type ' + uploadFile.type;
-					
-					blobDownloadElement.appendChild(hrefElement);
-					blobDownloadElement.appendChild(breakLine);
-				}
-			}
-		</script>
-	</head>
-	<body>
-		<div>
-			<h3>Upload Single File with No Filter</h3>
-			<input id="uploadSingleFileNoFilter" type="file">
-			<input type="submit" onclick="writeBlob('uploadSingleFileNoFilter');">
-		</div>
-		<div>
-			<h3>Upload Multiple Files with No Filter</h3>
-			<input id="uploadMultipleFileNoFilter" type="file" multiple>
-			<input type="submit" onclick="writeBlob('uploadMultipleFileNoFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Image Filter</h3>
-			<input id="uploadSingleFileImageFilter" type="file" accept="image/*">
-			<input type="submit" onclick="writeBlob('uploadSingleFileImageFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Video Filter</h3>
-			<input id="uploadSingleFileVideoFilter" type="file" accept="video/*">
-			<input type="submit" onclick="writeBlob('uploadSingleFileVideoFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Audio Filter</h3>
-			<input id="uploadSingleFileAudioFilter" type="file" accept="audio/*">
-			<input type="submit" onclick="writeBlob('uploadSingleFileAudioFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Ogg Audio Filter</h3>
-			<input id="uploadSingleFileOggAudioFilter" type="file" accept="audio/ogg">
-			<input type="submit" onclick="writeBlob('uploadSingleFileOggAudioFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Application Zip Filter</h3>
-			<input id="uploadSingleFileZipFilter" type="file" accept="application/zip">
-			<input type="submit" onclick="writeBlob('uploadSingleFileZipFilter');">
-		</div>
-		<div>
-			<h3>Upload Multiple Files with Video Filter</h3>
-			<input id="uploadMultipleFileVideoFilter" type="file" accept="video/*" multiple>
-			<input type="submit" onclick="writeBlob('uploadMultipleFileVideoFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Video & Audio Filters</h3>
-			<input id="uploadSingleFileVideoAudioFilter" type="file" accept="video/*|audio/*">
-			<input type="submit" onclick="writeBlob('uploadSingleFileVideoAudioFilter');">
-		</div>
-		<div>
-			<h3>Upload Multiple Files with Image & Video Filters</h3>
-			<input id="uploadMultipleFileImageVideoFilter" type="file" accept="image/*|video/*" multiple>
-			<input type="submit" onclick="writeBlob('uploadMultipleFileImageVideoFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Audio & Image PNG Filters</h3>
-			<input id="uploadSingleFileAudioImagePNGFilter" type="file" accept="audio/*|image/png">
-			<input type="submit" onclick="writeBlob('uploadSingleFileAudioImagePNGFilter');">
-		</div>
-		<div>
-			<h3>Upload Single File with Text RTF & Text HTML Filters</h3>
-			<input id="uploadSingleFileTextRTFTextHTMLFilter" type="file" accept="text/rtf|text/html">
-			<input type="submit" onclick="writeBlob('uploadSingleFileTextRTFTextHTMLFilter');">
-		</div>
-		<div id="blobDownload">
-			<h3>Uploaded Files</h3>
-		</div>
-	</body>
+          hrefElement.setAttribute('href', blobURL);
+          hrefElement.textContent = 'Download ' + uploadFile.name + ' with size ' + uploadFile.size + ' of type ' + uploadFile.type;
+
+          blobDownloadElement.appendChild(hrefElement);
+          blobDownloadElement.appendChild(breakLine);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h3>Upload Single File with No Filter</h3>
+      <input id="uploadSingleFileNoFilter" type="file">
+      <input type="submit" onclick="writeBlob('uploadSingleFileNoFilter');">
+    </div>
+    <div>
+      <h3>Upload Multiple Files with No Filter</h3>
+      <input id="uploadMultipleFileNoFilter" type="file" multiple>
+      <input type="submit" onclick="writeBlob('uploadMultipleFileNoFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Image Filter</h3>
+      <input id="uploadSingleFileImageFilter" type="file" accept="image/*">
+      <input type="submit" onclick="writeBlob('uploadSingleFileImageFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Video Filter</h3>
+      <input id="uploadSingleFileVideoFilter" type="file" accept="video/*">
+      <input type="submit" onclick="writeBlob('uploadSingleFileVideoFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Audio Filter</h3>
+      <input id="uploadSingleFileAudioFilter" type="file" accept="audio/*">
+      <input type="submit" onclick="writeBlob('uploadSingleFileAudioFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Ogg Audio Filter</h3>
+      <input id="uploadSingleFileOggAudioFilter" type="file" accept="audio/ogg">
+      <input type="submit" onclick="writeBlob('uploadSingleFileOggAudioFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Application Zip Filter</h3>
+      <input id="uploadSingleFileZipFilter" type="file" accept="application/zip">
+      <input type="submit" onclick="writeBlob('uploadSingleFileZipFilter');">
+    </div>
+    <div>
+      <h3>Upload Multiple Files with Video Filter</h3>
+      <input id="uploadMultipleFileVideoFilter" type="file" accept="video/*" multiple>
+      <input type="submit" onclick="writeBlob('uploadMultipleFileVideoFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Video & Audio Filters</h3>
+      <input id="uploadSingleFileVideoAudioFilter" type="file" accept="video/*|audio/*">
+      <input type="submit" onclick="writeBlob('uploadSingleFileVideoAudioFilter');">
+    </div>
+    <div>
+      <h3>Upload Multiple Files with Image & Video Filters</h3>
+      <input id="uploadMultipleFileImageVideoFilter" type="file" accept="image/*|video/*" multiple>
+      <input type="submit" onclick="writeBlob('uploadMultipleFileImageVideoFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Audio & Image PNG Filters</h3>
+      <input id="uploadSingleFileAudioImagePNGFilter" type="file" accept="audio/*|image/png">
+      <input type="submit" onclick="writeBlob('uploadSingleFileAudioImagePNGFilter');">
+    </div>
+    <div>
+      <h3>Upload Single File with Text RTF & Text HTML Filters</h3>
+      <input id="uploadSingleFileTextRTFTextHTMLFilter" type="file" accept="text/rtf|text/html">
+      <input type="submit" onclick="writeBlob('uploadSingleFileTextRTFTextHTMLFilter');">
+    </div>
+    <div id="blobDownload">
+      <h3>Uploaded Files</h3>
+    </div>
+  </body>
 </html>
