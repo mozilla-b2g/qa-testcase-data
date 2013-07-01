@@ -1,0 +1,19 @@
+﻿{
+  "version": "1.0",
+  "name": "Simple Push Test",
+  "description": "A test app for testing Simple Push",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/qalogo.png"
+  },
+  "permissions": {
+		"push": {}
+  },
+  "messages": [
+    {"push": "/index.html"}
+  ],
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  }
+}
