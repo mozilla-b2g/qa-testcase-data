@@ -2,12 +2,12 @@
   "version": "1.0",
   "name": "Simple Push Test",
   "description": "A test app for testing Simple Push",
-  "launch_path": "/index.html",
+  "launch_path": "/qa-testcase-data/webapi/simplepush/index.html",
   "icons": {
-    "128": "/qalogo.png"
+    "128": "/qa-testcase-data/webapi/simplepush/qalogo.png"
   },
   "permissions": {
-		"push": {}
+    "push": {}
   },
   "messages": [
     {"push": "/index.html"}
