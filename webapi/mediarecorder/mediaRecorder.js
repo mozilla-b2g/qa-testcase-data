@@ -9,6 +9,8 @@
 
 function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
+
+	blobURLUI = document.getElementById('blobDownload');
 }
 
 window.addEventListener("DOMContentLoaded", initialize);

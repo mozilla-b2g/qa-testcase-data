@@ -1,9 +1,25 @@
 ﻿var mediaRecorderList = [];
+var blobDataAvailable = [];
+var blobURLUI = null;
 
 function mediaRecorderAttributeDump(mediaRecorder) {
   console.log(mediaRecorder.stream);
   console.log('Recording state: ' + mediaRecorder.state);
   console.log('Mime type: ' + mediaRecorder.mimeType);
+}
+
+function updateBlobURLUI(blob) {
+	if(blobURLUI) {
+		var blobURL = URL.createObjectURL(blob);
+		var hrefElement = document.createElement('a');
+		var breakLine = document.createElement('br');
+
+		hrefElement.setAttribute('href', blobURL);
+		hrefElement.textContent = 'Download Data Available';
+
+		blobURLUI.appendChild(hrefElement);
+		blobURLUI.appendChild(breakLine);
+	}
 }
 
 function setupMediaRecorder(stream) {
@@ -13,6 +29,8 @@ function setupMediaRecorder(stream) {
     console.log('ondataavailable fired');
     console.log(evt);
     console.log(mediaRecorderAttributeDump(evt.target));
+		blobDataAvailable.push(evt.data);
+		updateBlobURLUI(evt.data);
   };
 
   mediaRecorder.onerror = function(evt) {
