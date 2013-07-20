@@ -55,10 +55,32 @@ function closeWindow() {
   windowList.splice(index, 1);
 }
 
-function runRandomizer() {
+function runRandomInWindowCommands() {
   randomCommands = [
     'createRandomGUMStream',
-    'runMediaRecorderOp',
+    'runMediaRecorderOp'
+  ];
+
+  function runRandomCommand() {
+    try {
+      var command = randomCommands[Math.floor(Math.random() * randomCommands.length)];
+      console.log(command);
+      window[command]();
+    } catch(err) {
+      console.log(err);
+    }
+
+    if(!stopRandomizer) {
+      runRandomInWindowCommands();
+    }
+  }
+
+  var timeout = Math.floor(Math.random() * 1000);
+  setTimeout(runRandomCommand, timeout);
+}
+
+function runWindowModificationCommand() {
+  randomCommands = [
     'newTab',
     'closeWindow'
   ];
@@ -73,12 +95,17 @@ function runRandomizer() {
     }
 
     if(!stopRandomizer) {
-      runRandomizer();
+      runWindowModificationCommand();
     }
   }
 
   var timeout = Math.floor(Math.random() * 1000);
   setTimeout(runRandomCommand, timeout);
+}
+
+function runRandomizer() {
+	runRandomInWindowCommands();
+	runWindowModificationCommand();
 }
 
 window.addEventListener("DOMContentLoaded", runRandomizer);
