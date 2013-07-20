@@ -48,12 +48,12 @@ function reloadPage() {
 }
 
 function newWindow() {
-  var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/randomizer.html');
+  var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html');
 	windowList.push(newWindow);
 }
 
 function newTab() {
-  var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/randomizer.html', '_blank');
+  var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html', '_blank');
 	windowList.push(newWindow);
 }
 
