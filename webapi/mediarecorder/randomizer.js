@@ -43,10 +43,6 @@ function runMediaRecorderOp() {
   }
 }
 
-function reloadPage() {
-  window.location.reload();
-}
-
 function newWindow() {
   var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html');
   windowList.push(newWindow);
@@ -68,7 +64,6 @@ function runRandomizer() {
   randomCommands = [
     'createRandomGUMStream',
     'runMediaRecorderOp',
-    'reloadPage',
     'newWindow',
     'newTab',
     'closeWindow'
