@@ -49,19 +49,19 @@ function reloadPage() {
 
 function newWindow() {
   var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html');
-	windowList.push(newWindow);
+  windowList.push(newWindow);
 }
 
 function newTab() {
   var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html', '_blank');
-	windowList.push(newWindow);
+  windowList.push(newWindow);
 }
 
 function closeWindow() {
-	var index = Math.floor(Math.random() * windowList.length);
-	var selectedWindow = windowList[index];
-	selectedWindow.close();
-	windowList.splice(index, 1);
+  var index = Math.floor(Math.random() * windowList.length);
+  var selectedWindow = windowList[index];
+  selectedWindow.close();
+  windowList.splice(index, 1);
 }
 
 function runRandomizer() {
@@ -71,7 +71,7 @@ function runRandomizer() {
     'reloadPage',
     'newWindow',
     'newTab',
-		'closeWindow'
+    'closeWindow'
   ];
 
   function runRandomCommand() {
