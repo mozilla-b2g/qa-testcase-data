@@ -57,7 +57,7 @@ function closeWindow() {
 
 function runRandomMediaOpCommand() {
   function runRandomCommand() {
-		runMediaRecorderOp();
+    runMediaRecorderOp();
 
     if(!stopRandomizer) {
       runRandomMediaOpCommand();
@@ -70,7 +70,7 @@ function runRandomMediaOpCommand() {
 
 function runRandomCreationStreamOp() {
   function runRandomCommand() {
-		createRandomGUMStream();
+    createRandomGUMStream();
 
     if(!stopRandomizer) {
       runRandomCreationStreamOp();
@@ -106,9 +106,9 @@ function runWindowModificationCommand() {
 }
 
 function runRandomizer() {
-	setTimeout(runRandomCreationStreamOp, 1);
-	setTimeout(runRandomMediaOpCommand, 1);
-	setTimeout(runWindowModificationCommand, 1);
+  setTimeout(runRandomCreationStreamOp, 1);
+  setTimeout(runRandomMediaOpCommand, 1);
+  setTimeout(runWindowModificationCommand, 1);
 }
 
 window.addEventListener("DOMContentLoaded", runRandomizer);
