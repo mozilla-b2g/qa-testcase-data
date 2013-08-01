@@ -57,7 +57,11 @@ function closeWindow() {
 
 function runRandomMediaOpCommand() {
   function runRandomCommand() {
-    runMediaRecorderOp();
+    try {
+      runMediaRecorderOp();
+    } catch(err) {
+      console.log(err);
+    }
 
     if(!stopRandomizer) {
       runRandomMediaOpCommand();
@@ -70,7 +74,11 @@ function runRandomMediaOpCommand() {
 
 function runRandomCreationStreamOp() {
   function runRandomCommand() {
-    createRandomGUMStream();
+    try {
+      createRandomGUMStream();
+    } catch(err) {
+      console.log(err);
+    }
 
     if(!stopRandomizer) {
       runRandomCreationStreamOp();
