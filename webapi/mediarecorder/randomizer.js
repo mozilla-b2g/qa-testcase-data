@@ -60,7 +60,7 @@ function runRandomMediaOpCommand() {
 		runMediaRecorderOp();
 
     if(!stopRandomizer) {
-      runRandomStreamCreationCommand();
+      runRandomMediaOpCommand();
     }
   }
 
@@ -73,7 +73,7 @@ function runRandomCreationStreamOp() {
 		createRandomGUMStream();
 
     if(!stopRandomizer) {
-      runRandomStreamCreationCommand();
+      runRandomCreationStreamOp();
     }
   }
 
