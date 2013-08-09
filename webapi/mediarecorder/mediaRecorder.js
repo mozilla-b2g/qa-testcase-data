@@ -9,7 +9,7 @@
 
 function createUIDrivenOpusStream() {
   var opusAudio = document.getElementById('opusAudio');
-  var stream = opusAudio.mozCaptureStreamUntilEnded();
+  var stream = opusAudio.mozCaptureStream();
   setupMediaRecorder(stream);
 }
 
