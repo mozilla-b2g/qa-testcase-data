@@ -1,0 +1,127 @@
+﻿<html>
+  <head>
+    <title>Web Notifications Test</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script type="text/javascript">
+
+    var notificationList = [];
+
+    window.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('notificationPermission').textContent = Notification.permission;
+
+      document.getElementById('authorize').onclick = function() {
+        Notification.requestPermission(function (permissionResult) {
+          document.getElementById('notificationPermission').textContent = Notification.permission;
+          document.getElementById('requestPermissionResult').textContent = permissionResult;
+        });
+      };
+      document.getElementById('show').onclick = function() {
+        var title = document.getElementById('notificationTitle').value;
+
+        var notification = new Notification(title, {
+          'titleDir': document.getElementById('notificationTitleDir').value,
+          'body': document.getElementById('notificationBody').value,
+          'bodyDir': document.getElementById('notificationBodyDir').value,
+          'tag': document.getElementById('notificationTag').value,
+          'iconUrl': document.getElementById('notificationIconURL').value
+        });
+
+        notification.onclick = function() {
+          console.log('onclick fired on title: ' + title);
+        };
+
+        notification.onshow = function() {
+          console.log('onshow fired on title: ' + title);
+        };
+
+        notification.onerror = function() {
+          console.log('onerror fired on title: ' + title);
+        };
+
+        notification.onclose = function() {
+          console.log('onclose fired on title: ' + title);
+        };
+
+        notificationList.push(notification);
+      };
+
+      document.getElementById('closeNotification').onclick = function() {
+        var notificationID = parseInt(document.getElementById('notificationId').value);
+
+        if(notificationID < notificationList.length) {
+          notificationList[notificationID].close();
+        }
+      };
+
+      document.getElementById('installApp').onclick = function() {
+        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/notifications/manifest.webapp');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+    });
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <h3>Install as App</h3>
+      <input type="submit" value="Install" id="installApp">
+    </div>
+    <div>
+      <h3>Notification Setup</h3>
+      <div>
+        <h4>Request Permission</h4>
+        <input id="authorize" type="submit" value="Request">
+      </div>
+      <div>
+        <h4>Request Permission Result</h4>
+        <p id="requestPermissionResult"></p>
+      </div>
+      <div>
+        <h4>Current Permission Level</h4>
+        <p id="notificationPermission"></p>
+      </div>
+    </div>
+    <div>
+      <h3>Show Notification</h3>
+      <div>
+        <span>Title</span>
+        <input id="notificationTitle" type="text">
+      </div>
+      <div>
+        <span>Title Dir</span>
+        <input id="notificationTitleDir" type="text">
+      </div>
+      <div>
+        <span>Body</span>
+        <input id="notificationBody" type="text">
+      </div>
+      <div>
+        <span>Body Dir</span>
+        <input id="notificationBodyDir" type="text">
+      </div>
+      <div>
+        <span>Tag</span>
+        <input id="notificationTag" type="text">
+      </div>
+      <div>
+        <span>Icon URL</span>
+        <input id="notificationIconURL" type="text">
+      </div>
+      <div>
+        <input id="show" type="submit" value="Show Notification">
+      </div>
+    </div>
+    <div>
+      <h3>Close Notification</h3>
+      <input id="notificationId" type="text">
+      <input id="closeNotification" type="submit" value="Close">
+    </div>
+  </body>
+</html>
