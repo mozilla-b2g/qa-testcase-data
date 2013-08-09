@@ -8,9 +8,13 @@
 }
 
 function createUIDrivenOpusStream() {
-  var opusAudio = document.getElementById('opusAudio');
-  var stream = opusAudio.mozCaptureStream();
-  setupMediaRecorder(stream);
+  var opusAudioInput = document.getElementById('opusAudioInput');
+  var opusAudioOutput = document.getElementById('opusAudioOutput');
+
+  opusAudioInput.src = 'test.opus';
+  opusAudioOutput.mozSrcObject = opusAudioInput.mozCaptureStreamUntilEnded();
+
+  setupMediaRecorder(opusAudioOutput.mozSrcObject);
 }
 
 function initialize() {
