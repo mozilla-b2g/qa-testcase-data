@@ -7,10 +7,17 @@
   createGUMStream(constraints);
 }
 
+function createUIDrivenOpusStream() {
+  var opusAudio = document.getElementById('opusAudio');
+  var stream = opusAudio.mozCaptureStreamUntilEnded();
+  setupMediaRecorder(stream);
+}
+
 function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
+  document.getElementById('setupOpusStream').onclick = createUIDrivenOpusStream;
 
-	blobURLUI = document.getElementById('blobDownload');
+  blobURLUI = document.getElementById('blobDownload');
 }
 
 window.addEventListener("DOMContentLoaded", initialize);
