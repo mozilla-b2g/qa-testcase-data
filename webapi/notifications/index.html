@@ -92,7 +92,7 @@
       <h3>Show Notification</h3>
       <div>
         <span>Title</span>
-        <input id="notificationTitle" type="text">
+        <input id="notificationTitle" type="text" value="Test Title">
       </div>
       <div>
         <span>Title Dir</span>
@@ -100,7 +100,7 @@
       </div>
       <div>
         <span>Body</span>
-        <input id="notificationBody" type="text">
+        <input id="notificationBody" type="text" value="Test Description">
       </div>
       <div>
         <span>Body Dir</span>
@@ -112,7 +112,7 @@
       </div>
       <div>
         <span>Icon URL</span>
-        <input id="notificationIconURL" type="text">
+        <input id="notificationIconURL" type="text" value="http://mozilla.github.io/qa-testcase-data/webapi/notifications/qalogo.png">
       </div>
       <div>
         <input id="show" type="submit" value="Show Notification">
@@ -120,8 +120,13 @@
     </div>
     <div>
       <h3>Close Notification</h3>
-      <input id="notificationId" type="text">
-      <input id="closeNotification" type="submit" value="Close">
+      <div>
+        <span>Tag</span>
+        <input id="notificationId" type="text">
+      </div>
+      <div>
+        <input id="closeNotification" type="submit" value="Close">
+      </div>
     </div>
   </body>
 </html>
