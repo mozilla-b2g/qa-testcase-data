@@ -11,7 +11,7 @@ function createUIDrivenOpusStream() {
   var opusAudioInput = document.getElementById('opusAudioInput');
   var opusAudioOutput = document.getElementById('opusAudioOutput');
 
-  opusAudioInput.src = 'test.opus';
+  opusAudioInput.src = document.getElementById('testOpusFile').value;
   opusAudioOutput.mozSrcObject = opusAudioInput.mozCaptureStreamUntilEnded();
 
   setupMediaRecorder(opusAudioOutput.mozSrcObject);
