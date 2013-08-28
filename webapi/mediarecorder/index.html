@@ -22,23 +22,35 @@
     </div>
     <div>
       <h3>Setup Opus Stream for Media Recorder</h3>
-			<div>
-				<h4>Select Opus File for Testing</h4>
-				<select id="testOpusFile">
-					<option value="music_orig.opus">music_orig.opus</option>
-					<option value="detodos.opus">detodos.opus</option>
-				</select>
+      <div>
+        <h4>Select Opus File for Testing</h4>
+        <select id="testOpusFile">
+          <option value="music_orig.opus">music_orig.opus</option>
+          <option value="detodos.opus">detodos.opus</option>
+          <option value="chain.opus">chain.opus</option>
+          <option value="test-1-mono.opus">test-1-mono.opus</option>
+          <option value="test-2-stereo.opus">test-2-stereo.opus</option>
+          <option value="test-3-LCR.opus">test-3-LCR.opus</option>
+          <option value="test-4-quad.opus">test-4-quad.opus</option>
+          <option value="test-5-5.0.opus">test-5-5.0.opus</option>
+          <option value="test-6-5.1.opus">test-6-5.1.opus</option>
+          <option value="test-7.6.1.opus">test-7-6.1.opus</option>
+          <option value="test-8-7.1.opus">test-8-7.1.opus</option>
+          <option value="variable-channel.opus">variable-channel.opus</option>
+          <option value="variable-preskip.opus">variable-preskip.opus</option>
+          <option value="variable-samplerate.opus">variable-samplerate.opus</option>
+        </select>
         <input type="submit" id="setupOpusStream" value="Setup">
-			</div>
-			<div>
-				<h4>Media Controls for Opus Input/Output</h4>
-				<div>
-					<audio id="opusAudioInput" controls></audio>
-				</div>
-				<div>
-					<audio id="opusAudioOutput" controls></audio>
-				</div>
-			</div>
+      </div>
+      <div>
+        <h4>Media Controls for Opus Input/Output</h4>
+        <div>
+          <audio id="opusAudioInput" controls></audio>
+        </div>
+        <div>
+          <audio id="opusAudioOutput" controls></audio>
+        </div>
+      </div>
     </div>
     <div id="blobDownload">
       <h3>Blob Data Available</h3>
