@@ -53,8 +53,32 @@
         }
       };
 
-      document.getElementById('installApp').onclick = function() {
+      document.getElementById('installHostedAppWithPerms').onclick = function() {
         var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/notifications/manifest.webapp');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+
+      document.getElementById('installHostedAppWithoutPerms').onclick = function() {
+        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/notifications/nopermissions.webapp');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+
+      document.getElementById('installPackagedApp').onclick = function() {
+        var request = navigator.mozApps.installPackage('http://mozilla.github.io/qa-testcase-data/webapi/notifications/packaged.manifest');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -70,8 +94,18 @@
   </head>
   <body>
     <div>
-      <h3>Install as App</h3>
-      <input type="submit" value="Install" id="installApp">
+      <div>
+        <h3>Install as Hosted App With Permissions</h3>
+        <input type="submit" value="Install" id="installHostedAppWithPerms">
+      </div>
+      <div>
+        <h3>Install as Hosted App Without Permissions</h3>
+        <input type="submit" value="Install" id="installHostedAppWithoutPerms">
+      </div>
+      <div>
+        <h3>Install as Packaged App</h3>
+        <input type="submit" value="Install" id="installPackagedApp">
+      </div>
     </div>
     <div>
       <h3>Notification Setup</h3>
@@ -96,7 +130,12 @@
       </div>
       <div>
         <span>Title Dir</span>
-        <input id="notificationTitleDir" type="text">
+        <select id="notificationTitleDir">
+          <option></option>
+          <option>ltr</option>
+          <option>rtl</option>
+          <option>auto</option>
+        </select>
       </div>
       <div>
         <span>Body</span>
@@ -104,7 +143,12 @@
       </div>
       <div>
         <span>Body Dir</span>
-        <input id="notificationBodyDir" type="text">
+        <select id="notificationBodyDir">
+          <option></option>
+          <option>ltr</option>
+          <option>rtl</option>
+          <option>auto</option>
+        </select>
       </div>
       <div>
         <span>Tag</span>
@@ -112,7 +156,15 @@
       </div>
       <div>
         <span>Icon URL</span>
-        <input id="notificationIconURL" type="text" value="http://mozilla.github.io/qa-testcase-data/webapi/notifications/qalogo.png">
+        <select id="notificationIconURL">
+          <option></option>
+          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/qalogo.png</option>
+          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/jpegsample.jpg</option>
+          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/largeicon.png</option>
+          <option>/qa-testcase-data/webapi/notifications/qalogo.png</option>
+          <option>/qa-testcase-data/webapi/notifications/smallicon.png</option>
+          <option>/thisdoesnotexist.png</option>
+        </select>
       </div>
       <div>
         <input id="show" type="submit" value="Show Notification">

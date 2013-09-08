@@ -1,0 +1,13 @@
+﻿{
+  "version": "1.0",
+  "name": "Notifications Test",
+  "description": "A test app for testing notifications",
+  "launch_path": "/qa-testcase-data/webapi/notifications/index.html",
+  "icons": {
+    "128": "/qa-testcase-data/webapi/notifications/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  }
+}
