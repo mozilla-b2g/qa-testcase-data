@@ -43,6 +43,7 @@
         };
 
         notificationList.push(notification);
+        console.log('Notification Added with Index: ' + (notificationList.length - 1));
       };
 
       document.getElementById('closeNotification').onclick = function() {
@@ -173,7 +174,7 @@
     <div>
       <h3>Close Notification</h3>
       <div>
-        <span>Tag</span>
+        <span>Index</span>
         <input id="notificationId" type="text">
       </div>
       <div>
