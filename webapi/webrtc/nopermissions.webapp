@@ -1,0 +1,13 @@
+﻿{
+  "version": "1.0",
+  "name": "getUserMedia Test",
+  "description": "A test app for testing getUserMedia",
+  "launch_path": "/qa-testcase-data/webapi/webrtc/gum_test.html",
+  "icons": {
+    "128": "/qa-testcase-data/webapi/notifications/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  }
+}
