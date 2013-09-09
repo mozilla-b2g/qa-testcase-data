@@ -1,0 +1,19 @@
+﻿<audio id="testAudio1" controls></audio>
+<audio id="testAudio2" controls></audio>
+<script type="text/javascript">
+navigator.mozGetUserMedia({audio: true}, function(stream1) {
+  var testAudio1 = document.getElementById('testAudio1');
+  testAudio1.mozSrcObject = stream1;
+  testAudio1.play();
+
+  navigator.mozGetUserMedia({audio: true}, function(stream2) {
+    var testAudio2 = document.getElementById('testAudio2');
+    testAudio2.mozSrcObject = stream2;
+    testAudio2.play();
+  }, function(err) {
+    console.log(err);
+  });
+}, function(err) {
+  console.log(err);
+});
+</script>
