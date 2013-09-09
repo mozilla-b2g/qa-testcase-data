@@ -1,0 +1,12 @@
+﻿<audio id="testAudio" controls></audio>
+<script type="text/javascript">
+setTimeout(function() {
+  navigator.mozGetUserMedia({audio: true}, function(stream) {
+    var testAudio = document.getElementById('testAudio');
+    testAudio.mozSrcObject = stream;
+    testAudio.play();
+  }, function(err) {
+    console.log(err);
+  });
+}, 5000);
+</script>
