@@ -1,5 +1,4 @@
 ﻿var mediaRecorderList = [];
-var blobDataAvailable = [];
 var blobURLUI = null;
 
 function mediaRecorderAttributeDump(mediaRecorder) {
@@ -24,6 +23,7 @@ function updateBlobURLUI(blob) {
 
 function setupMediaRecorder(stream) {
   var mediaRecorder = new MediaRecorder(stream);
+  var blobDataAvailable = [];
 
   mediaRecorder.ondataavailable = function(evt) {
     console.log('ondataavailable fired');
@@ -43,6 +43,7 @@ function setupMediaRecorder(stream) {
     console.log(evt);
     console.log(mediaRecorderAttributeDump(evt.target));
     updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
+		blobDataAvailable = [];
   };
 
   mediaRecorder.onwarning = function(evt) {
