@@ -23,7 +23,6 @@
     <div>
       <h3>Setup Opus Stream for Media Recorder</h3>
       <div>
-        <h4>Select Opus File for Testing</h4>
         <select id="testOpusFile">
           <option value="music_orig.opus">music_orig.opus</option>
           <option value="detodos.opus">detodos.opus</option>
@@ -42,15 +41,15 @@
         </select>
         <input type="submit" id="setupOpusStream" value="Setup">
       </div>
-      <div>
-        <h4>Media Controls for Opus Input/Output</h4>
-        <div>
-          <audio id="opusAudioInput" controls></audio>
-        </div>
-        <div>
-          <audio id="opusAudioOutput" controls></audio>
-        </div>
+    </div>
+    <div>
+      <h3>Media Controls for Opus Input/Output</h4>
+      <div id="opusMediaControls">
       </div>
+    </div>
+    </div>
+    <div id="mediaRecorderControls">
+      <h3>Media Recorder Controls</h3>
     </div>
     <div id="blobDownload">
       <h3>Blob Data Available</h3>

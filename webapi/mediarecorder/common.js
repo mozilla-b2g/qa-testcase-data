@@ -43,7 +43,7 @@ function setupMediaRecorder(stream) {
     console.log(evt);
     console.log(mediaRecorderAttributeDump(evt.target));
     updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
-		blobDataAvailable = [];
+    blobDataAvailable = [];
   };
 
   mediaRecorder.onwarning = function(evt) {
@@ -53,6 +53,10 @@ function setupMediaRecorder(stream) {
   };
 
   mediaRecorderList.push(mediaRecorder);
+
+  if(createMediaRecorderControls) {
+    createMediaRecorderControls(mediaRecorderList.length - 1);
+  }
 }
 
 function createGUMStream(constraints) {
