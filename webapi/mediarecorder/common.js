@@ -9,17 +9,17 @@ function mediaRecorderAttributeDump(mediaRecorder) {
 }
 
 function updateBlobURLUI(blob) {
-	if(blobURLUI) {
-		var blobURL = URL.createObjectURL(blob);
-		var hrefElement = document.createElement('a');
-		var breakLine = document.createElement('br');
+  if(blobURLUI) {
+    var blobURL = URL.createObjectURL(blob);
+    var hrefElement = document.createElement('a');
+    var breakLine = document.createElement('br');
 
-		hrefElement.setAttribute('href', blobURL);
-		hrefElement.textContent = 'Download Data Available';
+    hrefElement.setAttribute('href', blobURL);
+    hrefElement.textContent = 'Download Data Available';
 
-		blobURLUI.appendChild(hrefElement);
-		blobURLUI.appendChild(breakLine);
-	}
+    blobURLUI.appendChild(hrefElement);
+    blobURLUI.appendChild(breakLine);
+  }
 }
 
 function setupMediaRecorder(stream) {
@@ -29,8 +29,7 @@ function setupMediaRecorder(stream) {
     console.log('ondataavailable fired');
     console.log(evt);
     console.log(mediaRecorderAttributeDump(evt.target));
-		blobDataAvailable.push(evt.data);
-		updateBlobURLUI(evt.data);
+    blobDataAvailable.push(evt.data);
   };
 
   mediaRecorder.onerror = function(evt) {
@@ -43,6 +42,7 @@ function setupMediaRecorder(stream) {
     console.log('onstop fired');
     console.log(evt);
     console.log(mediaRecorderAttributeDump(evt.target));
+    updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
   };
 
   mediaRecorder.onwarning = function(evt) {
