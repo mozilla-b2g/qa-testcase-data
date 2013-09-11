@@ -70,6 +70,7 @@ function createMediaRecorderControls(index) {
     }
 
     mediaRecorderList[index].start(timeslice);
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   timesliceDiv.appendChild(timesliceSpan);
@@ -85,6 +86,7 @@ function createMediaRecorderControls(index) {
 
   stopRecording.onclick = function() {
     mediaRecorderList[index].stop();
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   var pauseRecording = document.createElement('input');
@@ -93,6 +95,7 @@ function createMediaRecorderControls(index) {
 
   pauseRecording.onclick = function() {
     mediaRecorderList[index].pause();
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   var resumeRecording = document.createElement('input');
@@ -101,6 +104,7 @@ function createMediaRecorderControls(index) {
 
   resumeRecording.onclick = function() {
     mediaRecorderList[index].resume();
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   var requestData = document.createElement('input');
@@ -109,6 +113,7 @@ function createMediaRecorderControls(index) {
 
   requestData.onclick = function() {
     mediaRecorderList[index].requestData();
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   playControlsDiv.appendChild(stopRecording);
@@ -131,6 +136,8 @@ function createMediaRecorderControls(index) {
     } else {
       console.log('stop function not available for index ' + index);
     }
+
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   var muteMediaStream = document.createElement('input');
@@ -138,6 +145,7 @@ function createMediaRecorderControls(index) {
   muteMediaStream.setAttribute('value', 'Mute Media Stream');
   muteMediaStream.onclick = function() {
     mediaRecorderList[index].stream.getAudioTracks()[0].enabled = false;
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   var unmuteMediaStream = document.createElement('input');
@@ -145,6 +153,7 @@ function createMediaRecorderControls(index) {
   unmuteMediaStream.setAttribute('value', 'Unmute Media Stream');
   unmuteMediaStream.onclick = function() {
     mediaRecorderList[index].stream.getAudioTracks()[0].enabled = true;
+    mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
   streamControlsDiv.appendChild(stopMediaStream);
