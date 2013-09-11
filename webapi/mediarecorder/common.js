@@ -54,6 +54,9 @@ function setupMediaRecorder(stream) {
 
   mediaRecorderList.push(mediaRecorder);
 
+  console.log('Media Recorder created on index ' + (mediaRecorderList.length - 1));
+  console.log(mediaRecorderAttributeDump(mediaRecorder));
+
   if(createMediaRecorderControls) {
     createMediaRecorderControls(mediaRecorderList.length - 1);
   }

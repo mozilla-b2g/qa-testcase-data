@@ -118,6 +118,41 @@ function createMediaRecorderControls(index) {
 
   root.appendChild(playControlsDiv);
 
+  var streamControlsDiv = document.createElement('div');
+
+  var stopMediaStream = document.createElement('input');
+  stopMediaStream.setAttribute('type', 'submit');
+  stopMediaStream.setAttribute('value', 'Stop Media Stream');
+  stopMediaStream.onclick = function() {
+    var stream = mediaRecorderList[index].stream;
+
+    if(stream.stop) {
+      stream.stop();
+    } else {
+      console.log('stop function not available for index ' + index);
+    }
+  };
+
+  var muteMediaStream = document.createElement('input');
+  muteMediaStream.setAttribute('type', 'submit');
+  muteMediaStream.setAttribute('value', 'Mute Media Stream');
+  muteMediaStream.onclick = function() {
+    mediaRecorderList[index].stream.getAudioTracks()[0].enabled = false;
+  };
+
+  var unmuteMediaStream = document.createElement('input');
+  unmuteMediaStream.setAttribute('type', 'submit');
+  unmuteMediaStream.setAttribute('value', 'Unmute Media Stream');
+  unmuteMediaStream.onclick = function() {
+    mediaRecorderList[index].stream.getAudioTracks()[0].enabled = true;
+  };
+
+  streamControlsDiv.appendChild(stopMediaStream);
+  streamControlsDiv.appendChild(muteMediaStream);
+  streamControlsDiv.appendChild(unmuteMediaStream);
+
+  root.appendChild(streamControlsDiv);
+
   document.getElementById('mediaRecorderControls').appendChild(root);
 }
 
