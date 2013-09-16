@@ -7,6 +7,10 @@
   </head>
   <body>
     <div>
+      <h3>Install as Hosted App</h3>
+      <input type="submit" id="installHostedApp" value="Install">
+    </div>
+    <div>
       <h3>Setup GUM Stream for Media Recorder</h3>
       <div>
         <input type="checkbox" id="gUMCamera">
@@ -17,7 +21,13 @@
         <span>Microphone</span>
       </div>
       <div>
-        <input type="submit" id="setupGUMStream" value="Setup">
+        <div>
+          <span>Number of Recorders</span>
+          <input type="text" id="numberOfGumRecorders">
+        </div>
+        <div>
+          <input type="submit" id="setupGUMStream" value="Setup">
+        </div>
       </div>
     </div>
     <div>

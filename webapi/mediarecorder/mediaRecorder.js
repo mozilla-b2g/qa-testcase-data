@@ -4,7 +4,9 @@
     'audio': document.getElementById('gUMMicrophone').checked
   };
 
-  createGUMStream(constraints);
+  var numberOfRecorders = document.getElementById('numberOfGumRecorders').value;
+
+  createGUMStream(constraints, numberOfRecorders);
 }
 
 function createUIDrivenOpusStream() {
@@ -165,9 +167,22 @@ function createMediaRecorderControls(index) {
   document.getElementById('mediaRecorderControls').appendChild(root);
 }
 
+function installHostedApp() {
+  var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/manifest.webapp');
+
+  request.onsuccess = function(e) {
+    console.log('Installed successfully');
+  };
+
+  request.onerror = function(err) {
+    console.log('Error: ' + err.target.error.name);
+  };
+}
+
 function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
   document.getElementById('setupOpusStream').onclick = createUIDrivenOpusStream;
+  document.getElementById('installHostedApp').onclick = installHostedApp;g
 
   blobURLUI = document.getElementById('blobDownload');
 }

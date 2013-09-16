@@ -21,50 +21,56 @@ function updateBlobURLUI(blob) {
   }
 }
 
-function setupMediaRecorder(stream) {
-  var mediaRecorder = new MediaRecorder(stream);
-  var blobDataAvailable = [];
+function setupMediaRecorder(stream, numberOfRecorders) {
+  if(!numberOfRecorders) {
+    numberOfRecorders = 1;
+  }
 
-  mediaRecorder.ondataavailable = function(evt) {
-    console.log('ondataavailable fired');
-    console.log(evt);
-    console.log(mediaRecorderAttributeDump(evt.target));
-    blobDataAvailable.push(evt.data);
-  };
+  for(var i = 0; i < numberOfRecorders; i++){
+    var mediaRecorder = new MediaRecorder(stream);
+    var blobDataAvailable = [];
 
-  mediaRecorder.onerror = function(evt) {
-    console.log('onerror fired');
-    console.log(evt);
-    console.log(mediaRecorderAttributeDump(evt.target));
-  };
+    mediaRecorder.ondataavailable = function(evt) {
+      console.log('ondataavailable fired');
+      console.log(evt);
+      console.log(mediaRecorderAttributeDump(evt.target));
+      blobDataAvailable.push(evt.data);
+    };
 
-  mediaRecorder.onstop = function(evt) {
-    console.log('onstop fired');
-    console.log(evt);
-    console.log(mediaRecorderAttributeDump(evt.target));
-    updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
-    blobDataAvailable = [];
-  };
+    mediaRecorder.onerror = function(evt) {
+      console.log('onerror fired');
+      console.log(evt);
+      console.log(mediaRecorderAttributeDump(evt.target));
+    };
 
-  mediaRecorder.onwarning = function(evt) {
-    console.log('onwarning fired');
-    console.log(evt);
-    console.log(mediaRecorderAttributeDump(evt.target));
-  };
+    mediaRecorder.onstop = function(evt) {
+      console.log('onstop fired');
+      console.log(evt);
+      console.log(mediaRecorderAttributeDump(evt.target));
+      updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
+      blobDataAvailable = [];
+    };
 
-  mediaRecorderList.push(mediaRecorder);
+    mediaRecorder.onwarning = function(evt) {
+      console.log('onwarning fired');
+      console.log(evt);
+      console.log(mediaRecorderAttributeDump(evt.target));
+    };
 
-  console.log('Media Recorder created on index ' + (mediaRecorderList.length - 1));
-  console.log(mediaRecorderAttributeDump(mediaRecorder));
+    mediaRecorderList.push(mediaRecorder);
 
-  if(createMediaRecorderControls) {
-    createMediaRecorderControls(mediaRecorderList.length - 1);
+    console.log('Media Recorder created on index ' + (mediaRecorderList.length - 1));
+    console.log(mediaRecorderAttributeDump(mediaRecorder));
+
+    if(createMediaRecorderControls) {
+      createMediaRecorderControls(mediaRecorderList.length - 1);
+    }
   }
 }
 
-function createGUMStream(constraints) {
+function createGUMStream(constraints, numberOfRecorders) {
   navigator.mozGetUserMedia(constraints, function(stream) {
-    setupMediaRecorder(stream);
+    setupMediaRecorder(stream, numberOfRecorders);
   }, function(err) {
     console.log(err);
   });
