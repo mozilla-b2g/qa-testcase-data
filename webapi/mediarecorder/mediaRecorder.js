@@ -182,7 +182,7 @@ function installHostedApp() {
 function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
   document.getElementById('setupOpusStream').onclick = createUIDrivenOpusStream;
-  document.getElementById('installHostedApp').onclick = installHostedApp;g
+  document.getElementById('installHostedApp').onclick = installHostedApp;
 
   blobURLUI = document.getElementById('blobDownload');
 }
