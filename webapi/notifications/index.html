@@ -23,7 +23,7 @@
           'body': document.getElementById('notificationBody').value,
           'bodyDir': document.getElementById('notificationBodyDir').value,
           'tag': document.getElementById('notificationTag').value,
-          'iconUrl': document.getElementById('notificationIconURL').value
+          'icon': document.getElementById('notificationIconURL').value
         });
 
         notification.onclick = function() {
@@ -156,7 +156,7 @@
         <input id="notificationTag" type="text">
       </div>
       <div>
-        <span>Icon URL</span>
+        <span>Icon</span>
         <select id="notificationIconURL">
           <option></option>
           <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/qalogo.png</option>
