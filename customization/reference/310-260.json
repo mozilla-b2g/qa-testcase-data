@@ -11,17 +11,17 @@
       ]
     }
   ],
-	"wallpaper" : "wallpapers/BlueWallpaper.png",
-	"supportcontacts" {
-		"onlinesupport" {
-			"href": "http://mozqa.com/",
-			"title": "Mozilla QA"
-		},
-		"callsupport": [
-			{
-				"href": "tel:910",
-				"title": "910call"
-			}
-		]
-	}
+  "wallpaper" : "wallpapers/BlueWallpaper.png",
+  "supportcontacts" {
+    "onlinesupport" {
+      "href": "http://mozqa.com/",
+      "title": "Mozilla QA"
+    },
+    "callsupport": [
+      {
+        "href": "tel:910",
+        "title": "910call"
+      }
+    ]
+  }
 }
