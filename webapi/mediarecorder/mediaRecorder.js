@@ -167,6 +167,18 @@ function createMediaRecorderControls(index) {
   document.getElementById('mediaRecorderControls').appendChild(root);
 }
 
+function installPackagedApp() {
+  var request = navigator.mozApps.installPackage('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/packaged.manifest');
+
+  request.onsuccess = function(e) {
+    console.log('Installed successfully');
+  };
+
+  request.onerror = function(e) {
+    console.log('Error: ' + err.target.error.name);
+  };
+}
+
 function installHostedApp() {
   var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/manifest.webapp');
 
@@ -183,6 +195,7 @@ function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
   document.getElementById('setupOpusStream').onclick = createUIDrivenOpusStream;
   document.getElementById('installHostedApp').onclick = installHostedApp;
+  document.getElementById('installPackagedApp').onclick = installPackagedApp;
 
   blobURLUI = document.getElementById('blobDownload');
 }
