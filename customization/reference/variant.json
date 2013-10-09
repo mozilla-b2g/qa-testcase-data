@@ -1,11 +1,17 @@
 {
   "apps": {
-    "twitter":
+    "Twitter":
       {
         "origin": "https://mobile.twitter.com",
         "manifestURL": "https://mobile.twitter.com/cache/twitter.webapp",
         "installOrigin": "https://marketplace.firefox.com",
         "etag": "\"3471914f48f497d06248794ae4d4dc2d\""
+      },
+    "Facebook":
+      {
+        "origin": "http://m.facebook.com",
+        "manifestURL": "http://m.facebook.com/openwebapp/manifest.webapp",
+        "installOrigin": "https://marketplace.firefox.com"
       }
   },
   "operators": [
@@ -16,7 +22,7 @@
       ],
       "apps": [
         {
-          "id": "twitter",
+          "id": "Twitter",
           "screen": 1,
           "location": 4
         }
@@ -24,6 +30,22 @@
       "support_contacts": "tmobileus/tmobileus_support_contacts.json",
       "default_contacts": "tmobileus/tmobileus_contacts.json",
       "wallpaper": "tmobileus/tmobileus_wallpaper.png"
+    },
+    {
+      "id": "at&t us",
+      "mcc-mnc": [
+        "310-410"
+      ],
+      "apps": [
+        {
+          "id": "Facebook",
+          "screen": 0,
+          "location": 2
+        }
+      ],
+      "support_contacts": "attus/attus_support_contacts.json",
+      "default_contacts": "attus/attus_contacts.json",
+      "wallpaper": "attus/attus_wallpaper.png"
     }
   ]
 }

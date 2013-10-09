@@ -1,0 +1,30 @@
+[
+  {
+    "name": [
+      "310410 person"
+    ],
+    "givenName": [
+      "310410 person"
+    ],
+    "tel": [
+      {
+        "type": "Other",
+        "value": "3104102222"
+      }
+    ]
+  },
+  {
+    "name": [
+      "Inf 310410"
+    ],
+    "givenName": [
+      "Inf 310410"
+    ],
+    "tel": [
+      {
+        "type": "Other",
+        "value": "3104101111"
+      }
+    ]
+  }
+]
