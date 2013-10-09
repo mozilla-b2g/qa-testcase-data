@@ -1,0 +1,16 @@
+{
+  "name": "Importer", 
+  "icons": {
+    "60": "/style/icons/icon.png", 
+    "120": "/style/icons/icon.png", 
+    "128": "/style/icons/icon.png"
+  }, 
+  "description": "Import your contacts to Firefox OS", 
+  "version": "1.0.2", 
+  "package_path": "https://owd.tid.es/store/packages/8975950a5fbbd80896d0c1ce1aa929b6.zip", 
+  "size": 137678, 
+  "developer": {
+    "url": "https://github.com/arcturus/firefoxos-contacts-importer", 
+    "name": "Francisco Jordano"
+  }
+}

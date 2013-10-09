@@ -1,0 +1,16 @@
+{
+  "supportcontacts": {
+    "onlinesupport": {
+      "href": "http://mozqa.com/310260",
+      "title": "Mozilla QA - 310260"
+    },
+    "callsupport1": {
+      "href": "tel:3102601",
+      "title": "3102601call"
+    },
+    "callsupport2": {
+      "href": "tel:3102602",
+      "title": "3102602call"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "apps": {
+    "importer":
+      {
+        "manifestURL": "https://owd.tid.es/store/packages/8975950a5fbbd80896d0c1ce1aa929b6.webapp"
+      },
+    "puzzle":
+      {
+        "manifestURL": "https://owd.tid.es/store/packages/fe8e4a866c518a42db9d2041568684c1.webapp"
+      },
+    "sudoku":
+      {
+        "manifestURL": "https://owd.tid.es/store/packages/12a0fcd176beac6141e57389c64e6141.webapp"
+      },
+    "store":
+      {
+        "manifestURL": "https://owd.tid.es/store/manifest.webapp",
+        "installOrigin": "https://www.openwebdevice.com"
+      }
+  },
+  "operators": [
+    {
+      "id": "t-mobile us",
+      "mcc-mnc": [
+        "310-260"
+      ],
+      "apps": [
+        {
+          "id": "importer",
+          "screen": 0,
+          "location": 2
+        }
+      ],
+      "support_contacts": "tmobileus/tmobile_support_contacts.json",
+      "default_contacts": "tmobileus/tmobile_contacts.json",
+      "wallpaper": "tmobileus/tmobileus_wallpaper.png"
+    }
+  ]
+}
