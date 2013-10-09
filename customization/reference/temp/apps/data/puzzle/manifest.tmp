@@ -1,0 +1,18 @@
+{
+  "description": "Puzzle Game", 
+  "icons": {
+    "60": "/style/icons/puzzle.png"
+  }, 
+  "name": "Puzzle", 
+  "package_path": "https://owd.tid.es/store/packages/fe8e4a866c518a42db9d2041568684c1.zip", 
+  "size": 120386, 
+  "locales": {
+    "en-US": {
+      "name": "Puzzle", 
+      "description": "Puzzle Game"
+    }
+  }, 
+  "developer": {
+    "name": "Cristian Rodriguez & Sergi Vila "
+  }
+}

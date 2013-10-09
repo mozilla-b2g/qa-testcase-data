@@ -31,8 +31,8 @@
           "location": 2
         }
       ],
-      "support_contacts": "tmobileus/tmobile_support_contacts.json",
-      "default_contacts": "tmobileus/tmobile_contacts.json",
+      "support_contacts": "tmobileus/tmobileus_support_contacts.json",
+      "default_contacts": "tmobileus/tmobileus_contacts.json",
       "wallpaper": "tmobileus/tmobileus_wallpaper.png"
     }
   ]
