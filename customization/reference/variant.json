@@ -1,21 +1,11 @@
 {
   "apps": {
-    "importer":
+    "twitter":
       {
-        "manifestURL": "https://owd.tid.es/store/packages/8975950a5fbbd80896d0c1ce1aa929b6.webapp"
-      },
-    "puzzle":
-      {
-        "manifestURL": "https://owd.tid.es/store/packages/fe8e4a866c518a42db9d2041568684c1.webapp"
-      },
-    "sudoku":
-      {
-        "manifestURL": "https://owd.tid.es/store/packages/12a0fcd176beac6141e57389c64e6141.webapp"
-      },
-    "store":
-      {
-        "manifestURL": "https://owd.tid.es/store/manifest.webapp",
-        "installOrigin": "https://www.openwebdevice.com"
+        "origin": "https://mobile.twitter.com",
+        "manifestURL": "https://mobile.twitter.com/cache/twitter.webapp",
+        "installOrigin": "https://marketplace.firefox.com",
+        "etag": "\"3471914f48f497d06248794ae4d4dc2d\""
       }
   },
   "operators": [
@@ -26,9 +16,9 @@
       ],
       "apps": [
         {
-          "id": "importer",
-          "screen": 0,
-          "location": 2
+          "id": "twitter",
+          "screen": 1,
+          "location": 4
         }
       ],
       "support_contacts": "tmobileus/tmobileus_support_contacts.json",
