@@ -16,27 +16,6 @@
   },
   "operators": [
     {
-      "id": "default",
-      "mcc-mnc": [
-        "000-000"
-      ],
-      "apps": [
-        {
-          "id": "Twitter",
-          "screen": 1,
-          "location": 4
-        },
-        {
-          "id": "Facebook",
-          "screen": 0,
-          "location": 2
-        }
-      ],
-      "support_contacts": "default/default_support_contacts.json",
-      "default_contacts": "default/default_contacts.json",
-      "wallpaper": "default/default_wallpaper.png"
-    },
-    {
       "id": "t-mobile us",
       "mcc-mnc": [
         "310-260"
