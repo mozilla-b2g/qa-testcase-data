@@ -12,6 +12,36 @@
         "origin": "http://m.facebook.com",
         "manifestURL": "http://m.facebook.com/openwebapp/manifest.webapp",
         "installOrigin": "https://marketplace.firefox.com"
+      },
+    "Wikipedia":
+      {
+        "origin": "https://bits.wikimedia.org",
+        "manifestURL": "https://bits.wikimedia.org/WikipediaMobileFirefoxOS/manifest.webapp",
+        "installOrigin": "https://marketplace.firefox.com",
+        "etag": "\"2cb-4dbe6958f4c40\""
+      },
+    "Accuweather":
+      {
+        "origin": "http://m.accuweather.com",
+        "manifestURL": "http://m.accuweather.com/mozilla.webapp",
+        "installOrigin": "https://marketplace.firefox.com",
+        "etag": "\"7c7c5fbc14cce1:0\""
+      },
+    "Calculator":
+      {
+        "origin": "app://calculator",
+        "installOrigin": "https://marketplace.firefox.com",
+        "packageEtag": "\"213993d924d7b2104ae281b75b41352c4fecc800f714abdaba059e8760ec6acd\"",
+        "manifestURL": "https://marketplace.firefox.com/app/9f96ce77-5b2d-42ca-a0d9-10a933dd84c4/manifest.webapp",
+        "etag": "\"7676d7e01c978e333f1da02837cf452c\""
+      },
+    "Poppit":
+      {
+        "origin": "app://poppit",
+        "installOrigin": "https://marketplace.firefox.com",
+        "packageEtag": "\"f94c618e185bc6a17b3490d4fb9ec8232290ab7ab3b960d693781173939396c3\"",
+        "manifestURL": "https://marketplace.firefox.com/app/d37cb5ed-525a-408e-a7cf-ec848064e041/manifest.webapp",
+        "etag": "\"f8f7f690e6b95335926afb5de5066d51\""
       }
   },
   "operators": [
@@ -25,6 +55,16 @@
           "id": "Twitter",
           "screen": 1,
           "location": 4
+        },
+        {
+          "id": "Wikipedia",
+          "screen": 0,
+          "location": 7
+        },
+        {
+          "id": "Calculator",
+          "screen": 0,
+          "location": 10
         }
       ],
       "support_contacts": "tmobileus/tmobileus_support_contacts.json",
@@ -41,6 +81,16 @@
           "id": "Facebook",
           "screen": 0,
           "location": 2
+        },
+        {
+          "id": "Accuweather",
+          "screen": 1,
+          "location": 6
+        },
+        {
+          "id": "Poppit",
+          "screen": 1,
+          "location": 13
         }
       ],
       "support_contacts": "attus/attus_support_contacts.json",
