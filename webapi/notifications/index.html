@@ -77,14 +77,35 @@
       };
 
       document.getElementById('closeNotification').onclick = function() {
-        var notificationID = parseInt(document.getElementById('notificationId').value);
+        var notificationCloseID = parseInt(document.getElementById('notificationCloseId').value);
 
-        if(notificationID < notificationList.length) {
-          notificationList[notificationID].close();
+        if(notificationCloseID < notificationList.length) {
+          notificationList[notificationCloseID].close();
 
           console.log('Notification closed');
-          notificationAttributeDump(notificationList[notificationID]);
+          notificationAttributeDump(notificationList[notificationCloseID]);
         }
+      };
+
+      document.getElementById('getNotification').onclick = function() {
+        var getOptions = {};
+        var notificationGetTag = document.getElementById('notificationGetTag').value;
+
+        if(notificationGetTag) {
+          getOptions['tag'] = notificationGetTag;
+        }
+
+        var notificationPromise = Notification.get(getOptions);
+
+        notificationPromise.then(function(getNotifications) {
+          notificationList.push(getNotifications);
+          console.log('Get Notification for tag ' + notificationGetTag);
+          console.log('Retrieved ' + getNotifications.length + ' notifications');
+
+          for(getNotification of getNotifications) {
+            notificationAttributeDump(getNotification);
+          }
+        });
       };
 
       document.getElementById('installHostedAppWithPerms').onclick = function() {
@@ -203,11 +224,20 @@
       <h3>Close Notification</h3>
       <div>
         <span>Index</span>
-        <input id="notificationId" type="text">
+        <input id="notificationCloseId" type="text">
       </div>
       <div>
         <input id="closeNotification" type="submit" value="Close">
       </div>
     </div>
+    <div>
+      <h3>Get Notification</h3>
+      <div>
+        <span>Tag</span>
+        <input id="notificationGetTag" type="text">
+      </div>
+      <div>
+        <input id="getNotification" type="submit" value="Get">
+      </div>
   </body>
 </html>
