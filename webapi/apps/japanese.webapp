@@ -2,7 +2,7 @@
   "version": "1.0",
   "name": "テスト Japanese テスト App テスト",
   "description": "テスト A test app for testing out テスト Japanese テスト",
-  "launch_path": "/qa-testcase-data/",
+  "launch_path": "/qa-testcase-data/index.html",
   "icons": {
     "126": "/qa-testcase-data/webapi/apps/qalogo.png"
   },

@@ -2,7 +2,7 @@
   "version": "1.0",
   "name": "Multiple Icons",
   "description": "A test app for testing multiple icons",
-  "launch_path": "/qa-testcase-data/",
+  "launch_path": "/qa-testcase-data/index.html",
   "icons": {
 		"62": "/qa-testcase-data/webapi/apps/smallqalogo.png",
     "126": "/qa-testcase-data/webapi/apps/qalogo.png"

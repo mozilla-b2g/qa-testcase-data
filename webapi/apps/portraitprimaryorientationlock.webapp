@@ -2,7 +2,7 @@
   "version": "1.0",
   "name": "Portrait Primary Orientation Lock",
   "description": "A test app for testing out portrait primary orientation lock",
-  "launch_path": "/qa-testcase-data/",
+  "launch_path": "/qa-testcase-data/index.html",
   "icons": {
     "126": "/qa-testcase-data/webapi/apps/qalogo.png"
   },

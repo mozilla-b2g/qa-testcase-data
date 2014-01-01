@@ -1,7 +1,7 @@
 ﻿{
   "name": "Appcache with invalid icon URL",
   "description": "This is an app with an appcache with invalid icon URL",
-  "launch_path": "/qa-testcase-data/",
+  "launch_path": "/qa-testcase-data/index.html",
   "developer": {
     "name": "Jason Smith",
     "url": "http://jasondanielsmith.wordpress.com"
