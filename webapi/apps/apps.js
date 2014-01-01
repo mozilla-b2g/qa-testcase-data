@@ -1,4 +1,4 @@
-﻿var BASE_PATH = 'http://jds2501.github.io/qa-testcase-data/webapi/apps/';
+﻿var BASE_PATH = 'http://mozilla.github.io/qa-testcase-data/webapi/apps/';
 
 function handleAppRequest(request) {
   request.onsuccess = function(e) {
@@ -18,6 +18,7 @@ function handleAppRequest(request) {
 
 function installHostedApp() {
   var manifest = document.getElementById('hostedAppManifest').value;
+	console.log(BASE_PATH + manifest);
   var request = navigator.mozApps.install(BASE_PATH + manifest);
   handleAppRequest(request);
 }
