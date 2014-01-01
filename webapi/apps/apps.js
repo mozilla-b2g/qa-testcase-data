@@ -18,7 +18,6 @@ function handleAppRequest(request) {
 
 function installHostedApp() {
   var manifest = document.getElementById('hostedAppManifest').value;
-	console.log(BASE_PATH + manifest);
   var request = navigator.mozApps.install(BASE_PATH + manifest);
   handleAppRequest(request);
 }
