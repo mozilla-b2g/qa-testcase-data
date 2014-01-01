@@ -1,0 +1,13 @@
+﻿{
+  "name": "Appcache with invalid icon URL",
+  "description": "This is an app with an appcache with invalid icon URL",
+  "launch_path": "/qa-testcase-data/",
+  "developer": {
+    "name": "Jason Smith",
+    "url": "http://jasondanielsmith.wordpress.com"
+  },
+  "icons": {
+    "120": "/sdfjlkjsdflkjdsalkfjdsalkjfdslkjflkdsajflkdsjflkdsajflkdsjf.png"
+  },
+  "appcache_path": "/qa-testcase-data/webapi/apps/mediumappcachepreload.appcache"
+}

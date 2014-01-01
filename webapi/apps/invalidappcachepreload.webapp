@@ -1,0 +1,13 @@
+﻿{
+  "name": "Invalid Appcache Preload",
+  "description": "This is an app with an invalid appcache",
+  "launch_path": "/qa-testcase-data/webapi/apps/appcache_preload.html",
+  "developer": {
+    "name": "Jason Smith",
+    "url": "http://jasondanielsmith.wordpress.com"
+  },
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "appcache_path": "/qa-testcase-data/webapi/apps/invalidappcachepreload.appcache"
+}

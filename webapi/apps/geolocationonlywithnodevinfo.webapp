@@ -1,0 +1,15 @@
+﻿{
+  "version": "1.0",
+  "name": "Test Geolocation Only without Developer Info",
+  "description": "A test app for testing out geolocation only",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "type": "web",
+  "permissions": {
+    "geolocation": {
+      "description": "Come see my geolocation"
+    }
+  }
+}

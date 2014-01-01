@@ -1,0 +1,28 @@
+﻿{
+  "version": "1.0",
+  "name": "テスト Japanese テスト App テスト",
+  "description": "テスト A test app for testing out テスト Japanese テスト",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "type": "web",
+  "permissions": {
+    "geolocation": {
+      "description": "Come see my geolocation"
+    },
+    "desktop-notification": {
+      "description": "Come see my notifications"
+    },
+    "fmradio": {
+      "description": "Come see my fmradio"
+    }
+  },
+	"chrome": {
+		"navigation": true
+	},
+  "developer": {
+    "name": "テスト Mozilla テスト QA テスト",
+    "url": "http://quality.mozilla.org"
+  }
+}

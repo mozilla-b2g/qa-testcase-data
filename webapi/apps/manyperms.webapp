@@ -1,0 +1,43 @@
+﻿{
+  "version": "1.0",
+  "name": "Many Permissions",
+  "description": "A test app for testing out many permissions",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "type": "web",
+  "permissions": {
+    "alarms": {},
+    "browser":{},
+    "power":{},
+    "fmradio":{},
+    "webapps-manage":{},
+    "mobileconnection":{},
+    "bluetooth":{},
+    "telephony":{},
+    "voicemail":{},
+    "device-storage:sdcard":{ "access": "readonly" },
+    "device-storage:pictures":{ "access": "readwrite" },
+    "device-storage:videos":{ "access": "readwrite" },
+    "device-storage:music":{ "access": "readcreate" },
+    "settings":{ "access": "readwrite" },
+    "storage":{},
+    "camera":{},
+    "geolocation":{},
+    "wifi-manage":{},
+    "desktop-notification":{},
+    "idle":{},
+    "network-events":{},
+    "embed-apps":{},
+    "background-sensors":{},
+    "permissions":{},
+    "audio-channel-publicnotification":{},
+    "audio-channel-notification":{},
+    "cellbroadcast":{}
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://quality.mozilla.org"
+  }
+}

@@ -1,0 +1,29 @@
+﻿{
+  "version": "1.0",
+  "name": "Landscape Primary Orientation Lock",
+  "description": "A test app for testing out landscape primary orientation lock",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "type": "web",
+	"orientation": "landscape-primary",
+  "permissions": {
+		"alarms": {
+			"description": "Come see my alarm"
+		},
+    "geolocation": {
+      "description": "Come see my geolocation"
+    },
+    "desktop-notification": {
+      "description": "Come see my notifications"
+    },
+    "fmradio": {
+      "description": "Come see my fmradio"
+    }
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://quality.mozilla.org"
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "version": "1.0",
+  "name": "No Permissions",
+  "description": "A test app with no permissions specified",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://quality.mozilla.org"
+  }
+}

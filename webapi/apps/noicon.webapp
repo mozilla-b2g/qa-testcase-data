@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0",
+  "name": "No Icon",
+  "description": "A test app for testing out web api permissions",
+  "launch_path": "/qa-testcase-data/",
+  "type": "web",
+  "permissions": {
+    "geolocation": {
+      "description": "Come see my geolocation"
+    },
+    "desktop-notification": {
+      "description": "Come see my notifications"
+    },
+    "fmradio": {
+      "description": "Come see my fmradio"
+    }
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://quality.mozilla.org"
+  }
+}

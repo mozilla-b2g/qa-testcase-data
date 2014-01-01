@@ -1,0 +1,13 @@
+﻿{
+  "version": "1.0",
+  "name": "Developer Name Only",
+  "description": "A test app for testing out web api permissions",
+  "launch_path": "/qa-testcase-data/",
+  "icons": {
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
+  },
+  "type": "web",
+  "developer": {
+    "name": "Mozilla QA"
+  }
+}
