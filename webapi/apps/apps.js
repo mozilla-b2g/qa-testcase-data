@@ -9,7 +9,7 @@ function handleAppRequest(request) {
     };
 
     app.ondownloaderror = function () {
-      alert('Error downloading app : ' + app.downloadError);
+      alert('Error downloading app : ' + app.downloadError.name);
     };
 
     app.ondownloadavailable = function () {
