@@ -39,7 +39,6 @@ function installHostedApp() {
 
 function installPackagedApp() {
   var miniManifest = document.getElementById('packagedAppMiniManifest').value;
-  console.log(BASE_PATH + miniManifest);
   var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
   handleAppRequest(request);
 }
