@@ -1,4 +1,4 @@
-﻿var ORIGIN = window.location.protocol + '://' + window.location.host;
+﻿var ORIGIN = window.location.protocol + '//' + window.location.host;
 var BASE_PATH = ORIGIN + '/qa-testcase-data/webapi/apps/';
 
 function handleAppRequest(request) {
