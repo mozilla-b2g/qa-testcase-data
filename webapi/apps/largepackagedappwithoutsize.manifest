@@ -9,5 +9,5 @@
     "name": "Mozilla QA",
     "url": "http://jasondanielsmith.wordpress.com/"
   },
-  "package_path": "/webapi-permissions-tests/large_packaged_app.zip"
+  "package_path": "/qa-testcase-data/webapi/apps/large_packaged_app.zip"
 }

@@ -26,5 +26,5 @@
       }
     }
   },
-  "package_path": "/webapi-permissions-tests/localeoverride.zip"
+  "package_path": "/qa-testcase-data/webapi/apps/localeoverride.zip"
 }

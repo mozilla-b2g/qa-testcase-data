@@ -4,11 +4,11 @@
   "size" : 10000,
   "release_notes": "First v1.1 release",
   "icons": {
-    "126": "/webapi-permissions-tests/qalogo.png"
+    "126": "/qa-testcase-data/webapi/apps/qalogo.png"
   },
   "developer": {
     "name": "Mozilla QA",
     "url": "http://jasondanielsmith.wordpress.com/"
   },
-  "package_path": "/webapi-permissions-tests/reviewersigned.zip"
+  "package_path": "/qa-testcase-data/webapi/apps/reviewersigned.zip"
 }

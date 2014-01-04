@@ -7,5 +7,5 @@
     "name": "Mozilla QA",
     "url": "http://jasondanielsmith.wordpress.com/"
   },
-  "package_path": "/webapi-permissions-tests/noicon.zip"
+  "package_path": "/qa-testcase-data/webapi/apps/noicon.zip"
 }
