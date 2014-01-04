@@ -1,0 +1,14 @@
+﻿{
+  "name" : "Large Packaged App",
+  "version" : "1.0",
+  "size" : 20000467,
+  "release_notes": "First v1.0 release",
+  "icons": {
+    "126": "/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  },
+  "package_path": "/webapi-permissions-tests/large_packaged_app.zip"
+}

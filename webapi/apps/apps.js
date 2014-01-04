@@ -1,4 +1,5 @@
-﻿var BASE_PATH = 'http://mozilla.github.io/qa-testcase-data/webapi/apps/';
+﻿var ORIGIN = window.location.protocol + '://' + window.location.host;
+var BASE_PATH = ORIGIN + '/qa-testcase-data/webapi/apps/';
 
 function handleAppRequest(request) {
   request.onsuccess = function(e) {
@@ -36,6 +37,13 @@ function installHostedApp() {
   handleAppRequest(request);
 }
 
+function installPackagedApp() {
+  var miniManifest = document.getElementById('packagedAppMiniManifest').value;
+  var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
+  handleAppRequest(request);
+}
+
 window.addEventListener('DOMContentLoaded', function() {
   document.getElementById('installHostedApp').onclick = installHostedApp;
+  document.getElementById('installPackagedApp').onclick = installPackagedApp;
 });

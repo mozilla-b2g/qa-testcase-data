@@ -1,0 +1,14 @@
+﻿{
+  "name" : "Web Permissions Test App",
+  "version" : "1.1",
+  "size" : 10000,
+  "release_notes": "First v1.1 release",
+  "icons": {
+    "126": "/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  },
+  "package_path": "/webapi-permissions-tests/webpermissionstestapp.zip"
+}

@@ -42,5 +42,27 @@
       </select>
       <input type="submit" id="installHostedApp" value="Install">
     </div>
+    <div>
+      <h2>Packaged App Install Tests</h2>
+      <select id="packagedAppMiniManifest">
+        <option value="badlaunchpath.manifest">badlaunchpath</option>
+        <option value="certifiedapp.manifest">certifiedapp</option>
+        <option value="doesnotexist.manifest">doesnotexist</option>
+        <option value="invalidfiletype.manifest">invalidfiletype</option>
+        <option value="invalidmanifest.manifest">invalidmanifest</option>
+        <option value="invalidminimanifest.manifest">invalidminimanifest</option>
+        <option value="largepackagedappwithoutsize.manifest">largepackagedappwithoutsize</option>
+        <option value="largepackagedappwithsize.manifest">largepackagedappwithsize</option>
+        <option value="largesizeinminimanifest.manifest">largesizeinminimanifest</option>
+        <option value="localeoverride.manifest">localeoverride</option>
+        <option value="nodeveloper.manifest">nodeveloper</option>
+        <option value="noicon.manifest">noicon</option>
+        <option value="privilegedappnosigning.manifest">privilegedappnosigning</option>
+        <option value="reviewersigned.manifest">reviewersigned</option>
+        <option value="usersigned.manifest">usersigned</option>
+        <option value="webpermissionstestapp.manifest">webpermissionstestapp</option>
+      </select>
+      <input type="submit" id="installPackagedApp" value="Install">
+    </div>
   </body>
 </html>

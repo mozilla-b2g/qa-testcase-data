@@ -1,0 +1,30 @@
+﻿{
+  "name" : "Locale Override",
+  "version" : "1.0",
+  "size" : 14000,
+  "release_notes": "First v1.0 release",
+  "icons": {
+    "126": "/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  },
+  "locales": {
+    "en": {
+      "name": "Localized app name for English",
+      "developer": {
+        "name": "Localized developer name for English",
+        "url": "Localized developer url for English"
+      }
+    },
+    "pt-BR": {
+      "name": "Localized app name for Brazil pt-BR",
+      "developer": {
+        "name": "Localized developer name for Brazil pt-BR",
+        "url": "Localized developer url for Brazil pt-BR"
+      }
+    }
+  },
+  "package_path": "/webapi-permissions-tests/localeoverride.zip"
+}
