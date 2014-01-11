@@ -102,10 +102,15 @@
           console.log('Retrieved ' + getNotifications.length + ' notifications');
 
           for(getNotification of getNotifications) {
-						notificationList.push(getNotification);
+            notificationList.push(getNotification);
             notificationAttributeDump(getNotification);
           }
         });
+      };
+
+      document.getElementById('dumpNotificationAttributes').onclick = function() {
+        var notificationIndex = document.getElementById('notificationDumpIndex').value;
+        notificationAttributeDump(notificationList[notificationIndex]);
       };
 
       document.getElementById('installHostedAppWithPerms').onclick = function() {
@@ -239,5 +244,16 @@
       <div>
         <input id="getNotification" type="submit" value="Get">
       </div>
+    </div>
+    <div>
+      <h3>Dump Notification Attributes</h3>
+      <div>
+        <span>Index</span>
+        <input id="notificationDumpIndex" type="text">
+      </div>
+      <div>
+        <input id="dumpNotificationAttributes" type="submit" value="Dump">
+      </div>
+    </div>
   </body>
 </html>
