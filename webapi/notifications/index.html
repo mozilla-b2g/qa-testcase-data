@@ -98,11 +98,11 @@
         var notificationPromise = Notification.get(getOptions);
 
         notificationPromise.then(function(getNotifications) {
-          notificationList.push(getNotifications);
           console.log('Get Notification for tag ' + notificationGetTag);
           console.log('Retrieved ' + getNotifications.length + ' notifications');
 
           for(getNotification of getNotifications) {
+						notificationList.push(getNotification);
             notificationAttributeDump(getNotification);
           }
         });
