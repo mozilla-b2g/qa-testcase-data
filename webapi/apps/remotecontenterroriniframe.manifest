@@ -1,0 +1,14 @@
+﻿{
+  "name" : "Remote Content Error in IFrame",
+  "version" : "1.0",
+  "size" : 10000,
+  "release_notes": "First v1.0 release",
+  "icons": {
+    "126": "/qalogo.png"
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  },
+  "package_path": "/qa-testcase-data/webapi/apps/remotecontenterroriniframe.zip"
+}
