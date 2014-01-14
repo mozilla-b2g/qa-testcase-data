@@ -1,0 +1,31 @@
+<html>
+  <head>
+<title>Bug crash screenconfigurationchange</title>
+    <script>
+var win;
+
+function doe() {
+  win = window.open('screenconfigurationchange.htm');
+setTimeout(function() {win.location.reload(); }, 500);
+  setTimeout(function() {win.close(); setTimeout(doe, 100);}, 1000);
+}
+
+
+var wins=[];
+function doe2() {
+for (var i=0;i<3;i++) {
+  wins[wins.length] = window.open('crash1.htm');
+}
+//setTimeout(function() {win.location.reload(); }, 500);
+  setTimeout(function() { setTimeout(doe2, 100);}, 10000);
+}
+
+    </script>
+  </head>
+  <body>
+<button style="width: 200px; height: 200px;" onclick="doe();">open screenconfigurationchange.htm</button>
+<br><br>
+<button style="width: 200px; height: 200px;" onclick="doe2();">open crash1.htm</button>
+<br><br>
+  </body>
+</html>

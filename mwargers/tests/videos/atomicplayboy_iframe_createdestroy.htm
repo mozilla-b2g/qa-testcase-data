@@ -1,0 +1,24 @@
+<html><head>
+
+<title>frames with webm videos</title>
+
+<script>
+var win;
+var win2;
+function doe() {
+win = document.createElement('iframe');
+win.src = 'atomicplayboy.webm';
+document.body.appendChild(win);
+win2 = document.createElement('iframe');
+win2.src = 'atomicplayboy.webm';
+document.body.appendChild(win2);
+setTimeout(function() {document.body.removeChild(win); document.body.removeChild(win2); setTimeout(doe, 500);}, 10000);
+}
+</script>
+
+
+</head><body>
+<button onclick="doe()">create iframes with webm video then close after 10 s and repeat</button><br><br>
+
+
+</body></html>

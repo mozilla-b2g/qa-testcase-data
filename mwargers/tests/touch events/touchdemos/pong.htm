@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>Pong</title>
+ <style>
+  #canvas {
+    background-color: black;
+	border: 1px solid #444;
+  }
+  
+  body {
+    background-color: black;
+    text-align: center;
+  }
+  
+  .score {
+    color: white;
+	font-size: 5em;
+	font-family: Impact;
+	font-weight: bold;
+	position: absolute;
+	top:10px;
+  }
+  
+  #sc1 {
+    left: 43%;
+  }
+  
+  #sc2 {
+    left: 54%;
+  }  
+ </style>
+ <script type="text/javascript">
+document.addEventListener("touchmove", touchmove, false);
+
+document.multitouchData = true;
+
+var cWidth = 1000;
+var cHeight = 600;
+
+var c;
+
+var p1s = 0, p2s = 0;
+
+var h1 = 60, h2 = 120;
+
+var bx = 500, by = 300, bs = 20, ps = 100;
+
+var dh = 10, dv = 5;
+
+document.addEventListener("DOMContentLoaded", function() {
+  c = document.getElementById("canvas").getContext("2d");
+  gameFrame();
+}, false);
+
+function moveBallUnrestricted() {
+  bx += dh;
+  by += dv;
+}
+
+function restart() {
+  bx = 500;
+  by = 300;
+  dv = 5;
+  dh = 10;
+  document.getElementById("sc1").firstChild.nodeValue = p1s;
+  document.getElementById("sc2").firstChild.nodeValue = p2s;
+}
+
+function checkHit() {
+  if (by > 590 || by < 10) dv = -dv;
+  
+  if (bx > 950) {
+    if ( Math.abs(h2 - by - bs/2) <  ps) {
+	  //hit
+	  dh = -dh;
+	} else {
+	   p1s++;
+	   restart();
+	}
+  }
+  
+  if (bx < 40) {
+    if (  (by + bs/2 > h1)  &&  (by < h1 + ps)  ) {
+	  //hit
+	  dh = -dh;
+	} else {
+	   p2s++;
+	   restart();
+	}
+  }
+  
+}
+
+function gameFrame() {
+
+  c.fillStyle = 'black';
+  c.fillRect( 0, 0, cWidth, cHeight );
+  c.fillStyle = 'white';
+  c.fillRect( (cWidth - 10)/ 2, 0, 10, cHeight);
+  
+  c.fillRect ( 10, h1, 30, 100);
+  c.fillRect ( cWidth - 10 - 30, h2, 30, 100);
+  
+  c.fillRect ( bx, by, 20, 20);
+}
+
+window.setInterval(function(){ moveBallUnrestricted(); gameFrame(); checkHit();}, 18);
+
+function touchmove(e) {
+  if (e.clientX < screen.width / 2)
+    h1 = e.clientY - ps/2;
+  else
+    h2 = e.clientY - ps/2;
+}
+ 
+</script>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="600" style="background-color: black"></canvas>
+<div id="sc1" class="score">0</div>
+<div id="sc2" class="score">0</div>
+</body>
+</html>

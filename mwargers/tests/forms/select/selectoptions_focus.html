@@ -1,0 +1,30 @@
+<html><head>
+<title>Bug  - No focus on select when tapping on selects</title>
+
+</head>
+<body>
+<select id=a onfocus="doe(event)">
+<optgroup label="empty optgroup"></optgroup>
+<option disabled selected>option 2 selected disabled</option>
+<option>option 1</option>
+mmm
+<option>option 3</option>
+</select>
+<input>
+<select id=b multiple onfocus="doe(event)">
+<optgroup label="empty optgroup"></optgroup>
+<option disabled selected>option 2 selected disabled</option>
+<option>option 1</option>
+
+<option>option 3</option>
+</select>
+<pre id="result"></pre>
+<script>
+function doe(aEvent) {
+document.getElementById('result').innerHTML += 'focus event on ' + aEvent.target.id +'\n';
+}
+
+window.addEventListener('popupshowing', function(e) {document.getElementById('result').innerHTML += 'popupshowing event on '  +'\n';}, true);
+window.addEventListener('touchdown', function(e) {document.getElementById('result').innerHTML += 'click event on '  +'\n';}, true);
+</script>
+</body>

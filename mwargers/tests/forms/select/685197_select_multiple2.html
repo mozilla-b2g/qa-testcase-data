@@ -1,0 +1,39 @@
+<html><head>
+<title>Bug  - Multiple select options become unselected when tapping on multi-select</title>
+<style>
+
+</style>
+</head>
+<body>
+<select multiple style="height: 400px;">
+<optgroup label="test" style="">
+        <option style="" selected="true">Three</option>
+        <option selected>Four</option>
+        <option>Five</option>
+</optgroup>
+<option selected style="">These options should</option>
+<option  selected>be selected in the</option>
+</select>
+<br>
+select option: pointer-events: none;<br>
+<select multiple style="height: 400px; ">
+<optgroup label="test"  style="pointer-events: none;">
+        <option style="pointer-events: none;" selected="true">Three</option>
+        <option style="pointer-events: none;" selected>Four</option>
+        <option style="pointer-events: none;">Five</option>
+</optgroup>
+<option selected  style="pointer-events: none;">These options should</option>
+<option  selected style="pointer-events: none;">be selected in the</option>
+</select>
+<br>
+select: pointer-events: none;<br>
+<select multiple style="height: 400px; pointer-events: none;">
+<optgroup label="test" style="">
+        <option style="" selected="true">Three</option>
+        <option selected>Four</option>
+        <option>Five</option>
+</optgroup>
+<option selected style="">These options should</option>
+<option  selected>be selected in the</option>
+</select>
+</body>

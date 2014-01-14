@@ -1,0 +1,36 @@
+<html><head>
+<title>Open window then postmessage</title>
+
+<style>
+</style>
+<script>
+var win;
+var interval;
+function doe() {
+win = window.open('data:text/html;charset=utf-8,%3Cpre%20id%3D%22result%22%3E%3C/pre%3E%0A%0A%3Cscript%3E%0Awindow.addEventListener%28%22message%22%2C%20receiveMessage%2C%20false%29%3B%20%20%0A%20%20%20%20%20%20%0Afunction%20receiveMessage%28event%29%20%7B%20%0Avar%20r%3Ddocument.getElementById%28%27result%27%29%3B%0Ar.innerHTML%20+%3D%20event.origin%20+%20%27%3Cbr%3E%27%3B%0Ar.innerHTML%20+%3D%20event.source%20+%20%27%3Cbr%3E%27%3B%0Ar.innerHTML%20+%3D%20event.data%20+%20%27%3Cbr%3E%27%3B%0Aopener.postMessage%28event.data%2C%20%27*%27%29%3B%0A%7D%20%20%0A%3C/script%3E');
+win.postMessage('test', '*');
+interval = setInterval(function() {win.postMessage('test', '*');}, 1000);
+}
+
+</script>
+</head>
+<body>
+<button onclick="doe()">
+open win and then<br>postmessage
+</button>
+
+<pre id="result"></pre>
+
+<script>
+window.addEventListener("message", receiveMessage, false);  
+      
+function receiveMessage(event) { 
+var r=document.getElementById('result');
+r.innerHTML += event.origin + '<br>';
+r.innerHTML += event.source + '<br>';
+r.innerHTML += event.data + '<br>';
+
+}  
+</script>
+</body>
+</html>

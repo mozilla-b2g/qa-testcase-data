@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+input {width: 10px;}
+</style>
+</head>
+<body>
+<form name=f method=get>
+<textarea style="width: 200px;height: 100px;"></textarea>
+<script>
+var str = '<input name=q>';
+for (var i=0;i<10;i++) {
+str += str;
+document.write(str);
+}
+</script>
+<input type="submit">
+</form>
+<form name=f method=get>
+<script>
+var str = '<input name=q>';
+for (var i=0;i<10;i++) {
+str += str;
+document.write(str);
+}
+</script>
+
+<input type="submit">
+</form>
+<script>
+document.forms[0].r.value = Math.random();
+document.forms[1].r.value = Math.random();
+</script>
+</body>
+</html>

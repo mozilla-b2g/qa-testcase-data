@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>canvas</title>
+ <style> body, div, html {
+   
+   margin: 0;
+ }
+ </style>
+ <script type="text/javascript">
+   
+   document.multitouchData = true;
+   
+   var canvasctx = null;
+   
+   function fadeOut() {
+     canvasctx.fillStyle = 'rgba(255,255,255,.15)';
+	 canvasctx.fillRect(0,0,1100,600);
+   
+   }
+   window.setInterval(fadeOut,180);
+   
+   function listenTo(event) { 
+	 canvasctx.fillStyle='rgba(0,0,0,1)';
+	 canvasctx.beginPath();
+	 canvasctx.arc(event.clientX, event.clientY, 20, 0, Math.PI*2, 1);
+	 canvasctx.fill();
+	 canvasctx.closePath();
+   }
+ document.addEventListener("MozTouchMove", listenTo, false);
+ document.addEventListener("DOMContentLoaded", function() {
+   canvasctx = document.getElementById("drawingcanvas").getContext('2d');
+ }, false);
+ 
+   </script>
+</head>
+<body><canvas width="1100" height="600" style="border: 0px solid #333" id="drawingcanvas"></canvas>
+</body>
+</html>

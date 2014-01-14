@@ -1,0 +1,42 @@
+<html><head>
+<title>Bug 627842 - Allow minimum font size based on size of frame</title>
+
+<style>
+div {
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<input id="a" style="width: 1000px; font-size: 9px;">
+<br>
+<script>
+var str='some text that is written, the quick brown fox jumped over the lazy dog ';
+for (var i=0;i<6;i++) {
+  str += str;
+}
+//document.write(str);
+document.getElementById('a').value=str;
+</script>
+
+
+<input id="b" style="width: 50px; font-size: 9px;">
+<script>
+document.getElementById('b').value = str;
+</script>
+
+<BR>
+
+<textarea id="aa" style="width: 1000px; font-size: 9px;"></textarea>
+<br>
+<script>
+document.getElementById('aaa').value=str;
+</script>
+
+
+<textarea id="bb" style="width: 50px; font-size: 9px;"></textarea>
+<script>
+document.getElementById('bb').value = str;
+</script>
+</body>
+</html>

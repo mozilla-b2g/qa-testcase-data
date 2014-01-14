@@ -1,0 +1,51 @@
+<html><head>
+<title>Bug 739488 - Fennec Native nightly crashes in mozilla::AndroidBridge::EnableLocationHighAccuracy when page requests GPS location </title>
+
+<style>
+</style>
+</head>
+<body>
+<button onclick="doe()">geolocation enableHighAccuracy:true</button><br><br>
+<button onclick="doe2()">geolocation with callback of same function</button><br><br>
+<button onclick="doe3()">geolocation with large object</button><br><br>
+<button onclick="doe4()">geolocation with document.write</button><br><br>
+<button onclick="doe5()">geolocation with window.close()</button><br><br>
+<button onclick="window.open(window.location.href)">window.open</button><br><br>
+<button onclick="doe6()">watchlocation</button><br><br>
+<pre id="result"></pre>
+
+<script>
+function doe(aX) {
+navigator.geolocation.getCurrentPosition(function() {}, function(){},{enableHighAccuracy:true, maximumAge:1000, timeout:240000});
+}
+
+function doe2(aX) {
+navigator.geolocation.getCurrentPosition(doe2, doe2);
+}
+
+function doe3() {
+var x={};
+
+for (var i=0;i<2000000;i++) {
+x['a'+i] = true;
+}
+navigator.geolocation.getCurrentPosition(function() {}, function(){},x);
+}
+
+
+function doe4() {
+var ss=99999999999999999999999999999999999999999999999999999999999999999999999999999;
+navigator.geolocation.getCurrentPosition(function() {document.write('pass')}, function(){document.write('fail')},{enableHighAccuracy:false, maximumAge:ss, timeout:ss});
+}
+function doe5() {
+navigator.geolocation.getCurrentPosition(function() {window.close();}, function(){window.close();});
+}
+
+
+function doe6() {
+
+    var watchId = navigator.geolocation.watchPosition(function() {alert('succes!!');});
+}
+</script>
+</body>
+</html>

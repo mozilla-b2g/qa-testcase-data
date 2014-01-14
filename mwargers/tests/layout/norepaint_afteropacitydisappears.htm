@@ -1,0 +1,16 @@
+<html><head></head>
+<title>Bug 757324 - Unable to dismiss modal popup on Flickr</title>
+<body style="background: lime; margin:0px; padding: 0px;">
+
+<script>
+var x=document.createElement('div');
+x.style.position = 'absolute';
+x.style.height = window.screen.height + 'px';
+x.style.width = window.screen.width + 'px';
+x.style.backgroundColor = 'red';
+x.innerHTML = '<p>You should not see any red after 1 second</p>';
+document.body.appendChild(x);
+setTimeout(function() {x.style.display = 'none';}, 1000);
+</script>
+</body>
+</html>

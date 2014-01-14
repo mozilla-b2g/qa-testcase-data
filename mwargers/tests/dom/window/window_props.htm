@@ -1,0 +1,38 @@
+<html><head>
+<title>window properties</title>
+
+<style>
+</style>
+
+<script>
+
+
+</script>
+</head>
+<body>
+
+<pre id="result">
+</pre>
+<script>
+var r=document.getElementById('result');
+function doe(aWindow) {
+for (var i in aWindow) {
+try {
+  r.innerHTML += i + ' :: ';
+}
+catch (e) {
+  r.innerHTML += '\n\n***' + e + '***\n\n';
+}
+try {
+  r.innerHTML += aWindow[i]+'\n';
+}
+catch(e) {
+  r.innerHTML += '\n\n' + e + '\n\n';
+}
+}
+}
+doe(window);
+</script>
+</pre>
+</body>
+</html>

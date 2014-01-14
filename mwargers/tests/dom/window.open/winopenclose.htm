@@ -1,0 +1,23 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+</head>
+<body>
+<embed src="http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf">
+<script>
+if (window.opener) {
+  setTimeout(function() {window.close();}, 4000);
+}
+
+function doe() {
+ window.open(window.location);
+}
+var timer;
+</script>
+<button onclick="timer = setInterval(doe, 3000)" style="width: 100px; height: 100px;">window open every 3 second, close after 4 seconds</button>
+<br><br>
+<button onclick="opener.clearInterval(timer); window.close();">Stop open timers</button>
+</body>
+</html>

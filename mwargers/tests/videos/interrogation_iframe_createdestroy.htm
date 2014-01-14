@@ -1,0 +1,23 @@
+<html><head>
+
+<title>frames with ogg audio</title>
+
+<script>
+
+var iframes = [];
+function doe(aAmount) {
+for (var i=0;i<aAmount; i++) {
+iframes[i] = document.createElement('iframe');
+iframes[i].src = 'interrogation.ogg';
+document.body.appendChild(iframes[i]);
+}
+setTimeout(function() {while (iframes.length) {document.body.removeChild(iframes.pop());} setTimeout(doe, 500, aAmount);}, 8000);
+}
+</script>
+
+
+</head><body>
+<button onclick="doe(35)">create iframes with ogg audio then close after 5 s and repeat</button><br><br>
+
+
+</body></html>

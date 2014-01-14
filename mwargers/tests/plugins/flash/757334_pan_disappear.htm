@@ -1,0 +1,15 @@
+<html><head>
+	<meta name="viewport" content="width=480, initial-scale=1.0, maximum-scale=1.0">		
+	<title>Bug 757334 - YouTube video element disappears when panning</title>
+</head>
+
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+							
+<iframe src="http://people.mozilla.com/~mwargers/tests/plugins/flash/317375_flash_wmode.swf" width="254" frameborder="0"></iframe>
+<div style="height: 2000px; border: 2px solid red;">
+<p>The blue circle should not disappear while panning</p>
+</div>
+			
+
+</body>
+</html>

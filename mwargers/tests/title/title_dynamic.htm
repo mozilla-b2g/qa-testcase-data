@@ -1,0 +1,17 @@
+<html><head>
+<title>title 1</title>
+
+<style>
+:target {
+background: green;
+}
+</style>
+</head>
+<body>
+This page should show 'title 1' in the url bar, after 500ms 'title 2' in the url bar
+<script>setTimeout(function() {document.title = 'title 2';}, 500); </script>
+<br><br><a href="#">After tapping this link, the title should not change</a>
+<br><br><a href="#b">After tapping this link, the title should not change</a>
+<span id="b">span id=b</span>
+</body>
+</html>

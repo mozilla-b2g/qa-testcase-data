@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <title>Select Test</title>
+    <script>
+        function dumpCombo(elem) {
+            var options = elem.options;
+            var output = ""
+            for (var i=0; i<options.length; i++) {
+                output += options[i].text;
+                output += "<br>";
+            }
+            var dump = document.getElementById("dump");
+            dump.innerHTML = output;
+        }
+
+        function addToCombo(elem) {
+            var option = document.createElement("option");
+            option.text = "Horton Hears a Who, I'm New!";
+            option.value = "horton";
+            elem.add(option, null);
+        }
+
+        function removeFirstFromCombo(elem) {
+            elem.remove(0);
+        }
+
+        function unselectCombo(elem) {
+            var options = elem.options;
+            for (var i=0; i<options.length; i++) {
+                options[i].selected = false;
+            }
+        }
+    </script>
+</head>
+<body>
+credit goes to mfinkle : 
+original page : http://people.mozilla.com/~mfinkle/select.html
+
+    <div>Combobox:</div>
+    <select id="cb1" size="1" onchange="document.getElementById('combo-value').innerHTML = '(' + this.selectedIndex + ') [' + this.value + ']';">
+        <option>One</option>
+
+        <option>Two</option>
+        <option selected="true">Three</option>
+        <option>Four</option>
+        <option>Five</option>
+        <option>Too many numbers!</option>
+        <option>Jim</option>
+
+        <option>Larry</option>
+        <option>Mark</option>
+        <option>Brad</option>
+        <option>Doug</option>
+        <option>Joel</option>
+        <option>Too many people and we are done!</option>
+
+    </select>
+    <br>
+    <span>onchange: (selectedIndex) [value]</span>
+    <br>
+    <span id="combo-value">-</span>
+    <br>
+    <button onclick="dumpCombo(document.getElementById('cb1'));">Dump</button>
+
+    <br>
+    <button onclick="addToCombo(document.getElementById('cb1'));">Add Option</button>
+    <button onclick="removeFirstFromCombo(document.getElementById('cb1'));">Remove First Option</button>
+    <button onclick="unselectCombo(document.getElementById('cb1'));">Unselect</button>
+    <br>
+    <br>
+    <div>Listbox:</div>
+
+    <select size="5">
+        <option>Alpha</option>
+        <option>Beta</option>
+        <option>Gamma</option>
+        <option>Epsilon</option>
+        <option>It's all Greek!</option>
+
+    </select>
+    <br>
+    <br>
+    <br>
+    <div>Disabled Combobox:</div>
+    <select size="1" disabled="true">
+        <option>One</option>
+        <option>Two</option>
+
+        <option selected="true">Three</option>
+        <option>Four</option>
+        <option>Five</option>
+    </select>
+    <br>
+    <br>
+    <br>
+
+    <div>OptGroup Combobox:</div>
+    <select id="cb3" size="1">
+        <optgroup label="Numbers">
+            <option>One</option>
+            <option>Two</option>
+            <option selected="true">Three</option>
+            <option>Four</option>
+
+            <option>Five</option>
+        </optgroup>
+        <optgroup label="Letters">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+
+        </optgroup>
+    </select>
+    <br>
+    <button onclick="dumpCombo(document.getElementById('cb3'));">Dump</button>
+    <br>
+    <span id="dump"></span>
+    <br>
+    <br>
+
+    <br>
+    <div>Multi-select Listbox:</div>
+    <select id="cb4" size="5" multiple="true">
+        <option>Alpha</option>
+        <option>Beta</option>
+        <option>Gamma</option>
+        <option>Epsilon</option>
+
+        <option>Jimmy</option>
+        <option>Benny</option>
+        <option>Bobby</option>
+    </select>
+    <br>
+    <button onclick="unselectCombo(document.getElementById('cb4'));">Unselect</button>
+</body>
+
+</html>

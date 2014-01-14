@@ -1,0 +1,36 @@
+<html><head>
+<style>
+embed {
+ width: 0px;
+ height: 0px;
+}
+</style>
+<script>
+function doe() {
+var x=document.embeds;
+for (var i=0;i<x.length;i++) {
+x[i].style.width = '100px';
+x[i].style.height = '100px';
+
+}
+}
+
+function reportevent(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type + ' fired<br>';
+
+}
+window.addEventListener('PluginClickToPlay', reportevent, true);
+</script>
+</head><body style="background: yellow;">
+
+<button onclick="doe()">make flash embeds<br> visible</button><br>
+normal flash<br>
+<embed src="317375_flash_wmode.swf" style="border: 1px solid black;">
+<br>
+wmode=transparent, background of embed should be yellow
+<br>
+<embed src="317375_flash_wmode.swf" wmode="transparent" style="border: 1px solid black;">
+<br>
+<pre id="result"></pre><br>
+<a href="flashembed_invisible.html">Link tho this same page</a><br>
+</body></html>

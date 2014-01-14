@@ -1,0 +1,43 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>caretPositionFromPoint seems to return different offset as what the selection offset is</title>
+</head>
+<body>
+<button onmouseup="setTimeout(doe, 100)">setcaret at last caretpositionfrompoint thingy</button>
+<div id="a" onmouseup="mw_caretPositionFromPoint(event.clientX, event.clientY, event)" style="padding: 10px; border:8px solid black; width: 900px; " contenteditable="">
+abc, abc, abc<br>
+abc, abc, abc<br>
+<textarea>abc</textarea><input value="abc"><br><br>
+<marquee>marquee</marquee>
+</div>
+<select onclick="mw_caretPositionFromPoint(event.clientX, event.clientY, event)"><option selected="selected">abcabc</option></select>
+<pre id="mw_result"></pre>
+<script>
+window.addEventListener('mouseup', mw_caretPositionFromPoint, true);
+
+
+function mw_caretPositionFromPoint(aEvent){
+var x=document.getElementById('mw_result');
+if (!x) {
+  var x = document.createElement('http://www.w3.org/1999/xhtml', 'div');
+  x.setAttribute('style', 'position: fixed; top: 0px; left: 0px; z-index: 9999999; border: 1px solid black; background: lime;');
+}
+
+x.innerHTML = 'clientX:' + aEvent.clientX + ' clientY:' + aEvent.clientY + '<br>';
+
+
+var cp = document.caretPositionFromPoint(aEvent.clientX, aEvent.clientY);
+if (aEvent.target.nodeName != 'TEXTAREA' && aEvent.target.nodeName != 'INPUT') {
+x.innerHTML += 'selection.focusNode: '+ window.getSelection().focusNode + ' selection.focusOffset:'+ window.getSelection().focusOffset+'<br>';
+}
+else {
+x.innerHTML += 'textfield: '+ aEvent.target + ' textfield.selectionEnd:'+ aEvent.target.selectionEnd+'<br>';
+}
+x.innerHTML += 'caretpositionfrompoint.offsetNode:'+ cp.offsetNode+ ' caretpositionfrompoint.offset:'+ cp.offset + '<br>';
+
+}
+
+
+</script>
+
+</body></html>

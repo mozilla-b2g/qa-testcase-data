@@ -1,0 +1,33 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+</head>
+<body>
+<embed src="http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf"><br><br>
+<script>
+if (window.opener) {
+  setTimeout(function() {window.close();}, 100);
+}
+
+function doe() {
+ window.open(window.location);
+}
+var timer;
+
+var flashwin;
+function doeflash() {
+ flashwin = window.open('http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf');
+ setTimeout(function() {flashwin.close(); doeflash();}, 400);
+}
+</script>
+<button onclick="timer = setInterval(doe, 500)" style="width: 100px; height: 100px;">window open every 3 second, close after 4 seconds</button>
+<br><br>
+<button onclick="opener.clearInterval(timer); window.close();">Stop open timers</button>
+<br><br>
+<button onclick="doeflash()">open flash page and close<br><br> very quickly</button>
+<br><br>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=740997">Bug 740997 - navigator.mozCameras</a>
+<script>
+var cameras = navigator.mozCameras;
+function test1() {
+  for (var i in cameras) {
+   alert(i + '::' + cameras[i]);
+  }
+}
+
+function test2() {
+var x=cameras.getCamera(function() {alert('onsucces')}, function() {alert('onerror')});
+//alert(x);
+}
+
+function test3() {
+var x=cameras.getListOfCameras();
+alert(x);
+}
+
+</script>
+
+<button onclick="alert(navigator.mozCameras);">alert(navigator.mozCameras);</button><br><br>
+
+<button onclick="alert(navigator.mozCameras.previewSizes);">alert(navigator.mozCameras.previewSizes);</button><br><br>
+
+<button onclick="test1()">test all mozCameras methods/attributes</button><br><br>
+
+<button onclick="test2()">test getCamera</button><br><br>
+
+<button onclick="test3()">test getListOfCameras</button><br><br>
+
+</body></html>

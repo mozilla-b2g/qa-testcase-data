@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Bug 745250 - java.lang.NullPointerException: at android.view.GestureDetector.onTouchEvent(GestureDetector.java)</title>
+
+ 
+</head>
+<body>
+<script>
+var windows = [];
+
+function doe() {
+windows[windows.length] = window.open('data:text/html;charset=utf-8,%3Cscript%3E%0Awindow.addEventListener%28%27touchend%27%2C%20function%28e%29%20%7Be.preventDefault%28%29%3Bwindow.close%28%29%3B%7D%2C%20true%29%3B%0A%3C/script%3E');
+}
+
+function doe2() {
+for (var i=0;i<10;i++) {
+doe();
+}
+
+setTimeout(function() {
+while (windows.length) {
+windows.pop().close();
+}
+}, 20000);
+}
+
+
+
+</script>
+<button onclick="doe2()">
+open window with touchmove preventdefault<br>
+and tap on the window.close button in the resulting window<br><br>
+After that, quickly make some flinging actions in the resulting window, while it almost starts to close<br>
+Mozilla should not crash that way
+</button>
+<iframe style="width: 600px; height: 600px;" src="data:text/html;charset=utf-8,%3Cscript%3E%0Awindow.addEventListener%28%27touchmove%27%2C%20function%28e%29%20%7Be.preventDefault%28%29%3Bwindow.frameElement.parentNode.removeChild%28window.frameElement%29%3B%7D%2C%20true%29%3B%0A%3C/script%3E"></iframe><br><br>
+<iframe style="width: 600px; height: 600px;" src="data:text/html;charset=utf-8,%3Cscript%3E%0Awindow.addEventListener%28%27touchmove%27%2C%20function%28e%29%20%7Bwindow.location.reload%28%29%3B%7D%2C%20true%29%3B%0A%3C/script%3E"></iframe>
+</body>
+</html>

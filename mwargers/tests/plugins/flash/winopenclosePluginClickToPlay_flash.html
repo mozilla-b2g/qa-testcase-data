@@ -1,0 +1,23 @@
+<html><head>
+<style>
+
+</style>
+</head><body>
+
+<script>
+var win;
+function openwin() {
+win = window.open('flashembed.html');
+setTimeout(function() {win.close();}, 5000);
+}
+
+function openwin2() {
+win = window.open('flashembed.html');
+win.addEventListener('PluginClickToPlay', function() {win.close()}, true);
+}
+</script>
+<button onclick="openwin()">open flash window<br>and close it after 5 seconds</button><br>
+<button onclick="openwin2()">open flash window<br>and close it after pluginclicktoplay event fired</button><br>
+
+
+</body></html>

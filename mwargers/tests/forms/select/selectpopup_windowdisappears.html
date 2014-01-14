@@ -1,0 +1,7 @@
+<html><head>
+<title>Bug - Select form control not working after following this testcase using onfocus window.close on select</title>
+
+</head>
+<body>
+<button style="height: 300px; width: 400px;" onclick="window.open('data:text/html;charset=utf-8,%3Cselect%20onfocus%3D%22setTimeout%28function%28%29%20%7Bwindow.close%28%29%7D%2C%20100%29%3B%22%20style%3D%22width%3A%20200px%3B%20height%3A%20200px%3B%22%3E%3C/select%3E')">open input window</button>
+</body>

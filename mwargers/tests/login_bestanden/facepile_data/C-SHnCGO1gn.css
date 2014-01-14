@@ -1,0 +1,488 @@
+/*1316401384,176820408*/
+
+button.async_saving .default_message,
+a.async_saving .default_message,
+form.async_saving .default_message,
+.saving_message{display:none}
+.default_message,
+button.async_saving .saving_message,
+a.async_saving .saving_message,
+form.async_saving .saving_message{display:inline}
+.inlineBlock{display:-moz-inline-box;display:inline-block;zoom:1}
+button.as_link{-moz-user-select:text;background:none;border:none;color:#3b5998;cursor:pointer;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-size:100%;margin:0;overflow:visible;padding:0;text-align:left;width:auto}
+button.as_link::-moz-focus-inner{border:0;padding:0}
+button.as_link:hover span,button.as_link:focus span{text-decoration:underline}
+button.as_link .button_img{margin:0 6px 0 0;vertical-align:text-bottom;width:16px;height:16px}
+.permalink_stream .uiStream .uiStreamMessage{font-size: 13px}
+.UIActionLinks_title{font-size: 9px;font-weight:normal;white-space:nowrap;color:#999}
+.UIActionLinks_bottom{color:#999}
+.UIActionLinks_bottom a,
+.UIActionLinks_bottom button.as_link,
+.UIActionLinks_bottom .uiLinkButton input,
+.UIActionLinks_bottom .uiLinkButton input:hover{color:#6d84b4}
+.UIActionLinks .uiBlingBox{color:#3b5998}
+
+.textMetrics{border:none;height:1px;overflow:hidden;padding:0;position:absolute;top:-9999999px}
+.ego_x{float:right;opacity:0}
+.ego_unit:hover .ego_x{opacity:1}
+.presenceIndicator{display:inline-block}
+.presenceIndicator .uiTooltipWrap{margin-left:-5px}
+.presenceIndicator i{display:inline-block;width:7px;height:14px}
+.presenceIndicator .online{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:-493px -407px}
+.presenceIndicator .idle{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:-493px -392px}
+.presenceIndicator .mobile{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:-386px -422px;height:12px;width:8px}
+.presenceIndicator .offline{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-493px -64px}
+.audienceSelector{text-align:left}
+.audienceSelector .uiSelectorButton .customimg{margin-left:-2px;margin-right:2px}
+.audienceSelector .uiButtonNoText .customimg{margin-right:-5px}
+.showSecondaryOptions li,
+.audienceSelector .secondaryOption,
+.audienceSelector .returnOption{display:none}
+.showSecondaryOptions li,
+.audienceSelector .secondaryOption,
+.audienceSelector .returnOption{display:none}
+.showSecondaryOptions .returnOption,
+.showSecondaryOptions .secondaryOption,
+.group .groupOption,
+.friendList .friendListOption{display:block}
+.friendList .groupOption,
+.group .friendListOption{display:none}
+.showSecondaryOptions .uiSelectorMenu{max-height:214px;overflow-y:auto}
+.composerAudienceWrapper .uiSelectorButton{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:right -1px}
+.composerAudienceWrapper .uiButton .uiButtonText{color:#808080;font-weight:normal}
+.composerAudienceWrapper .audienceSelector .uiSelectorButton .customimg{opacity:.5}
+.composerAudienceWrapper:hover .uiButton .uiButtonText{color:#333}
+.composerAudienceWrapper .openToggler .uiButton .uiButtonText{color:#fff}
+.composerAudienceWrapper:hover .audienceSelector .uiSelectorButton .customimg,.composerAudienceWrapper .openToggler .uiSelectorButton .customimg{opacity:1}
+.composerAudienceWrapper .selected .plusLabel{color:#fff}
+.composerAudienceWrapper .uiSelector,.composerAudienceWrapper .uiSelectorNormal .uiSelectorButton,.composerAudienceWrapper .uiSelectorNormal .uiSelectorButton:active,.composerAudienceWrapper .uiSelectorNormal .uiSelectorButton:focus,.composerAudienceWrapper .uiSelectorNormal .uiSelectorButton:hover,.composerAudienceWrapper .uiSelectorNormal .uiButtonSuppressed:active,.composerAudienceWrapper .uiSelectorNormal .uiButtonSuppressed:focus,.composerAudienceWrapper .uiSelectorNormal .uiButtonSuppressed:hover,.composerAudienceWrapper .uiSelectorNormal .uiSelectorButton .uiButtonText{max-width:none}
+.composerAudienceWrapper .uiSelectorNormal .uiSelectorBigButtonLabel .uiButtonText{overflow:visible}
+div.visibilitySelector .uiSelectorButton .customimg{margin:0 -4px 0 -1px}
+div.labeledVisibilitySelector .uiSelectorButton .customimg{margin:0 2px 0 0}
+.fbProfileByline{width:493px;margin-top:4px;line-height:15px}
+.fbProfileBylineFragment{margin-right:8px;color:#666}
+.fbProfileBylineIcon{margin-bottom:1px;vertical-align:bottom}
+.fbProfileLoggedOutByline{width:493px;margin-top:1px;line-height:14px}
+.profileHeader{margin-top:4px}
+.profileHeaderMain{width:513px}
+.profileHeaderMain h1{display:inline;margin-right:5px}
+.profileHeaderMain .profileHeaderButtons{display:inline-block;vertical-align:top;white-space:nowrap}
+.profileHeaderMain .profileHeaderButton{margin-right:5px;z-index:3}
+.profileHeaderMain #profile_connect_text .uiButton,.profileHeaderMain #profile_connect{margin-left:0}
+.profileHeader .mainButton{vertical-align:top}
+.profileHeader .headerFormButton{display:inline}
+.profileHeader .headerActions{text-align:right}
+.profileHeader .FriendButton .uiButton,.profileHeader .subscribeButtonsContainer .uiButton{min-width:68px}
+.profileHeader .subtitle{line-height:15px;padding-top:4px;width:490px}
+.profileHeader .profileActions{float:left;margin-top:3px}
+.profileHeader .profileCallButton .img{margin-top:2px}
+.profileHeader .fadedDespressedButton{opacity:.6}
+.ginormousProfileName{color:#1c2a47;font-size: 20px}
+.profileArrow{margin:0 5px 2px 6px}
+.fbx_above_html #above_the_profile{width:auto;padding-right:0}
+.profile-picture{background-color:#fff;display:block;overflow:hidden;position:relative;width:180px}
+.profile-picture:hover{text-decoration:none}
+.profile-picture:hover .edit_profilepicture{display:block}
+.profile-picture img{display:block;margin:auto;max-width:180px}
+.profile-picture span{background-color:#000;height:800px;position:absolute;top:0;right:0;width:1px;opacity:.30}
+.edit_profilepicture{background:#000;color:#fff;display:none;height:20px;opacity:.7;padding:6px 7px 0 23px;position:absolute;right:1px;top:0}
+.edit_profilepicture:hover{opacity:.95}
+span.edit_profilepicture_icon{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yA/r/QbfalTL4SQ2.png) no-repeat left 4px;height:18px;left:7px;opacity:.95;position:absolute;top:4px;width:18px}
+.profile-friends .profileFriendsContent{height:42px;line-height:14px;overflow:hidden}
+.profile-friends .profileFriendsText{overflow:hidden;text-overflow:ellipsis;width:102px;word-wrap:normal}
+.profile-friends .profileFriendsByline{width:172px}
+.profileFriendsByline{white-space:nowrap}
+.profileFriendsNetwork{white-space:nowrap}
+.profile-left-nav-facepile{margin:2px 6px 14px 6px}
+.relationshipSection:hover .fbProfileNavHeaderEditButton{display:block}
+.relationshipSection .fbProfileNavHeaderEditButton{display:none}
+.profile-friends{margin:7px 6px 15px}
+.profile-friends li{margin-bottom:7px}
+.profile-friends li .UIImageBlock_Content{padding-top:3px}
+.profile-friends-footer{border-top:1px solid #cdcdcd;padding:8px 10px 0 6px}
+.profile-friends-footer li:first-child{padding-top:0}
+div.profile-pagelet-section{margin-bottom:24px}
+.profile .fbx_profile_tab_loading{background:no-repeat url(https://s-static.ak.facebook.com/rsrc.php/v1/y9/r/jKEcVPZFk-2.gif) center center;padding:150px 0}
+.fbx .profileInfoTable th.label{padding-right:8px;width:80px}
+.fbx .nuxBanner .description{width:450px}
+.fbProfilePhotoBar{margin-left:-2px}
+.fbProfilePhotoBar li{float:left;line-height:0;padding-left:2px}
+.fbProfilePhotoStrip{overflow:hidden;width:493px}
+.fbProfilePhotoStrip .fbProfilePhotoBar{display:block;width:900px}
+a.fbProfilePhotoThumb,
+a.fbProfilePhotoThumb:hover{border:none;padding:0}
+a.fbProfilePhotoThumb i{height:68px;width:97px}
+div.fbProfilePhotoThumbEmpty{background-color:#f2f2f2;border-top:1px solid #d9d9d9;height:67px;width:97px}
+#profile_minifeed .reportHide{display:none}
+#profile_minifeed.uiReportStream .reportHide{display:block}
+#profile_minifeed.uiReportStream .uiStreamHide,#profile_minifeed.uiReportStream .uiStreamHide .uiSelectorButton{opacity:1}
+.fbProfileStream .uiStreamMessage .passiveName{font-weight:normal}
+.fbProfileStream .uiStreamMessage a.passiveName{font-weight:bold}
+.uiUfiLikeIcon{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yG/r/GV1gcvcpYtq.png);background-repeat:no-repeat;background-position:-14px -152px;display:block;height:13px;width:15px}
+.uiUfiLikeIconDisabled,.uiUfiLikeIconDisabled:active,.uiUfiLikeIconDisabled:focus{cursor:default;outline:none}
+.uiLinkButton input{background:none;border:none;color:#3b5998;cursor:pointer;font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;font-size: 11px;margin:0;padding:0;vertical-align:top}
+.uiLinkButton input::-moz-focus-inner{border:0;padding:0}
+.uiLinkButton:hover,.uiLinkButton input:hover,.uiLinkButton input:focus,.uiLinkButton input:active{color:#3b5998;text-decoration:underline}
+.uiLinkButton:hover{text-decoration:none}
+.uiLinkButtonSubtle input,.uiLinkButtonSubtle:hover,.uiLinkButtonSubtle input:hover,.uiLinkButtonSubtle input:focus,.uiLinkButtonSubtle input:active{color:#808080}
+.uiLinkButton input.async_saving{text-decoration:none}
+.uiComposer{border-bottom:1px solid #ccc}
+.uiComposerTopBorder{border-top:1px solid #ccc}
+.uiComposerOpen,.no_js .uiComposer{border-bottom:none}
+.uiComposer .attachmentLoader{line-height:normal;position:absolute;right:2px;top:9px}
+.uiComposer .attachmentSentenceBar{line-height:22px;padding:3px 0 6px;position:relative;z-index:2;zoom:1}
+.uiComposer .attachmentCloseBtn{position:absolute;right:2px;top:7px}
+.uiComposer .attachmentFrame{border:1px solid #b4bbcd;border-bottom-color:#ccc}
+.uiComposerHideMessageBox .attachmentFrame,.uiComposerHideInput .attachmentFrame{border-bottom-color:#b4bbcd}
+.uiComposerHideContent .attachmentFrame{display:none}
+.uiComposerOpen .focus_target{padding-bottom:10px}
+.uiComposerWhiteMessageBox .child_was_focused{border-bottom:1px solid #e9e9e9}
+.uiComposerHideMessageBox .child_was_focused{border-bottom:none}
+.uiComposer .showWhenOpen,.uiComposer .showWhenLoading,.uiComposer .showOnceInteracted,.uiComposer.async_saving .hideWhenLoading{display:none !important}
+.uiComposerOpen .showWhenOpen,.no_js .uiComposer .showWhenOpen,.uiComposerInteracted .showOnceInteracted,.uiComposer .child_was_focused .showOnceInteracted,.uiComposer.async_saving .showWhenLoading{display:block !important}
+.uiComposerAttachment .attachmentLink{outline:none}
+.uiComposerAttachment .attachmentLink:focus{text-decoration:underline}
+.uiComposerAttachment .selected,
+.uiComposerAttachmentSelected .normal{display:none}
+.uiComposerAttachmentSelected .selected{display:inline}
+.uiComposerAttachment .nub{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yf/r/PfBgtiydy5U.gif) no-repeat center top;height:7px;left:2px;position:absolute;top:18px;width:11px}
+.uiMetaComposer .uiComposerAttachment .nub{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yb/r/ALnh3ly4npU.gif);left:4px;top:19px}
+span.uiComposerAttachment{color:#333;display:inline-block}
+.uiComposerAttachments{line-height:22px;padding:3px 0 4px;position:relative;z-index:2}
+.uiComposerOpen .uiComposerAttachments{padding-bottom:6px}
+.uiComposerMetaContainer{background-color:#fff;border:1px solid #b4bbcd;position:relative;z-index:1}
+.uiMetaComposer .uiComposerMetaContainer .attachmentFrame{border:0}
+.uiMetaComposer.uiComposerWhiteMessageBox .child_was_focused{border:none}
+.uiMetaComposerMessageBox{zoom:1}
+.uiComposerHideMessageBox .uiMetaComposerMessageBox{display:none}
+.uiComposerWhiteMessageBox .uiComposerMessageBox{background-color:#fff;border-width:0;padding:0}
+.uiMetaComposerMessageBoxTable{border-spacing:0;width:100%}
+.uiMetaComposerMessageBoxTable td{padding:0;vertical-align:top}
+.uiMetaComposerMessageBoxTable .attachmentBottomRow{height:0}
+.uiMetaComposerMessageBoxTable .attachmentBottomRow td{vertical-align:bottom}
+.uiMetaComposerMessageBox .inputContainer{background-color:#fff;zoom:1}
+.uiComposerHideInput .uiMetaComposerMessageBoxTable{display:none}
+.uiMetaComposerMessageBox .uiComposerMessageBoxControls{height:30px;margin:0}
+.uiMetaComposerMessageBox .uiComposerMessageBoxMentions .inputContainer{border:none;padding:0;position:relative;zoom:1}
+.uiMetaComposerMessageBox .uiComposerMention .inputContainer{z-index:2}
+.uiMetaComposerMessageBoxShelf{background-color:#f2f2f2;border-top:1px solid #e6e6e6}
+.uiMetaComposerMessageBox .composerTypeahead{border:0}
+.uiMetaComposerMessageBox .composerTypeahead .wrap{padding:5px !important;border:0}
+.uiMetaComposerMessageBox .uiMentionsInput .highlighter{font-size: 13px}
+.uiMetaComposerMessageBox .uiMentionsInput .highlighter div{line-height:16px}
+.uiMetaComposerMessageBox .uiMentionsInput .highlighter .metadataFragment{color:#aaa}
+.uiMetaComposerMessageBox .uiMentionsInput .highlighter .taggedFragment{color:#3b5998}
+.uiMetaComposerMessageBox .input{background:transparent;border-width:0;font-size: 13px;height:16px;margin:0;outline:none;padding:0;resize:none;vertical-align:bottom;width:100%}
+.child_was_focused .uiMetaComposerMessageBox .input{min-height:48px}
+.child_was_focused .uiMetaComposerMessageBox .inputContainer{min-height:58px}
+.uiMetaComposerMessageBox .composerTypeahead .uiStickyPlaceholderInput{width:100%}
+div.uiMetaComposerMessageBox .composerTypeahead .placeholder{font-size: 13px;padding:0}
+.uiMetaComposerMessageBox .attachmentMetaArea{position:relative}
+.uiMetaComposerMessageBox .textBlurb{line-height:30px}
+.uiMetaComposerMessageBox .textBlurb label{font-weight:normal;vertical-align:baseline}
+.uiMetaComposerMessageBox .textBlurb input{vertical-align:middle}
+.uiMetaComposerMessageBox .uiComposerTagControls{border-right:1px solid #e0e0e0;display:inline-block;float:left;height:30px;outline:none;width:29px}
+.uiMetaComposerMessageBox .uiComposerTagControls:hover{background-color:#e9e9e9}
+.uiMetaComposerMessageBox .attachmentBarArea .uiComposerTagControlOpen{background-color:#fafafa;border-top:1px solid #f2f2f2;margin-top:-1px}
+.uiMetaComposerMessageBox .uiComposerBarRightArea{margin:4px}
+.uiMetaComposerMessageBox .submitBtn{padding:2px 16px}
+.uiMetaComposerMessageBox .disabledFriendListButton,.uiMetaComposerMessageBox .disabledFriendListButton:active,.uiMetaComposerMessageBox .disabledFriendListButton:focus,.uiMetaComposerMessageBox .disabledFriendListButton:hover{border-color:transparent}
+.uiMetaComposerMessageBox .disabledFriendListButton .uiButtonText{font-weight:normal;color:#808080}
+.uiMetaComposer .ComposerCitySharer{color:#808080;line-height:30px}
+.uiMetaComposer .ComposerCitySharer .uiCloseButton{margin:-4px 0 0 3px}
+.uiMetaComposer .friendsTokenizer{border:0;border-top:1px dashed #bdc7d8;padding:0}
+.uiMetaComposer .friendsTokenizer .uiTypeaheadView{width:300px}
+.uiMetaComposer .friendsTokenizer .tokenarea{padding-left:2px}
+.uiMetaComposer .attachmentBottomArea .inputtext{border:none;min-width:160px;outline:none}
+.uiMetaComposer .friendsTokenizer .uiTypeaheadDisabled{display:none}
+.uiMetaComposer .taggerLocationSharer{border:0;border-top:1px dashed #bdc7d8}
+.uiMetaComposer .taggerLocationSharer .wrap{border:0}
+.uiMetaComposer .taggerLocationSharer .uiStickyPlaceholderInput{width:100%}
+.uiMetaComposerMessageBox .friendTaggerIcon{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-30px -94px}
+.uiMetaComposerMessageBox .friendTaggerIconSelected{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-60px -94px}
+.uiMetaComposerMessageBox .placeTaggerIcon{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-90px -94px}
+.uiMetaComposerMessageBox .placeTaggerIconSelected{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:0 -94px}
+.uiIconText{padding-left:21px;position:relative}
+label.uiIconText{vertical-align:baseline}
+.uiIconText .img{left:0;position:absolute;top:-1px;vertical-align:middle}
+.uiMentionsInput{position:relative}
+.uiMentionsInput .mentionsTextarea,.uiMentionsInput .mentionsTypeahead{background:transparent;zoom:1}
+.uiMentionsInput .highlighter{left:1px;overflow:hidden;position:absolute;padding:4px;top:1px}
+.uiMentionsInput .highlighter{padding:5px}
+.uiMentionsInput .highlighter div{color:transparent;line-height:14px;white-space:pre-wrap;width:100%}
+.uiMentionsInput .highlighter b{background:#d8dfea;font-weight:normal}
+.uiSelector .uiCloseButton{background-clip:padding-box;border:1px solid transparent;margin:0}
+.uiSelector .openToggler .uiCloseButton{background-position:left -32px}
+.uiSelector .openToggler .uiCloseButtonSmall{background-position:left -24px}
+.uiMenu{background-color:#fff;padding:3px 0 4px;overflow-y:auto}
+.uiMenuItem .itemAnchor{border:solid #fff;border-width:1px 0;color:#111;display:block;font-weight:normal;line-height:16px;padding:1px 16px 1px 22px;text-decoration:none}
+.uiMenuItem a:hover{text-decoration:none}
+.uiMenuItem a:active,.uiMenuItem a:focus{background-color:#6d84b4;border-color:#3b5998;color:#fff;outline:none}
+.uiMenu .checked .itemAnchor{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yu/r/6NHt8H5uyPf.png) left 4px no-repeat;font-weight:bold}
+.uiMenu .checked a:active,.uiMenu .checked a:focus{background-color:#6d84b4;background-position:left -56px}
+.uiMenuItem{white-space:nowrap}
+.uiMenuItem .itemLabel{display:block;max-width:300px;text-overflow:ellipsis;white-space:nowrap}
+.uiMenuItem .itemWithIcon .itemLabel,.uiMenuItem .itemIcon{display:inline-block;vertical-align:middle}
+.uiMenuItemBigLabel .itemLabel{overflow:hidden;min-width:300px}
+.uiMenuItem .disabledAnchor,.uiMenu .disabled .itemAnchor{display:none}
+.uiMenu .disabled .disabledAnchor{display:block}
+.uiMenu .disabled .itemAnchor{opacity:.55}
+.uiMenuItemGroup .groupTitle{margin:0 16px 3px 22px}
+.uiMenuSeparator{border-bottom:1px solid #ddd;margin:5px 7px 6px;padding-top:1px}
+.uiSelector{max-width:200px;vertical-align:top}
+.uiSelector .wrap{position:relative}
+.uiSelector select,.uiSelector .submitButton,.no_js form .uiSelectorButton{display:none}
+.no_js form .uiSelector select,.no_js form .uiSelector .submitButton{display:inline}
+.uiSelector .uiButton,.uiSelector .uiButton:active,.uiSelector .uiButton:focus,.uiSelector .uiButton:hover{background-image:none}
+.uiSelector .uiSelectorButton{vertical-align:top}
+.uiSelector .uiSelectorButton:active{background-color:#ddd}
+.uiSelector .openToggler .uiSelectorButton,.uiSelector .openToggler .uiSelectorButton:active,.uiSelector .openToggler .uiSelectorButton:focus,.uiSelector .openToggler .uiSelectorButton:hover{background-color:#6d84b4;border:1px solid #3b5998;border-bottom-color:#6d84b4;box-shadow:none;-moz-box-shadow:none}
+.uiSelectorNormal .uiSelectorChevronOnly,.uiSelectorNormal .uiSelectorChevronOnly:active,.uiSelectorNormal .uiSelectorChevronOnly:focus,.uiSelectorNormal .uiSelectorChevronOnly:hover{height:20px;padding:0}
+.uiSelectorNormal .uiSelectorButton,.uiSelectorNormal .uiSelectorButton:active,.uiSelectorNormal .uiSelectorButton:focus,.uiSelectorNormal .uiSelectorButton:hover,.uiSelectorNormal .uiButtonSuppressed:active,.uiSelectorNormal .uiButtonSuppressed:focus,.uiSelectorNormal .uiButtonSuppressed:hover{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:right -343px;max-width:169px;padding-right:23px}
+.uiSelectorNormal .uiButtonDisabled,.uiSelectorNormal a.uiButtonDisabled:active,.uiSelectorNormal a.uiButtonDisabled:focus,.uiSelectorNormal a.uiButtonDisabled:hover{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:right -196px}
+.uiSelectorNormal .uiButtonSuppressed.uiButtonDisabled{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:right 0}
+.uiSelectorNormal .uiSelectorButton:active,.uiSelectorNormal .uiButtonSuppressed{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:right -99px}
+.uiSelectorNormal .openToggler .uiSelectorButton,.uiSelectorNormal .openToggler .uiSelectorButton:active,.uiSelectorNormal .openToggler .uiSelectorButton:focus,.uiSelectorNormal .openToggler .uiSelectorButton:hover,.uiSelectorNormal .openToggler .uiButtonSuppressed,.uiSelectorNormal .openToggler .uiButtonSuppressed:active,.uiSelectorNormal .openToggler .uiButtonSuppressed:focus,.uiSelectorNormal .openToggler .uiButtonSuppressed:hover{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:right -147px}
+.uiSelectorNormal .uiSelectorButton .uiButtonText{max-width:169px;overflow:hidden;text-overflow:ellipsis;vertical-align:top}
+.uiSelectorNormal .uiSelectorBigButtonLabel .img{float:left}
+.uiSelectorNormal .uiSelectorBigButtonLabel .uiButtonText{display:block}
+.uiSelectorNormal .openToggler .uiSelectorButton .uiButtonText{color:#fff}
+.uiSelectorMenuWrapper{bottom:auto;left:0;margin:-1px 0 30px;max-width:340px;min-width:100%;position:absolute;right:auto;top:100%;z-index:-1}
+.uiSelectorRight .uiSelectorMenuWrapper{left:auto;right:0}
+.uiSelectorMenuWrapper .loading{padding:5px 20px}
+.uiSelectorMenuWrapper .loading span{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif) no-repeat 0 0;display:-moz-inline-box;display:inline-block;height:11px;margin:0 auto;width:16px}
+.uiSelector .uiMenu{border:1px solid #777;border-bottom:2px solid #293e6a}
+.uiTextareaNoResize{resize:none}
+.uiTextareaAutogrow{overflow:hidden}
+.uiCollapsedList .visible{margin-right:10px}
+.uiCollapsedListHidden .showAll{list-style-type:none}
+.uiCollapsedListVisible .showAll,
+.uiCollapsedListHidden .hiddenItem{display:none}
+.uiCollapsedListNoSeparate .visible{margin-right:3px}
+.uiCollapsedListVisible .visible,
+.uiCollapsedListMiddot .visible{margin-right:0}
+.uiPhotoThumb{border:1px solid #ccc;display:inline-block}
+.uiPhotoThumb img{display:block;margin:3px}
+.uiPhotoThumb:hover{border:1px solid #3b5998}
+.loading.uiPhotoThumb{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif) no-repeat center center}
+.loading.uiPhotoThumb img{opacity:.3}
+.uiSideNav ul{display:none}
+.uiSideNav .open ul{display:block}
+.uiSideNav .forceSubitems ul{display:block}
+.uiClownySideNavSection .sideNavItem{position:relative;zoom:1}
+.uiSideNav .hidden{display:none}
+.uiSideNav .item,.uiSideNav .subitem{color:#333;display:block;border-bottom:1px solid #fff;min-height:17px;line-height:13px;padding:3px 8px 0 28px;text-decoration:none}
+.uiClownySideNavSection .item,.uiClownySideNavSection .subitem{min-height:13px;padding-bottom:4px;position:relative;zoom:1}
+.uiSideNav .subitem{padding-left:37px}
+.uiSideNav .item:hover,.uiSideNav .item:active,.uiSideNav .item:focus,.uiSideNav .subitem:hover,.uiSideNav .subitem:active,.uiSideNav .subitem:focus{background-color:#eff2f7;text-decoration:none}
+.uiSideNav .selectedItem .item,.uiSideNav .selectedItem .item:hover,.uiSideNav ul .selectedItem .subitem,.uiSideNav ul .selectedItem .subitem:hover{background-color:#d8dfea;font-weight:bold}
+.uiSideNav .item .imgWrap{width:18px}
+.uiClownySideNavSection .item .imgWrap{position:absolute;top:2px;left:5px;text-align:center}
+.uiSideNav .external{padding-right:12px;background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yW/r/AebrcwrBeG6.png) no-repeat right 3px}
+.uiSideNav .item .linkWrap{display:block;max-width:116px;overflow:hidden;padding-left:0;text-overflow:ellipsis;white-space:nowrap}
+.uiSideNavCountText{color:#808080}
+.uiSideNav .loading .item,.uiSideNav .sideNavItem .loading .subitem{background-color:#eff2f7;border-color:#eff2f7;border-bottom-color:#fff}
+.uiSideNav .loading .subitem{background-color:#fff;border-color:#fff}
+.uiFutureSideNav .actionLinks{font-size: 9px;font-weight:bold;text-transform:uppercase}
+.droppableNav .actionLinks{display:block}
+.actionLinks{line-height:12px;padding:4px 0 4px 28px;position:relative}
+.uiSideNav .loadingIndicator,.actionLinks .loadingIndicator{background:url(https://s-static.ak.facebook.com/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif) no-repeat 0 0;display:none;height:11px;position:absolute;right:5px;top:5px;width:16px}
+.loading .loadingIndicator,.async_saving .loadingIndicator{display:block}
+.editMode .loadingIndicator,.loading ul .loadingIndicator{display:none}
+.uiSideNav ul .loading .loadingIndicator{top:5px}
+.uiSideNav .showSubitems .hiddenSubitem,.uiSideNav .open .navMore{display:block}
+.uiSideNav .hiddenSubitem,.uiSideNav .showSubitems .navMore,.uiSideNav .navMore{display:none}
+.uiSideNav li .navMore{margin:4px 0 10px 37px}
+.uiSideNav .loading .navMore{background-color:transparent}
+.uiFutureSideNavSection .loading .uiLoadingIndicatorAsync,.uiFutureSideNav .loading .uiLoadingIndicatorAsync{display:inline}
+.editMode .uiFutureSideNavSection .loading .uiLoadingIndicatorAsync,.uiFutureSideNavSection .loading ul .uiLoadingIndicatorAsync{display:none}
+.uiFutureSideNavSection .uiLoadingIndicatorAsync{position:relative;top:2px}
+.uiFutureSideNavSection .buttonWrap{clear:left;float:left;height:20px;text-align:right;width:20px}
+.uiFutureSideNavSection .sideNavItem{padding-right:20px;margin-left:-20px;width:100%}
+.uiFutureSideNavSection .drag{margin-left:0}
+.uiFutureSideNavSection .item,.uiFutureSideNavSection .subitem{margin-left:20px;margin-right:-20px}
+.uiFutureSideNavSection .sideNavItem .imgWrap{margin-left:-22px;margin-top:-1px;float:left}
+.uiFutureSideNavSection .sideNavItem .linkWrap{display:block;overflow:hidden;padding-left:0;text-overflow:ellipsis;white-space:nowrap}
+.uiFutureSideNavSection .sideNavItem .hasCount{max-width:110px}
+.uiFutureSideNavSection .sideNavItem .noCount{max-width:145px}
+.uiFutureSideNavSection .loading .noCount{max-width:127px}
+.uiFutureSideNavSection .sideNavItem .uiSideNavEditButton{margin:2px 5px 0 0;text-align:left}
+.uiFutureSideNavSection .sideNavItem .uiCloseButton{opacity:0}
+.uiFutureSideNavSection .sideNavItem .uiCloseButton:focus,.uiFutureSideNavSection .sideNavItem:hover .uiCloseButton,.uiFutureSideNavSection .sideNavItem .openToggler .uiCloseButton{opacity:1}
+.uiNarrowSideNav .uiSideNavSection .sideNavItem:hover .buttonWrap,.uiNarrowSideNav .uiSideNavSection .hover .buttonWrap,.uiNarrowSideNav .uiSideNavSection .editMenuOpened .buttonWrap{padding-right:4px;width:25px}
+.uiNarrowSideNav .uiSideNavSection .sideNavItem:hover .item .rfloat,.uiNarrowSideNav .uiSideNavSection .hover .item .rfloat,.uiNarrowSideNav .uiSideNavSection .editMenuOpened .item .rfloat{display:none}
+.uiNarrowSideNav .uiSideNavSection .buttonWrap{float:right;margin-right:-2px;width:0}
+.uiNarrowSideNav .sideNavItem{padding-right:0;margin-left:0}
+.uiNarrowSideNav .sideNavItem .item,.uiNarrowSideNav .sideNavItem .subitem{margin-left:0;margin-right:0}
+.uiSideNavCount{background-color:#d8dfea;border-radius:2px;color:#3b5998;font-weight:bold;left:-1px;padding:0 4px;position:relative}
+.uiFutureSideNavSection .uiSideNavCount{padding-bottom:2px}
+.uiSideNavCountInline{display:inline-block;line-height:15px}
+.uiSideNav .async_saving .uiSideNavCount,.uiSideNav .loading .uiSideNavCount{display:none}
+.uiClownySideNavSection .uiSideNavCount{float:right}
+.uiClownySideNavSection .actionLinks span.uiSideNavCount{margin-right:4px}
+.uiContextualDialogDefaultPadding{padding:15px}
+.uiContextualDialogFooter{padding:6px 7px 6px 8px}
+.uiContextualDialogPositioner,
+.uiContextualDialogPositioner .uiContextualDialog{position:absolute;z-index:200}
+.uiContextualDialogFixed{position:fixed}
+.uiContextualDialogAbove .uiContextualDialog{bottom:0}
+.uiContextualDialogLeft .uiContextualDialog{right:0}
+.uiOverlay{position:relative;z-index:200}
+.uiOverlayContent{background:#fff;border:1px solid #8c8c8c;border:1px solid rgba(0, 0, 0, .45);border-bottom:1px solid #666;box-shadow:0 3px 8px rgba(0, 0, 0, .3);position:relative}
+.uiOverlayFooter{text-align:right}
+.uiOverlayFooterMessage{width:100%}
+.uiOverlayFooterButtons{white-space:nowrap}
+.uiOverlayArrow{position:absolute;overflow:hidden}
+.uiOverlayArrowTop{padding-top:10px}
+.uiOverlayArrowRight{padding-right:10px}
+.uiOverlayArrowBottom{padding-bottom:10px}
+.uiOverlayArrowLeft{padding-left:10px}
+.uiOverlayArrowTop .uiOverlayArrow{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-142px -68px;height:9px;top:2px;width:16px}
+.uiOverlayArrowRight .uiOverlayArrow{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-248px -94px;height:16px;right:2px;width:9px}
+.uiOverlayArrowBottom .uiOverlayArrow{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-108px -68px;bottom:2px;height:9px;width:16px}
+.uiOverlayWithFooterArrowBottom .uiOverlayArrow{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-125px -68px}
+.uiOverlayArrowLeft .uiOverlayArrow{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yX/r/XT-G1AgJUb5.png);background-repeat:no-repeat;background-position:-238px -94px;height:16px;left:2px;width:9px}
+.uiFacepileSmall ul{margin-top:-2px}
+.uiFacepileMedium ul{margin-top:-1px}
+.uiFacepileLarge ul{margin-top:-3px}
+.uiFacepile .link{display:-moz-inline-box;display:inline-block}
+.uiFacepile .uiFacepileItem .img{vertical-align:bottom}
+.uiFacepileSmall .uiFacepileItem{margin:2px 2px 0 0}
+.uiFacepileMedium .uiFacepileItem{margin:1px 1px 0 0}
+.uiFacepileLarge .uiFacepileItem{margin:3px 3px 0 0}
+.uiFacepile li:last-child .img{margin-right:0}
+.uiFacepile .chatOnline .uiTooltipText,.uiFacepile .chatIdle .uiTooltipText{background-position:right center;background-repeat:no-repeat;border-right:7px solid #282828;padding-right:12px}
+.uiFacepile .chatOnline .uiTooltipText{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yU/r/gATt-jY8pG8.png)}
+.uiFacepile .chatIdle .uiTooltipText{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yA/r/Ha6HNkDAqei.png)}
+.uiFacepile .chatStatus{border:solid #fff;border-width:1px 0 0 1px;bottom:0;height:5px;position:absolute;right:0;width:5px}
+.uiFacepile .chatOnline .chatStatus{background:#84ca5a;background:-moz-linear-gradient(top, #88cc5f, #7bc64d);background:-webkit-gradient(
+linear,
+left top,
+left bottom,
+from(#88cc5f), to(#7bc64d))}
+.uiFacepile .chatIdle .chatStatus{background:#8698bb}
+.uiFacepile .chatOffline .chatStatus,.uiFacepile .chatMobile .chatStatus{border:none}
+div.experienceAttachment{border-left:2px solid #ccc;float:none}
+div.experienceAttachment .img{margin-top:1px}
+.uiStreamStory .uiPhotoThumb img{max-width:121px}
+.uiStreamStory .largePhoto img{max-width:300px}
+.uiStreamMinistoryGroup{padding:10px 0 11px 60px}
+.uiStreamMinistoryGroup .uiStreamStory{padding-top:1px}
+.uiStreamMinistoryGroup .header{color:#aaa;padding:2px 0 8px}
+.uiStreamMinistoryGroup .uiStreamStory .ministoryMessage{color:#333}
+.uiStreamMinistoryGroup .uiStreamStory .ministoryInlineMessage{display:inline}
+.uiStreamMinistoryGroup .showSimilar{display:block;margin:0 2px 8px 22px}
+.uiStreamMinistoryGroup .ministoryUfi{margin-bottom:6px}
+.uiStream .uiStreamMessage{color:#000;font-size: 11px;font-weight:normal;margin:0 0 5px 0}
+.Locale_zh_CN .uiStream .uiStreamMessage,.Locale_zh_TW .uiStream .uiStreamMessage,.Locale_zh_HK .uiStream .uiStreamMessage{font-size: 13px}
+.Locale_ja_JP .uiStream .uiStreamMessage{font-size: 12px}
+.uiStreamMessage,.uiAttachmentTitle,.uiAttachmentDesc{word-wrap:break-word}
+.uiStreamMessage .actorDescription{padding-bottom:3px}
+.fbStreamPrivacy .lock{bottom:-2px;margin-bottom:-5px;position:relative;vertical-align:top}
+div.uiAttachmentTitle{color:#333}
+.uiStreamStory{padding-right:35px}
+.uiStream .uiStreamHide{float:right;margin:-2px -35px 0 0}
+.uiStream .substoryHideSelector{float:right;margin:-2px 0 0 0}
+.uiStreamHide .uiSelectorButton,a.uiCloseButton.uiStreamHide,.uiStream .uiStreamStory:hover .uiStreamSubstory .uiStreamHide .uiSelectorButton{opacity:0}
+.uiStream .uiStreamStory:hover .uiStreamHide .uiSelectorButton,.uiStream .uiStreamStory:hover .uiCloseButton.uiStreamHide,.uiStream .uiStreamStory .uiStreamSubstory:hover .uiStreamHide .uiSelectorButton,.uiStream .uiStreamStory .uiStreamHide .openToggler .uiSelectorButton{opacity:1}
+.uiStream .uiAttachmentDesc,.uiStream .uiStreamPassive,.uiStream .uiAdminAttribution{color:#808080}
+.uiStream .tagIcon{vertical-align:bottom}
+.uiStream .text_exposed_link{display:block;padding-top:4px;font-size: 11px}
+.uiStream .uiStreamStoryHide .storyContent{display:none}
+.uiStreamAttachments .external img{max-height:90px;max-width:90px}
+.uiStream .uiAttachmentDetails{color:#333}
+.uiAttachmentInline .uiAttachmentTitle,.uiAttachmentInline .uiAttachmentDesc{display:inline}
+.uiStreamMessage .actorName,.uiStreamMessage .passiveName{font-weight:bold}
+.uiStreamMessage .readButton{float:right}
+.uiAttachmentNoMedia{border-left:2px solid #ccc}
+.uiAttachmentMedia{float:left}
+.uiStreamAttachments .exploded .UIImageBlock_Image{margin-right:0}
+.uiStreamAttachments .exploded .UIImageBlock_Content,.uiStreamAttachments .text_exposed .truncatedMediaInfo{clear:both;display:block;padding-left:0;width:auto}
+.uiStreamAttachments .truncatedMediaItem{display:none}
+.uiStreamAttachments .text_exposed .truncatedMediaItem{display:block}
+.uiStreamAttachments .truncatedMediaInfo{display:table;zoom:1}
+.uiStreamFooter .uiStreamPrivacy .uiTooltipWrap,.uiStreamFooter .uiStreamPrivacy:active .uiTooltipWrap,.uiStreamFooter .uiStreamPrivacy:focus .uiTooltipWrap,.uiStreamFooter .uiStreamPrivacy:hover .uiTooltipWrap{left:-4px}
+.uiStreamPrivacyContainer{color:#999}
+.uiStreamCollapsed{border-top:1px solid #eee}
+.uiStreamSubstories li.showAll{line-height:15px;padding:8px 0 0}
+.uiStreamSubstories li.showAll a{color:#6d84b4}
+.uiStreamSubstories .unseenItem{border-left:2px solid #a8b2ce;margin-left:-4px;padding-left:2px}
+.uiStreamSubstories .uiUfi{width:358px}
+.uiStream .uiStreamSeparator{background-color:#e9e9e9;border:0;height:7px;margin:6px 0;padding:0;text-align:center}
+.uiStream .uiStreamSeparatorText{background-color:#fff;padding:0 5px;position:relative;top:-4px}
+.uiStream .suppressBorder{border-top:0}
+.uiStreamFooter,.uiStreamSource,.uiStreamAdditionalLogging{color:#999}
+.uiStreamFooter a{color:#6d84b4}
+.uiStreamSource a{color:#999}
+.uiTypeaheadView{display:block;left:0;position:absolute;top:100%;width:100%}
+.uiTypeaheadView ul{background:#fff;border:solid;border-width:1px 1px 2px;border-color:#333 #333 #293e6a;overflow:hidden;padding:2px 0}
+.uiTypeaheadView .freeform{border-top-color:#ddd;padding:2px 6px 1px;text-align:center}
+.uiTypeaheadView li{border:solid #fff;border-width:1px 0;color:#333;cursor:pointer;display:block;min-height:1px;padding:0 6px;position:relative}
+.uiTypeaheadView strong{background-color:#d8dfea;color:#3b5998}
+div.uiTypeaheadView .selected{background-color:#6d84b4;border-color:#3b5998}
+.uiTypeaheadView .selected,.uiTypeaheadView .selected a,.uiTypeaheadView .selected div,.uiTypeaheadView .selected span{color:#fff !important}
+.uiTypeaheadView .selected strong{background-color:#5670a6}
+.uiTypeaheadView .text,.uiTypeaheadView .subtext,.uiTypeaheadView .category{display:block;padding-bottom:2px}
+.uiTypeaheadView .category{color:#666}
+.uiTypeaheadView .subtext{color:#999}
+.uiTypeaheadView .arrow{background:transparent url(https://s-static.ak.facebook.com/rsrc.php/v1/yV/r/IJYgcESal33.png) 0 -413px;display:inline-block;height:7px;margin-left:4px;width:4px}
+.uiTypeaheadView .selected .arrow{background-position:0 -420px}
+.uiTypeahead .uiTypeaheadView .calltoaction{background:#f7f7f7;border-bottom:none;border-color:#ddd;display:block;min-height:1px;margin:2px 0 -2px;padding:8px;text-align:center}
+.uiTypeahead .uiTypeaheadView .calltoaction.selected{background:#6d84b4;border-color:#3b5998}
+.typeaheadLoading .uiTypeaheadView .calltoaction span.text{visibility:hidden}
+.typeaheadLoading .uiTypeaheadView .calltoaction{background:#f7f7f7 url(https://s-static.ak.facebook.com/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif) no-repeat 50% 50%}
+.typeaheadLoading .uiTypeaheadView .calltoaction.selected{background:#6d84b4 url(https://s-static.ak.facebook.com/rsrc.php/v1/y-/r/AGUNXgX_Wx3.gif) no-repeat 50% 50%}
+.uiTypeaheadView .compact li{min-height:32px;padding:2px 10px 2px 45px}
+.uiTypeaheadView .compact .splitpics,.uiTypeaheadView .compact img{display:block;height:32px;left:6px;position:absolute;width:32px}
+.uiTypeaheadView .compact .text{font-weight:bold}
+.uiTypeaheadView .compact .details{color:#999;padding-top:0}
+.uiTypeaheadView .compact .detailsContents{position:relative}
+.uiTypeaheadView .compact .splitpic{float:left;overflow:hidden;width:15px}
+.uiTypeaheadView .compact .splitpics img{left:0;margin-left:-8px;position:static}
+.uiTypeaheadView .compact .splitpics .leftpic{margin-right:1px;width:16px}
+.uiTypeaheadView .compact .friendlist img{background-color:transparent}
+.autoexpand_mode .feedback_toggle_link{display:none}
+.UIActionLinks .uiLinkButton,
+.UIActionLinks .uiLinkButton input,
+.UIActionLinks .uiLinkButton input:hover{color:#6b84b4;font-weight:normal;vertical-align:text-top}
+.collapsed_comments .uiUfi{display:none}
+.uiUfi{padding-top:2px;width:398px}
+.uiUfi .ufiItem{background-color:#edeff4;border-bottom:1px solid #e5eaf1;margin-top:2px;padding:5px 5px 4px}
+.uiUfi .uiUfiSpamItem{background-color:#e2e2e2}
+.uiUfi .uiUfiUnseenItem{border-left:2px solid #a8b2ce;padding-left:3px}
+.uiUfi .ufiNub{margin-bottom:-2px;margin-top:0}
+.uiUfi .ufiNub i{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/y1/r/WUGF7ETcWHn.png);background-repeat:no-repeat;background-position:-133px -392px;display:block;height:5px;margin-left:17px;width:9px}
+.uiUfiAddComment .actorPic{float:left;margin-right:6px}
+.uiUfiAddComment .commentArea{padding:0 !important}
+.uiUfiAddComment .commentBox{padding:0 8px 0 0}
+.uiUfiAddComment .commentBtn{float:right}
+.uiUfiAddComment .textBox{display:block;margin:0;width:100%}
+.child_is_active .uiUfiAddCommentCollapsed .textBox,.child_was_focused .commentArea .inlineShareBox .textBox,.uiUfiAddComment .textBox{height:29px}
+.uiUfiAddCommentCollapsed .textBox{height:14px}
+.hidden_add_comment .uiUfiAddComment,.uiUfiAddCommentCollapsed .actorPic,.uiUfiAddComment .commentBtn,.uiUfiAddCommentCollapsed .sendOnEnterTip,.uiUfiAddCommentCollapsed .commentBoxSubtitle,.commentUndoTip{display:none}
+.child_is_active .uiUfiAddCommentCollapsed .actorPic,.child_is_active .uiUfiAddComment .commentBtn,.child_is_active .sendOnEnterTip,.child_is_active .commentBoxSubtitle,.commentUndone .child_is_focused .commentUndoTip{display:block}
+.commentUndone .commentBoxSubtitle,.commentUndone .sendOnEnterTip{display:none}
+.uiUfiAddTip{padding-top:1px;padding-left:0}
+.uiUfiAddComment .mentionsAddComment .commentBox{padding:0}
+.uiUfiAddComment .mentionsAddComment .mentionsTypeahead .wrap{padding:3px}
+.uiUfiAddComment .mentionsAddComment .textBoxContainer{background-color:#fff}
+.uiUfiAddComment .mentionsAddComment .textBox{padding:0;line-height:13px}
+.uiUfiAddComment .mentionsAddComment .highlighter{padding:3px}
+.uiUfiAddComment .mentionsAddComment .highlighter{left:2px}
+.uiUfiAddComment .mentionsAddComment .highlighter div{line-height:13px}
+.uiUfiComment .commentContent{padding-top:1px}
+.uiUfiComment .actorName{font-weight:bold}
+.uiUfiComment .commentActions{padding-top:2px}
+.uiUfiComment .deleteAction,.uiUfiComment .commentHideSelector .uiSelectorButton{opacity:0}
+.uiUfiComment .socialContext a{color:#808080}
+.uiUfiComment:hover .deleteAction,.uiUfiComment:hover .commentHideSelector .uiSelectorButton,.uiUfiSpamItem .commentHideSelector .uiSelectorButton,.uiUfiComment .commentHideSelector .openToggler .uiSelectorButton{opacity:1}
+.uiUfiFailureShow,
+.uiUfiCommentFailed .uiUfiFailureHide{display:none}
+.uiUfiCommentFailed .uiUfiFailureShow{display:block}
+.uiUfiCommentFailed{background:#f2f2f2 !important;border-left:2px solid #aaa7a2}
+.uiUfiCommentFailed .actorName,
+.uiUfiCommentFailed{color:#808080}
+.uiUfiCommentFailed .uiUfiFailureMessage{color:#111}
+.uiUfiSmall .commentArea .textBox{height:14px}
+
+#bootloader_Pdqij { height: 42px; }

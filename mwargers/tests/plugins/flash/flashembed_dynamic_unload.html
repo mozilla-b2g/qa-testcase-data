@@ -1,0 +1,46 @@
+<html><head>
+<style>
+embed {
+}
+</style>
+<script>
+function reportevent(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type + ' fired<br>';
+}
+window.addEventListener('PluginClickToPlay', reportevent, true);
+
+function does() {
+var x=document.createElement('object');
+//x.type="unknown/unknown";
+x.data = 'xxx://';
+document.body.appendChild(x);
+}
+
+
+setTimeout(does, 2000);
+
+var mwem; 
+var win;
+function openwind() {
+mwem=win.document.embeds[0];
+win.close();
+setTimeout(function() {mwem.src = mwem.src+'?1'; }, 5000);
+}
+</script>
+</head><body onunload="//does()" onbeforeunload="//does(); document.write('tests')" style="background: yellow;">
+onberoeunload onunload
+<button onclick="does()">append flash embeds<br> visible</button><br>
+<button onclick="embed=document.body.removeChild(document.embeds[0]);setTimeout(function() {embed.src=mwem.src+'?1';}, 500); ">remove flash<br> change src</button><br><br>
+
+<button onclick="embed=window.frames[0].document.embeds[0]; document.body.removeChild(window.frames[0].frameElement); setTimeout(function() {embed.src=mwem.src+'?1';}, 500); ">remove flash iframe<br> change src</button><br>
+<button onclick="win=window.open(window.location); win.onload=openwind;">make flash unknown<br> visible</button><br>
+
+normal flash<br>
+<embed src="http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf" style="border: 1px solid black;">
+<br>
+width: 200px; height: 100px;
+
+<br>
+<iframe src="data:text/html;charset=utf-8,%3Cembed%20src%3D%22http%3A//people.mozilla.org/%7Emwargers/tests/plugins/flash/317375_flash_wmode.swf%22%3E%20"></iframe>
+<pre id="result"></pre>
+</body></html>

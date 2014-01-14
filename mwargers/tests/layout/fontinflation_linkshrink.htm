@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Bug 737621 - link wording temporarily grow smaller if you click on a link to go to a page</title>
+<style>
+a {
+outline: 2px solid black;
+outline-offset: -2px;
+}
+</style>
+</head>
+<body>
+
+    <p><a href='#'>Link 1</a> text <a href='#'>Link 2</a> text <a href='#'>Link 3</a></p>
+
+<script>
+function doe() {
+window.location=document.links[0].href;
+}
+setTimeout(doe, 2000);
+document.links[1].focus();
+document.links[0].href = '?' + Math.random();
+</script>
+</body>
+</html>

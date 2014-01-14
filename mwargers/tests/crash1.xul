@@ -1,0 +1,11 @@
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+
+<menubar id="sample-menubar" flex="1">  
+  <menu id="file-menu" label="File" style="width: 500px;">  
+    <menupopup id="file-popup">  
+      <menuitem label="New"/>    
+    </menupopup>  
+  </menu>  
+</menubar> 
+</window>

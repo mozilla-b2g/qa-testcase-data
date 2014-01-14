@@ -1,0 +1,27 @@
+<html><head>
+<title>Bug 627842 - Allow minimum font size based on size of frame</title>
+
+<style>
+div {
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div style="width: 1000px; font-size: 9px;">
+<script>
+var str='some text that is written, the quick brown fox jumped over the lazy dog ';
+for (var i=0;i<6;i++) {
+  str += str;
+}
+document.write(str);
+</script>
+</div>
+
+<div style="width: 50px; font-size: 9px;">
+<script>
+document.write(str);
+</script>
+</div>
+</body>
+</html>

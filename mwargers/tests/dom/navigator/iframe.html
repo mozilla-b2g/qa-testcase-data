@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script>
+var mozbatt = window.navigator.battery || window.navigator.mozBattery || window.navigator.webkitBattery;
+mozbatt.addEventListener("chargingchange", function() {}, true);
+function doe() {
+  for (var i=0;i<100;i++) { 
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent('chargingchange', true, true, null);
+    mozbatt.dispatchEvent(evt);
+  }
+}
+setInterval(doe, 10);
+    </script>
+  </head>
+</html>

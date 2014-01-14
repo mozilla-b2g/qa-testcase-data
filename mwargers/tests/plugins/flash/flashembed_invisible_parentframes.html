@@ -1,0 +1,23 @@
+<html><head>
+<style>
+
+</style>
+<script>
+function reportevent(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type + ' fired<br>';
+
+}
+window.addEventListener('PluginClickToPlay', reportevent, true);
+</script>
+</head><body style="background: yellow;">
+
+<iframe src="flashembed_invisible.html"></iframe>
+<iframe src="flashembed_invisible.html"></iframe>
+<iframe src="flashembed_invisible.html"></iframe>
+<iframe src="flashembed_invisible.html"></iframe>
+
+<br>
+<pre id="result"></pre>
+<embed src="317375_flash_wmode.swf">
+</body>
+</html>

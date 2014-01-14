@@ -1,0 +1,11 @@
+<html><head>
+<title>Opening new window from link inside frame, then tapping Android back button results in minimizing Fennec</title>
+
+<style>
+</style>
+</head>
+<body>
+<a href="data:text/html;charset=utf-8,%3Cpre%3EIf%20there%20is%20a%20window.opener%2C%20this%20tab%20should%20be%20closed%2C%20after%20tapping%20on%20the%20Android%20back%20button.%20The%20browser%20should%20not%20get%20minimized.%0AOr%20if%20this%20page%20was%20opened%20by%20tapping%20on%20the%20%22Open%20Link%20in%20New%20Tab%22%20context%20menu%20item%2C%20then%20this%20tab%20should%20be%20closed%20too%2C%20after%20tapping%20on%20the%20Android%20back%20button.%20The%20browser%20should%20not%20get%20minimized%0A%3C/pre%3E%0A%3Cpre%20id%3D%22result%22%3E%3C/pre%3E%3Cscript%3E%0Avar%20result%3Ddocument.getElementById%28%27result%27%29%3B%0Aif%20%28window.opener%29%0A%20%20result.innerHTML%20%3D%20%27window.opener%3D%27+window.opener.location+%27%5Cn%27%3B%0Aif%20%28window.opener%20%26%26%20window.opener%20%21%3D%20window.opener.top%29%0A%20%20result.innerHTML%20+%3D%20%27window.opener.top%3D%27%20+%20window.opener.top.location%3B%0A%3C/script%3E" target="_blank">targetblank link</a><br><br><br>
+<button onclick="window.open('data:text/html;charset=utf-8,%3Cpre%3EIf%20there%20is%20a%20window.opener%2C%20this%20tab%20should%20be%20closed%2C%20after%20tapping%20on%20the%20Android%20back%20button.%20The%20browser%20should%20not%20get%20minimized.%0AOr%20if%20this%20page%20was%20opened%20by%20tapping%20on%20the%20%22Open%20Link%20in%20New%20Tab%22%20context%20menu%20item%2C%20then%20this%20tab%20should%20be%20closed%20too%2C%20after%20tapping%20on%20the%20Android%20back%20button.%20The%20browser%20should%20not%20get%20minimized%0A%3C/pre%3E%0A%3Cpre%20id%3D%22result%22%3E%3C/pre%3E%3Cscript%3E%0Avar%20result%3Ddocument.getElementById%28%27result%27%29%3B%0Aif%20%28window.opener%29%0A%20%20result.innerHTML%20%3D%20%27window.opener%3D%27+window.opener.location+%27%5Cn%27%3B%0Aif%20%28window.opener%20%26%26%20window.opener%20%21%3D%20window.opener.top%29%0A%20%20result.innerHTML%20+%3D%20%27window.opener.top%3D%27%20+%20window.opener.top.location%3B%0A%3C/script%3E')">window open button</button>
+</body>
+</html>

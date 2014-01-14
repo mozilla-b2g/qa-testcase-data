@@ -1,0 +1,28 @@
+<html>
+ <head>
+  <title>window open worker scripts</title>
+<script type="text/javascript">
+
+
+</script>
+ </head>
+ <body>
+
+
+<script>
+var windows=[];
+for (var i=0;i<15;i++) {
+windows[windows.length] = window.open('worker.htm');
+}
+
+setTimeout(function() {
+while (windows.length) {
+windows.pop().close();
+}
+}, Math.floor(Math.random()*6500));
+
+setTimeout(function() {window.location.reload();}, 2000);
+</script>
+
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<html><head>
+<title>autosubmit after 500ms</title>
+
+<style>
+</style>
+</head>
+<body>
+<iframe src="formautosubmit_reload.htm?1"></iframe>
+
+<form method="post"></form>
+
+<script>
+var result = document.getElementById('result');
+function doe() {
+ if (window == top)
+  window.frames[0].document.forms[0].submit();
+}
+setTimeout(doe, 1000);
+setTimeout(function() {window.location.reload();}, 4000);
+</script>
+</body>
+</html>

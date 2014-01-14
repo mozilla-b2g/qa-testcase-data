@@ -1,0 +1,20 @@
+<html><head>
+<title>Large url crashes [@ malloc_print_stats | @0x0 | getanswer ]  Fennec</title>
+
+
+</head>
+<body>
+Tapping on the button should not crash Fennec
+<script>
+var str = 'a';
+for (var i=0;i<21;i++) {
+ str+=str;
+}
+function doe() {
+window.location = window.location + '#' + str;
+}
+
+</script><br><br>
+<button onclick="doe()">make large url,<br>make large url</button>
+</body>
+</html>

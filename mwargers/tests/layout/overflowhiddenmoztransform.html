@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>-moz-transform elements not clipped by surrounding element when they should be</title>
+
+<style type="text/css">
+#screen {
+position: absolute;
+width: 100px;
+height: 100px;
+background: #000;
+overflow: hidden;
+outline: green solid 10px;
+}
+</style>
+
+<script type="text/javascript">
+var aX=1;
+function doe() {
+var x=document.getElementById('a');
+aX+=1;
+x.style.MozTransform = 'translate('+aX+'px, '+aX+'px)';
+setTimeout(doe, 100);
+}
+setTimeout(doe, 100);
+</script>
+</head>
+
+<body>
+<button onclick="doe()">move red block<br>a bit further</button><br><br>
+
+<div id="screen">
+<div id="a" style="width: 100px; height: 100px; background: red; position: absolute;  -moz-transform:translate(0px, 0px);"></div>
+</div>
+
+</body>
+</html>

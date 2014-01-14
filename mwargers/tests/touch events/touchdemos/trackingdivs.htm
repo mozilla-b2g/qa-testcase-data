@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>Tracking &lt;div&gt;s</title>
+ <style>
+   .square {
+     width: 50px;
+	 height: 50px;
+	 border: 1px solid #444;
+	 position: absolute;
+	 left:-50px; top:0;
+   }
+ </style>
+ <script type="text/javascript">
+   function output(text) {
+     document.getElementById("output").appendChild(document.createTextNode(text));
+	 document.getElementById("output").appendChild(document.createElement("br"));
+   }
+   document.multitouchData = true;
+   var assign = {};
+   
+   var lastused = 0;
+   
+   function listenTo(event) {
+     if (lastused >= 4) return;
+	 var use = null;
+	 if (assign[event.streamId]) {
+
+       use = assign[event.streamId];
+	 } else {
+
+	   use = "sq" + (++lastused);
+	   assign[event.streamId] = use;
+	 }
+	 
+	 document.getElementById(use).style.left = event.clientX + 'px';
+	 document.getElementById(use).style.top = event.clientY + 'px';
+
+   }
+   
+ document.addEventListener("MozTouchMove", listenTo,false);
+ document.addEventListener("MozTouchRelease", function() { lastused--; }, false);
+   </script>
+</head>
+<body>
+  <div class="square" id="sq1" style="background-color: red"></div>
+  <div class="square" id="sq2" style="background-color: green"></div>
+  <div class="square" id="sq3" style="background-color: blue"></div>
+  <div class="square" id="sq4" style="background-color: #fd4"></div>
+</body>
+</html>

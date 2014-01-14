@@ -1,0 +1,29 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Testcase bug - Scrolling with large div using 1px dotted border extremely slow</title>
+<style type="text/css">
+#leftDiv {
+width: 580px; 
+height: 7000px;
+border: 1px dotted black;
+}
+</style>
+</head><body>
+<script>
+var t_start;
+function doe(i){
+window.scrollBy(00,10);
+i=i+1;
+window.status=i;
+if (i>=200){
+var t_end=new Date();
+var result=t_end-t_start;
+alert('time this took is: '+result+'ms');
+return;
+};
+setTimeout(doe,20,i);
+}
+</script>
+<button onclick="t_start=new Date();doe(0)">start the window scroll time test</button>
+<div id="leftDiv"></div>
+</body></html>

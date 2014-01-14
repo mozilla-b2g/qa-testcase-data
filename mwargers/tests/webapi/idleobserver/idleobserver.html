@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=715041">Bug 715041 - Add API for content to be notified on "OS idle"</a>
+<script>
+var observer1 = {time: 1, onidle: function() {alert('idle')}, onactive: function() {alert('active')}};
+//SpecialPowers.addPermission('idle');
+var webnav = SpecialPowers.wrap(window).QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                                          .getInterface(Components.interfaces.nsIWebNavigation)
+ 
+var docShell = webnav.QueryInterface(Components.interfaces.nsIDocShell);
+
+var wm = SpecialPowers.wrap(Components).classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
+var win = wm.getMostRecentWindow("navigator:browser");
+//docShell.setAppId(1);
+//docShell.setIsBrowserElement();
+
+function test1() {
+  win.navigator.addIdleObserver(observer1);
+}
+
+function test1remove() {
+  win.navigator.removeIdleObserver(observer1);
+}
+
+</script>
+
+<h1>Test 1: addIdleObserver</h1>
+<p></p>
+<button onclick="test1()">addIdleObserver 1s</button>
+<button onclick="test1remove()">removeIdleObserver 1s</button>
+
+
+
+<pre>
+from navigator object
+/** 
+* Navigator requests to add an idle observer to the existing window.
+*/
+void addIdleObserver(in nsIIdleObserver aIdleObserver);
+   
+/** 
+* Navigator requests to remove an idle observer from the existing window.
+*/
+void removeIdleObserver(in nsIIdleObserver aIdleObserver);
+
+nsIIdleObserver
+11   // Time is in seconds and is read only when idle observers are added
+12   // and removed.
+13   readonly attribute unsigned long time;
+14   void onidle();
+15   void onactive();
+
+dom.idle-observers-api.enabled pref set to true
+</pre>
+</body></html>

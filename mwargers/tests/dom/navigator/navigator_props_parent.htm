@@ -1,0 +1,40 @@
+<html><head>
+<title>navigator properties</title>
+
+<style>
+</style>
+
+<script>
+
+
+</script>
+</head>
+<body>
+<iframe src="navigator_props.htm"></iframe>
+<iframe src="navigator_props.htm" style="display:none;"></iframe>
+<pre id="result">
+</pre>
+<script>
+var r=document.getElementById('result');
+function doe(aWindow) {
+for (var i in aWindow.navigator) {
+try {
+  r.innerHTML += i + ' :: ';
+}
+catch (e) {
+  r.innerHTML += '\n\n***' + e + '***\n\n';
+}
+try {
+  r.innerHTML += aWindow.navigator[i]+'\n';
+}
+catch(e) {
+  r.innerHTML += '\n\n' + e + '\n\n';
+}
+}
+}
+doe(window.frames[0]);
+doe(window.frames[1]);
+</script>
+</pre>
+</body>
+</html>

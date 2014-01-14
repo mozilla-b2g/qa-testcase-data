@@ -1,0 +1,16 @@
+<html><head>
+<title></title>
+
+
+</head>
+<body>
+This page should show 'blahblah' in the url bar, after 0.5 seconds 'blahblah', after 1 second 'blahblahblahblah', etc
+<script>
+document.title = 'blah';
+function doe() {
+document.title += document.title;
+}
+setInterval(doe, 500);
+</script>
+</body>
+</html>

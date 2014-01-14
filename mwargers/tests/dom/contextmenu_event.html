@@ -1,0 +1,23 @@
+<html>
+
+<head>
+<title>Bug - Contextmenu events generated even though no context menu appears</title>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+
+</head>
+
+<body>
+<div><p>text</p>
+<input disabled value=disabled><input><a href="#">link</a>
+<pre id="result"></pre>
+<script>
+function doe() {
+ document.getElementById('result').innerHTML += 'contextmenu\n';
+}
+window.addEventListener('contextmenu', doe, true);
+
+</script>
+</body>
+</html>

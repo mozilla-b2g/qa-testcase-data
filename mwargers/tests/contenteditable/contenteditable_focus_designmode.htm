@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+<title>Contenteditable</title>
+
+<style>
+div {
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div contenteditable="true" id="a">
+This is a contenteditable div<br>This is a contenteditable div
+</div>
+<br><br>
+<textarea id="result" style="width: 100%; height: 600px;"></textarea>
+<script>
+var x=document.getElementById('a');
+x.addEventListener('focus', doe, true);
+x.addEventListener('blur', undoe, true);
+
+ function doe() {
+  document.getElementById('result').value += 'focus on contenteditable element, designMode turned on\n';
+  document.designMode = 'on';
+
+}
+
+function undoe() {
+  document.getElementById('result').value += 'blur on contenteditable element, designMode turned off\n';
+  document.designMode = 'off';
+}
+
+
+var prevType = '';
+function reportmouse(aEvent) {
+if (aEvent.type == prevType)
+return;
+if (aEvent.target.nodeName == 'TEXTAREA')
+return;
+
+
+document.getElementById('result').value += aEvent.type + ' on ' + aEvent.target.nodeName + '\n';
+prevType = aEvent.type;
+}
+window.addEventListener('mousedown', reportmouse, true);
+window.addEventListener('mouseover', reportmouse, true);
+window.addEventListener('mousemove', reportmouse, true);
+window.addEventListener('mouseup', reportmouse, true);
+window.addEventListener('click', reportmouse, true);
+window.addEventListener('touchstart', reportmouse, false);
+window.addEventListener('touchmove', reportmouse, false);
+window.addEventListener('touchend', reportmouse, false);
+window.addEventListener('touchcancel', reportmouse, false);
+window.addEventListener('touchleave', reportmouse, false);
+</script>
+</body>
+</html>

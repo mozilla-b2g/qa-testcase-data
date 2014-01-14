@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+<title>Drag and drop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body {
+	background-color: #ffffff;
+}
+
+div#testElement {
+	height: 100px;
+	background-color: black;
+	width: 100px;
+	z-index: 5;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	color: white;
+	text-align: center;
+}
+
+p#bubbleTest {
+	border: 5px solid blue;
+	font-size: 150%;
+	display: none;
+}
+
+</style>
+
+<script>
+
+var testEl;
+
+window.onload = function () {
+	testEl = $('testElement');
+	testEl.onmousedown = testEl.ontouchstart = startDrag;
+
+	document.ontouchstart = function () {
+		$('bubbleTest').style.display = 'block';
+		document.ontouchstart = null;
+	}
+
+
+	// don't try to remove the mousedown ontouchstart; it makes the first drag
+	// very slow.
+
+}
+
+function startDrag(e) {
+
+	if (e.type === 'touchstart') {
+		testEl.onmousedown = null;
+		testEl.ontouchmove = moveDrag;
+		testEl.ontouchend = function () {
+			testEl.ontouchmove = null;
+			testEl.ontouchend = null;
+			testEl.ontouchstart = startDrag; // necessary for Dolfin; this is a bug
+		}
+	}/* else {
+		document.onmousemove = moveDrag;
+		document.onmouseup = function () {
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	} */
+
+	var pos = [testEl.offsetLeft,testEl.offsetTop];
+	var origin = getCoors(e);
+
+
+	function moveDrag (e) {
+		var currentPos = getCoors(e);
+		var deltaX = currentPos[0] - origin[0];
+		var deltaY = currentPos[1] - origin[1];
+		testEl.style.left = (pos[0] + deltaX) + 'px';
+		testEl.style.top  = (pos[1] + deltaY) + 'px';
+		return false;
+		/* cancels scrolling; Android 2.1 needs this ontouchstart, but that's a bug.
+		iPhone and Android 2.2 allow it ontouchstart, but also ontouchmove
+		Dolfin requires it ontouchmove */
+	}
+
+	function getCoors(e) {
+		var coors = [];
+		if (e.touches && e.touches.length) { 	// iPhone
+			coors[0] = e.touches[0].clientX;
+			coors[1] = e.touches[0].clientY;
+		} else { 								// all others
+			coors[0] = e.clientX;
+			coors[1] = e.clientY;
+		}
+		return coors;
+	}
+}
+
+function $(id) {
+	return document.getElementById(id);
+}
+
+
+</script>
+</head>
+
+<body>
+
+<div id="testElement">
+Drag me
+
+</div>
+From : <a href="http://www.quirksmode.org/m/tests/drag.html">http://www.quirksmode.org/m/tests/drag.html</a>
+
+<p>This is a very basic drag-and-drop; it's mostly a proof of concept. The action
+is a bit stilted, especially on the Android, and when you drag the element beyond
+the page borders and then back to the centre, the action looks a bit odd.</p>
+
+<p>It might be useful to restrict the drag to the canvas that's shown naturally, and prevent
+it from stretching up.</p>
+
+<p>Still, this is an extremely simple script that I put together in under an hour,
+including solving a few minor problems.</p>
+
+<p>It also works on normal desktop browsers, as well as on the S60 Widget Manager (Opera-based).
+Use <a href="drag.wgt">this widget</a>.
+Other phone browsers should not support it because they don't support the right events.</p>
+
+<p>See also the <a href="drag2.html">multitouch drag-and-drop</a>.</p>
+
+<p id="bubbleTest">The touchstart event has bubbled up to the document.</p>
+
+</body>
+</html>

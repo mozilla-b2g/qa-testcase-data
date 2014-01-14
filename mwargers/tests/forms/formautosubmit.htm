@@ -1,0 +1,19 @@
+<html><head>
+<title>autosubmit after 500ms</title>
+
+<style>
+</style>
+</head>
+<body>
+<form id="a" method="post"><input></form>
+<pre id="result"></pre>
+
+<script>
+var result = document.getElementById('result');
+function doe() {
+  document.forms[0].submit();
+}
+setInterval(doe, 500);
+</script>
+</body>
+</html>

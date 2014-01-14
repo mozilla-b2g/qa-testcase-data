@@ -1,0 +1,20 @@
+<html><head>
+<title>props window/props document</title>
+
+<style>
+</style>
+</head>
+<body>
+<button onclick="doe(window)">props window</button><button onclick="doe(document)">props document</button><button onclick="alert(window.media)">props document</button>
+<pre id="result"></pre>
+
+<script>
+function doe(aX) {
+for (var i in aX) {
+
+document.getElementById('result').innerHTML += i + '::'  + '<br>';
+}
+}
+</script>
+</body>
+</html>

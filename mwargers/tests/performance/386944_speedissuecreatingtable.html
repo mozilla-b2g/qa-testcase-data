@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><title>Speed issue creating table</title>
+
+	<script language="javascript">
+	xx = 0;
+var counter= 0;
+	function start() {
+counter++;
+if (counter > 400)
+  stop();
+		node_testdiv = document.getElementById("bodyScroll");
+		newNode = document.createElement("div");
+		newNode.innerHTML =  '<div class="row" rowid="666"><div class="kv">'+xx+'</div><div class="name">text'+xx+'text text<div class="info">'+xx+' text text</div></div><div class="addr">addddddreeeess dddddd  ddfffffddd'+xx+'<div class="town">'+xx+'</div></div><a href="#" class="ph">'+xx+'</a><div class="krA">krossA'+xx+'</div><div class="krB">krossB'+xx+'</div></div>';
+
+/*
+        if (node_testdiv.lastChild ) {
+		   node_testdiv.lastChild.className="row";
+		   }
+
+                                newNode.firstChild.className = "row_kursor";
+*/
+
+//		node_testdiv.insertBefore(newNode, node_testdiv.firstChild)
+		node_testdiv.appendChild(newNode.firstChild);
+
+
+//		if (xx>18) node_testdiv.removeChild(node_testdiv.lastChild);
+		if (xx>18) node_testdiv.removeChild(node_testdiv.firstChild);
+
+		xx = xx+1;
+	}
+var tstart;
+	timerr = false;
+	function setInter() {
+tstart = Date.now();
+		if (timerr) return;
+		timerr = window.setInterval("start()", 10);
+	}
+
+
+	function stop() {
+alert('time it took: ' + (Date.now() - tstart) + 'ms');
+		if (timerr) window.clearInterval(timerr);
+		timerr = false;
+	}
+
+	</script>
+    <style type="text/css">
+<!--
+
+a.stop {
+	padding-top: 1px;
+	padding-right: 1ex;
+	padding-bottom: 1px;
+	padding-left: 1ex;
+	border: 1px solid #CCCCCC;
+	margin-right: 1em;
+}
+a.stop:hover {
+	background-color: #FFCEF0;
+}
+a.start {
+	padding-top: 1px;
+	padding-right: 1ex;
+	padding-bottom: 1px;
+	padding-left: 1ex;
+	border: 1px solid #CCCCCC;
+	margin-right: 1em;
+        display: block;
+   
+}
+a.start:hover {
+	background-color: #CFFECF;
+}
+
+
+#testdiv {
+	border: 1px solid #A65959;
+	background-color: #EAEAEA;
+	font-size: large;
+	width: 99%;
+	overflow: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	position: relative;
+}
+
+#testdiv:focus  { outline: 1px solid #FF0000 }
+
+#testdiv .head{
+	padding-left: 0.5ex;
+}
+#testdiv .head .row {
+	width: 53em;
+	white-space: pre;
+	overflow: hidden;
+
+	background-color: #EEE;
+
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+
+}
+
+
+
+#bodyScroll {
+	padding-left: 0.5ex;
+	padding-bottom: 0.5ex;
+        }
+
+#bodyScroll .row {
+	width: 53em;
+	white-space: pre;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+	display: block;
+}
+#bodyScroll .row_kursor {
+	width: 53em;
+	white-space: pre;
+	overflow: hidden;
+	background-color: #8DD3FA;
+
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+
+
+}
+#bodyScroll .row_kursor .town{
+	background-color: #8DD3FA;
+}
+
+.kv      {width: 3em;float: left;white-space: pre;overflow: hidden;padding-left: 1ex;border-right-width: 1px;border-right-style: solid;border-right-color: #000000;border-left-width: 1px;border-left-style: solid;border-left-color: #000000;}
+.name    {width: 16em;float: left;white-space: pre;overflow: hidden;padding-left: 1ex;border-right-width: 1px;border-right-style: solid;border-right-color: #000000;position: relative;}
+.addr    {width: 18em;float: left;white-space: pre;overflow: hidden;padding-left: 1ex;border-right-width: 1px;border-right-style: solid;border-right-color: #000000;position: relative;}
+.town    {position: absolute;top: 0px;right: 0px;text-align: right;padding-left: 0.5ex;padding-right: 0.6ex;background-color: #FFF;}
+.ph      {width: 4em;float: left;white-space: pre;overflow: hidden;padding-left: 1ex;padding-right: 1ex;text-decoration: none;color: #000000;text-align: right;border-right-width: 1px;border-right-style: solid;border-right-color: #000000;}
+
+a.ph:hover {background-color: #00FF66;}
+
+.krA     {width: 4em; float: left; white-space: pre; overflow: hidden; padding-left: 1ex; border-right-width: 1px; border-right-style: solid; border-right-color: #000000; }
+.krB     {white-space: pre; overflow: hidden; padding-left: 1ex;float: left;  width: 4em; }
+
+
+.info {
+    position: absolute;
+    bottom: 1px;
+    top: 1px;
+    right: 1px;
+    max-width: 3em;
+    overflow: hidden;
+    background-color: #D9FECB;
+    border: 1px solid #000000;
+    padding-left: 0.5ex;
+    padding-right: 0.5ex;
+    font-size: small;
+    color: #000000;
+    white-space: pre;
+}
+.info:hover {
+    top: 0px;
+    bottom: 0px;
+    max-width: 12em;
+    border-right-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: groove;
+    border-right-color: #000000;
+    border-left-width: 2px;
+    border-left-color: #008424;
+    padding-right: 2ex;
+    font-size: large;
+}
+
+
+
+
+
+-->
+    </style></head><body>
+<br>
+
+<a href="javascript:setInter();" class="start">Start table-rows creating test</a>
+<br><br>
+
+<div id="testdiv" tabindex="1">
+  <div class="head">
+      <div class="row" style="border-bottom-width: 2px; border-bottom-color: rgb(0, 0, 0);"><div class="kv">text text</div><div class="name">text text</div><div class="addr">text text</div><div class="ph">text text</div><div class="krA">text ttext</div><div class="krB">text text</div></div>
+  </div>
+  <div id="bodyScroll"></div>
+</div>
+<br>
+</body></html>

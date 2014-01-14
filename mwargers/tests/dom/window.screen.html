@@ -1,0 +1,27 @@
+<html>
+  <head>
+<title>Bug - mozUnlockOrientation() works in regular web content</title>
+    <script>
+function doe(aOrientation) {
+var x=window.open(window.location);
+x.onload = function() {
+x.screen.onmozorientationchange = function() {alert('o');}
+}
+}
+
+window.screen.onmozorientationchange = function(e) {
+alert(e);
+}
+    </script>
+<style>
+button {
+width: 150px; height: 150px;
+}
+</style>
+  </head>
+  <body>
+
+<button onclick="doe()">open win and close onmozorientationchange</button><br><br>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <head>
+<title>Bug 763203 - Native Fennec's input 'value' property doesn't change until user has pressed enter</title>
+
+<style>
+
+</style>
+  </head>
+  <body>
+<input id="a"><br>
+Input value:<br>
+<pre id="result"></pre>
+<script>
+function doe() {
+document.getElementById('result').innerHTML  = document.getElementById('a').value;
+}
+setInterval(doe, 200);
+</script>
+  </body>
+</html>

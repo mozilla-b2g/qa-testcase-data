@@ -1,0 +1,19 @@
+<html>
+  <head>
+<title>Bug 735114 - crash </title>
+    <script>
+var win;
+setTimeout(function() {
+ // window.frames[0].frameElement.parentNode.removeChild(window.frames[0].frameElement);
+  window.location.reload();
+
+}, 3000);
+win = window.open('overflow_orientationchange.htm');
+setTimeout(function() {win.close();}, 2500);
+    </script>
+  </head>
+  <body>
+Fennec shouldn't crash when you rotate<br>
+
+  </body>
+</html>

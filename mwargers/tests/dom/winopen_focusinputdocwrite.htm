@@ -1,0 +1,19 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+</head>
+<body>
+<script>
+var win;
+var input;
+function doe() {
+win = window.open('data:text/html;charset=utf-8,%3Chtml%3E%0A%3Chead%3E%0A%3Ctitle%3ETarget%20page%3C/title%3E%0A%0A%3Cstyle%3Ebody%20%7B%20background-color%3A%20%23F0FFFF%3B%20%7D%3C/style%3E%0A%0A%3Cscript%3E%0A%0Afunction%20set_up_stuff%28%29%20%7B%0A%0A%20%20if%20%28Math.random%28%29%20%3C%200.5%29%0A%20%20%20%20document.designMode%20%3D%20%27on%27%3B%0A%0A%20%20document.getElementById%28%27editable%27%29.contentEditable%20%3D%20%27true%27%3B%0A%7D%0A%0A%3C/script%3E%0A%0A%3C/head%3E%0A%3Cbody%20onload%3D%22set_up_stuff%28%29%22%3E%0A%0A%3Cobject%3E%3C/object%3E%0A%0A%3Cembed%20src%3D%22http%3A//www.youtube.com/v/a1Y73sPHKxw%26amp%3Bhl%3Den_US%26amp%3Bfs%3D1%22%20%0A%20%20type%3D%22application/x-shockwave-flash%22%20%0A%20%20allowscriptaccess%3D%22always%22%20%0A%20%20width%3D%22240%22%20%0A%20%20height%3D%22190%22%3E%0A%3C/embed%3E%0A%0A%3Cp%3E%0A%0A%3Cimg%20src%3D%22lolcat.jpg%22%3E%0A%0A%3Cform%3E%0A%3Cinput%20type%3Dfile%3E%0A%3Cinput%20type%3Dpassword%3E%0A%3C/form%3E%0A%0A%3Csvg%3ESadly%2C%20not%20supported%20yet...%3C/svg%3E%0A%3Ccanvas%3E%3C/canvas%3E%0A%0A%3Ciframe%3E%3C/iframe%3E%0A%0A%3Ca%20href%3D%22%23%22%3ELink%3C/a%3E%0A%3Ctable%3E%3Ctr%3E%3Ctd%3EX%3C/td%3E%3C/tr%3E%3C/table%3E%0A%0A%3Clink%20href%3D%22%23%22%20rel%3D%22foo%22%3E%0A%0A%3Cisindex%3E%3C/isindex%3E%0A%3Cmap%3E%3C/map%3E%0A%3Col%3E%3Cli%3EX%3C/ol%3E%0A%3Cdiv%20id%3Deditable%3E%3C/div%3E%0A%3Cxmp%3EX%3C/xmp%3E%0A%3Cdiv%3E%3C/div%3E%0A%3Ctextarea%3E%3C/textarea%3E%0A%0A%3C/body%3E%3C/html%3E%0A');
+setTimeout(function() {input=win.document.getElementsByTagName('html')[0];win.close();}, 500);
+setTimeout(function() {win.document.write('test');document.body.appendChild(input);}, 1000);
+}
+</script>
+<button onclick="doe();">windowopenbuttononclick</button>
+</body>
+</html>

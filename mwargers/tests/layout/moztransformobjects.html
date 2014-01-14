@@ -1,0 +1,46 @@
+<html><head>
+<title>Bug 739195 - css transform objects not clickable</title>
+<style>
+a:active {
+background-color: yellow;
+}
+</style>
+</head><body>
+iframe normal:<br>
+<iframe src="data:text/html;charset=utf-8;base64,PGJvZHkgc3R5bGU9ImJhY2tncm91bmQ6IGJsYWNrOyBjb2xvcjp3aGl0ZTsiPjxzdHlsZT5hOmxpbmsge2NvbG9yOndoaXRlO308L3N0eWxlPgo8c2NyaXB0Pgp2YXIgc3RyID0gJzxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgpIiBvbmNsaWNrPSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9XCd5ZWxsb3dcJyI+U29tZSBsaW5rIHRleHQsIHNvbWUgbGluayB0ZXh0LCBzb21lIGxpbmsgdGV4dCA8L2E+PGJyPicKZm9yICh2YXIgaT0wO2k8OTtpKyspIHtzdHIrPWkrc3RyO30KZG9jdW1lbnQud3JpdGUoc3RyKTsKPC9zY3JpcHQ+CjwvYm9keT4%3D"></iframe><br>
+
+
+iframe -moz-transform: translate(150px, 200px) scale(2);<br>
+<iframe style=" -moz-transform: translate(150px, 200px) scale(2);" src="data:text/html;charset=utf-8;base64,PGJvZHkgc3R5bGU9ImJhY2tncm91bmQ6IGJsYWNrOyBjb2xvcjp3aGl0ZTsiPjxzdHlsZT5hOmxpbmsge2NvbG9yOndoaXRlO308L3N0eWxlPgo8c2NyaXB0Pgp2YXIgc3RyID0gJzxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgpIiBvbmNsaWNrPSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9XCd5ZWxsb3dcJyI+U29tZSBsaW5rIHRleHQsIHNvbWUgbGluayB0ZXh0LCBzb21lIGxpbmsgdGV4dCA8L2E+PGJyPicKZm9yICh2YXIgaT0wO2k8OTtpKyspIHtzdHIrPWkrc3RyO30KZG9jdW1lbnQud3JpdGUoc3RyKTsKPC9zY3JpcHQ+CjwvYm9keT4%3D"></iframe>
+
+<br><br><br><br><br><br><br><br>
+
+Normal div:
+<div style="overflow: scroll; height: 100px; width: 150px; border: 2px solid red;">
+<a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br>
+<a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br>
+</div>
+
+Div with -moz-transform: translate(150px, 200px) scale(2);<br>
+<div style="overflow: scroll; height: 100px; width: 150px; border: 2px solid red; -moz-transform: translate(150px, 200px) scale(2);">
+<a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br>
+<a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br><a href="javascript:void()">link link link</a><br>
+</div>
+
+<div id="a" style="position:fixed; top:0px; left: 0px; border: 2px solid black; background: yellow;">mm</div>
+<script>
+function doe(e) {
+var a=document.getElementById('a');
+a.style.position = 'absolute';
+a.innerHTML = '';
+a.offsetHeight;
+a.style.background = 'green';
+a.innerHTML = e.touches[0].clientX + '::' + e.touches[0].clientY;
+a.style.position = 'fixed';
+a.style.background='yellow';
+}
+
+window.addEventListener('touchstart', doe, true);
+</script>
+
+</body></html>

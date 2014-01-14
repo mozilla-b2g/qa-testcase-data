@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+<iframe></iframe><iframe></iframe>
+<br>text<br>
+<iframe></iframe><iframe></iframe>
+<input style="display: block; width: 100%; height: 800px;">
+<iframe></iframe><iframe></iframe>
+<br>text<br>
+<iframe></iframe><iframe></iframe>
+
+
+<script>
+window.onload=function() {
+var str = 'data:text/html;charset=utf-8,%3Cinput%20style%3D%22width%3A%20100%25%3B%20height%3A%20800px%3B%22%3E';
+
+var fr=window.frames;
+for (var i=0;i<fr.length;i++) {
+fr[i].location=str;
+}
+}
+</script>
+</body>
+</html>

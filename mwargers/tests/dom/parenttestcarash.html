@@ -1,0 +1,19 @@
+<html>
+  <head>
+<title>Bug 735114 - crash </title>
+    <script>
+var win;
+setTimeout(function() {
+ // window.frames[0].frameElement.parentNode.removeChild(window.frames[0].frameElement);
+  window.location.reload();
+
+}, 2000);
+win = window.open(window.location);
+setTimeout(function() {win.close();}, 500);
+    </script>
+  </head>
+  <body>
+Fennec shouldn't crash when you rotate<br>
+<iframe src="data:text/html;charset=utf-8,%3Cscript%3E%0Afunction%20doe%28%29%20%7B%0A%20%20for%20%28var%20i%3D0%3Bi%3C100%3Bi++%29%20%7B%0Atop.addEventListener%28%22deviceorientation%22%2C%20function%28event%29%20%7Bevent.gamma%3B%7D%2C%20true%29%3B%0Atop.addEventListener%28%22devicerotationrate%22%2C%20function%28event%29%20%7B%0Atop.close%28%29%3B%0Aevent.gamma%3B%7D%2C%20true%29%3B%0Atop.addEventListener%28%22devicemotion%22%2C%20function%28event%29%20%7Bevent.gamma%3B%7D%2C%20true%29%3B%0A%0A%0Avar%20evt%20%3D%20top.document.createEvent%28%27CustomEvent%27%29%3B%0A%20%20%20%20evt.initCustomEvent%28%27devicerotationrate%27%2C%20true%2C%20true%2C%20null%29%3B%0A%20%20%20%20top.document.dispatchEvent%28evt%29%3B%0A%20%20%7D%0A%7D%0AsetInterval%28doe%2C%201000%29%3B%0Adoe%28%29%3B%0A%20%20%20%20%3C/script%3E"></iframe>
+  </body>
+</html>

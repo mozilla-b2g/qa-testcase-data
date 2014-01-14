@@ -1,0 +1,25 @@
+<html><head>
+<title>Bug - winwrite</title>
+
+</head>
+<body>
+<script>
+var win;
+function doe() {
+
+win = window.open('');
+
+//win.document.close();
+setTimeout(doe2,100);
+}
+function doe2() {
+win.document.write('<p>some random text</p>');win.document.write('<p>some random text</p>');
+}
+</script>
+<div id="a">
+<label for="a">tsomeer
+<input style="width: 200px; height: 200px;">open input window</button>
+</label>
+<a href="http://google.com" onclick="window.open(this.href)">test</a>
+<a href="javascript:void(alert(navigator.userAgent.toLowerCase()))">navigator.useragent</a>
+</body>

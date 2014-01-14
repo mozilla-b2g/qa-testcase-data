@@ -1,0 +1,217 @@
+<html>
+<head>
+  <title>Disabled elements</title>
+</head>
+<body>
+
+    <form>
+<fieldset disabled>
+<legend>disabled fieldset<input value="input not disabled"></legend>
+<fieldset>
+<legend>fieldset<input value="input disabled"></legend>
+<input>
+<input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!" value="aaa"/>
+<button onclick="alert('test')">button</button>
+<input type="email" placeholder="foo@bar.com" />
+<input type="file" multiple />
+<input type="checkbox" />
+<input type="radio" />
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+
+          </select>
+          <select multiple>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+          </select>
+<input type="submit">
+<textarea></textarea>
+</fieldset>
+
+<button onclick="alert('test')">button</button>
+
+          <input type="text" maxlength="6"/>
+          <input type="search" list="search-suggestions"/>
+        
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+          <option label="TC" value="The Cure">
+        </datalist>
+          <input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!"/>
+          <input type="password" autofocus placeholder="Password"/>
+          <input type="url" id="url" name="earl" required />
+          <input type="email" placeholder="foo@bar.com" />
+          <input type="datetime" />
+          <input type="date" />
+          <input type="month" />
+          <input type="week" />
+          <input type="time" />
+          <input type="datetime-local" />
+          <input type="number" min="99" max="101"/>
+          <input type="range" name="range" />
+          <output required onforminput="value=range.value">0</output>
+          <input type="color" />
+          <input type="checkbox" />
+          <input type="radio" />
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+            <option>Option 9</option>
+            <option>Option 10</option>
+
+            <option>Option 11</option>
+          </select>
+          <input type="file" accept="image/png"/>
+      <input type="submit" />
+<textarea></textarea>
+</fieldset>
+
+<button onclick="alert('test')" disabled>disabled button</button>
+
+          <input type="text" maxlength="6" disabled/>
+          <input type="search" list="search-suggestions" disabled/>
+        
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+          <option label="TC" value="The Cure">
+        </datalist>
+          <input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!"  disabled/>
+          <input type="password" autofocus placeholder="Password" disabled/>
+          <input type="url" id="url" name="earl" required  disabled/>
+          <input type="email" placeholder="foo@bar.com"  disabled/>
+          <input type="datetime"  disabled/>
+          <input type="date"  disabled/>
+          <input type="month"  disabled/>
+          <input type="week"  disabled/>
+          <input type="time"  disabled/>
+          <input type="datetime-local"  disabled/>
+          <input type="number" min="99" max="101" disabled/>
+          <input type="range" name="range"  disabled/>
+          <output required onforminput="value=range.value">0</output>
+          <input type="color"  disabled/>
+          <input type="checkbox"  disabled/>
+          <input type="radio"  disabled/>
+          <select disabled>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+            <option>Option 9</option>
+            <option>Option 10</option>
+
+            <option>Option 11</option>
+          </select>
+          <select multiple disabled>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+            <option>Option 9</option>
+            <option>Option 10</option>
+
+            <option>Option 11</option>
+          </select>
+          <input type="file" accept="image/png"  disabled/>
+<textarea disabled></textarea>
+      <input type="submit"  disabled/>
+
+    </form>
+
+
+
+    <form>normal form
+<fieldset>
+<legend>fieldset</legend>
+<input>
+<input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!" value="aaa"/>
+<button onclick="alert('test')">button</button>
+<input type="email" placeholder="foo@bar.com" />
+<input type="file" accept="image/png" />
+<input type="checkbox" />
+<input type="radio" />
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+
+          </select>
+          <select multiple>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+          </select>
+<input type="submit">
+</fieldset>
+
+<button onclick="alert('test')">button</button>
+
+          <input type="text" maxlength="6"/>
+          <input type="search" list="search-suggestions"/>
+        
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+          <option label="TC" value="The Cure">
+        </datalist>
+          <input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!"/>
+          <input type="password" placeholder="Password"/>
+          <input type="url" id="url" name="earl" required />
+          <input type="email" placeholder="foo@bar.com" />
+          <input type="datetime" />
+          <input type="date" />
+          <input type="month" />
+          <input type="week" />
+          <input type="time" />
+          <input type="datetime-local" />
+          <input type="number" min="99" max="101"/>
+          <input type="range" name="range" />
+          <output required onforminput="value=range.value">0</output>
+          <input type="color" />
+          <input type="checkbox" />
+          <input type="radio" />
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+            <option>Option 9</option>
+            <option>Option 10</option>
+
+            <option>Option 11</option>
+          </select>
+          <input type="file" accept="image/png" />
+<textarea></textarea>
+      <input type="submit" />
+    </form>
+<body>
+</html>

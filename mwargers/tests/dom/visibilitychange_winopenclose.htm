@@ -1,0 +1,35 @@
+<html><head>
+<title>No mozvisibilitychange event fired when Fennec is moved to the background</title>
+
+<style>
+</style>
+</head>
+<body>
+<button onclick="doe2()">window open<br>visibilty change event close</button>
+<pre id="result"></pre>
+
+<script>
+    function doe() {
+if ('visibilityState' in document) {
+        document.getElementById('result').innerHTML += 'document.visibilityState:' + document.visibilityState + '<br>';
+        document.getElementById('result').innerHTML += 'document.hidden:' + document.hidden + '<br>';
+}
+else
+        document.getElementById('result').innerHTML += 'document.mozVisibilityState:' + document.mozVisibilityState + '<br>';
+        document.getElementById('result').innerHTML += 'document.mozHidden:' + document.mozHidden + '<br>';
+    }  
+doe();
+
+var win;
+function doe2() {
+  win = window.open('data:text/html;charset=utf-8,');
+win.onload=function() {
+win.document.addEventListener('visibilitychange', function() {win.close()}, true);
+win.document.addEventListener('mozvisibilitychange', function() {win.close()}, true);
+}
+}
+  document.addEventListener('visibilitychange', doe, true);
+document.addEventListener('mozvisibilitychange', doe, true);
+</script>
+</body>
+</html>

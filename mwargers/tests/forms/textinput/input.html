@@ -1,0 +1,203 @@
+<html>
+<head>
+  <title>Web Forms 2.0 test page</title>
+  <style>
+    input:required {background: green;}
+
+    input:out-of-range {border: 3px solid red;}
+    input:invalid {background: red;}
+  </style>
+</head>
+<body>
+<script>
+function doAttr(aAttr) {
+var x=document.getElementsByTagName('input');
+ for (var i=0;i<x.length;i++) {
+ x[i].setAttribute(aAttr, 'true');
+}
+}
+</script>
+<button onclick="doAttr('readonly')">make all readonly</button> - <button onclick="doAttr('disabled')">make all disabled</button> - <button onclick="doAttr('contenteditable')">make all contenteditable</button> - 
+
+    <h1>Demo:</h1>
+    <form>
+      <div>
+        <label>Text:
+          <input type="text" maxlength="6"/>
+        </label>
+        <code>&lt;input type="text" maxlength="6"/&gt;</code>
+
+      </div>
+      <div>
+        <label>Search:
+          <input type="search" list="search-suggestions" />
+        </label>
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+
+          <option label="TC" value="The Cure">
+        </datalist>
+        <code><pre>
+          (css) [list] {background:#ff0;}
+          &lt;input type="search" autofocus list="search-suggestions"/&gt;
+          &lt;datalist id="search-suggestions"&gt;
+            &lt;option label="DM" value="Depeche Mode"&gt;
+            &lt;option label="Moz" value="Morrissey"&gt;
+
+            &lt;option label="NO" value="New Order"&gt;
+            &lt;option label="TC" value="The Cure"&gt;
+          &lt;/datalist&gt;
+        </pre></code>
+      </div>
+      <div>
+        <label>Telephone:
+          <input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!"/>
+
+        </label>
+        <code>&lt;input type="tel" pattern="[0-9]{10}" name="tel" title="Phone Number?!?!"/&gt;</code>
+      </div>
+      <div>
+        <label>Password:
+          <input type="password" autofocus placeholder="Password"/>
+        </label>
+        <code>
+        <pre>
+
+          (css) [autofocus] {background:blue;}  
+          &lt;input type="password" placeholder="Password"/&gt;
+        </pre>
+        </code>
+      </div>  
+      <div>
+        <label>URL:
+          <input type="url" id="url" name="earl" required />
+        </label>
+        <code>
+
+        <pre>
+          (css) [required] {border:2px dotted green;}
+          (css) input:required {outline: 2px solid #f00;color:red;}  
+          &lt;input type="url" id="url" name="earl" required /&gt;
+        </pre>  
+        </code>
+      </div>
+      <div>
+        <label>Email:
+          <input type="email" placeholder="foo@bar.com" />
+        </label>
+
+        <code>&lt;input type="email" placeholder="foo@bar.com" /&gt;</code>
+      </div>
+      <div>
+        <label>Datetime:
+          <input type="datetime" />
+        </label>
+        <code><pre>
+          (css) [type=datetime] {font: normal 14px 'Helvetica Neue';color:red;}
+          &lt;input type="datetime" /&gt;
+
+          </pre></code>
+      </div>
+      <div>
+        <label>Date:
+          <input type="date" />
+        </label>
+        <code><pre>
+          (css) [type=date] {font: normal 15px 'Hobo Std';}
+          &lt;input type="date" /&gt;
+
+          </pre></code>
+      </div>
+      <div>
+        <label>Month:
+          <input type="month" />
+        </label>
+        <code>&lt;input type="month" /&gt;</code>
+      </div>  
+        <label>Week:
+          <input type="week" />
+
+        </label>
+        <code>&lt;input type="week" /&gt;</code>
+      <div>
+        <label>Time:
+          <input type="time" />
+        </label>
+        <code>&lt;input type="time" /&gt;</code>
+      </div>
+
+        <label>Date-Time Local:
+          <input type="datetime-local" />
+        </label>
+        <code>&lt;input type="datetime-local" /&gt;</code>
+      <div>
+        <label>Number:
+          <input type="number" min="99" max="101"/>
+        </label>
+        <code>&lt;input type="number" min="99" max="101"/&gt;</code>
+
+      </div>
+      <div>
+        <label>Range:
+          <input type="range" name="range" />
+          <output required onforminput="value=range.value">0</output>
+        </label>
+        <pre>
+        &lt;input type="range" required name="range" />
+        &lt;output onforminput="value=range.value"&gt;0&lt;/output&gt;</pre>
+
+      </div>
+      <div>
+        <label>Color:
+          <input type="color" />
+        </label>
+        <code>&lt;input type="color"/&gt;</code>
+      </div>
+      <div>
+        <label>Checkbox:
+          <input type="checkbox" />
+
+        </label>
+        <code>&lt;input type="checkbox"/&gt;</code>
+      </div>
+      <div>
+        <label>Radio:
+          <input type="radio" />
+        </label>
+        <code>&lt;input type="radio"/&gt;</code>
+
+      </div>
+      <div>
+        <label>Select:
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+            <option>Option 9</option>
+            <option>Option 10</option>
+
+            <option>Option 11</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>File:
+          <input type="file" multiple />
+        </label>
+        <code>&lt;input type="file" multiple /&gt;</code>
+
+      </div>
+      <input type="submit" />
+    </form>
+
+  <p class="small">Copyright &copy; 2009 Michael Taylor and licensed under the <a href="/code/license.txt">MIT license.</a></p>
+<body>
+</html>

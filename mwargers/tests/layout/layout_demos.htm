@@ -1,0 +1,118 @@
+<html><head>
+<meta name="viewport" content="width=device-width">
+<title>External sites with layout/css/canvas demos</title>
+
+
+<style>
+textarea {
+display: none;
+}
+</style>
+
+</head>
+<body>
+<h1>External sites with layout/css/canvas demos</h1>
+<ul>
+<li>Layout/CSS
+<ul>
+<textarea id="ta">
+http://webdesignerwall.com/trends/47-amazing-css3-animation-demos
+https://developer.mozilla.org/en-US/demos/tag/tech:css3/
+http://mortalwombat.org.uk/demos/index.php
+http://speckyboy.com/2010/05/21/10-mind-blowing-experimental-css3-techniques-and-demos/
+http://thewebrocks.com/demos/
+http://moztw.org/foxmosa/game/pairs/
+http://people.mozilla.com/~prouget/demos/
+https://developer.mozilla.org/nl/demos/detail/paperfold-css/launch
+https://developer.mozilla.org/media/uploads/demos/H/u/Huan/99e7ecb282cfe8cf59e7275acc838998/css-3d-carousel-gall_1332896169_demo_package/index.html#L6
+http://processingjs.nihongoresources.com/test/spritesD/
+http://processingjs.nihongoresources.com/
+http://people.mozilla.org/~jmuizelaar/
+</textarea>
+<script>
+var ar=document.getElementById('ta').value.split('\n');
+for (var i=0;i<ar.length-1;i++) {
+document.write('<li><a href="'+ar[i]+'"></a></li>');
+}
+</script>
+
+</ul>
+</li>
+<li>WebGL
+<ul>
+<textarea id="tb">
+http://get.webgl.org/
+http://webglsamples.googlecode.com/hg/aquarium/aquarium.html
+http://media.tojicode.com/q3bsp/
+http://www.ro.me/
+http://o3d.googlecode.com/svn/trunk/samples_webgl/o3d-webgl-samples/pool.html
+http://code.google.com/p/webglsamples/
+http://www.chromeexperiments.com/webgl
+http://crazybugs.ivank.net/
+http://playwebgl.com/
+http://people.mozilla.org/~bjacob/webgl-spotlight-js-2012/
+http://helloracer.com/webgl/
+http://www.everyday3d.com/j3d/
+http://learningthreejs.com/data/2012-05-04-tquery-md2character-a-plugin-for-doom-characters/examples/
+http://learningthreejs.com/
+http://www.ibiblio.org/e-notes/webgl/deflate/spider.html
+</textarea>
+<script>
+var ar=document.getElementById('tb').value.split('\n');
+for (var i=0;i<ar.length-1;i++) {
+document.write('<li><a href="'+ar[i]+'"></a></li>');
+}
+</script>
+
+
+</ul>
+</li>
+<li>HTML5
+<ul>
+<textarea id="tc">
+http://html5demos.com/
+http://mobilehtml5.org/
+http://www.kevs3d.co.uk/dev/asteroidsbench/
+http://www.kevs3d.co.uk/dev/index.html
+http://www.dhteumeuleu.com/
+http://hakim.se/experiments/html5/coil/
+http://hakim.se
+http://www.clicktorelease.com/code/css3dclouds/
+http://people.opera.com/richt/release/demos/orientation/artificialhorizon/
+http://designbeep.com/2011/07/05/20-amazing-experimental-projects-from-mozilla-demo-studiocss3html5/
+</textarea>
+<script>
+var ar=document.getElementById('tc').value.split('\n');
+for (var i=0;i<ar.length-1;i++) {
+document.write('<li><a href="'+ar[i]+'"></a></li>');
+}
+</script>
+</ul>
+</li>
+
+<li>SVG
+<ul>
+<textarea id="td">
+http://svg-wow.org/
+http://codinginparadise.org/projects/svgweb/samples/
+https://developer.mozilla.org/en-US/demos/tag/tech:svg/
+http://double.co.nz/video_test/video.svg
+http://svg-edit.googlecode.com/svn/branches/2.4/editor/svg-editor.html
+http://files.myopera.com/MacDev_ed/svg/svgtime/circularclip.svg
+https://bug119490.bugzilla.mozilla.org/attachment.cgi?id=275755
+</textarea>
+<script>
+var ar=document.getElementById('td').value.split('\n');
+for (var i=0;i<ar.length-1;i++) {
+document.write('<li><a href="'+ar[i]+'"></a></li>');
+}
+</script>
+</ul>
+</li>
+</ul>
+<script>
+for (var i=0;i<document.links.length;i++) {
+document.links[i].innerHTML = document.links[i].href;
+}
+</script>
+</body></html>

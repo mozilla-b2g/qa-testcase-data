@@ -1,0 +1,47 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Performance regression in moving absolutely positioned block inside table</title>
+</head><body>
+<button onclick="teststart();">start scrolling test</button><br>
+<table height="100%"><tbody><tr><td>
+  <table height="100%"><tbody><tr><td>
+    <table height="100%"><tbody>
+      <tr><td>
+<DIV style="position: relative;"><DIV style="position: absolute; left: 637px; top: 0px;" id="iemarquee">text</DIV></DIV>
+      </td></tr>
+      <tr><td> 
+        <table height="100%"><tbody>
+
+<script>
+var str = '<tr><td><table height="100%" border="1"><tbody><tr><td></td></tr></tbody></table></td></tr>'
+for (var i=0;i<8;i++)
+  str+=str;
+document.write(str);
+</script>
+
+        </tbody></table>
+      </td></tr>
+    </tbody></table>
+  </td></tr></tbody></table>
+</td></tr></tbody></table>
+
+<script>
+var x = 637;
+var marquee = document.getElementById("iemarquee");
+function scrollmarquee(){
+marquee.style.left=x+"px";
+x--;
+if (x<500) {
+  alert('Time it took: ' + (Date.now() - tstart) + 'ms');
+  return;
+}
+setTimeout(scrollmarquee, 20);
+}
+
+var tstart;
+function teststart() {
+tstart = Date.now();
+setTimeout(scrollmarquee, 20);
+}
+</script>
+</body></html>

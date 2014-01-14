@@ -1,0 +1,23 @@
+<html><head>
+
+<title>frames with webm videos</title>
+
+<script>
+var win;
+var win2;
+var wins=[];
+function doe(aAmount) {
+for (var i=0;i<aAmount;i++) {
+wins[i] = window.open('interrogation.ogg');
+}
+
+setTimeout(function() {while (wins.length)  {wins.pop().close();} setTimeout(doe, 500, aAmount);}, 7000);
+}
+</script>
+
+
+</head><body>
+<button onclick="doe(5)">win open then close after 10 s</button>
+
+
+</body></html>

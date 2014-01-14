@@ -1,0 +1,17 @@
+<html><head>
+<style> 
+
+</style></head>
+
+<body>make sure that dom.w3c_touch_events.enabled pref is set to true and then reload
+<div id=result style="background: yellow; position:fixed; top:0;"></div>
+<script>
+window.addEventListener('touchstart', function(e) {result.innerHTML += e.type+e.touches[0].clientY+ '- ';}, false);
+window.addEventListener('touchmove', function(e) {result.innerHTML += e.type+e.touches[0].clientY+ '- ';}, false);
+window.addEventListener('touchend', function(e) {result.innerHTML += e.type+e.touches.length+ '- ';}, false);
+window.addEventListener('touchcancel', function(e) {result.innerHTML += e.type+e.touches.length+ '- ';}, false);
+window.addEventListener('touchleave', function(e) {result.innerHTML += e.type+e.touches.length+ '- ';}, false);
+window.addEventListener('click', function(e) {result.innerHTML += e.type+e.clientY+ '- ';}, false);
+</script>
+<div style="height: 2000px; border: 10px dotted black;"></div>
+ </body></html>

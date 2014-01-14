@@ -1,0 +1,24 @@
+<html><head>
+<title>Dialogs</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>text to find, some text to find
+<pre id="result"></pre>
+<button onclick="alert('This is an alert')"></button><br><br>
+<button onclick="var x = prompt('This is a prompt'); document.getElementById('result').innerHTML = x;"></button><br><br>
+<button onclick="var x = confirm('This is a confirm'); document.getElementById('result').innerHTML = x;"></button><br><br>
+<button onclick="window.print();"></button><br><br>
+<button onclick="window.find();"></button><br><br>
+<button onclick="window.find('text');"></button><br><br>
+<script>
+var buttons=document.getElementsByTagName('button');
+for (var i=0;i<buttons.length;i++) {
+buttons[i].innerHTML = buttons[i].getAttribute('onclick');
+}
+
+</script>
+
+</div>
+</body>
+</html>

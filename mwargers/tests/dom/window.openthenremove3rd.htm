@@ -1,0 +1,24 @@
+<html><head>
+<title>open 5 windows, close 3rd one after 3 seconds</title>
+
+</head>
+<body>
+<script>
+var colors=['red','green', 'lime', 'blue', 'yellow', 'orange', 'brown', 'Maroon', 'azure'];
+function doewin() {
+this.document.title = this.document.body.innerHTML;
+this.document.body.style.backgroundColor = colors[this.document.title];
+setTimeout(function(aThis) {aThis.close();}, Math.floor(Math.random()*10000)+1000, this);
+}
+var wins=[];
+function openwins() {
+for (var i=0;i<5;i++) {
+wins[wins.length]=window.open('data:text/html;charset=utf-8,' + i);
+wins[wins.length-1].onload = doewin;
+}
+}
+</script>
+<button onclick="openwins()">open windows<br>5 ones</button>
+<button onclick="setTimeout(openwins, 5000)">open windows<br>5 ones after 5 seconds</button>
+</body>
+</html>

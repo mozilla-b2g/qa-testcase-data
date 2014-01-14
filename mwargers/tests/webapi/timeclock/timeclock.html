@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=714358">Bug 714358 - navigator.mozTime</a>
+<script>
+
+function test1() {
+  alert(navigator.mozTime);
+}
+
+
+</script>
+
+<button onclick="alert(navigator.mozTime);">alert(navigator.mozTime);</button><br>
+
+<button onclick="alert(navigator.mozTime.set(1));">alert(navigator.mozTime.set(1));</button><br>
+
+
+<button onclick="alert(Date.now());">alert(Date.now());</button><br>
+
+
+
+
+</body></html>

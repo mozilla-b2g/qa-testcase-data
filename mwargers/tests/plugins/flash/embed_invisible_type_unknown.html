@@ -1,0 +1,33 @@
+<html><head>
+<style>
+embed {
+ width: 0px;
+ height: 0px;
+}
+</style>
+<script>
+function doe() {
+var x=document.embeds;
+for (var i=0;i<x.length;i++) {
+x[i].style.width = '100px';
+x[i].style.height = '100px';
+
+}
+}
+
+function reportevent(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type + ' fired<br>';
+
+}
+window.addEventListener('PluginClickToPlay', reportevent, true);
+</script>
+</head><body style="background: yellow;">
+
+<button onclick="doe()">make type=unknown embeds<br> visible</button><br>
+normal flash<br>
+<embed type="unknown/unknown" style="border: 1px solid black;">
+<br>
+
+<pre id="result"></pre><br>
+<a href="embed_invisible_type_unknown.html">Link tho this same page</a><br>
+</body></html>

@@ -1,0 +1,49 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>TestcaseBug 729082 - MAPLE - Jerky panning</title>
+<style type="text/css">
+
+</style>
+</head><body>
+<script>
+var i=0; 
+var tbegin;
+var tend; 
+var scrollamount = 100;
+var opacityamount = 0.1;
+var currentopacity = 0;
+
+function doe(){
+if (i ==0) tbegin = Date.now();
+i++;
+if (i % 10 == 0) {scrollamount = -scrollamount; opacityamount = -opacityamount;}
+currentopacity += opacityamount;
+document.getElementById('p').style.opacity = currentopacity;
+//alert(parseInt(document.getElementById('p').style.opacity) + opacityamount);
+window.scrollBy(0,scrollamount);
+
+if (i>200){  
+tend = Date.now();
+alert('Time the scrolling took: ' + (tend-tbegin) +'ms');
+i=0;  
+return;
+} 
+setTimeout(doe,20);
+
+} 
+
+</script>
+
+<a href="javascript:void(doe())">scrolltest</a>
+<div style="position: fixed; z-index: 10; border: 5px dotted red; background: blue; opacity: 0.9; width: 100px; height: 100px; top: 100px; border-radius: 50px;"></div>
+<p id="p" style="max-width: 1000px; background: lime; opacity: 0;">
+<script>
+var str = '';
+for (var i=0;i<2000;i++) {
+ str += i + ' ';
+}
+i=0;
+document.write(str);
+</script>
+</p>
+</body></html>

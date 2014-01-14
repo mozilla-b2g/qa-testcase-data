@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bug 745250 - java.lang.NullPointerException: at android.view.GestureDetector.onTouchEvent(GestureDetector.java)</title>
+
+  <script>
+var win;
+function doe() {
+win = window.open('data:text/html;charset=utf-8,%3Chtml%3E%3Chead%3E%0A%3Cscript%3E%0Afunction%20handleStart%28e%29%20%7B%0A%20%20e.preventDefault%28%29%3B%0A%20%20window.close%28%29%3B%0A%7D%0Awindow.addEventListener%28%22touchstart%22%2C%20handleStart%2C%20false%29%3B%0A%3C/script%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%3Cdiv%20style%3D%22background%3A%20lime%3B%20width%3A%20200px%3B%20height%3A%20200px%3B%22%3EDouble%20tapping%20on%20this%20box%20should%20not%20crash%20Fennec%3C/div%3E%0A%3C/body%3E%0A%3C/html%3E');
+//setTimeout(function() {win.close(); doe();}, 1000);
+}
+</script>
+</head>
+<body>
+<button style=" width: 200px; height: 200px;" onclick="doe()">Open window</button>
+</body>
+</html>

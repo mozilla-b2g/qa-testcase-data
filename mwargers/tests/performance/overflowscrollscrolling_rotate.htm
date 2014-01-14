@@ -1,0 +1,44 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>scrolling performance with moz-transform rotate</title>
+<style type="text/css">
+
+</style>
+</head><body>
+<script>
+
+
+var tbegin;var tend; var scrollamount = 50;
+var rottransform = 0;
+function doe(aI){
+rottransform += aI;
+if (aI ==0) tbegin = Date.now();
+if (aI % 10 == 0) scrollamount = -scrollamount; 
+window.scrollBy(0,scrollamount);
+var divs = document.getElementsByTagName('div');
+for (var i=0;i<divs.length; i++) {
+  divs[i].style.MozTransform = 'rotate('+rottransform+'deg)';
+}
+
+if (aI>200){  tend = Date.now();alert('Time the scrolling took: ' + (tend-tbegin) +'ms');aI=0;  return;} 
+setTimeout(doe,20, ++aI);
+
+} 
+
+</script>
+
+<a href="javascript:void(doe(0));">scroll with moztranform test</a>
+<section style="max-width: 600px;">
+<script>
+var str = '';
+for (var i=0;i<100;i++) {
+ str += i + ' ';
+}
+var str2= '';
+for (var i=0;i<100;i++) {
+  str2 += '<div style="border: 3px inset blue; float: left; overflow: scroll; width: 100px; height: 100px;">' + str + '</div>';
+}
+document.write(str2);
+</script>
+</section>
+</body></html>

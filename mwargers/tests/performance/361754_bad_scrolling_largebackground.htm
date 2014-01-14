@@ -1,0 +1,25 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Testcase bug 361754 - Bad scrolling performance with Cairo builds using large background-image</title>
+<style type="text/css">
+body {
+ background-image: url("http://people.mozilla.org/~mwargers/tests/images/090711_Landscape_near_Vries_Dr_NL.jpg"); 
+height: 1000%;
+}
+</style></head><body>
+<script>
+var t_start;
+function doe(i){
+window.scrollBy(00,10);
+i=i+1;
+window.status=i;
+if (i>=400){
+var t_end=new Date();
+var result=t_end-t_start;
+alert('time this took is: '+result+'ms');
+return;
+};
+setTimeout(doe,20,i);
+}
+</script>
+<button onclick="t_start=new Date();doe(0)">start the window scroll time test</button>
+</body></html>
