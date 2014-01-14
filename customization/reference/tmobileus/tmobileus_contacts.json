@@ -8,7 +8,7 @@
     ],
     "tel": [
       {
-        "type": "Other",
+        "type": ["Other"],
         "value": "3102605555"
       }
     ]
