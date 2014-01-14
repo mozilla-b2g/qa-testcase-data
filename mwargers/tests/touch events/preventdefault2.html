@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>prevent default 2</title>
+  <style type="text/css">
+    #canvas {
+      border:solid black 1px;
+    }
+  </style>
+  
+  <script>
+function doe(aEvent) {
+if (aEvent.type = 'touchmove')
+  aEvent.preventDefault();
+var i=document.createEvent("MouseEvent");
+i.initMouseEvent(aEvent.type,true,true,window,1,aEvent.changedTouches[0].screenX,aEvent.changedTouches[0].screenY,aEvent.changedTouches[0].clientX,aEvent.changedTouches[0].clientY,true, true,true,true,0,null);
+c.target.dispatchEvent(i);
+}
+
+    function startup() {
+      var el = document;
+      el.addEventListener("touchstart", doe, true);
+      //el.addEventListener("touchend", doe, false);
+      //el.addEventListener("touchcancel", doe, false);
+      //el.addEventListener("touchleave", doe, false);
+      el.addEventListener("touchmove", doe, true);
+      el.addEventListener("touchend", doe, false);
+    }
+
+
+  </script>
+<style>#cvs {position:absolute;top:0;left:0;width:100%;height:100%} </style>
+</head>
+<body onload="startup()">text
+      <canvas id="cvs" width="600" height="700"></canvas>
+</body>
+</html>

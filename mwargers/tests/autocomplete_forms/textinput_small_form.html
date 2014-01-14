@@ -1,0 +1,20 @@
+<html>
+<head></head>
+<body>
+<form name=f method=get>
+<input name=q type=weird style="width: 10px;">
+<input type=hidden name=r>
+<input type="submit">
+</form>
+<div style="height:150%; border: 1px solid black;"></div>
+<form name=f method=get>
+<input name=q type=weird>
+<input type=hidden name=r>
+<input type="submit">
+</form>
+<script>
+document.forms[0].r.value = Math.random();
+document.forms[1].r.value = Math.random();
+</script>
+</body>
+</html>

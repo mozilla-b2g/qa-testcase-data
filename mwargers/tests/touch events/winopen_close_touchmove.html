@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Bug 745250 - java.lang.NullPointerException: at android.view.GestureDetector.onTouchEvent(GestureDetector.java)</title>
+
+ 
+</head>
+<body>
+<button onclick="window.open('data:text/html;charset=utf-8,%3Cscript%3E%0Awindow.addEventListener%28%27touchmove%27%2C%20function%28e%29%20%7B%7D%2C%20true%29%3B%0A%3C/script%3E%0A%3Cbutton%20onclick%3D%22window.close%28%29%22%3EClose%20this%3Cbr%3Ewindow%3Cbr%3E%3Cbr%3EClose%20this%3Cbr%3Ewindow%3C/button%3E');">
+open window with touchmove preventdefault<br>
+and tap on the window.close button in the resulting window<br><br>
+After that, quickly make some flinging actions in the resulting window, while it almost starts to close<br>
+Mozilla should not crash that way
+</button>
+
+</body>
+</html>

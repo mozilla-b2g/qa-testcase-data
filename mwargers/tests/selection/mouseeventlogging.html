@@ -1,0 +1,53 @@
+<html><head>
+<title>Text selection events</title>
+
+</head>
+<body>
+Some text, can this be selected?<br>
+<p>Some text inside a p tag, this should easily be selectable</p>
+<iframe></iframe><iframe src="mouseeventlogging.html?1"></iframe>
+<textarea style="width: 200px; height: 300px; "></textarea>
+<a href="#">a link a link a link a link a link</a><select><option>option 1</option><option>option 2</option></select><input type="submit"><select multiple><option>option 1</option><option>option 2</option></select><br><br>
+<table contenteditable="true"><tr><td><img>table cell content</td><td>table cell content</td><td>table cell content</td></tr></table>
+<pre id="result"></pre><script>
+var mousemoved=false;
+var counter = 0;
+function doe(aEvent) {
+if (aEvent.type =='mousemove' && mousemoved) return;
+
+
+mousemoved = false;
+ var x=document.getElementById('result');
+counter++;
+if (counter>15) {
+  x.innerHTML = '';
+  counter = 0;
+}
+ x.innerHTML += aEvent.type + '::' + aEvent.target + '<br>';
+
+if (aEvent.type=='mousemove') {
+mousemoved=true;
+}
+}
+
+window.addEventListener('DOMAttrModified', doe, true);
+window.addEventListener('mousedown', doe, true);
+window.addEventListener('mouseup', doe, true);
+window.addEventListener('click', doe, true);
+window.addEventListener('mouseover', doe, true);
+window.addEventListener('mousemove', doe, true);
+//window.addEventListener('touchstart', doe, true);
+//window.addEventListener('touchmove', doe, true);
+//window.addEventListener('touchend', doe, true);
+
+window.addEventListener('focus', doe, true);
+window.addEventListener('blur', doe, true);
+
+
+window.addEventListener('TapSingle', doe, true);
+window.addEventListener('TapDown', doe, true);
+window.addEventListener('TapOver', doe, true);
+window.addEventListener('TapUp', doe, true);
+
+</script>
+</body>

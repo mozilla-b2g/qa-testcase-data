@@ -1,0 +1,48 @@
+<html manifest="winprops.htm"><head>
+<title>multiple doorhangers</title>
+
+<style>
+</style>
+</head>
+<body onload="doall()">
+<form name=f method=get>
+<input id="q" name=q type=text>
+<input type="submit">
+</form>
+
+<script>
+document.getElementById('q').focus();
+</script>
+<button onclick="doe()">geolocation</button><br><br>
+<button onclick="doe2()">window.open</button><br><br>
+<button onclick="doe3()">notification.show()</button><br><br>
+
+<pre id="result"></pre>
+
+<script>
+function doe() {
+navigator.geolocation.getCurrentPosition(function() {});
+}
+
+function doe2() {
+window.open('about:blank');
+}
+
+function doe3() {
+var notification = navigator.mozNotification.createNotification('notification', 'Notification test', 'http://people.mozilla.com/~mwargers/tests/images/fish.gif');
+notification.show(); 
+}
+
+function doall() {
+doe();
+doe2();
+doe3();
+window.mozIndexedDB.open("TestDatabase");
+}
+
+</script>
+
+<embed type="application/x-shockwave-flash" height="1" width="1">
+<iframe src="data:application/x-xpinstall;charset=utf-8,"></iframe>
+</body>
+</html>

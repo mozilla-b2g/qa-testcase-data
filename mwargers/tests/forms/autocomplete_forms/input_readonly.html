@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Readonly text inputs can trigger form autocomplete popups</title>
+</head>
+<body>
+<form name=f method=get>
+regular text input: <input id="q" name=q type=text readonly>
+<br><br>
+input with datalist:
+          <input type="search" list="search-suggestions" readonly />
+
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+
+          <option label="TC" value="The Cure">
+        </datalist>
+<input type="submit">
+</form>
+
+
+<script>
+document.getElementById('q').focus();
+</script>
+</body>
+</html>

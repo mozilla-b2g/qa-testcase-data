@@ -1,0 +1,17 @@
+<html><head>
+<title>Bug 739195 - Scrolling iframes causes visual artifacts (white lines) to be displayed</title>
+</head><body>
+
+<iframe src="data:text/html;charset=utf-8;base64,PGJvZHkgc3R5bGU9ImJhY2tncm91bmQ6IGJsYWNrOyBjb2xvcjp3aGl0ZTsiPjxzdHlsZT5hOmxpbmsge2NvbG9yOndoaXRlO308L3N0eWxlPgo8c2NyaXB0Pgp2YXIgc3RyID0gJzxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgpIiBvbmNsaWNrPSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9XCd5ZWxsb3dcJyI+bGluayB0ZXh0PC9hPjxicj4nCmZvciAodmFyIGk9MDtpPDk7aSsrKSB7c3RyKz1pK3N0cjt9CmRvY3VtZW50LndyaXRlKHN0cik7CnNldEludGVydmFsKGZ1bmN0aW9uKCkge3dpbmRvdy5zY3JvbGxCeSgwLDEpfSwgMTApOwo8L3NjcmlwdD4KPC9ib2R5Pg%3D%3D"></iframe>
+
+<iframe style="-moz-transform: translate(100px, 50px) scale(1.5);" src="data:text/html;charset=utf-8;base64,PGJvZHkgc3R5bGU9ImJhY2tncm91bmQ6IGJsYWNrOyBjb2xvcjp3aGl0ZTsiPjxzdHlsZT5hOmxpbmsge2NvbG9yOndoaXRlO308L3N0eWxlPgo8c2NyaXB0Pgp2YXIgc3RyID0gJzxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgpIiBvbmNsaWNrPSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9XCd5ZWxsb3dcJyI+bGluayB0ZXh0PC9hPjxicj4nCmZvciAodmFyIGk9MDtpPDk7aSsrKSB7c3RyKz1pK3N0cjt9CmRvY3VtZW50LndyaXRlKHN0cik7CnNldEludGVydmFsKGZ1bmN0aW9uKCkge3dpbmRvdy5zY3JvbGxCeSgwLDEpfSwgMTApOwo8L3NjcmlwdD4KPC9ib2R5Pg%3D%3D"></iframe><br>
+
+<iframe border="0" style="border: 0px; border-radius: 50px; overflow: hidden; -moz-transform: translate(150px, 200px) scale(2);" src="data:text/html;charset=utf-8;base64,PGJvZHkgc3R5bGU9ImJhY2tncm91bmQ6IGJsYWNrOyBjb2xvcjp3aGl0ZTsiPjxzdHlsZT5hOmxpbmsge2NvbG9yOndoaXRlO308L3N0eWxlPgo8c2NyaXB0Pgp2YXIgc3RyID0gJzxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgpIiBvbmNsaWNrPSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9XCd5ZWxsb3dcJyI+bGluayB0ZXh0PC9hPjxicj4nCmZvciAodmFyIGk9MDtpPDk7aSsrKSB7c3RyKz1pK3N0cjt9CmRvY3VtZW50LndyaXRlKHN0cik7CnNldEludGVydmFsKGZ1bmN0aW9uKCkge3dpbmRvdy5zY3JvbGxCeSgwLDEpfSwgMTApOwo8L3NjcmlwdD4KPC9ib2R5Pg%3D%3D"></iframe>
+
+<script>
+window.frames[0].onload = function() {
+setInterval(function() {window.frames[0].scrollBy(0,1)}, 10);
+
+}
+</script>
+</body></html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>After window with touchmove event preventDefault(), can't long tap to open context menu anymore</title>
+
+ 
+</head>
+<body>
+<button onclick="window.open('data:text/html;charset=utf-8,%3Cscript%3E%0Awindow.addEventListener%28%27touchmove%27%2C%20function%28e%29%20%7Be.preventDefault%28%29%3B%7D%2C%20true%29%3B%0A%3C/script%3E%0AThis%20page%20has%20touchmove%20event%20preventdefault%3Cbr%3E%0A%3Cbutton%20onclick%3D%22window.close%28%29%22%3EClose%20this%3Cbr%3Ewindow%3C/button');">
+open window with touchmove preventdefault<br>
+and tap on the window.close button
+</button>
+<br><br>
+<input><br><br>
+<a href="#top">linklinklink<br>linklinklink</a>
+<pre id="result"></pre>
+<script>
+function doe(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type+'<br>';
+}
+
+window.addEventListener('click', doe, true);
+window.addEventListener('contextmenu', doe, true);
+</script>
+</body>
+</html>

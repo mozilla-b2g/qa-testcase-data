@@ -1,0 +1,52 @@
+<html><head>
+<title>navigator.mozNotification.createNotification</title>
+</head>
+<body>
+<button onclick="doenotif()">doe notification</button><br><br>
+<button onclick="setInterval(doenotif, 1000)">doe notification interval 1 second</button><br><br>
+<button onclick="winopendoenotif()">win open doe notification</button><br><br>
+<pre id="test"></pre>
+<script>
+
+var count=0;
+function doenotif() {
+count++;
+document.getElementById('test').innerHTML = count + ' seconds';
+var notification = navigator.mozNotification.createNotification('notification', 'Notification test', 'http://people.mozilla.com/~mwargers/tests/images/fish.gif');
+notification.show(); 
+
+    notification.onclick = function() {  
+      var e = document.createElement("p");  
+      e.innerHTML = "<strong>The notification was clicked.</strong>";  
+      document.body.appendChild(e);  
+    };  
+    notification.onclose = function() {  
+      var e = document.createElement("p");  
+      e.innerHTML = "<strong>The notification was closed.</strong>";  
+      document.body.appendChild(e);  
+    };  
+}
+
+var win;
+function winopendoenotif() {
+win = window.open('');
+count++;
+document.getElementById('test').innerHTML = count + ' seconds';
+var notification = win.navigator.mozNotification.createNotification('notification', 'Notification test', 'http://people.mozilla.com/~mwargers/tests/images/fish.gif');
+notification.show(); 
+
+    notification.onclick = function() {  
+      var e = document.createElement("p");  
+      e.innerHTML = "<strong>The notification was clicked.</strong>";  
+      document.body.appendChild(e);  
+    };  
+    notification.onclose = function() {  
+      win.close();  
+    };  
+setTimeout(function() {win.close(); notification.show(); winopendoenotif();}, 2000);
+}
+doenotif();
+setTimeout(function() { window.location.reload();}, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Testcase bug 328388 - Selecting/deselecting slower in Cairo builds</title>
+<script>
+var sel=window.getSelection();
+
+
+isSelected = false;
+var tstart;
+function doe(i){
+  if (isSelected == true) {isSelected = false; sel.collapse(document.body, 0); } 
+  else {sel.selectAllChildren(document.body);isSelected = true;}; 
+  if (i>100){alert('Time deselecting/selecting took: ' + (Date.now() - tstart) + 'ms');
+    return;
+} 
+setTimeout(doe, 40, ++i);
+} 
+</script>
+</head>
+<body>
+<button onclick="tstart = Date.now(); doe(0);">Start select/deselect test</button>
+<br>
+<div>
+<script>
+var str = ' text';
+for (var i=0;i<12;i++) {
+str += str+i;
+}
+document.write(str);
+</script> text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text01234 text text0 text
+ text01 text text0 text text012 text text0 text text01 text text0 text 
+text0123 text text0 text text01 text text0 text text012 text text0 text 
+text01 text text0 text text012345 text text0 text text01 text text0 text
+ text012 text text0 text text01 text text0 text text0123 text text0 text
+ text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text01234567 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234 text text0 text text01 text text0 text text012
+ text text0 text text01 text text0 text text0123 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text 
+text012345 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text01234 text text0
+ text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123456 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123 text 
+text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345678 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text012345 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123456 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345 text text0 text text01 text
+ text0 text text012 text text0 text text01 text text0 text text0123 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234567 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123456789 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234 text text0 text text01 text text0 text text012
+ text text0 text text01 text text0 text text0123 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text 
+text012345 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text01234 text text0
+ text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123456 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123 text 
+text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234567 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text012345 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123456 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345 text text0 text text01 text
+ text0 text text012 text text0 text text01 text text0 text text0123 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345678 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text01234567 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234 text text0 text text01 text text0 text text012
+ text text0 text text01 text text0 text text0123 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text 
+text012345 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text01234 text text0
+ text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123456 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123 text 
+text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345678910 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text012345 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123456 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345 text text0 text text01 text
+ text0 text text012 text text0 text text01 text text0 text text0123 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234567 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345678 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234 text text0 text text01 text text0 text text012
+ text text0 text text01 text text0 text text0123 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text 
+text012345 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text01234 text text0
+ text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123456 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123 text 
+text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234567 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text012345 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123456 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345 text text0 text text01 text
+ text0 text text012 text text0 text text01 text text0 text text0123 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123456789
+ text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text01234567 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text01234 text text0 text text01 text text0 text text012
+ text text0 text text01 text text0 text text0123 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text 
+text012345 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text01234 text text0
+ text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text0123456 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text0123 text 
+text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text012345 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345678 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text012345 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123456 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text012345 text text0 text text01 text
+ text0 text text012 text text0 text text01 text text0 text text0123 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text01234 text text0 text text01 text text0 text text012 text
+ text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234567 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text0123 text text0 text text01 text text0 text text012 
+text text0 text text01 text text0 text text01234 text text0 text text01 
+text text0 text text012 text text0 text text01 text text0 text text0123 
+text text0 text text01 text text0 text text012 text text0 text text01 
+text text0 text text012345 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123 text text0 text 
+text01 text text0 text text012 text text0 text text01 text text0 text 
+text01234 text text0 text text01 text text0 text text012 text text0 text
+ text01 text text0 text text0123 text text0 text text01 text text0 text 
+text012 text text0 text text01 text text0 text text0123456 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text0123 text text0 text text01 text text0 text text012 text text0 
+text text01 text text0 text text01234 text text0 text text01 text text0 
+text text012 text text0 text text01 text text0 text text0123 text text0 
+text text01 text text0 text text012 text text0 text text01 text text0 
+text text012345 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text0123 text text0 text text01 text 
+text0 text text012 text text0 text text01 text text0 text text01234 text
+ text0 text text01 text text0 text text012 text text0 text text01 text 
+text0 text text0123 text text0 text text01 text text0 text text012 text 
+text0 text text01 text text0 text text01234567891011
+</div>
+
+</body></html>

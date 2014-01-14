@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<embed type="application/x-ms-wmp">
+
+<iframe src="http://www.nu.nl/deeplink_rss2/index.jsp?r=Internet"></iframe>
+
+
+
+
+<script>
+setTimeout(function() {
+window.addEventListener("deviceorientation", function(event) {
+window.close();
+//window.frameElement.parentNode.removeChild(window.frameElement);
+event.gamma;
+}, true);
+window.addEventListener("devicerotationrate", function(event) {
+window.close();
+//window.frameElement.parentNode.removeChild(window.frameElement);
+event.gamma;
+}, true);
+window.addEventListener("devicemotion", function(event) {
+window.close();
+//window.frameElement.parentNode.removeChild(window.frameElement);
+event.gamma;
+}, true);
+}, 1200+Math.floor(Math.random()*800));
+</script>
+
+</body>
+
+</html>

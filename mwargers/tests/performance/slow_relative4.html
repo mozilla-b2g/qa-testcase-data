@@ -1,0 +1,151 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Testcase bug 277762 - DHTML performance regression with this particular testcase?</title>
+<style type="text/css">
+#crosshair{position:absolute; width:17px; height:17px; background-color: red;}
+#div_block{width:542px;height:400px;background-color:green;display:none;}
+#transpare {display:inline;}
+#not_trans{display:none;}
+#results {position:absolute;width:400px;right:5px;top:5px;}
+</style></head>
+<body style="background-color: rgb(153, 204, 204);">
+<table><tbody><tr><td>
+<div id="rel" style="position: relative;">
+<span id="crosshair"></span>
+<img id="transpare" src="slow_relative4_bestanden/attachment_002.png"> <!-- at beginning display:inline -->
+<img id="not_trans" src="slow_relative4_bestanden/attachment.png"> <!-- at beginning display:none -->
+<div id="div_block"></div> <!-- at beginning display:none -->
+</div>
+</td></tr></tbody></table>
+
+<!-- the rest of the html is just for toggling stuff -->
+
+<button id="button_position" style="position:absolute;bottom:40px;" onclick="toggle_position()">
+Current position: relative -&gt; Next: absolute
+</button>
+<button style="position:absolute;bottom:40px;left:300px;" onclick="toggle_background()">
+transparent/non-transparent image/green div
+</button>
+<div style="position:absolute;bottom:10px;">
+<button onclick="start()">start()</button>
+Result: <span id="result"> </span> millisec
+<button onclick="start4all()">Automatic test for all()</button>
+</div>
+<pre id="results">Results:
+</pre>
+<script>
+var rel_ar=['relative','absolute','fixed   ','static  '];
+var rel_index=0;
+var map_ar=['transpare','not_trans','div_block'];
+var map_index=0;
+function toggle_position(){
+rel_index++;
+if (rel_index>=rel_ar.length)rel_index=0;
+set_styles();
+}
+
+function toggle_background(){
+map_index++;
+if (map_index>=map_ar.length)map_index=0;
+set_styles();
+}
+
+var CurrIndex=0;
+var Crosshair=document.getElementById("crosshair").style;
+var Timer;
+function move(){
+CurrIndex++;
+if (CurrIndex>400) d_stop();
+Crosshair.left= CurrIndex+"px";
+Crosshair.top= CurrIndex+"px";
+}
+
+var time1, time2;
+function start(){
+time1=new Date();
+Timer=setInterval(move, 20)
+}
+
+var cookiestring='';
+function d_stop(){
+time2=new Date();
+var temp=time2-time1;
+cookiestring+=temp+'-';
+document.getElementById('results').childNodes[0].nodeValue+=rel_ar[rel_index]+': '+map_ar[map_index]+': '+temp+'\n';
+clearInterval(Timer);
+CurrIndex=0;
+startupagain()//for the automatic testing
+}
+
+function startupagain(){
+rel_index++;
+
+if (rel_index>=rel_ar.length){rel_index=0;map_index++;};
+if (map_index>=map_ar.length) {
+rel_index=0;
+map_index=0;
+saveCookie('moz_'+navigator.productSub,cookiestring,3650);//store cookie of bench results
+set_styles();
+return;
+};
+set_styles();
+setTimeout('start()',300);
+}
+
+function set_styles(){
+var temp;
+document.getElementById('rel').style.position=rel_ar[rel_index];
+for (var i=0;i<map_ar.length;i++){
+if (i==map_index){
+temp=(map_ar[i]=='div_block')?'block':'inline';
+document.getElementById(map_ar[i]).style.display=temp;
+continue;
+};
+document.getElementById(map_ar[i]).style.display='none';
+}
+temp=(rel_index+1>=rel_ar.length)?rel_ar[0]:rel_ar[rel_index+1]; //some feedback
+document.getElementById('button_position').childNodes[0].nodeValue='Current position: '+rel_ar[rel_index]+' -> Next: '+temp;
+}
+
+function start4all(){
+//reset the whole mess
+cookiestring='';
+rel_index=0;
+map_index=0;
+set_styles();
+start();
+}
+
+// Cookie handling functions
+
+function saveCookie(name,value,days)
+{
+var ex;
+  if (days) {
+    var d = new Date();
+    d.setTime(d.getTime()+(days*24*60*60*1000));
+    ex = "; expires="+d.toGMTString();
+  }
+  else {
+    ex = "";
+  }
+  document.cookie = name+"="+value+ex+"; path=/";
+}
+
+function readCookie(name)
+{
+  var eq = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i<ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(eq) == 0) return c.substring(eq.length,c.length);
+  }
+  return null;
+}
+
+
+function eraseCookie(name){  saveCookie(name,"",-1);}
+</script>
+<a href="https://bug277762.bugzilla.mozilla.org/results2.htm" style="position: absolute; right: 5px; bottom: 5px;">
+Results of the tests</a>
+</body></html>

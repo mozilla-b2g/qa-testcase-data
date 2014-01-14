@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>Resize</title>
+ <style>
+   img {
+	 position: absolute;
+	 border: 1px dashed #bbb;
+     /*-moz-transform: rotate(30deg);
+	 -moz-transform-origin: bottom right;*/
+   }
+ </style>
+ <script type="text/javascript">
+document.addEventListener("MozTouchDown", touchdown, false);
+document.addEventListener("MozTouchRelease", touchrelease, false);
+document.addEventListener("MozTouchMove", touchmove, false);
+
+document.multitouchData = true;
+
+var X1, Y1, X2, Y2;
+
+var fingersTracked = 0;
+
+var fingerIds = [-1,-1,-1,-1];
+
+function touchdown(e) {	
+  if (fingersTracked < 4)
+    fingerIds[fingersTracked] = e.streamId;
+  fingersTracked++;
+}
+
+function touchrelease(e) {
+  fingersTracked--;
+}
+
+function dist(x1,x2,y1,y2) {
+  return Math.sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) );
+}
+
+function touchmove(e) {
+
+  var im1 = document.getElementById("image1");
+  var im2 = document.getElementById("image2");
+  var diagonal, sidesize;
+  
+  if (fingerIds[0] == e.streamId) { // finger 1
+	X1 = e.clientX;
+	Y1 = e.clientY;
+
+  } else if (fingerIds[1] == e.streamId) { // finger 2
+    diagonal = dist(X1, e.clientX, Y1, e.clientY);
+	sidesize = diagonal / Math.sqrt(2);
+	
+	im1.style.left = ((e.clientX < X1) ? e.clientX : X1) + "px"
+	im1.style.top  = ((e.clientY < Y1) ? e.clientY : Y1) + "px"
+	
+	im1.style.width  = sidesize + "px"
+	im1.style.height = sidesize + "px"
+
+  } else if (fingerIds[2] == e.streamId) { // finger 3
+    X2 = e.clientX;
+	Y2 = e.clientY;
+
+  } else if (fingerIds[3] == e.streamId) { // finger 4
+    diagonal = dist(X2, e.clientX, Y2, e.clientY);
+	sidesize = diagonal / Math.sqrt(2);
+	
+	im2.style.left = ((e.clientX < X2) ? e.clientX : X2) + "px"
+	im2.style.top  = ((e.clientY < Y2) ? e.clientY : Y2) + "px"
+
+	im2.style.width  = sidesize + "px"
+	im2.style.height = sidesize + "px"	
+  }
+
+}
+
+
+
+ 
+   </script>
+</head>
+<body>
+  <img src="http://www.rebron.org/wordpress/wp-content/uploads/2009/07/Thunderbird-300x300.jpg" id="image2"></img>
+  <img src="http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-512.png" id="image1"></img>
+  
+</body>
+</html>

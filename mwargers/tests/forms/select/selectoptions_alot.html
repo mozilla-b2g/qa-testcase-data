@@ -1,0 +1,28 @@
+<html><head>
+<title>Bug  - Bad performance with a lot of options in a select list</title>
+
+</head>
+<body>
+<select id=a>
+<script>
+var str = '';
+for (var i=0;i<3000; i++) {
+str+='<option>option '+i+'</option>';
+}
+//str+='<option selected="selected">option '+(i+1)+'</option>';
+document.write(str);
+</script>
+</select>
+<br><br>
+<select id=a multiple>
+<script>
+var str = '';
+for (var i=0;i<2000; i++) {
+str+='<optgroup label="optgroup '+i+'"><option selected>option '+i+'</option></optgroup>';
+}
+//str+='<option selected="selected">option '+(i+1)+'</option>';
+document.write(str);
+</script>
+</select>
+</script>
+</body>

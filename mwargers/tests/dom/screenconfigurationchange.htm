@@ -1,0 +1,24 @@
+<html>
+  <head>
+<title>screenconfigurationchange</title>
+    <script>
+
+
+
+function doe() {
+  for (var i=0;i<100;i++) {
+    window.addEventListener("deviceorientation", function() {}, true); 
+    window.addEventListener("deviceorientationrotate", function() {}, true);
+    window.addEventListener("MozScrolledAreaChanged", function() {}, true); 
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent('MozScrolledAreaChanged', true, true, null);
+    mozbatt.dispatchEvent(evt);
+  }
+}
+setInterval(doe, 10);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

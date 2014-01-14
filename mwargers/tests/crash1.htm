@@ -1,0 +1,28 @@
+<html style="display: table-column;">
+
+<head>
+</head>
+<body>
+<script>
+var win
+function doe() {
+if (!opener)
+  win=window.open(window.location.href);
+else {
+setTimeout(function() {window.close();}, 900);
+}
+//setTimeout(function() {win.location.reload();}, 100);
+
+//setTimeout(function() {document.getElementsByTagName('input')[0].focus();}, 400);
+
+setTimeout(function() {win.close();}, 900);
+}
+//setInterval(doe, 1000);
+
+</script>
+
+<button onclick="doe()">open win doe</button>
+<input autofocus onfocus="document.removeChild(document.documentElement)">
+<div style="width: 2000px; height: 1000px; border: 5px solid red;"></div>
+</body>
+</html>

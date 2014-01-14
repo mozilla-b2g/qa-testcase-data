@@ -1,0 +1,18 @@
+<html><head>
+<title>Bug 748701 - crash in nsObjectLoadingContent::IsPluginEnabledForType</title>
+<script>
+var mwem; 
+var win;
+function openwind() {
+mwem=win.document.embeds[0];
+win.close();
+setTimeout(function() {mwem.src = mwem.src+'?1'; }, 500);
+}
+</script>
+</head><body>
+<button onclick="win=window.open(window.location); win.onload=openwind;">open window<br>then close<br>then change embed src</button><br><br>
+
+
+<embed src="http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf" style="border: 1px solid black;">
+
+</body></html>

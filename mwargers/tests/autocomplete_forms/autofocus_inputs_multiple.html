@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Bug 735734 - Form autocomplete popup shows up on focus</title>
+<style>form {display: inline;}
+input {width: 30px;}
+</style>
+</head>
+<body>
+
+
+<script>
+for (var i=0;i<200; i++) {
+document.write('<form name=f method=get><input name=q type=text></form> ');
+}
+var qs=document.getElementsByName('q');
+
+function doe() {
+qs[Math.floor(Math.random()*qs.length)].focus();
+}
+setInterval(doe, 100);
+</script>
+</body>
+</html>

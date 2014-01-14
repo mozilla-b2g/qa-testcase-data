@@ -1,0 +1,121 @@
+<script id="script" xmlns="http://www.w3.org/1999/xhtml">/*template*/
+var doc = document;
+if (document.getElementById('content'))
+  doc = document.getElementById('content').contentDocument;
+
+function tripleclick(i, j){
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+var wu =  doc.defaultView.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                .getInterface(Components.interfaces.nsIDOMWindowUtils);
+//alert(wu);
+wu.sendMouseEvent('mousedown',  20*i, 20*j, 0, 3, 0);
+wu.sendMouseEvent('mouseup',  20*i, 20*i, 0, 1, 0);
+i+=1;
+if (i>50) {
+ i =0;
+ j++;
+}
+setTimeout(tripleclick,20,i, j);
+}
+
+setTimeout(tripleclick,200,0, 0);
+/*template*/</script>
+<script id="script" xmlns="http://www.w3.org/1999/xhtml">//<![CDATA[
+/*
+
+function doe2(i) {
+var x=document.getElementsByTagName('*');
+
+var temp = x[1].getAttribute('style');
+x[1].setAttribute('style', x[0].getAttribute('style'));
+x[0].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[2].getAttribute('style');
+x[2].setAttribute('style', x[1].getAttribute('style'));
+x[1].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[3].getAttribute('style');
+x[3].setAttribute('style', x[2].getAttribute('style'));
+x[2].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[4].getAttribute('style');
+x[4].setAttribute('style', x[3].getAttribute('style'));
+x[3].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[5].getAttribute('style');
+x[5].setAttribute('style', x[4].getAttribute('style'));
+x[4].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[6].getAttribute('style');
+x[6].setAttribute('style', x[5].getAttribute('style'));
+x[5].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[7].getAttribute('style');
+x[7].setAttribute('style', x[6].getAttribute('style'));
+x[6].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[8].getAttribute('style');
+x[8].setAttribute('style', x[7].getAttribute('style'));
+x[7].setAttribute('style', temp);
+document.body.offsetHeight;
+
+var temp = x[9].getAttribute('style');
+x[9].setAttribute('style', x[8].getAttribute('style'));
+x[8].setAttribute('style', temp);
+document.body.offsetHeight;
+i++;
+if (i>3)
+  return;
+setTimeout(doe2,50,i);
+}
+setTimeout(doe2,500,0);
+
+*/
+var doc = document;
+if (top.win2)
+  doc = top.win2.document;
+
+if (window.location.href.indexOf('chrome://')!=-1) {
+  var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+                     .getService(Components.interfaces.nsIWindowWatcher);
+  var tb = ww.activeWindow.getBrowser();
+  doc = tb.contentWindow.document.getElementById('content').contentDocument;
+}
+  
+
+if (document.getElementById('content') && window.location.href.indexOf('chrome://')==-1)
+  doc = document.getElementById('content').contentDocument;
+function replacestyles(i){
+if (top.win2)
+  doc = top.win2.document;
+
+var x=doc.getElementsByTagName('*');
+
+if (x[i] && x[i+1])
+  {
+var temp = x[i+1].getAttribute('style');
+x[i+1].setAttribute('style', x[i].getAttribute('style'));
+x[i].setAttribute('style', temp);
+if (i % 4 == 0) {
+  if (i % 8 == 0)
+    x[i].blur();
+  else
+    x[i].focus();
+}
+//document.documentElement.getBoundingClientRect();
+}
+else { i = 0;}
+  i++;
+setTimeout(replacestyles,50,i);
+}
+//alert('tst');
+setTimeout(replacestyles,100,0);
+/*template*/
+//]]></script><input name=q gradientTransform="scale(.2)"  from="0%"  transform="scale(.2)"  in="//table"  placeholder="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"  style="display: inline;position: static;overflow: hidden;-moz-background-clip: inherit;direction: inherit;ime-mode: inherit;pointer-events: painted;left: 80%;font-family: sjjunglego;font-style: inherit;background: inherit;background-attachment: -moz-initial;"><embed src="317375_flash_wmode.swf"  wmode="transparent" lighting-color="#CCC"  stroke="grad2"  transform="skewY(30)"  action="file:///C:/Users/mw22/Desktop/crashzone/ajaxdemolisher_files/fish.gif"  y1="30"  style="display: inline-table;position: inherit;overflow: inherit;-moz-background-clip: inherit;direction: inherit;ime-mode: inherit;pointer-events: stroke;left: inherit;font-family: inherit;font-style: oblique;background: url(1px_lime.gif) top left no-repeat, url(1px_lime.gif) 1px top repeat-x,  url(1px_lime.gif) 0px 1px no-repeat, url(1px_lime.gif) 1px 1px no-repeat, url(1px_lime.gif) 2px 1px no-repeat, url(1px_lime.gif) 3px 1px no-repeat, url(1px_lime.gif) 4px 1px no-repeat,  url(1px_lime.gif) 0px 2px no-repeat,  url(1px_lime.gif) 4px 2px no-repeat,  url(1px_lime.gif) 0px 3px no-repeat, url(1px_lime.gif) 4px 3px no-repeat,  url(1px_lime.gif) bottom left no-repeat, url(1px_lime.gif) 100% 100% no-repeat,  url(1px_red.gif) bottom right repeat;;background-attachment: inherit;"></embed><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;"></foreignObject></view></input></input>t t t mm</input></input></input></input>t t t mm</input></input></input>t t t mm</input></input></input></input>t t t mm</input></input><input type="radio" currentloop="1000"  ping="http://websocketstest.com/"  onMozMagnifyGestureUpdate="event.target.parentNode.removeChild(event.target)"  onMozTouchDown="event.target.parentNode.removeChild(event.target)"  height="30"  style="display: inline;position: relative;overflow: hidden;-moz-background-clip: padding;direction: rtl;ime-mode: active;pointer-events: -moz-initial;left: -100px;font-family: icon;font-style: oblique;background: -moz-element(binding.xml#randomxbl) repeat;background-attachment: inherit;"><animateMotion onMozMagnifyGestureStart="event.target.parentNode.removeChild(event.target)"  contenteditable="true"  x="1"  result="b"  style="display: inline-block;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: border;direction: ltr;ime-mode: inherit;pointer-events: auto;left: 80%;font-family: icon;font-style: inherit;background: -moz-initial;background-attachment: -moz-initial;"></animateMotion></view></input></input>t t t mm</input></input></input></input>t t t mm</input></input></input>t t t mm</input></input></input></input>t t t mm</input></input><input type="radio" currentloop="1000"  ping="http://websocketstest.com/"  onMozMagnifyGestureUpdate="event.target.parentNode.removeChild(event.target)"  onMozTouchDown="event.target.parentNode.removeChild(event.target)"  height="30"  style="display: inline;position: relative;overflow: hidden;-moz-background-clip: padding;direction: rtl;ime-mode: active;pointer-events: -moz-initial;left: -100px;font-family: icon;font-style: oblique;background: -moz-element(binding.xml#randomxbl) repeat;background-attachment: inherit;"><set letter-spacing="2147483648"  fill="#CCC"  xlink:href="file:///C:/Users/mw22/Desktop/crashzone/ajaxdemolisher_files/testmovie.wmv"  required="false"  autobuffer="true"  style="display: inline;position: inherit;overflow: scroll;-moz-background-clip: inherit;direction: auto;ime-mode: disabled;pointer-events: fill;left: 999999999px;font-family: droid sans fallback;font-style: -moz-initial;background: background-attachment: -moz-initial;"></set></input><input type="radio" spreadMethod="reflect"  content="event.explicitOriginalTarget.parentNode.removeChild(event.explicitOriginalTarget)"  width="80"  attributeName="marker-mid"  onMozMagnifyGesture="event.target.parentNode.removeChild(event.target)"  style="display: inline-table;position: fixed;overflow: scroll;-moz-background-clip: border;direction: auto;ime-mode: active;pointer-events: visiblePainted;left: -10%;font-family: droid sans hebrew;font-style: inherit;background: inherit;background-attachment: fixed;"><embed src="317375_flash_wmode.swf"  wmode="transparent" result="a"  formnovalidate="true"  lighting-color="red"  playcount="60"  alignment-baseline="ideographic"  style="display: inline;position: absolute;overflow: visible;-moz-background-clip: border;direction: inherit;ime-mode: -moz-initial;pointer-events: none;left: -100px;font-family: droid serif;font-style: inherit;background: url(http://www.google.nl/intl/nl_nl/images/logo.gif);background-attachment: fixed;"></embed><object data="317375_flash_wmode.swf" overflow="auto"  content="event.originalTarget.setAttribute('tabindex', Math.floor(Math.random()*5)-9)"  color="red"  xml:lang="en"  style="display: none;position: -moz-initial;overflow: auto;-moz-background-clip: border;direction: auto;ime-mode: auto;pointer-events: visibleStroke;left: -10%;font-family: -moz-initial;font-style: inherit;background: none;background-attachment: scroll;"></object><input type="hidden" playcount="2147483648"  fx="50%"  stdDeviation="80"  visibility="collapse"  from="120%"  style="display: table-row;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: -moz-initial;direction: rtl;ime-mode: enabled;pointer-events: visibleFill;left: -100px;font-family: menu;font-style: normal;background: background-attachment: inherit;"><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;</embed></input></input>t t t mm</input></input></input></input>t t t mm</input></input></animateTransform></input></input>t t t mm</input></input></input></input>t t t mm</input></input>t t t mm</input>t t t mm</input></input><input type="radio" spreadMethod="reflect"  content="event.explicitOriginalTarget.parentNode.removeChild(event.explicitOriginalTarget)"  width="80"  attributeName="marker-mid"  onMozMagnifyGesture="event.target.parentNode.removeChild(event.target)"  style="display: inline-table;position: fixed;overflow: scroll;-moz-background-clip: border;direction: auto;ime-mode: active;pointer-events: visiblePainted;left: -10%;font-family: droid sans hebrew;font-style: inherit;background: inherit;background-attachment: fixed;"><input type="hidden" playcount="2147483648"  fx="50%"  stdDeviation="80"  visibility="collapse"  from="120%"  style="display: table-row;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: -moz-initial;direction: rtl;ime-mode: enabled;pointer-events: visibleFill;left: -100px;font-family: menu;font-style: normal;background: background-attachment: inherit;"><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;<input type="hidden" playcount="2147483648"  fx="50%"  stdDeviation="80"  visibility="collapse"  from="120%"  style="display: table-row;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: -moz-initial;direction: rtl;ime-mode: enabled;pointer-events: visibleFill;left: -100px;font-family: menu;font-style: normal;background: background-attachment: inherit;"><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;</input></input>t t t mm</input></input></input></input>t t t mm</input></input></input></input>t t t mm</input></input></input></input>t t t mm</input></input><ins y2="100"  x2="90"  markerWidth="1"  requiredExtensions="http://example.com/SVGExtensions/EmbeddedXHTML"  usemap="#g"  style="display: inline-block;position: relative;overflow: auto;-moz-background-clip: inherit;direction: rtl;ime-mode: auto;pointer-events: visiblePainted;left: 120%;font-family: tddisplay;font-style: oblique;background: none;background-attachment: -moz-initial;"></ins></input><view onMozTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="true"  onMozMagnifyGestureUpdate="event.target.parentNode.removeChild(event.target)"  width="1073741825"  style="display: inline-block;position: -moz-initial;overflow: -moz-initial;-moz-background-clip: inherit;direction: inherit;ime-mode: enabled;pointer-events: fill;left: -moz-initial;font-family: droid sans hebrew;font-style: italic;background: -moz-element(#c) repeat;background-attachment: scroll;"></view></input></input>t t t mm</input></input></input></input>t t t mm</input></input></input>t t t mm</input></input></input></input>t t t mm</input></input><input type="radio" currentloop="1000"  ping="http://websocketstest.com/"  onMozMagnifyGestureUpdate="event.target.parentNode.removeChild(event.target)"  onMozTouchDown="event.target.parentNode.removeChild(event.target)"  height="30"  style="display: inline;position: relative;overflow: hidden;-moz-background-clip: padding;direction: rtl;ime-mode: active;pointer-events: -moz-initial;left: -100px;font-family: icon;font-style: oblique;background: -moz-element(binding.xml#randomxbl) repeat;background-attachment: inherit;"></input></input>t t t mm</input></input></input></input>t t t mm</input></input><input type="reset" points="50,375 150,375 150,325 250,325 250,375 350,375 350,250 450,250 450,375 550,375 550,175 650,175 650,375 750,375 750,100 850,100 850,375 950,375 950,25 1050,25 1050,375 1150,375"  zoomAndPan="disable"  operator="in2"  dx="2"  result="pubkey"  style="display: block;position: relative;overflow: -moz-initial;-moz-background-clip: -moz-initial;direction: auto;ime-mode: inherit;pointer-events: visibleFill;left: -100px;font-family: tddisplay;font-style: inherit;background: url(http://www.google.nl/intl/nl_nl/images/logo.gif);background-attachment: fixed;"><animateTransform onMozTapGesture="event.target.parentNode.removeChild(event.target)"  y1="0.1"  direction="rtl"  placeholder="a b c d e f g"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  style="display: table;position: static;overflow: auto;-moz-background-clip: border;direction: rtl;ime-mode: enabled;pointer-events: auto;left: 999999999px;font-family: icon;font-style: normal;background: -moz-element(#b) repeat;background-attachment: fixed;"><embed src="317375_flash_wmode.swf" zoomAndPan="disable"  dominant-baseline="mathematical"  onMozSwipeGesture="event.target.parentNode.removeChild(event.target)"  onMozMagnifyGestureStart="event.target.parentNode.removeChild(event.target)"  style="display: table;position: relative;overflow: inherit;-moz-background-clip: -moz-initial;direction: auto;ime-mode: disabled;pointer-events: painted;left: -10%;font-family: inherit;font-style: oblique;background: url(landscape.jpg);background-attachment: inherit;"><object data="317375_flash_wmode.swf" overflow="auto"  content="event.originalTarget.setAttribute('tabindex', Math.floor(Math.random()*5)-9)"  color="red"  xml:lang="en"  style="display: none;position: -moz-initial;overflow: auto;-moz-background-clip: border;direction: auto;ime-mode: auto;pointer-events: visibleStroke;left: -10%;font-family: -moz-initial;font-style: inherit;background: none;background-attachment: scroll;"></object><input type="hidden" playcount="2147483648"  fx="50%"  stdDeviation="80"  visibility="collapse"  from="120%"  style="display: table-row;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: -moz-initial;direction: rtl;ime-mode: enabled;pointer-events: visibleFill;left: -100px;font-family: menu;font-style: normal;background: background-attachment: inherit;"><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;</embed></input></input>t t t mm</input></input></input></input>t t t mm</input></input></animateTransform></input></input>t t t mm</input></input></input></input>t t t mm</input></input>t t t mm</input>t t t mm</input></input><input type="radio" spreadMethod="reflect"  content="event.explicitOriginalTarget.parentNode.removeChild(event.explicitOriginalTarget)"  width="80"  attributeName="marker-mid"  onMozMagnifyGesture="event.target.parentNode.removeChild(event.target)"  style="display: inline-table;position: fixed;overflow: scroll;-moz-background-clip: border;direction: auto;ime-mode: active;pointer-events: visiblePainted;left: -10%;font-family: droid sans hebrew;font-style: inherit;background: inherit;background-attachment: fixed;"><input type="hidden" playcount="2147483648"  fx="50%"  stdDeviation="80"  visibility="collapse"  from="120%"  style="display: table-row;position: -moz-initial;overflow: -moz-hidden-unscrollable;-moz-background-clip: -moz-initial;direction: rtl;ime-mode: enabled;pointer-events: visibleFill;left: -100px;font-family: menu;font-style: normal;background: background-attachment: inherit;"><foreignObject patternTransform="scale(3)"  id="b"  display="-moz-grid-line"  onMozPressTapGesture="event.target.parentNode.removeChild(event.target)"  autoplay="false"  style="display: inline-block;position: inherit;overflow: auto;-moz-background-clip: -moz-initial;direction: ltr;ime-mode: inherit;pointer-events: visibleStroke;left: 120%;font-family: icon;font-style: -moz-initial;background: '0% top url(404.png), url(404.png) 0% top';background-attachment: -moz-initial;

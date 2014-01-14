@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>Can lock screen in portrait/landscape mode in this case using mozRequestFullScreen()</title>
+<style>
+button {
+width: 200px; height: 200px;
+}
+</style>
+</head>
+<body>
+
+<button onclick="this.mozRequestFullScreen(); setTimeout(function() {window.screen.mozLockOrientation('portrait-primary');setTimeout(function() {window.location.reload();}, 500);}, 500);">lock screeen in portrait mode</button><br><br>
+
+<button onclick="this.mozRequestFullScreen(); setTimeout(function() {window.screen.mozLockOrientation('landscape-primary');setTimeout(function() {window.location.reload();}, 500);}, 500);">lock screeen in landscape mode</button><br><br>
+</body>
+
+</html>

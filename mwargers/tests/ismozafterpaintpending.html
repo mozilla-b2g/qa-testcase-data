@@ -1,0 +1,27 @@
+<html><head>
+
+  <title></title>
+
+<script>
+
+</script>
+</head><body>
+<pre id=a></pre>
+<pre id=b></pre>
+
+<iframe src="data:text/html;charset=utf-8,1"></iframe>
+<script>
+function doe() {
+netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+  var utils = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor).
+                      getInterface(Components.interfaces.nsIDOMWindowUtils);
+
+document.getElementById('a').innerHTML='mozafterpaintpending:'+ utils.isMozAfterPaintPending;
+}
+setInterval(doe, 500);
+
+setTimeout(function() {window.frames[0].location.href = 'data:text/html;charset=utf-8,2'}, 600);
+
+window.addEventListener("MozAfterPaint", function() {}, false);
+</script>
+</body></html>

@@ -1,0 +1,20 @@
+<html><head>
+
+<title>frames with webm videos</title>
+
+<script>
+var win;
+var win2;
+function doe() {
+win = window.open('atomicplayboy.webm');
+win2 = window.open('atomicplayboy.webm');
+setTimeout(function() {win.close(); win2.close(); setTimeout(doe, 500);}, 10000);
+}
+</script>
+
+
+</head><body>
+<button onclick="doe()">win open then close after 10 s</button>
+
+
+</body></html>

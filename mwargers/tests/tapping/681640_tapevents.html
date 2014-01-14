@@ -1,0 +1,41 @@
+<html><head>
+<title>Bug 681640 - When text field is not focused yet, mouse events are consumed, when tapping on it</title>
+
+</head>
+<body>
+<select onfocus="setTimeout(function(athis) {athis.style.display = 'none' }, 30, this);"><option>1</option><option>2</option></select>
+<textarea style="width: 200px; height: 300px; "></textarea>
+<a href="#">a link a link a link a link a link</a><select><option>1</option><option>2</option></select><input type="submit"><select multiple><option>1</option><option>2</option></select>
+<pre id="result"></pre><script>
+var mousemoved=false;
+function doe(aEvent) {
+if (aEvent.type =='mousemove' && mousemoved) return;
+mousemoved = false;
+ var x=document.getElementById('result');
+ x.innerHTML += aEvent.type + '::' + aEvent.target + '<br>';
+
+if (aEvent.type=='mousemove') {
+mousemoved=true;
+}
+}
+
+window.addEventListener('mousedown', doe, true);
+window.addEventListener('mouseup', doe, true);
+window.addEventListener('click', doe, true);
+window.addEventListener('mouseover', doe, true);
+window.addEventListener('mousemove', doe, true);
+window.addEventListener('touchstart', doe, true);
+window.addEventListener('touchmove', doe, true);
+window.addEventListener('touchend', doe, true);
+
+window.addEventListener('focus', doe, true);
+window.addEventListener('blur', doe, true);
+
+
+window.addEventListener('TapSingle', doe, true);
+window.addEventListener('TapDown', doe, true);
+window.addEventListener('TapOver', doe, true);
+window.addEventListener('TapUp', doe, true);
+
+</script>
+</body>

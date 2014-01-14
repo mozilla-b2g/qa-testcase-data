@@ -1,0 +1,18 @@
+<html>
+<head></head>
+<body>
+<form name=f method=get>
+<input id="q" name=q type=text>
+<input type="submit">
+</form>
+
+<script>
+document.getElementById('q').focus();
+var str = 'm';
+for (var i=0;i<14;i++) {
+str+=str;
+}
+document.getElementById('q').value = str;
+</script>
+</body>
+</html>

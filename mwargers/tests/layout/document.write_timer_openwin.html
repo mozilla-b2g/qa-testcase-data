@@ -1,0 +1,36 @@
+<html>
+<head><title></title>
+<style>
+a:link {
+ display: block;
+}
+a:nth-child(odd) {
+background-color: yellow;
+}
+a:nth-child(even) {
+background-color: green;
+}
+</style>
+<script>
+
+var win;
+function doe() {
+win = window.open('');
+var str = '';
+for (var i=0;i<200;i++) {
+str+='<a href="#a'+i+'" name="a'+i+'">link nr '+i+', anchor nr '+i+'</a><br>';
+}
+win.document.write(str);
+}
+//setTimeout(doe, 500);
+</script>
+
+</head>
+<body>
+<button onclick="doe()">open window and document.write links</button>
+
+
+
+
+</body>
+</html>

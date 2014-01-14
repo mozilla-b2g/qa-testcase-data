@@ -1,0 +1,27 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+
+<script>
+
+var loadedCalled = false;
+var win;
+function doe() {
+for (var i=0;i<5;i++) {
+win = window.open("data:text/html,<body onload='window.close()'>");
+}
+}
+//doe();
+
+</script>
+</head>
+<body>
+<button onclick="doe()" style="font-size: 60px;">open window call</button>
+<script>
+
+</script>
+
+</body>
+</html>

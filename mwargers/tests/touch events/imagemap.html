@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bug 736927 - touchevents don't work with image maps</title>
+  <script type="text/javascript">
+
+window.onload = function() {
+    div = document.getElementById('div');
+    div.addEventListener("touchstart", touch, false);
+    div.addEventListener("touchend", touch, false);
+    div.addEventListener("mousedown", domouseevent, false);
+}
+
+function erasemsg() {
+  document.getElementById('msg').innerHTML = '';
+}
+
+var touch = function(ev) {
+    document.getElementById('msg').innerHTML += ev.type + '::' + ev.targetTouches[0].target.id + '<br>';
+}
+
+function domouseevent(ev) {
+    document.getElementById('msg').innerHTML += ev.type + '::' + ev.target.id + '<br>';
+    setTimeout(erasemsg, 5000);
+}
+</script>
+
+</head>
+<body>
+<div id="div">
+    <img id="image"  usemap="#dmap" src="data:image/gif,GIF89a%01%00%01%00%B3%00%00%04%FE%04H%00%00%16%00%00%00%00%00%04%CE%00%00%07%00%00h%00%00%05%00P%A7%DFH%C0%DA%16%009%00%00~X%60%00H%E8%00%16%12%00%00%00%00!%F9%04%00%00%00%00%00%2C%00%00%00%00%01%00%01%00%03%04%02%10D%00%3B" style="border:3px solid blue; width:600px; height:300px;">
+
+    <map id="dmap" name="dmap">
+      <area id="left" coords="0,0,300,300" shape="rect">
+      <area id="right" coords="300,0,600,300" shape="rect">
+    </map>
+</div>
+  <pre id="msg"></pre>
+
+
+</body>
+</html>

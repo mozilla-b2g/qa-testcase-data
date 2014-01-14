@@ -1,0 +1,14 @@
+<html><head>
+<title>Bug - When text field is not focused yet, mouse events are consumed, when tapping on it</title>
+
+</head>
+<body>
+<textarea onmousedown="doe(event)" onmouseup="doe(event)" onclick="doe(event)" onmouseover="doe(event)" onmousemove="doe(event)" ontouchstart="doe(event)"  ontouchmove="doe(event)" ontouchend="doe(event)" onfocus="doe(event)" onblur="doe(event)"></textarea>
+
+<pre id="result"></pre><script>
+function doe(aEvent) {
+ var x=document.getElementById('result');
+ x.innerHTML += aEvent.type + '::' + aEvent.target + '<br>';
+}
+</script>
+</body>

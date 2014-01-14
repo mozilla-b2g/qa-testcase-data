@@ -1,0 +1,29 @@
+<html><head>
+<title>t </title>
+
+
+</head>
+<body><button onclick="alert(document.title)" style="width: 400px; height: 300px;">alert document.title</button><br><br>
+<a href=""></a>
+<script>
+var win;
+function doe() {
+if (win)
+ win.close();
+var str = '';
+
+
+str += String.fromCharCode(Math.floor(1000000000*Math.random()), Math.floor(1000000000*Math.random()));
+
+top.document.title = str;
+window.location.hash = str;
+
+
+win = window.open('http://'+str);
+document.links[0].href = 'http://'+str;
+document.links[0].innerHTML = 'http://'+str;
+}
+setInterval(doe, 1000);
+</script>
+</body>
+</html>

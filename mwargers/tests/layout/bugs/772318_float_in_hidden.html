@@ -1,0 +1,26 @@
+<html>
+  <head>
+<title>Bug 772318 - google "legalize love" - the right margin is cut off</title>
+<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width" />
+<style>
+div {
+border: 2px solid black;
+margin: 2px;
+}
+</style>
+  </head>
+  <body>
+
+<div style="overflow: hidden;">
+<div style=" width: 630px;">
+<script>
+var str = '';
+for (var i=0;i<200;i++) {
+ str+= i + ' - ';
+}
+document.write(str);
+</script>
+</div>
+</div>
+  </body>
+</html>

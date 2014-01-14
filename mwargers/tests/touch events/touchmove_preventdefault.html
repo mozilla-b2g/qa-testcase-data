@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Bug 725449 - calling prevent default on first touchmove should prevent pinch zoom</title>
+
+ 
+</head>
+<body>
+You should not be able to pinch-zoom out/in this page
+<br><br>
+<textarea id="result" style="width: 50%; height: 600px;"></textarea>
+<script>
+document.getElementById('result').value = '';
+var prevType = '';
+function reportmouse(aEvent) {
+if (aEvent.type == 'touchmove')
+  aEvent.preventDefault();
+if (aEvent.type == prevType)
+return;
+if (aEvent.target.nodeName == 'TEXTAREA')
+return;
+
+
+document.getElementById('result').value += aEvent.type + ' on ' + aEvent.target.nodeName +'\n';
+prevType = aEvent.type;
+}
+
+
+
+function doe() {
+window.addEventListener('mousedown', reportmouse, true);
+window.addEventListener('mouseover', reportmouse, true);
+window.addEventListener('mousemove', reportmouse, true);
+window.addEventListener('mouseup', reportmouse, true);
+window.addEventListener('click', reportmouse, true);
+window.addEventListener('touchstart', reportmouse, false);
+window.addEventListener('touchmove', reportmouse, false);
+window.addEventListener('touchend', reportmouse, false);
+window.addEventListener('touchcancel', reportmouse, false);
+window.addEventListener('touchleave', reportmouse, false);
+}
+doe();
+
+</script>
+</body>
+</html>

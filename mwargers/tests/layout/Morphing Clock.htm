@@ -1,0 +1,40 @@
+<html><head>
+<title>Bug 666122 - Running the clock (tap on "Analog" button) crashes Firefox</title>
+<meta name="viewport" content="width=320,user-scalable:no">
+<style>
+div.segment {
+  position: absolute;
+  border-top:2px solid #000;
+  width: 5px;
+  height: 5px;
+  background: red;
+color: yellow;
+}
+</style>
+</head>
+<body>
+<button onclick="doe();" style="font-size: 200px;">doe</button>
+<div id="content">
+<script>
+var str1='<div class="segment" style="-moz-transform:rotate(0deg); top:'
+var str2='px; left:';
+var str3='px;" id="a';
+var str4='">m</div>';
+var str='';
+
+for (var i=0;i<2000;i++) {
+str+=str1+i+str2+i+str3+i+str4;
+}
+document.write(str);
+
+function doe() {
+for (var i=0;i<2000;i++) {
+var a=document.getElementById('a'+i);
+a.style.MozTransform='rotate(10deg)';
+}
+}
+</script>
+</div>
+
+
+</body></html>

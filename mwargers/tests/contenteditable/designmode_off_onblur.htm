@@ -1,0 +1,29 @@
+<html><head>
+<title>Designmode off onblur on contenteditable node opens up virtual keyboard</title>
+
+<style>
+div {
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div contenteditable="true" id="a">
+This is a contenteditable div<br>This is a contenteditable div
+</div>
+
+<script>
+var x=document.getElementById('a');
+x.addEventListener('focus', doe, true);
+x.addEventListener('blur', undoe, true);
+
+ function doe() {
+  document.designMode = 'on';
+}
+
+function undoe() {
+  document.designMode = 'off';
+}
+</script>
+</body>
+</html>

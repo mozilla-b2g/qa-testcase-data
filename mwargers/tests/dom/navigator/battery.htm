@@ -1,0 +1,54 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+</head>
+<body>
+<script>
+var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;  
+      
+    function updateBatteryStatus() {  
+//window.close();
+    }  
+      
+    battery.addEventListener("chargingchange", updateBatteryStatus);  
+    battery.addEventListener("levelchange", updateBatteryStatus);  
+   //setTimeout(function() { updateBatteryStatus();}, 500); 
+
+
+var win;
+var winbatt;
+function doe() {
+win=window.open(window.location);
+win.onload=function() {
+winbatt = win.navigator.battery || win.navigator.mozBattery || win.navigator.webkitBattery;
+//win.close();
+delete winbatt;
+winbatt.addEventListener("levelchange", function() {win.close();});  
+winbatt.addEventListener("chargingchange", function() {win.close();});  
+winbatt.addEventListener("chargingtimechange", function() {win.close();});  
+winbatt.addEventListener("dischargingtimechange", function() {win.close();});  
+winbatt.addEventListener("kkk", function() {alert('kkk');});  
+}
+//setTimeout(function() {win.close();}, 1000);
+}
+
+function mozbattery() {
+var mozb=window.navigator.mozBattery;
+for (var i in mozb) {
+alert(i + '::'+ mozb[i]);
+}
+}
+</script>
+
+<button onclick="setInterval(doe, 3000)">window.open</button>
+
+<br><br>
+
+
+
+
+<button onclick="mozbattery()">mozbattery properties</button>
+</body>
+</html>

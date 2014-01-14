@@ -1,0 +1,69 @@
+<html><head>
+  <title>font rendering of strings</title>
+<style>
+body span {
+background:lime;
+}
+body div {background:yellow;}
+</style>
+</head><body>
+<input id="value1" value="0"> <input id="value2" value="100"> 
+<select id="font-style">
+<option value="normal">normal</option>
+<option value="italic" selected>italic</option>
+<option value="oblique">oblique</option>
+</select>  
+<select id="font-variant">
+<option value="normal">normal</option>
+<option value="small-caps" selected>small-caps</option>
+<option value="caps">caps</option>
+</select> 
+<select id="font-weight">
+<option value="normal">normal</option>
+<option value="bold" selected>bold</option>
+<option value="0">0</option>
+<option value="800">800</option>
+</select>   
+ <button onclick="changestrs()">render these str with available fonts</button>
+<div id=a></div>
+
+<script>
+var str = '';
+var strs = '';
+
+function changestrs() {
+strs = '';
+for (var i=document.getElementById('value1').value; i<document.getElementById('value2').value; i++) {
+  strs += String.fromCharCode(i);
+}
+
+doe();
+
+document.getElementById('a').innerHTML = str;
+}
+
+
+
+
+function doe() {
+str = '';
+
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+   var popup = document.getElementById("file-popup");
+   var enumerator = Components.classes["@mozilla.org/gfx/fontenumerator;1"].createInstance(Components.interfaces.nsIFontEnumerator);
+   var strFonts = enumerator.EnumerateAllFonts({});
+   for(var i=0; i<strFonts.length; i++)
+   {
+       str += '<span style="font-family: '+ strFonts[i] +'; font-style: '+ document.getElementById("font-style").value + 
+                                                         '; font-variant: '+ document.getElementById("font-variant").value + 
+                                                         '; font-weight: '+ document.getElementById("font-weight").value + 
+                                                         ';"> ' + strs + '</span> ';
+   }
+}
+
+
+
+</script>
+
+
+</body></html>

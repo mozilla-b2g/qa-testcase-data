@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+<form name=f method=get>window.close
+<input name=q id=q>
+<input type=hidden name=r>
+<input type="submit">
+</form>
+
+<form name=f method=get>remove doc
+<input name=q id=q2 onfocus="setTimeout(function(){document.removeChild(document.documentElement);}, 4000);">
+<input type=hidden name=r>
+<input type="submit">
+</form>
+<script>
+var focused = 0;
+document.getElementById('q').onfocus = function() {
+focused++;
+setTimeout(function() {window.close();}, 4000);
+}
+document.forms[0].r.value = Math.random();
+document.forms[1].r.value = Math.random();
+</script>
+</body>
+</html>

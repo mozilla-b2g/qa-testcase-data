@@ -1,0 +1,9 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1">
+    <title>Bug 721523 - Flash of unstyled content in Fennec nightly as AMO loads</title>
+    <script>
+document.write('<link rel="stylesheet" media="all" href="http://people.mozilla.org/~mwargers/tests/layout/bugs/721523_flashuntstyledcontent.css?rnd='+Math.random()+'">');
+</script>
+      </head>
+  <body style="background:red;">You should not see a flash from a red background
+</body></html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<style>
+
+
+
+#header_wrapper {
+
+		-webkit-box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.3);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 59px;
+		width: 100%;
+		z-index: 800;
+}
+
+#header_wrapper header {
+	height: 65px;
+	margin: 0 auto;
+	position: relative;
+	width: 980px;
+}
+
+#header_wrapper a div.logo{
+	margin-top:11px;
+}
+
+#header_wrapper div.logo {
+	float: left;
+	position: relative;
+	height: 40px;
+	width: 160px;
+	background: url('../images/Swizzle_logo_o.png') no-repeat left top;
+}
+
+
+
+#header_wrapper .slogan{
+	float: left;
+	line-height: 15px;
+	color: #878787;
+	width: 200px;
+	padding: 13px 0 0 7px;	
+}
+
+#header_wrapper #search_wrapper {
+	float: right;
+	padding: 10px 0 0 0;
+	width: 222px;
+	margin-top: 5px;
+	height: 44px;
+	border-left: 1px solid #CCC;
+}
+
+#header_wrapper #search_style {
+	float: right;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-top: 2px solid #ccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	height: 33px;
+	width: 200px;
+	margin:0px 10px 3px 0;
+}
+
+#header_wrapper #search_wrapper input {
+	font-family: Arial, Helvetica, sans-serif;
+	background: transparent;
+	border: 0;
+	color: #666;
+	float: right;
+	height: 20px;
+	line-height: 20px;
+	padding: 6px;
+	width: 160px;
+}
+
+
+
+
+#header_wrapper #search_wrapper button {
+	background-color:white;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+	background:#FFF;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	float: right;
+	height: 32px;
+	padding: 0 0 0 0;
+	text-indent: -9999px;
+	width: 20px;
+}
+
+#header_wrapper #search_wrapper .search_ie{
+	background: lime;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	float: left;
+	height: 32px;
+	padding: 0;
+	text-indent: -9999px;
+	width: 20px;
+}
+
+#feedback_wrapper {
+	display:block;
+	height: 111px;
+	margin-top: -56px;
+	position: fixed;
+	right: 0;
+	top: 50%;
+	width: 41px;
+	z-index:10000;
+}
+
+#feedback_btn {
+	background: lime;
+	filter: none;
+	border: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	display: block;
+	height: 111px;
+	line-height: normal;
+	margin: 0;
+	padding: 0;
+	text-indent: -9999px;
+	width: 41px;
+}
+
+#header_wrapper #nav {
+	margin-top:5px;
+	float: right;
+}
+
+#nav > li {
+	float: left;
+	font-weight: bold;
+	height: 54px;
+	line-height: 55px;
+	border-left: 1px solid #CCC
+}
+
+
+
+
+
+</style>
+</head>
+<body id="home">
+<section id="header_wrapper">
+	<header><a href="http://theswizzle.com/"><div class="logo"></div></a>
+<p class="slogan">Saving your inbox<br>from email overload!</p>
+<ul id="nav" class="in">
+	<li class="home"><a href="http://theswizzle.com/"><span class="icon"></span><span class="text">Home</span></a></li>
+	<li class="browse"><a href="http://theswizzle.com/brands"><span class="icon"></span><span class="text">Browse</span></a></li>
+	<li class="login"><a href="http://theswizzle.com/login"><span class="icon"></span><span class="text">Log In</span></a></li>
+    <li class="signup"><a href="http://theswizzle.com/signup"><span class="icon"></span><span class="text">Sign Up</span></a></li>
+</ul>
+<aside id="search_wrapper">
+	<form id="form_search" action="/search/" method="post">
+		<div id="search_style">
+			<input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" id="search_box" name="search" placeholder="Explore Brands" type="text">
+			<button type="submit"><div class="search_ie"></div></button>
+		</div>
+	</form>
+</aside></header>
+</section>
+
+</body></html>

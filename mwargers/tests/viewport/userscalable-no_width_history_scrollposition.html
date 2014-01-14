@@ -1,0 +1,18 @@
+<html><head>
+<title>Bug xxxxx - scroll position user-scalable page = no</title>
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<form name=a>
+<input style="width: 50px;">
+</form>
+<div style="border: 5px solid red;">
+text text<br> text 
+</div>
+<script>
+for (var i=0;i<100;i++) {
+document.write('<a href="http://google.com">link '+i+' to google.com</a><br>');
+}
+</script>
+
+</body>

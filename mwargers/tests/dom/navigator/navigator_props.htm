@@ -1,0 +1,33 @@
+<html><head>
+<title>navigator properties</title>
+
+<style>
+</style>
+
+<script>
+
+
+</script>
+</head>
+<body><pre>
+navigator properties:
+
+<script>
+for (var i in navigator) {
+try {
+  document.write(i + ' :: ');
+}
+catch (e) {
+document.write('\n\n***' + e + '***\n\n');
+}
+try {
+  document.write(navigator[i]+'\n');
+}
+catch(e) {
+document.write('\n\n' + e + '\n\n');
+}
+}
+</script>
+</pre>
+</body>
+</html>

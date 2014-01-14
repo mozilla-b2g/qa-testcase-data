@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- There is, at present, no official xsd for (X)HTML5. A pity. Usefulness would depend on the parser and extensions made by the site.  -->
+<title>testcase</title>
+    <style type="text/css">
+* { margin: 0; padding: 0; }
+.hide { top: 100% !important; }
+
+#details
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -moz-box-sizing: border-box; 
+    -o-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+ 
+    background-color: white;
+    min-height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    -moz-transition-property: top;
+    -moz-transition-duration: 0.75s;
+    -webkit-transition-property: top;
+    -webkit-transition-duration: 0.75s;
+    -o-transition-property: top;
+    -o-transition-duration: 0.75s;
+    -ms-transition-property: top;
+    -ms-transition-duration: 0.75s;
+}
+button
+{
+}
+    </style>
+</head>
+<body>
+<p>So. Animation on this is screwed up on Firefox Mobile nightlies. Click the button below and compare against desktop.
+<button onclick="document.getElementById('details').classList.remove('hide')">Click me to show</button>
+</p>
+<section id="details" class="hide">
+I'm a test of hiding animation
+<button onclick="this.parentNode.classList.add('hide')">Click me to hide</button>
+</section>
+</body>
+</html>

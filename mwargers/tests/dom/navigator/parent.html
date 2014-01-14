@@ -1,0 +1,15 @@
+<html>
+  <head>
+<title>Bug 735114 - crash [mozilla::hal::NotifyBatteryChange]</title>
+    <script>
+setTimeout(function() {
+  window.frames[0].frameElement.parentNode.removeChild(window.frames[0].frameElement);
+  window.location.reload();
+}, 3000);
+    </script>
+  </head>
+  <body>
+Fennec shouldn't crash when you attach/release your device to the charger<br>
+<iframe src="data:text/html;charset=utf-8,%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Cscript%3E%0Avar%20mozbatt%20%3D%20window.navigator.battery%20%7C%7C%20window.navigator.mozBattery%20%7C%7C%20window.navigator.webkitBattery%3B%0A%0Afunction%20doe%28%29%20%7B%0A%20%20for%20%28var%20i%3D0%3Bi%3C100%3Bi++%29%20%7B%0A%20%20%20%20mozbatt.addEventListener%28%22chargingchange%22%2C%20function%28%29%20%7B%7D%2C%20true%29%3B%20%0A%20%20%20%20var%20evt%20%3D%20document.createEvent%28%27CustomEvent%27%29%3B%0A%20%20%20%20evt.initCustomEvent%28%27chargingchange%27%2C%20true%2C%20true%2C%20null%29%3B%0A%20%20%20%20mozbatt.dispatchEvent%28evt%29%3B%0A%20%20%7D%0A%7D%0AsetInterval%28doe%2C%2010%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%3C/html%3E"></iframe>
+  </body>
+</html>

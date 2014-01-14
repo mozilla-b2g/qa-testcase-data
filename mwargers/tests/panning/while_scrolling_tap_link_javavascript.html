@@ -1,0 +1,38 @@
+<html>
+<head><title></title>
+<style>
+a:link {
+ display: block;
+}
+a:nth-child(odd) {
+background-color: yellow;
+}
+a:nth-child(even) {
+background-color: green;
+}
+a:focus{
+background-color:red;
+}
+a:hover {
+  outline: 5px solid red;
+}
+</style>
+<script>
+window.onload=function() {
+var str = '';
+for (var i=0;i<200;i++) {
+str+='<a href="javascript:void()" name="a'+i+'">link nr '+i+', anchor nr '+i+'</a>';
+}
+document.body.innerHTML = str;
+}
+</script>
+
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

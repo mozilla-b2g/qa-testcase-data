@@ -1,0 +1,27 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ontouchstart="window.close()" style="background: lime;">
+<pre>
+Steps to reproduce:
+- Tap on the button, a new window opens
+- Double tap on the button, or make a pinch zoom gesture
+
+Expected result: no crash
+Actual result: crash
+</pre>
+<script>
+
+function doe() {
+ window.open(window.location);
+}
+var timer;
+</script>
+<button onclick="doe(); return fale;" style="width: 100px; height: 100px;">window open</button>
+
+</body>
+</html>

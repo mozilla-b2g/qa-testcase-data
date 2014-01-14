@@ -1,0 +1,23 @@
+<html><head>
+<title></title>
+
+<style>
+
+</style>
+</head>
+<body>
+<a href="" onclick="doe(event);">open iframe</a>
+<div id="a" style="display: none;">
+<iframe src="data:text/html;charset=utf-8,%3Cinput%3E"></iframe>
+</div>
+<script>
+function doe(aEvent) {
+document.getElementById('a').style.display = '';
+window.frames[0].document.getElementsByTagName('input')[0].focus();
+aEvent.preventDefault();
+return false;
+}
+
+setTimeout(doe, 1000);
+</script>
+</body></html>

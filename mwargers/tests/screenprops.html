@@ -1,0 +1,22 @@
+<html style="border: 5px solid green;"><head>
+<title></title>
+
+</head>
+<body>
+text text
+<pre id=result></pre>
+<script>
+var x=document.getElementById('result');
+
+function doe() {
+x.innerHTML = '';
+for (var i in screen) {
+x.innerHTML += 'screen.' + i + ': ' + screen[i] + '<br>';
+}
+}
+setInterval(doe, 200);
+document.write(window.scrollbars.visible);
+</script>
+
+
+</body>

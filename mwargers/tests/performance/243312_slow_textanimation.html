@@ -1,0 +1,51 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Testcase bug 243312 - Text animation is very slow</title>
+</head>
+<body>
+<div id="fp" style="border:1px solid green; width:150px;position: relative; font-size: 25px;">moving text</div>
+<script>
+var str = '<img src="data:image/gif,GIF89a%01%00%01%00%B3%00%00%04%FE%04H%00%00%16%00%00%00%00%00%04%CE%00%00%07%00%00h%00%00%05%00P%A7%DFH%C0%DA%16%009%00%00~X%60%00H%E8%00%16%12%00%00%00%00!%F9%04%00%00%00%00%00%2C%00%00%00%00%01%00%01%00%03%04%02%10D%00%3B" border="0">';
+var str2 = '';
+for (var i=0;i<300;i++) {
+str2 += str;
+}
+str2 += '<br>';
+str2+=str2;str2+=str2;str2+=str2;str2+=str2;str2+=str2;
+
+document.write(str2);
+
+</script>
+<br>
+1 - <button onclick="animate(800,500, true, 'a')">animate(800,500, true)</button><span id="a">result: </span><br>
+2 - <button onclick="animate(300,0, true, 'b')">animate(350,50, true)</button><span id="b">result: </span><br>
+3 - <button onclick="animate(-150,-350, true, 'c')">animate(-150,-350, true)</button><span id="c">result: </span><br>
+4 - <button onclick="alltests = 2; animate(800,500, true, 'a')">test 1, 2 en 3</button><br>
+<a href="javascript:(function(s){if (document.getElementById('paintevent.js')) return; s.src='data:text/javascript;charset=utf-8;base64,Ly8gbW9kaWZpZWQgZnJvbSBKb2huIFJlc2lnGXMgZXhhbXBsZTogaHR0cDovL2Vqb2huLm9yZy9hcHBzL3BhaW50L3RyYWNrLmpzCihmdW5jdGlvbigpewogICAgdmFyIGNvbnRhaW5lcjsKICAgIAogICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoIk1vekFmdGVyUGFpbnQiLCBsb2csIGZhbHNlKTsKICAgIAogICAgaWYgKCBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQgKQogICAgICAgIGJpbmQoKTsKICAgIGVsc2UKICAgICAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigibG9hZCIsIGJpbmQsIGZhbHNlKTsKICAgICAgICAKICAgIGZ1bmN0aW9uIGJpbmQoKQogICAgewogICAgICAgIGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIsImRpdiIpOwogICAgICAgIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5hcHBlbmRDaGlsZChjb250YWluZXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGxvZyhlKQogICAgewogICAgICAgIHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCJNb3pBZnRlclBhaW50IiwgbG9nLCBmYWxzZSk7CgogICAgICAgIHZhciByZWN0cyA9IGUuY2xpZW50UmVjdHM7CiAgICAgICAgLy93aW5kb3cuc3RhdHVzID0gZS5jdXJyZW50VGFyZ2V0OwoKICAgICAgICBmb3IgKCB2YXIgaSA9IDA7IGkgPCByZWN0cy5sZW5ndGg7IGkrKyApIHsKICAgICAgICAgICAgdmFyIHJlY3QgPSByZWN0c1tpXTsKICAgICAgICAgICAgdmFyIGEgPSByZWN0LnRvcC0yOyBpZiAoYTw9MCkgYT0xOwogICAgICAgICAgICB2YXIgYiA9IHJlY3QucmlnaHQrMjsgaWYgKGI+PXdpbmRvdy5pbm5lcldpZHRoKSBiPXdpbmRvdy5pbm5lcldpZHRoLTE7CiAgICAgICAgICAgIHZhciBjID0gcmVjdC5ib3R0b20rMjsgaWYgKGM+PXdpbmRvdy5pbm5lckhlaWdodCkgYz13aW5kb3cuaW5uZXJIZWlnaHQtMTsKICAgICAgICAgICAgdmFyIGQgPSByZWN0LmxlZnQtMjsgaWYgKGQ8PTApIGQ9MTsKICAgICAgICAgICAgCiAgICAgICAgICAgIGNvbnRhaW5lci5pbm5lckhUTUwgKz0gJzxkaXYgc3R5bGU9InotaW5kZXg6IDEwMDAwOyBvdXRsaW5lOiAycHggc29saWQgZ3JlZW47ICcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArICdwb3NpdGlvbjogZml4ZWQ7IHRvcDonICsgYQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICsgJ3B4OyBsZWZ0OiAnICsgcmVjdC5sZWZ0ICsgJ3B4OyB3aWR0aDogJyArIChyZWN0LnJpZ2h0IC0gcmVjdC5sZWZ0KSArICdweDsgaGVpZ2h0OiAwcHg7Ij48L2Rpdj4nCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKyAnPGRpdiBzdHlsZT0iei1pbmRleDogMTAwMDA7IG91dGxpbmU6IDJweCBzb2xpZCBncmVlbjsgJwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICsgJ3Bvc2l0aW9uOiBmaXhlZDsgdG9wOicgKyByZWN0LnRvcAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICsgJ3B4OyBsZWZ0OiAnICsgYiArICdweDsgd2lkdGg6IDBweDsgaGVpZ2h0OiAnCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKyAocmVjdC5ib3R0b20gLSByZWN0LnRvcCkgKyAncHg7Ij48L2Rpdj4nCiAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArICc8ZGl2IHN0eWxlPSJ6LWluZGV4OiAxMDAwMDsgb3V0bGluZTogMnB4IHNvbGlkIGdyZWVuOyAnCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKyAncG9zaXRpb246IGZpeGVkOyB0b3A6JyArIGMKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArICdweDsgbGVmdDogJyArIHJlY3QubGVmdCArICdweDsgd2lkdGg6ICcgKyAocmVjdC5yaWdodCAtIHJlY3QubGVmdCkgKyAncHg7IGhlaWdodDogMHB4OyI+PC9kaXY+JwoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArICc8ZGl2IHN0eWxlPSJ6LWluZGV4OiAxMDAwMDsgb3V0bGluZTogMnB4IHNvbGlkIGdyZWVuOyAnCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKyAncG9zaXRpb246IGZpeGVkOyB0b3A6JyArIHJlY3QudG9wCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKyAncHg7IGxlZnQ6ICcgKyBkICsgJ3B4OyB3aWR0aDogMHB4OyBoZWlnaHQ6ICcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArIChyZWN0LmJvdHRvbSAtIHJlY3QudG9wKSArICdweDsiPjwvZGl2PicgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgIH0KICAgICAgICAvL2FsZXJ0KGNvbnRhaW5lci5pbm5lckhUTUwpOwogICAgICAgIAogICAgICAgIHdpbmRvdy5zZXRUaW1lb3V0KGZ1bmN0aW9uKCkgewogICAgICAgICAgICBjb250YWluZXIudGV4dENvbnRlbnQgPSAnJzsKICAgICAgICAgICAgCiAgICAgICAgICAgIHdpbmRvdy5zZXRUaW1lb3V0KGZ1bmN0aW9uKCkgewogICAgICAgICAgICAgICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoIk1vekFmdGVyUGFpbnQiLCBsb2csIGZhbHNlKTsKICAgICAgICAgICAgfSwgMCk7CiAgICAgICAgfSwgMTAwKTsKICAgIH0KICAgIAogICAgZnVuY3Rpb24gYWRkVG9GcmFtZXMoKSB7CiAgICAgIGlmICh3aW5kb3cuZnJhbWVzLmxlbmd0aCkgewogICAgICAgIGZvciAodmFyIGkgPTA7IGk8d2luZG93LmZyYW1lcy5sZW5ndGg7IGkrKykgewogICAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFyIHg9IHdpbmRvdy5mcmFtZXNbaV0uZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sJywgJ3NjcmlwdCcpOwogICAgICAgICAgICB4LnNyYz0naHR0cDovL21hcnRpam4ubWFydGlqbi5nb29nbGVwYWdlcy5jb20vcGFpbnRldmVudC5qcyc7CiAgICAgICAgICAgIHguaWQ9J3BhaW50ZXZlbnQuanMnOwogICAgICAgICAgICB3aW5kb3cuZnJhbWVzW2ldLmRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5hcHBlbmRDaGlsZCh4KTsKICAgICAgICAgIH0gY2F0Y2goZSkge30KICAgICAgICB9CiAgICAgIH0KICAgIH0KICAgIGFkZFRvRnJhbWVzKCk7Cn0pKCk7';s.id='paintevent.js';document.documentElement.appendChild(s);})(document.createElementNS('http://www.w3.org/1999/xhtml','script'));">Show paint events</a> (make sure you have dom.send_after_paint_to_content=true in about:config)
+<script>
+var el = document.getElementById('fp');
+var tstart;var tend;
+
+var alltests = false;
+function animate(begin,end,firsttime, aId) {
+if (firsttime) {el.style.left=begin; tstart=new Date();}
+if (parseInt(el.style.left)<=end) {
+tend=new Date(); document.getElementById(aId).innerHTML=tend-tstart+'ms';
+if (alltests) {
+alltests--;
+if (alltests==1) {
+  animate(300,0, true, 'b')
+  return;
+}
+if (alltests==0) {
+  animate(-150,-350, true, 'c')
+  return;
+}
+}
+return;
+}
+el.style.left = parseInt(el.style.left)-2;
+setTimeout(animate, 10, begin, end, false, aId);
+}
+</script>
+</body></html>

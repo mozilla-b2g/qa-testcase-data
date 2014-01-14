@@ -1,0 +1,13 @@
+<html><head>
+<title>Bug 737707 - Cannot play Flash videos on studio1290.com</title>
+
+</head>
+<body>
+<object id="a" style="width: 300px; height: 300px;" data="http://people.mozilla.org/~mwargers/tests/plugins/flash/317375_flash_wmode.swf">
+</object>
+
+<script>
+var a=document.getElementById('a');
+setTimeout(function() {a.style.visibility = 'hidden';}, 500);
+</script>
+</body></html>

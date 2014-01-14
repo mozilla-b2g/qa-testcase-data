@@ -1,0 +1,26 @@
+<html><head>
+<title>Bug 691758 - [Tablet] Optgroup should not have checkbox in select popup helper</title>
+
+</head>
+<body>
+
+<select id=a multiple>
+<option>option 1</option>
+<optgroup label="optgroup 1">
+<option>option 2</option>
+</optgroup>
+<optgroup label="optgroup 2 disabled" disabled>
+<option>option 3</option>
+</optgroup>
+<option disabled>option 4 disabled</option>
+<optgroup label="optgroup 3 selected test disabled" disabled selected>
+<option>option 5</option>
+</optgroup>
+<option disabled selected>option 6 selected disabled</option>
+<optgroup label="optgroup 3 selected test" disabled>
+<option selected id=b>option 6 selected</option>
+</optgroup>
+<option selected>option 7 selected which some long text inside it to see what happens</option>
+</select>
+<button onclick="alert(document.getElementById('b').selected)">selectedIndex</button>
+</body>

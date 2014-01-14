@@ -1,0 +1,23 @@
+<html><head>
+<title>Bug 720218 - MediaQueryList listeners seems not invoked</title>
+
+<style>
+</style>
+</head>
+<body>
+<pre id="result"></pre>
+<script>
+    function handleOrientationChange(mql) {  
+      if (mql.matches) {
+        document.getElementById('result').innerHTML = 'orientation: portrait'; 
+      } else {  
+        document.getElementById('result').innerHTML = 'orientation: landscape';
+      }  
+    }  
+
+    var mql = window.matchMedia("(orientation: portrait)");  
+    mql.addListener(handleOrientationChange);  
+    handleOrientationChange(mql);
+</script>
+</body>
+</html>

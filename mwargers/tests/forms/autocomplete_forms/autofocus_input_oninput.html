@@ -1,0 +1,17 @@
+<html>
+<head></head>
+<body>
+<form name=f method=get>
+<input id="q" name=q type=text oninput="doe(event)">
+<input type="submit">
+</form>
+<pre id="result"></pre>
+<script>
+document.getElementById('q').focus();
+
+function doe(aEvent) {
+document.getElementById('result').innerHTML += 'event fired: '+aEvent.type + ' - input.value: '+aEvent.target.value+'<br>'
+}
+</script>
+</body>
+</html>

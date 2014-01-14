@@ -1,0 +1,26 @@
+<html>
+ <head>
+  <title>Web Workers | Good Primes</title>
+<script type="text/javascript">
+function findPrimes() {
+	var worker = new Worker('prime.js');
+   worker.onmessage = function (event) {
+     document.getElementById('result').textContent = event.data;
+   };
+}
+
+</script>
+ </head>
+ <body>
+	Click "Go!" to calculate prime numbers w/out hosing your browser.
+	<div style="width:768px; height:576px; border: 1px solid #000; text-align: center;">
+<input type="button" value="Go!" onClick="findPrimes()">
+  <p>The highest prime number discovered so far is:</p> <output id="result"></output>
+</div>
+
+<script>
+findPrimes();
+</script>
+
+ </body>
+</html>

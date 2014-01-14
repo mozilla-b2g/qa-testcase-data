@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="windows-1252" />
+        <meta name="viewport" content="width=device-width" />
+
+        <title>Physical Event Demonstration</title>
+
+        <!-- Load up the controller code. -->
+        <script>
+window.addEventListener("devicemotion", function (event) {
+    document.getElementById("acceleration-x")
+        .innerHTML = event.acceleration ?
+            event.acceleration.x : "not reported";
+    document.getElementById("acceleration-y")
+        .innerHTML = event.acceleration ?
+            event.acceleration.y : "not reported";
+    document.getElementById("acceleration-z")
+        .innerHTML = event.acceleration ?
+            event.acceleration.z : "not reported";
+
+    document.getElementById("acceleration-gravity-x")
+        .innerHTML = event.accelerationIncludingGravity ?
+            event.accelerationIncludingGravity.x : "not reported";
+    document.getElementById("acceleration-gravity-y")
+        .innerHTML = event.accelerationIncludingGravity ?
+            event.accelerationIncludingGravity.y : "not reported";
+    document.getElementById("acceleration-gravity-z")
+        .innerHTML = event.accelerationIncludingGravity ?
+            event.accelerationIncludingGravity.z : "not reported";
+
+    document.getElementById("interval").innerHTML = event.interval;
+
+    document.getElementById("rot-rate-alpha")
+        .innerHTML = event.rotationRate ?
+            event.rotationRate.alpha : "not reported";
+    document.getElementById("rot-rate-beta")
+        .innerHTML = event.rotationRate ?
+            event.rotationRate.beta : "not reported";
+    document.getElementById("rot-rate-gamma")
+        .innerHTML = event.rotationRate ?
+            event.rotationRate.gamma : "not reported";
+    }, false);
+
+window.addEventListener("deviceorientation", function (event) {
+    document.getElementById("orientation-alpha")
+        .innerHTML = event.alpha;
+    document.getElementById("orientation-beta")
+        .innerHTML = event.beta;
+    document.getElementById("orientation-gamma")
+        .innerHTML = event.gamma;
+    }, false);
+
+
+window.addEventListener("compassneedscalibration", function (event) {
+    document.getElementById("compassneedscalibration")
+        .innerHTML = "true";
+    }, false);
+
+</script>
+    </head>
+    
+    <body>
+        <p>This web page responds to physical events only, so make sure
+        to view this on a device with an accelerometer and/or gyroscope.
+        Also, since these events remain very much in the "emerging
+        technology" category, don't be surprised if some or all of the
+        data below are not populated at all.  Things should get more
+        consistent and better-supported over time.</p>
+
+        <h3>Acceleration</h3>
+        
+        <p>acceleration.x: <span id="acceleration-x"></span></p>
+        <p>acceleration.y: <span id="acceleration-y"></span></p>
+        <p>acceleration.z: <span id="acceleration-z"></span></p>
+
+        <h3>Acceleration Including Gravity</h3>
+        
+        <p>accelerationIncludingGravity.x:
+            <span id="acceleration-gravity-x"></span></p>
+        <p>accelerationIncludingGravity.y:
+            <span id="acceleration-gravity-y"></span></p>
+        <p>accelerationIncludingGravity.z:
+            <span id="acceleration-gravity-z"></span></p>
+            
+        <h3>Time Between Motion Events</h3>
+        
+        <p><span id="interval"></span> milliseconds</p>
+        
+        <h3>Rotation Rate</h3>
+
+        <p>rotationRate.alpha: <span id="rot-rate-alpha"></span></p>
+        <p>rotationRate.beta: <span id="rot-rate-beta"></span></p>
+        <p>rotationRate.gamma: <span id="rot-rate-gamma"></span></p>
+
+        <h3>Orientation</h3>
+
+        <p>orientation.alpha: <span id="orientation-alpha"></span></p>
+        <p>orientation.beta: <span id="orientation-beta"></span></p>
+        <p>orientation.gamma: <span id="orientation-gamma"></span></p>
+
+        <h3>Calibration</h3>
+
+        <p>compassneedscalibration: <span id="compassneedscalibration"></span></p>
+
+    </body>
+</html>

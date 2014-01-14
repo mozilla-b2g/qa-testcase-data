@@ -1,0 +1,43 @@
+<html><head>
+<title>Contenteditable</title>
+
+<style>
+div {
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div id="a" style="height: 300px;">
+Double tap on this normal div, double tap on this normal div
+</div>
+<br><br>
+<textarea id="result" style="width: 100%; height: 600px;"></textarea>
+<script>
+var x=document.getElementById('a');
+
+
+var prevType = '';
+function reportmouse(aEvent) {
+if (aEvent.type == prevType)
+return;
+if (aEvent.target.nodeName == 'TEXTAREA')
+return;
+
+
+document.getElementById('result').value += aEvent.type + ' on ' + aEvent.target.nodeName + ' - e.screenX: ' + aEvent.screenX + ' e.sceenY: ' + aEvent.screenY +'\n';
+prevType = aEvent.type;
+}
+window.addEventListener('mousedown', reportmouse, true);
+window.addEventListener('mouseover', reportmouse, true);
+window.addEventListener('mousemove', reportmouse, true);
+window.addEventListener('mouseup', reportmouse, true);
+window.addEventListener('click', reportmouse, true);
+window.addEventListener('touchstart', reportmouse, false);
+window.addEventListener('touchmove', reportmouse, false);
+window.addEventListener('touchend', reportmouse, false);
+window.addEventListener('touchcancel', reportmouse, false);
+window.addEventListener('touchleave', reportmouse, false);
+</script>
+</body>
+</html>

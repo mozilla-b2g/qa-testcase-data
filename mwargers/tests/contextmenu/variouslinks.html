@@ -1,0 +1,45 @@
+<html>
+<head>
+<base target="a">
+<style>
+
+</style>
+</head>
+<body>
+<a href="#">link href="#"</a><br><br>
+<a href="mailto:a@bc.d">link href="mailto:"</a><br><br>
+<a href="tel:068934356">link href="tel:"</a><br><br>
+<a href="javascript:void(alert('test'))">link href="javascript:void(alert('test'))"</a><br><br>
+<a href="javascript:void()">link href="javascript:void()"</a><br><br>
+<a href="javascript:" onmouseover="doe(event)" onmouseout="doe(event)">link href="javascript:"</a><br><br>
+<a href="http://mozilla.org?special2">link  href="http://mozilla.org?special2"</a><br><br>
+<a href="#top" target="_self">link href="#top"</a><br><br>
+<a href="file:///">link href="file:///"</a><br><br>
+<a href="chrome://browser/content/browser.js">link href="chrome://browser/content/browser.js"</a><br><br>
+<a href="chrome://global/content/finddialog.xul">link href="chrome://global/content/finddialog.xul"</a><br><br>
+<a href="about:support">link href="about:support"</a><br><br>
+<a href="xxx:///">link href="xxx:///"</a><br><br>
+<a href="javascript:void(window.open('chrome://browser/content/browser.js'))">window.open chrome://browser/content/browser.js</a><br><br>
+
+<div id="result"></div>
+<script>
+var x=document.getElementById('result');
+var prevEvent;
+function doe(aEvent) {
+if (aEvent.type == prevEvent)
+  return;
+
+prevEvent = aEvent.type;
+
+  x.innerHTML += aEvent.type += '::'+ aEvent.target+' - ';
+}
+
+window.addEventListener('focus', doe, true);
+window.addEventListener('blur', doe, true);
+//window.addEventListener('mouseover', doe, true);
+//window.addEventListener('mouseout', doe, true);
+
+</script>
+<iframe id="a" name="a"></iframe>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html><head>
+<title></title>
+
+<style>
+</style>
+
+<script>
+function doe() {
+var w = window.open();
+w.document.open();
+w.document.addEventListener("DOMContentLoaded", function() {
+
+  w.close();
+ 
+});
+w.document.write("\u003cscript>opener.log('First');\u003c/script>");
+w.document.write("\u003cscript>document.close();\u003c/script>");
+w.document.write("\u003cscript>opener.log('Second');\u003c/script>");
+}
+</script>
+</head>
+<body>
+<script>
+
+</script>
+<button onclick="doe()" style="width: 100px; height: 100px;">window.open()</button>
+>
+</body>
+</html>

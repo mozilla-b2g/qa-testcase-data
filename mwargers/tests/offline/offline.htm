@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html manifest="site.appcache">
+<body>
+<script>
+function docacheadd() {
+var cache = window.applicationCache;
+alert(cache);
+cache.mozAdd('http://people.mozilla.org/~mwargers/tests/images/090711_Landscape_near_Vries_Dr_NL.jpg');
+}
+</script>
+<button onclick="docacheadd()">add cache button</button>
+
+</body>
+</html>

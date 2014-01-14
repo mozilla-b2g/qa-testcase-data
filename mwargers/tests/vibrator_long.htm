@@ -1,0 +1,12 @@
+<script>
+function mozvibr(i){
+var ar= [];
+for (var i=0;i<99; i++) {
+ar[ar.length] = i+100;
+}
+navigator.vibrate(ar);
+setTimeout(mozvibr,20,i);
+}
+
+setTimeout(mozvibr,20,0);
+</script>

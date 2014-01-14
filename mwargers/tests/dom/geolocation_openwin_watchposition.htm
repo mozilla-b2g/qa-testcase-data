@@ -1,0 +1,27 @@
+<html><head>
+<title>Bug  </title>
+
+<style>
+</style>
+</head>
+<body>
+<button onclick="doe()">open win with geolocation.watchposition then close</button><br><br>
+<button onclick="doe5()">open win with geolocation.currentposition</button><br><br>
+<pre id="result"></pre>
+
+<script>
+
+
+
+function doe() {
+
+window.open('data:text/html;charset=utf-8,%3Cscript%3E%0Avar%20watchId%20%3D%20navigator.geolocation.watchPosition%28function%28%29%20%7Balert%28%27geolocation%20watchposition%20from%3A%20%27%20+%20window.location%29%3B%7D%29%3B%0AsetTimeout%28function%28%29%20%7Bdocument.write%28%27test%27%29%3B%7D%2C%205000%29%3B%0A%3C/script%3E');
+}
+
+function doe5() {
+navigator.geolocation.getCurrentPosition(function() {}, function(){});
+}
+
+</script>
+</body>
+</html>

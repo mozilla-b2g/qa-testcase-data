@@ -1,0 +1,40 @@
+<html><head>
+<title>window.open with dialog=yes argument in it causes weird issues</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+<script>
+function openModal()
+{
+  var a = new Array;
+  a[0] = 1;
+  a[1] = 4;
+
+  var r = window.showModalDialog('data:text/html;charset=utf-8,%3Chtml%3E%0A%3Cbody%3E%0A%3Cscript%3E%0Adocument.write%28%22Modal%20dialog%20got%20argument%3A%20%22%20+%20window.dialogArguments%29%3B%0A%3C/script%3E%0A%3Cinput%20id%3D%22foo%22%20type%3D%22text%22%20value%3D%22Dialog%20value...%22%3E%0A%3Cinput%20type%3D%22button%22%20value%3D%22Close%22%20onclick%3D%22window.returnValue%20%3D%20document.getElementById%28%27foo%27%29.value%3B%20window.close%28%29%3B%22%3E%0A%3Ca%20href%3D%22http%3A//google.com%22%3Elink%3C/a%3E%0A%3C/body%3E%0A%3C/html%3E',
+      a, "dialogwidth: 450; dialogheight: 300; resizable: yes");
+  document.getElementById('foo').textContent = r;
+  alert(r);
+}
+
+function openModal2()
+{
+  var a = new Array;
+  a[0] = 1;
+  a[1] = 4;
+
+  var r = window.showModelessDialog('data:text/html;charset=utf-8,%3Chtml%3E%0A%3Cbody%3E%0A%3Cscript%3E%0Adocument.write%28%22Modal%20dialog%20got%20argument%3A%20%22%20+%20window.dialogArguments%29%3B%0A%3C/script%3E%0A%3Cinput%20id%3D%22foo%22%20type%3D%22text%22%20value%3D%22Dialog%20value...%22%3E%0A%3Cinput%20type%3D%22button%22%20value%3D%22Close%22%20onclick%3D%22window.returnValue%20%3D%20document.getElementById%28%27foo%27%29.value%3B%20window.close%28%29%3B%22%3E%0A%3Ca%20href%3D%22http%3A//google.com%22%3Elink%3C/a%3E%0A%3C/body%3E%0A%3C/html%3E',
+      a, "dialogwidth: 4500; dialogheight: 300; resizable: no");
+  document.getElementById('foo2').textContent = r;
+  alert(r);
+}
+</script>
+</head>
+<body>
+<button onclick="window.openDialog(window.location); ">windowopenDialog<br>buttononclick</button><br><br>
+<button onclick="window.open(window.location, '', 'dialog=yes'); ">windowopen dialog=yes<br>buttononclick</button><br>
+<button onclick="window.importDialog(null, 'about:config', 'dialog=yes'); ">windowimportdialog<br>buttononclick</button><br>
+<button onclick="window.find()">window.<br>find()</button><br>
+<button onclick="openModal()">window<br>showModalDialog()</button><span id="foo"></span><br>
+<button onclick="openModal2()">window<br>showModelessDialog()</button><span id="foo2"></span><br>
+</body>
+</html>

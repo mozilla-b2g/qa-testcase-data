@@ -1,0 +1,28 @@
+<html><head>
+<style>
+embed {
+}
+</style>
+<script>
+
+//setTimeout(function() {window.frames[0].document.open();window.frames[0].document.write(document.body.innerHTML); }, 1000);
+</script>
+</head><body style="background: yellow;">
+
+<script>
+function reportevent(aEvent) {
+document.getElementById('result').innerHTML += aEvent.type + ' fired<br>';
+}
+window.addEventListener('PluginClickToPlay', reportevent, true);
+
+function does() {
+var x=document.createElement('embed');
+x.src = '317375_flash_wmode.swf';
+document.body.appendChild(x);
+}
+setInterval(does, 2000);
+</script>
+
+<br>
+<pre id="result"></pre>
+</body></html>

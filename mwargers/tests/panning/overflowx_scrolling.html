@@ -1,0 +1,34 @@
+<html>
+<head><title>Bug 732422 - certain portion of pages can be unresponsive to scrolling</title>
+<style>
+div:nth-child(odd) {
+background-color: yellow;
+}
+div:nth-child(even) {
+background-color: green;
+}
+
+div {
+  overflow: auto;
+  height: 400px;
+}
+</style>
+<script>
+window.onload=function() {
+var str = '';
+for (var i=0;i<20;i++) {
+str+='<div><span style="display: block; width: 110%;">div nr '+i+', anchor nr '+i+'</span></div>';
+}
+document.body.innerHTML = 'You should be able to pan this page easily' + str;
+}
+</script>
+
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

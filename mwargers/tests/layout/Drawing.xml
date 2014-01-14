@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg" 
+      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<head>
+<script>
+var obj = null;
+var target = null;
+var dx = 0;
+var dy = 0;
+function init() {
+    document.getElementById('svg').addEventListener("mousedown", mousedown_listener, false);
+}
+
+function onSvgComponentMouseover(object) {
+   obj = object;
+}
+function mousedown_listener(evt) {
+	dx = 0;
+	dy = 0;
+	target = obj;
+        if  (target) {
+          var str = obj.getAttribute("transform");
+          if (str) {
+            str = str.match(/translate\(([ \-0-9]+),{0,1}([ \-0-9]+){0,1}/);
+            if (str.length>1)// str[1])
+                dx = eval(str[1]);
+            if (str.length>2)// str[2])
+	        dy = eval(str[2]);
+          }
+          dx -=  evt.clientX;
+          dy -=  evt.clientY;
+          document.addEventListener("mousemove", mousemove_listener, true);
+          document.addEventListener("mouseup", mouseup_listener, true);
+       }
+}
+function mouseup_listener(evt) {
+    document.removeEventListener("mousemove", mousemove_listener, true);
+    document.removeEventListener("mouseup", mouseup_listener, true);
+    target = null;
+}
+
+function mousemove_listener(evt) {
+    if  (target) {
+	var x = dx + evt.clientX;
+	var y = dy + evt.clientY;
+        target.setAttribute('transform', 'translate('+x+','+y+')');
+    }
+}
+</script>
+</head>
+<body onload="init()">
+<svg:svg>
+<svg:g xmlns="http://www.w3.org/2000/svg" id="svg">
+  <g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(5, 5)"><rect x="5" width="120" height="40" fill="lavender" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">A</text><line x1="125" x2="130" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="30.5" color="black" text-anchor="end">Output</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(5, 55)"><rect x="5" width="120" height="100" fill="seashell" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">B</text><line x2="5" y1="57.5" y2="57.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="60.5" color="black" text-anchor="start">Input 1</text><line x1="125" x2="130" y1="32" y2="32" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="35" color="black" text-anchor="end">Output 1</text><line x1="125" x2="130" y1="49" y2="49" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="52" color="black" text-anchor="end">Output 2</text><line x1="125" x2="130" y1="66" y2="66" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="69" color="black" text-anchor="end">Output 3</text><line x1="125" x2="130" y1="83" y2="83" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="86" color="black" text-anchor="end">Output 4</text><rect x="5" width="120" height="100" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 55)"><rect x="5" width="120" height="40" fill="lightblue" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">C</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><line x1="125" x2="130" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="30.5" color="black" text-anchor="end">Output</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(345, 55)"><rect x="5" width="120" height="40" fill="lightblue" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">D</text><line x2="5" y1="23.3333" y2="23.3333" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="26.3333" color="black" text-anchor="start">Input 1</text><line x2="5" y1="31.6667" y2="31.6667" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="34.6667" color="black" text-anchor="start">Input</text><line x1="125" x2="130" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="30.5" color="black" text-anchor="end">Output</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(515, 55)"><rect x="5" width="120" height="40" fill="lightblue" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">E</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 105)"><rect x="5" width="120" height="40" fill="lightblue" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">F</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><line x1="125" x2="130" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="30.5" color="black" text-anchor="end">Output</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 155)"><rect x="5" width="120" height="40" fill="lightblue" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">G</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input 1</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 205)"><rect x="5" width="120" height="40" fill="lightgray" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">H</text><line x2="5" y1="23.3333" y2="23.3333" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="26.3333" color="black" text-anchor="start">Input 1</text><line x2="5" y1="31.6667" y2="31.6667" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="34.6667" color="black" text-anchor="start">Input 2</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 255)"><rect x="5" width="120" height="40" fill="lightgray" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">I</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(175, 305)"><rect x="5" width="120" height="40" fill="lightsalmon" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">J</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><line x1="125" x2="130" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="123" y="30.5" color="black" text-anchor="end">Output</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)" transform="translate(345, 305)"><rect x="5" width="120" height="40" fill="lightsalmon" rx="5" ry="5" stroke="black" stroke-width="1"/><text font-size="12" x="70" y="10.5" color="black" text-anchor="middle" stroke="black">K</text><line x2="5" y1="27.5" y2="27.5" stroke="black" stroke-width="2"/><text font-size="12" x="7" y="30.5" color="black" text-anchor="start">Input</text><rect x="5" width="120" height="40" fill="red" rx="5" ry="5" stroke="black" stroke-width="1" opacity="0" class="component"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="32.5" x2="5" y2="112.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="32.5" x2="5" y2="112.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="87" x2="175" y2="82.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="87" x2="175" y2="82.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="104" x2="175" y2="132.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="104" x2="175" y2="132.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="305" y1="82.5" x2="345" y2="78.3333"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="305" y1="82.5" x2="345" y2="78.3333"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="305" y1="132.5" x2="345" y2="86.6667"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="305" y1="132.5" x2="345" y2="86.6667"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="121" x2="175" y2="182.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="121" x2="175" y2="182.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="475" y1="82.5" x2="515" y2="82.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="475" y1="82.5" x2="515" y2="82.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="121" x2="175" y2="228.333"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="121" x2="175" y2="228.333"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="104" x2="175" y2="236.667"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="104" x2="175" y2="236.667"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="121" x2="175" y2="282.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="121" x2="175" y2="282.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="135" y1="138" x2="175" y2="332.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="135" y1="138" x2="175" y2="332.5"/></g>
+	<g onmousedown="onSvgComponentMouseover(this)"><line stroke="black" stroke-width="1" x1="305" y1="332.5" x2="345" y2="332.5"/><line stroke="red" stroke-width="10" class="wire" opacity="0" x1="305" y1="332.5" x2="345" y2="332.5"/></g>
+  </g>
+</svg:g>
+</svg:svg>
+</body>
+</html>
+

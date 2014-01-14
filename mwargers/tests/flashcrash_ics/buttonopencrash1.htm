@@ -1,0 +1,15 @@
+<html><head>
+<script>
+var win;
+function doe() {
+win =window.open('crash1.htm');
+setTimeout(function() {win.close()}, 4000);
+}
+</script>
+</head>
+<body>
+<button onclick="doe()">open crash1.htm then close after 4 seconds</button><br><br>
+<button onclick="setInterval(doe, 5000);">open crash1.htm setinterval then close after 4 seconds</button>
+
+
+</body></html>

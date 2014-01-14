@@ -1,0 +1,27 @@
+<html><head>
+<title>xbl fun</title>
+<style>
+:root {
+// -moz-binding: none;
+}
+
+
+</style>
+<script>
+function doe() {
+var x=document.getAnonymousElementByAttribute(document.documentElement, "anonid", "selection-handle-start");
+x.style.backgroundImage='none';
+x.style.background='red';
+x=document.getAnonymousElementByAttribute(document.documentElement, "anonid", "selection-handle-end");
+x.style.backgroundImage='none';
+x.style.background='blue';
+}
+setTimeout(doe, 200);
+</script>
+</head>
+<body>
+<p>Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, </p>
+<p>Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, Some text to be selected, </p>
+
+</body>
+</html>

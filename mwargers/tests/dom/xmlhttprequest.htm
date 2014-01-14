@@ -1,0 +1,29 @@
+<html><head>
+<title>setinterval xmlhttprequest</title>
+
+<style>
+</style>
+</head>
+<body>
+<pre id="result"></pre>
+
+<script>
+var result = document.getElementById('result');
+function doe() {
+    var oReq = new XMLHttpRequest();  
+    oReq.open("GET", window.location + '?1', true);  
+    oReq.onreadystatechange = function (oEvent) {  
+      if (oReq.readyState === 4) {  
+        if (oReq.status === 200) {  
+          result.innerHTML = oReq.responseText + '<br>';  
+        } else {  
+          result.innerHTML = "Error: " + oReq.statusText + '<br>';  
+        }  
+      }  
+    };  
+    oReq.send(null);  
+}
+setInterval(doe, 2000);
+</script>
+</body>
+</html>

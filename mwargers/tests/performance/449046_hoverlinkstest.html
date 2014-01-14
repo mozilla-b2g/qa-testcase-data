@@ -1,0 +1,44 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Bug 449046 – Hovering over links in large list is slow</title>
+<style>
+body {  font-variant: small-caps;}
+a:hover {  color: red;}
+</style>
+</head>
+<body>
+
+<div style="height: 50px;">
+<button onclick="doe()">Do color link test</button>
+</div>
+<script>
+var str = '<a href="#">text</a> ';
+for (var i=0;i<8;i++)
+  str+=str;
+document.write(str);
+
+var x = document.links[0];
+
+i=0;
+function doe2() {
+x.style.color == 'black' ? x.style.color = 'red' : x.style.color = 'black';
+i++;
+if (i>30) {
+ clearInterval(interval);
+ i=0;
+ tend = Date.now();
+ alert('Time it took: ' + (tend-tstart) + 'ms');
+}
+}
+
+var tstart;
+var tend;
+
+var interval;
+function doe() {
+  tstart = Date.now();
+  interval = setInterval(doe2, 10);
+}
+</script><a style="color: black;" href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> <a href="#">text</a> 
+
+</body></html>
