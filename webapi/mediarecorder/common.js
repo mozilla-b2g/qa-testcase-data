@@ -21,7 +21,7 @@ function updateBlobURLUI(blob) {
   }
 }
 
-function setupMediaRecorder(stream, numberOfRecorders) {
+function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
   if(!numberOfRecorders) {
     numberOfRecorders = 1;
   }
@@ -47,7 +47,7 @@ function setupMediaRecorder(stream, numberOfRecorders) {
       console.log('onstop fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : 'audio/ogg' }));
+      updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : mimeType }));
       blobDataAvailable = [];
     };
 
@@ -68,9 +68,9 @@ function setupMediaRecorder(stream, numberOfRecorders) {
   }
 }
 
-function createGUMStream(constraints, numberOfRecorders) {
+function createGUMStream(constraints, numberOfRecorders, mimeType) {
   navigator.mozGetUserMedia(constraints, function(stream) {
-    setupMediaRecorder(stream, numberOfRecorders);
+    setupMediaRecorder(stream, numberOfRecorders, mimeType);
   }, function(err) {
     console.log(err);
   });

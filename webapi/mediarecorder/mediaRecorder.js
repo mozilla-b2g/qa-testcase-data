@@ -5,11 +5,14 @@
   };
 
   var numberOfRecorders = document.getElementById('numberOfGumRecorders').value;
+  var mimeType = document.getElementById('gUMMimeType').value;
 
-  createGUMStream(constraints, numberOfRecorders);
+  createGUMStream(constraints, numberOfRecorders, mimeType);
 }
 
-function createUIDrivenOpusStream() {
+function createUIDrivenFileStream() {
+  var mediaType = document.getElementById('mediaType').value;
+  var mimeType = document.getElementById('mimeType').value;
   var root = document.createElement('div');
 
   var header = document.createElement('h4');
@@ -19,31 +22,31 @@ function createUIDrivenOpusStream() {
   var inputSpan = document.createElement('span');
   inputSpan.textContent = 'input';
 
-  var opusAudioInput = document.createElement('audio');
-  opusAudioInput.setAttribute('controls', 'controls');
+  var mediaInput = document.createElement(mediaType);
+  mediaInput.setAttribute('controls', 'controls');
 
   inputRoot.appendChild(inputSpan);
-  inputRoot.appendChild(opusAudioInput);
+  inputRoot.appendChild(mediaInput);
 
   var outputRoot = document.createElement('div');
   var outputSpan = document.createElement('span');
   outputSpan.textContent = 'output';
 
-  var opusAudioOutput = document.createElement('audio');
-  opusAudioOutput.setAttribute('controls', 'controls');
+  var mediaOutput = document.createElement(mediaType);
+  mediaOutput.setAttribute('controls', 'controls');
 
   outputRoot.appendChild(outputSpan);
-  outputRoot.appendChild(opusAudioOutput);
+  outputRoot.appendChild(mediaOutput);
 
-  opusAudioInput.src = document.getElementById('testOpusFile').value;
-  opusAudioOutput.mozSrcObject = opusAudioInput.mozCaptureStreamUntilEnded();
+  mediaInput.src = document.getElementById('testFile').value;
+  mediaOutput.mozSrcObject = mediaInput.mozCaptureStreamUntilEnded();
 
   root.appendChild(header);
   root.appendChild(inputRoot);
   root.appendChild(outputRoot);
 
-  document.getElementById('opusMediaControls').appendChild(root);
-  setupMediaRecorder(opusAudioOutput.mozSrcObject);
+  document.getElementById('fileMediaControls').appendChild(root);
+  setupMediaRecorder(mediaOutput.mozSrcObject, 1, mimeType);
 }
 
 function createMediaRecorderControls(index) {
@@ -193,7 +196,7 @@ function installHostedApp() {
 
 function initialize() {
   document.getElementById('setupGUMStream').onclick = createUIDrivenGUMStream;
-  document.getElementById('setupOpusStream').onclick = createUIDrivenOpusStream;
+  document.getElementById('setupFileStream').onclick = createUIDrivenFileStream;
   document.getElementById('installHostedApp').onclick = installHostedApp;
   document.getElementById('installPackagedApp').onclick = installPackagedApp;
 

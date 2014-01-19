@@ -25,6 +25,13 @@
         <span>Microphone</span>
       </div>
       <div>
+        <span>Mime Type</span>
+        <select id="gUMMimeType">
+          <option value="audio/ogg; codecs=opus">audio/ogg; codecs=opus</option>
+          <option value="video/ogg; codecs=opus">video/ogg; codecs=opus</option>
+        </select>
+      </div>
+      <div>
         <div>
           <span>Number of Recorders</span>
           <input type="text" id="numberOfGumRecorders">
@@ -37,33 +44,52 @@
     <div>
       <h3>Setup Stream for Media Recorder by File</h3>
       <div>
-        <select id="testOpusFile">
-          <option value="music_orig.opus">music_orig.opus</option>
-          <option value="detodos.opus">detodos.opus</option>
-          <option value="chain.opus">chain.opus</option>
-          <option value="test-1-mono.opus">test-1-mono.opus</option>
-          <option value="test-2-stereo.opus">test-2-stereo.opus</option>
-          <option value="test-3-LCR.opus">test-3-LCR.opus</option>
-          <option value="test-4-quad.opus">test-4-quad.opus</option>
-          <option value="test-5-5.0.opus">test-5-5.0.opus</option>
-          <option value="test-6-5.1.opus">test-6-5.1.opus</option>
-          <option value="test-7.6.1.opus">test-7-6.1.opus</option>
-          <option value="test-8-7.1.opus">test-8-7.1.opus</option>
-          <option value="variable-channel.opus">variable-channel.opus</option>
-          <option value="variable-preskip.opus">variable-preskip.opus</option>
-          <option value="variable-samplerate.opus">variable-samplerate.opus</option>
-          <option value="sample_aac.aac">sample_aac.aac</option>
-          <option value="sample_mp3.mp3">sample_mp3.mp3</option>
-          <option value="audiocheck.net_C.mp3">audiocheck.next_C.mp3</option>
-          <option value="audiocheck.net_L.mp3">audiocheck.next_L.mp3</option>
-          <option value="audiocheck.net_R.mp3">audiocheck.next_R.mp3</option>
-        </select>
-        <input type="submit" id="setupOpusStream" value="Setup">
+        <div>
+          <span>File</span>
+          <select id="testFile">
+            <option value="music_orig.opus">music_orig.opus</option>
+            <option value="detodos.opus">detodos.opus</option>
+            <option value="chain.opus">chain.opus</option>
+            <option value="test-1-mono.opus">test-1-mono.opus</option>
+            <option value="test-2-stereo.opus">test-2-stereo.opus</option>
+            <option value="test-3-LCR.opus">test-3-LCR.opus</option>
+            <option value="test-4-quad.opus">test-4-quad.opus</option>
+            <option value="test-5-5.0.opus">test-5-5.0.opus</option>
+            <option value="test-6-5.1.opus">test-6-5.1.opus</option>
+            <option value="test-7.6.1.opus">test-7-6.1.opus</option>
+            <option value="test-8-7.1.opus">test-8-7.1.opus</option>
+            <option value="variable-channel.opus">variable-channel.opus</option>
+            <option value="variable-preskip.opus">variable-preskip.opus</option>
+            <option value="variable-samplerate.opus">variable-samplerate.opus</option>
+            <option value="sample_aac.aac">sample_aac.aac</option>
+            <option value="sample_mp3.mp3">sample_mp3.mp3</option>
+            <option value="audiocheck.net_C.mp3">audiocheck.next_C.mp3</option>
+            <option value="audiocheck.net_L.mp3">audiocheck.next_L.mp3</option>
+            <option value="audiocheck.net_R.mp3">audiocheck.next_R.mp3</option>
+            <option value="gizmo.mp4">gizmo.mp4</option>
+          </select>
+        </div>
+        <div>
+          <span>Media Type</span>
+          <select id="mediaType">
+            <option value="audio">audio</option>
+            <option value="video">video</option>
+          </select>
+        </div>
+        <div>
+          <span>Mime Type</span>
+          <select id="mimeType">
+            <option value="audio/ogg; codecs=opus">audio/ogg; codecs=opus</option>
+            <option value="audio/mpeg">audio/mpeg</option>
+            <option value="video/mp4">video/mp4</option>
+          </select>
+        </div>
+        <input type="submit" id="setupFileStream" value="Setup">
       </div>
     </div>
     <div>
-      <h3>Media Controls for Opus Input/Output</h3>
-      <div id="opusMediaControls">
+      <h3>Media Controls for File Input/Output</h3>
+      <div id="fileMediaControls">
       </div>
     </div>
     <div id="mediaRecorderControls">
