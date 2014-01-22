@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Dynamic compressor node test</title>
+    <link rel="stylesheet" type="text/css" href="style/uitest.css">
+    <script src="static/js/audio-utils.js"></script>
+    <script src="static/js/analyser.js"></script>
+    <script src="static/js/dynamic-compressor.js"></script>
+  </head> 
+  <body>
+    <ul><button id="play" onclick="dynamicsCompressor.run()">Play/Pause</button></ul>
+    <ul><label>threshold:</label><input id="threshold" type="range" min="-100" max="0" value="-24" step="0.1" onchange="dynamicsCompressor.changeThreshold(this.value)"></input><p>-24db</p></ul>
+    <ul><label>knee:</label><input id="knee" type="range" min="0" max="40" value="30" step="0.1" onchange="dynamicsCompressor.changeKnee(this.value)"></input><p>30db</p></ul>
+    <ul><label>ratio:</label><input id="ratio" type="range" min="1" max="20" value="12" onchange="dynamicsCompressor.changeRatio(this.value)"></input><p>12</p></ul>
+    <ul><label>attack:</label><input id="attack" type="range" min="0" max="1" value="0.003" step="0.001" onchange="dynamicsCompressor.changeAttack(this.value)"></input><p>0.003</p></ul>
+    <ul><label>release:</label><input id="release" type="range" min="0" max="1" value="0.250" step="0.001" onchange="dynamicsCompressor.changeRelease(this.value)"></input><p>0.250</p></ul>
+    <ul>
+    <canvas></canvas>
+    </ul>
+    <script>
+      var url = "sound/sample.ogg";
+      dynamicsCompressor.init(url);
+    </script>
+  </body>
+</html>

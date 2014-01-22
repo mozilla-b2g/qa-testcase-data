@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Test WaveShaperNode</title>
+</head>
+<body>
+<script src="static/js/buffer-loader.js" type="text/javascript"></script>
+<script class="testbody" type="text/javascript">
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+window.onload = init;
+var context;
+var bufferLoader;
+
+function init() {
+  context = new AudioContext();
+
+  bufferLoader = new BufferLoader(
+    context,
+    [
+			//'audio-mono-expected.wav',
+      //'audio-expected.wav',
+      //'http://webaudioapi.com/samples/audio-tag/chrono.mp3'
+      'sound/sample.ogg'
+    ],
+    finishedLoading
+    );
+
+  bufferLoader.load();
+}
+
+function createWaveShaperNode(context) {
+	var shaper = context.createWaveShaper();
+
+	var curve = new Float32Array(2048);
+  for (var i = 0; i < 2048; ++i) {
+    curve[i] = Math.sin(100 * Math.PI * (i + 1) / context.sampleRate);
+	}
+	shaper.curve = curve;
+	return shaper;
+}
+
+function finishedLoading(bufferList) {
+  // Create two sources and play them both together.
+  var source1 = context.createBufferSource();
+	source1.buffer = bufferList[0];
+	
+	var shaper = createWaveShaperNode(context);
+	//shaper.oversample = "2x";
+	source1.connect(shaper);
+	shaper.connect(context.destination);
+  source1.start(0);
+}
+
+</script>
+</pre>
+</body>
+</html>
