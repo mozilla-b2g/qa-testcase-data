@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Biquad filter node test</title>
+    <link rel="stylesheet" type="text/css" href="style/uitest.css" />
+    <script src="static/js/audio-utils.js"></script>
+    <script src="static/js/analyser.js"></script>
+    <script src="static/js/biquad-filter.js"></script>
+  </head> 
+  <body>
+    <ul><button id="play" onclick="biquadFilter.run()">Play/Pause</button></ul>
+    <ul><label>Type: </label>
+      <select onchange="biquadFilter.changeType(this.value)">
+        <option value="lowpass" selected>lowpass</option>
+        <option value="highpass">highpass</option>
+        <option value="bandpass">bandpass</option>
+        <option value="lowshelf">lowshelf</option>
+        <option value="highshelf">highshelf</option>
+        <option value="peaking">peaking</option>
+        <option value="notch">notch</option>
+        <option value="allpass">allpass</option>
+      </select>
+    </ul>
+    <ul><label>frequency:</label><input id="frequency" type="range" min="220" max="1000" value="350" onchange="biquadFilter.changeFrequency(this.value)"></input><p>350</p></ul>
+    <ul><label>detune:</label><input id="detune" type="range" min="0" max="100" value="100" onchange="biquadFilter.changeDetune(this.value)"></input><p>100%</p></ul>
+    <ul><label>Q:</label><input id="Q" type="range" min="-4" max="4" value="0" onchange="biquadFilter.changeQ(this.value)"></input><p>1</p></ul>
+    <ul><label>gain:</label><input id="gain" type="range" min="-100" max="100" value="0" onchange="biquadFilter.changeGain(this.value)"></input><p>0</p></ul>
+    <ul>
+      <canvas></canvas>
+    </ul>
+    <script>
+      var url = "sound/sample.ogg";
+      biquadFilter.init(url);
+    </script>
+  </body>
+</html>
+

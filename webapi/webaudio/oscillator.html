@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Oscillator | Web Audio API</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+    <div id="container">
+      <h2>Oscillator</h2>
+      <p><code>Test for OscillatorNode</code>.</p>
+      <p><canvas style="background: white;"></canvas></p>
+      <div>
+        Frequency: <input id="frequency" type="range" min="0" max="1000"
+        step="1" value="440"
+        onchange="sample.changeFrequency(this.value);">
+        Detune: <input id="detune" type="range" min="-100" max="100" step="5" value="0"
+        onchange="sample.changeDetune(this.value);">
+      </div>
+      <div>
+        <input type="radio" name="ir" value="sine" class="effect" checked
+        onclick="sample.changeType('sine')">Sine</input>
+        <input type="radio" name="ir" value="square" class="effect"
+        onclick="sample.changeType('square')">Square</input>
+        <input type="radio" name="ir" value="sawtooth" class="effect"
+        onclick="sample.changeType('sawtooth')">Sawtooth</input>
+        <input type="radio" name="ir" value="triangle" class="effect"
+        onclick="sample.changeType('triangle')">Triangle</input>
+      </div>
+
+      <p><button onclick="sample.toggle()">Play/pause</button></p>
+
+      <script src="static/js/shared.js"></script>
+      <script src="static/js/oscillator-sample.js"></script>
+      <script>
+      var sample = new OscillatorSample();
+      </script>
+    </div>
+  </body>
+</html>
+

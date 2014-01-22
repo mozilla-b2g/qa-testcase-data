@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Audio Tag</title>
+    <script src="static/js/shared.js"></script>
+    <script src="static/js/audio-utils.js"></script>
+    <script src="static/js/audio-tag.js"></script>
+  </head>
+
+  <body>
+  <div id="container">
+    <h2>Audio Tag</h2>
+    <p>Illustrates the use of MediaElementAudioSourceNode to wrap the audio tag.
+      <input value="sound/sample.ogg" placeholder="URL to audio file...">
+      <button onclick="sample.play(document.querySelector('input').value)">Load URL</button>
+      <script>
+        var sample = new AudioTagSample();
+      </script>
+    </p>
+    </div>
+  </body>
+</html>
+
