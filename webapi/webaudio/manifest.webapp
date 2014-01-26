@@ -1,0 +1,55 @@
+{
+  "name": "WebAudio",
+  "description": "test app for webaudio",
+  "type": "web",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "MozQATW Team",
+    "url": "https://github.com/zapion/webaudio/"
+  },
+  "messages": [
+    {
+      "alarm": "/index.html"
+    }
+  ],
+  "permissions": {
+    "audio-channel-content": {
+      "description": "Use the audio channel for a music player"
+    }
+  },
+  "locales": {
+    "ar": {
+      "name": "WebAudio",
+      "description": "Web Audio"
+    },
+    "en-US": {
+      "name": "WebAudio",
+      "description": "Web Audio"
+    },
+    "fr": {
+      "name": "WebAudio",
+      "description": "Web Audio"
+    },
+    "zh-TW": {
+      "name": "WebAudio",
+      "description": "Web Audio"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "79": "/style/icons/webauido.png",
+    "128": "/style/icons/128x128.png"
+  },
+  "activities": {
+    "view": {
+      "filters": {
+        "type": "url",
+        "url": {
+          "required": true,
+          "pattern": "mailto:.{1,16384}"
+        }
+      }
+    }
+  },
+  "orientation": "portrait-primary"
+}

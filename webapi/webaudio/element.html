@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<head>
+  <title>Test MediaElementAudioSourceNode</title>
+</head>
+<body>
+<pre id="test">
+<script class="testbody" type="text/javascript">
+
+var audio = new Audio("sound/sample.ogg");
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var context = new AudioContext();
+var node = context.createMediaElementSource(audio);
+node.connect(context.destination);
+audio.play();
+
+</script>
+</pre>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gain node test</title>
+    <!--link rel="stylesheet" href="style/uitest.css" type="text/css" media="screen" /-->
+    <script src="static/js/audio-utils.js"></script>
+    <script src="static/js/gain-test.js"></script>
+  </head>
+
+  <body>
+  <div id="container">
+    <h2>Gain node test</h2>
+    <p><ul>Illustrates the use of gain node</ul>
+      <ul><button onclick="gainTest.run()">Play/Pause</button></ul>
+      <ul>Gain Control
+      <input id="controller" type="range" min="0" max="100" value="100" onchange="gainTest.control(this.value)"></input></ul>
+      <script>
+        gainTest.init("sound/sample.ogg");
+      </script>
+    </p>
+    </div>
+  </body>
+</html>
+
