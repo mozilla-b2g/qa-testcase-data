@@ -11,10 +11,16 @@
         for(mediaElement of mediaCollection) {
           var rtspURL = mediaElement.getAttribute('url');
           var rtspDiv = document.createElement('div');
-          var rtspElement = document.createElement('a');
-          rtspElement.setAttribute('href', rtspURL);
-          rtspElement.textContent = rtspURL;
-          rtspDiv.appendChild(rtspElement);
+          var rtspVideo = document.createElement('video');
+          var rtspLink = document.createElement('a');
+
+          rtspVideo.setAttribute('src', rtspURL);
+          rtspVideo.setAttribute('controls', 'controls');
+          rtspLink.setAttribute('href', rtspURL);
+          rtspLink.textContent = rtspURL;
+
+          rtspDiv.appendChild(rtspLink);
+          rtspDiv.appendChild(rtspVideo);
           resultRTSPOutput.appendChild(rtspDiv);
         }
       }
