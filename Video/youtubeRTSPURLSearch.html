@@ -11,7 +11,9 @@
         for(mediaElement of mediaCollection) {
           var rtspURL = mediaElement.getAttribute('url');
           var rtspDiv = document.createElement('div');
+          var rtspVideoDiv = document.createElement('div');
           var rtspVideo = document.createElement('video');
+          var rtspLinkDiv = document.createElement('div');
           var rtspLink = document.createElement('a');
 
           rtspVideo.setAttribute('src', rtspURL);
@@ -22,8 +24,10 @@
           rtspLink.setAttribute('href', rtspURL);
           rtspLink.textContent = rtspURL;
 
-          rtspDiv.appendChild(rtspLink);
-          rtspDiv.appendChild(rtspVideo);
+          rtspVideoDiv.appendChild(rtspVideo);
+          rtspLinkDiv.appendChild(rtspLink);
+          rtspDiv.appendChild(rtspVideoDiv);
+          rtspDiv.appendChild(rtspLinkDiv);
           resultRTSPOutput.appendChild(rtspDiv);
         }
       }
