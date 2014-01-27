@@ -28,13 +28,13 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
 
   for(var i = 0; i < numberOfRecorders; i++){
     var mediaRecorder = new MediaRecorder(stream);
-    var blobDataAvailable = [];
+    mediaRecorder.blobData = [];
 
     mediaRecorder.ondataavailable = function(evt) {
       console.log('ondataavailable fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      blobDataAvailable.push(evt.data);
+      mediaRecorder.blobData.push(evt.data);
     };
 
     mediaRecorder.onerror = function(evt) {
@@ -47,8 +47,8 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log('onstop fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : mimeType }));
-      blobDataAvailable = [];
+      updateBlobURLUI(new Blob(mediaRecorder.blobData, { 'type' : mimeType }));
+      mediaRecorder.blobData = [];
     };
 
     mediaRecorder.onwarning = function(evt) {
