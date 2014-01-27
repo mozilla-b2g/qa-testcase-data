@@ -16,6 +16,9 @@
 
           rtspVideo.setAttribute('src', rtspURL);
           rtspVideo.setAttribute('controls', 'controls');
+          rtspVideo.setAttribute('preload', 'none');
+          rtspVideo.setAttribute('width', '300');
+          rtspVideo.setAttribute('height', '300');
           rtspLink.setAttribute('href', rtspURL);
           rtspLink.textContent = rtspURL;
 
