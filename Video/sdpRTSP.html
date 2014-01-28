@@ -1,0 +1,73 @@
+﻿<html>
+  <head>
+    <title>SDP RTSP Test</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script type="text/javascript">
+    var rtspURLCollection = [
+      'rtsp://198.64.249.22:554/mbc.sdp',
+      'rtsp://digitalbroadcast.streamguys.net/live-studio.sdp',
+      'rtsp://digitalbroadcast.streamguys.net/slch08.sdp',
+      'rtsp://digitalbroadcast.streamguys.net/music.sdp',
+      'rtsp://digitalbroadcast.streamguys.net/jazzbar.sdp',
+      'rtsp://media-us-1.soundreach.net/slcnlive.sdp',
+      'rtsp://media-us-2.soundreach.net/slcn_lifestyle.sdp',
+      'rtsp://media-us-2.soundreach.net/slcn_sports.sdp',
+      'rtsp://media-us-2.soundreach.net/slcn_community.sdp',
+      'rtsp://media-us-2.soundreach.net/slcn_metaversed.sdp',
+      'rtsp://a1352.l1857053128.c18570.g.lq.akamaistream.net/D/1352/18570/v0001/reflector:53128',
+      'rtsp://streaming.multicasttech.com/MusicVideosOnTheI.sdp',
+      'rtsp://streaming.multicasttech.com/AmericaFreeTVComedy.sdp',
+      'rtsp://video1.multicasttech.com/AFTVIndyMoviesH2641000.sdp',
+      'rtsp://video1.multicasttech.com/AFTVIndyMoviesH264500.sdp',
+      'rtsp://video1.multicasttech.com/AFTVIndyMoviesH264250.sdp',
+      'rtsp://video2.multicasttech.com/AFTVCrimeH264250.sdp',
+      'rtsp://video2.multicasttech.com/AFTVSciFiH264250.sdp',
+      'rtsp://video3.americafree.tv/AFTVCartoonsH264250.sdp',
+      'rtsp://stream01.qt.slamtv.true.nl/slamtv.sdp',
+      'rtsp://stream03.qt.slamtv.true.nl/slamtv.sdp',
+      'rtsp://stream04.qt.slamtv.true.nl/slamtv.sdp',
+      'rtsp://82.94.213.26/live.sdp',
+      'rtsp://82.94.213.26/live-low.sdp',
+      'rtsp://80.94.48.100/xtvhi.sdp',
+      'rtsp://85.25.148.161:554/findawaytv',
+      'rtsp://kassandra.okto.tv:8001/okto.sdp',
+      'rtsp://video1.multicasttech.com/EspanaFreeH264500.sdp',
+      'rtsp://64.202.98.20/telespazio/Studio%203%20Live',
+      'rtsp://64.202.98.20/telespazio/Telespazio%20TV%20live',
+      'rtsp://157.238.224.42/HWAZAN_TV_128k',
+    ];
+
+    function initialize() {
+      var sdpRTSPOutput = document.getElementById('sdpRTSPOutput');
+
+      for(rtspURL of rtspURLCollection) {
+        var rtspDiv = document.createElement('div');
+        var rtspVideoDiv = document.createElement('div');
+        var rtspVideo = document.createElement('video');
+        var rtspLinkDiv = document.createElement('div');
+        var rtspLink = document.createElement('a');
+
+        rtspVideo.setAttribute('src', rtspURL);
+        rtspVideo.setAttribute('controls', 'controls');
+        rtspVideo.setAttribute('preload', 'none');
+        rtspVideo.setAttribute('width', '500');
+        rtspVideo.setAttribute('height', '500');
+        rtspLink.setAttribute('href', rtspURL);
+        rtspLink.textContent = rtspURL;
+
+        rtspVideoDiv.appendChild(rtspVideo);
+        rtspLinkDiv.appendChild(rtspLink);
+        rtspDiv.appendChild(rtspVideoDiv);
+        rtspDiv.appendChild(rtspLinkDiv);
+        sdpRTSPOutput.appendChild(rtspDiv);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="sdpRTSPOutput">
+    </div>
+  </body>
+</html>
