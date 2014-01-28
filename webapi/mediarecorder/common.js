@@ -34,7 +34,7 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log('ondataavailable fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      mediaRecorder.blobData.push(evt.data);
+      evt.target.blobdata.push(evt.data);
     };
 
     mediaRecorder.onerror = function(evt) {
@@ -48,7 +48,7 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
       updateBlobURLUI(new Blob(mediaRecorder.blobData, { 'type' : mimeType }));
-      mediaRecorder.blobData = [];
+      evt.target.blobdata = [];
     };
 
     mediaRecorder.onwarning = function(evt) {
