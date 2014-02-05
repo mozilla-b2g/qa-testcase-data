@@ -41,6 +41,7 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log('onerror fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
+      errorMsg.innerHTML = evt;
     };
 
     mediaRecorder.onstop = function(evt) {

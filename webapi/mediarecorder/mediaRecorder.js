@@ -76,11 +76,18 @@ function createMediaRecorderControls(index) {
 
     mediaRecorderList[index].start(timeslice);
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
+
+  var mediaRecorderState = document.createElement('label');
+  mediaRecorderState.setAttribute('type', 'text');
+  mediaRecorderState.setAttribute('style', 'padding-left:1em;color:red');
+  mediaRecorderState.innerHTML = 'inactive';
 
   timesliceDiv.appendChild(timesliceSpan);
   timesliceDiv.appendChild(timesliceValue);
   timesliceDiv.appendChild(startRecording);
+  timesliceDiv.appendChild(mediaRecorderState);
 
   root.appendChild(timesliceDiv);
 
@@ -92,6 +99,7 @@ function createMediaRecorderControls(index) {
   stopRecording.onclick = function() {
     mediaRecorderList[index].stop();
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   var pauseRecording = document.createElement('input');
@@ -101,6 +109,7 @@ function createMediaRecorderControls(index) {
   pauseRecording.onclick = function() {
     mediaRecorderList[index].pause();
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   var resumeRecording = document.createElement('input');
@@ -110,6 +119,7 @@ function createMediaRecorderControls(index) {
   resumeRecording.onclick = function() {
     mediaRecorderList[index].resume();
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   var requestData = document.createElement('input');
@@ -119,6 +129,7 @@ function createMediaRecorderControls(index) {
   requestData.onclick = function() {
     mediaRecorderList[index].requestData();
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   playControlsDiv.appendChild(stopRecording);
@@ -143,6 +154,7 @@ function createMediaRecorderControls(index) {
     }
 
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   var muteMediaStream = document.createElement('input');
@@ -151,6 +163,7 @@ function createMediaRecorderControls(index) {
   muteMediaStream.onclick = function() {
     mediaRecorderList[index].stream.getAudioTracks()[0].enabled = false;
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   var unmuteMediaStream = document.createElement('input');
@@ -159,6 +172,7 @@ function createMediaRecorderControls(index) {
   unmuteMediaStream.onclick = function() {
     mediaRecorderList[index].stream.getAudioTracks()[0].enabled = true;
     mediaRecorderAttributeDump(mediaRecorderList[index]);
+    mediaRecorderState.innerHTML = mediaRecorderList[index].state;
   };
 
   streamControlsDiv.appendChild(stopMediaStream);
@@ -166,6 +180,11 @@ function createMediaRecorderControls(index) {
   streamControlsDiv.appendChild(unmuteMediaStream);
 
   root.appendChild(streamControlsDiv);
+
+  var errorMsg = document.createElement('div');
+  errorMsg.setAttribute('id', 'errorMsg');
+  errorMsg.setAttribute('style', 'color:red');
+  root.appendChild(errorMsg);
 
   document.getElementById('mediaRecorderControls').appendChild(root);
 }
