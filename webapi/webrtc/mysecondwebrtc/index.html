@@ -1,0 +1,511 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>My First WebRTC App</title>
+    <script src="/_ah/channel/jsapi"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var socket;
+      var localPC;
+      var localDC;
+      var remoteDC;
+      var remoteClientId;
+      var dcStatus;
+      var messagesReceived;
+      var SessionDescription;
+      var getUserMedia;
+      var RTCPeerConnection;
+      var IceCandidate;
+      var pcConstraints;
+      var iceConfig;
+
+      if(navigator.userAgent.match("(Chrome)")) {
+        RTCPeerConnection = webkitRTCPeerConnection;
+        getUserMedia = navigator.webkitGetUserMedia.bind(navigator);
+        SessionDescription = RTCSessionDescription;
+        IceCandidate = RTCIceCandidate;
+        pcConstraints = { 'optional': [{'DtlsSrtpKeyAgreement': 'true'}]};
+      } else {
+        RTCPeerConnection = mozRTCPeerConnection;
+        getUserMedia = navigator.mozGetUserMedia.bind(navigator);
+        SessionDescription = mozRTCSessionDescription;
+        IceCandidate = mozRTCIceCandidate;
+        pcConstraints = null;
+      }
+
+      function writeErrorToConsole(err) {
+        console.log(err);
+      }
+
+      function onChannelOpened() {
+        console.log('Channel opened');
+      }
+
+      function onChannelError() {
+        console.log('Channel error received');
+      }
+
+      function onChannelClosed() {
+        console.log('Channel closed');
+      }
+
+      function onChannelMessage(message) {
+        var msg = JSON.parse(message.data);
+
+        if(msg.type === 'offer') {
+          remoteOfferReceived(msg);
+        } else if(msg.type === 'answer') {
+          remoteAnswerReceived(msg);
+        } else if(msg.type === 'candidate') {
+          remoteCandidateReceived(msg);
+        } else {
+          console.log('Unknown message received');
+        }
+      }
+
+      function openChannel(channelToken) {
+        var channel = new goog.appengine.Channel(channelToken);
+        var handler = {
+          'onopen': onChannelOpened,
+          'onmessage': onChannelMessage,
+          'onerror': onChannelError,
+          'onclose': onChannelClosed
+        };
+        socket = channel.open(handler);
+      }
+
+      function sendDataToRemoteClient(remoteId, data) {
+        var path = 'send?remoteClientId=' + remoteId;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', path, true);
+        xhr.send(data);
+      }
+
+      function playMediaFromStream(element_id, stream) {
+        var video = document.getElementById(element_id);
+        video.src = URL.createObjectURL(stream);
+        video.play();
+      }
+
+      function DCDump(name, dc) {
+        console.log("Data Channel dump for " + name);
+        console.log("Label: " + dc.label);
+        console.log("Reliable: " + dc.reliable);
+        console.log("Ready State: " + dc.readyState);
+        console.log("Buffered Amount: " + dc.bufferedAmount);
+        console.log("Binary Type: " + dc.binaryType);
+        console.log("Protocol: " + dc.protocol);
+        console.log("Stream: " + dc.stream);
+        console.log("Ordered: " + dc.ordered);
+      }
+
+      function setupDataChannel() {
+        localDC.onopen = function() {
+          dcStatus.textContent = 'Open';
+          DCDump('onopen', localDC);
+        };
+
+        localDC.onerror = function(err) {
+          dcStatus.textContent = 'Error: ' + err;
+          DCDump('onerror', localDC);
+        };
+
+        localDC.onclose = function() {
+          dcStatus.textContent = 'Close';
+          DCDump('onclose', localDC);
+        };
+
+        localDC.onmessage = function(event) {
+          var divRoot = document.createElement('div');
+
+          var data = event.data;
+          var element = null;
+
+          console.log(data);
+
+          if(data instanceof Blob) {
+            try {
+              var intArrayData = new Int32Array(data);
+              var intArrayStr = '';
+
+              for (var i = 0; i < intArrayData.length; i++) {
+                intArrayStr = intArrayStr + intArrayData[i];
+              }
+
+              var intArrayElement = document.createElement('p');
+              intArrayElement.textContent = intArrayStr;
+
+              divRoot.appendChild(intArrayElement);
+            } catch (e) {
+              console.log(e);
+            }
+
+            element = document.createElement('a');
+            var dataUrl = URL.createObjectURL(data);
+            element.setAttribute('href', dataUrl);
+            element.textContent = 'Download Received Blob';
+          } else {
+            element = document.createElement('p');
+            element.textContent = event.data;
+          }
+
+          divRoot.appendChild(element);
+          messagesReceived.appendChild(divRoot);
+          DCDump('onmessage', localDC);
+        };
+      }
+
+      function remoteCandidateReceived(msg) {
+        var iceCandidate = new IceCandidate({
+          'sdpMLineIndex': msg.label,
+          'sdpMid': msg.id,
+          'candidate': msg.candidate
+        });
+
+        localPC.addIceCandidate(iceCandidate);
+      }
+
+      function remoteAnswerReceived(msg) {
+        var remoteSessionDescription = new SessionDescription({
+          'type': msg.type,
+          'sdp': msg.sdp
+        });
+
+        localPC.setRemoteDescription(remoteSessionDescription, function() {
+          console.log('handshake finished');
+        }, writeErrorToConsole);
+      }
+
+      function setupRemotePeer(sdp) {
+        localPC.ondatachannel = function(event) {
+          localDC = event.channel;
+          setupDataChannel();
+        };
+
+        localPC.setRemoteDescription(sdp, function() {
+          localPC.createAnswer(function(answerSDP) {
+            localPC.setLocalDescription(answerSDP, function() {
+              sendDataToRemoteClient(remoteClientId, JSON.stringify({
+                'client_id': '{{ client_id }}',
+                'type': 'answer',
+                'sdp': answerSDP.sdp
+              }));
+            }, writeErrorToConsole);
+          }, writeErrorToConsole);
+        }, writeErrorToConsole);
+      }
+
+      function remoteOfferReceived(msg) {
+        var remoteSessionDescription = new SessionDescription({
+          'type': msg.type,
+          'sdp': msg.sdp
+        });
+
+        remoteClientId = msg.client_id;
+        setupLocalPeer(function() {
+          setupRemotePeer(remoteSessionDescription);
+        });
+      }
+
+      function submitRemoteClientId() {
+        setupLocalPeer(function() {
+          remoteClientId = document.getElementById('remoteClientIdRequested').value;
+          var customizationWanted = document.getElementById('allowDCCustomization').checked;
+          var dcDictInit = {};
+
+          if(customizationWanted) {
+            var ordered = document.getElementById('ordered').checked;
+            var maxRetransmitTime = document.getElementById('maxRetransmitTime').value;
+            var maxRetransmits = document.getElementById('maxRetransmits').value;
+            var protocol = document.getElementById('protocol').value;
+            var negotiated = document.getElementById('negotiated').checked;
+            var id = document.getElementById('id').value;
+
+            dcDictInit = {
+              'ordered': ordered,
+              'protocol': protocol,
+              'negotiated': negotiated
+            };
+
+            if(maxRetransmitTime) {
+              dcDictInit['maxRetransmitTime'] = parseInt(maxRetransmitTime);
+            }
+
+            if(maxRetransmits) {
+              dcDictInit['maxRetransmits'] = parseInt(maxRetransmits);
+            }
+
+            if(id) {
+              dcDictInit['id'] = parseInt(id);
+            }
+
+            console.log(dcDictInit);
+          }
+
+          localDC = localPC.createDataChannel('local', dcDictInit);
+          setupDataChannel();
+
+          localPC.createOffer(function(sdp) {
+            localPC.setLocalDescription(sdp, function() {
+              sendDataToRemoteClient(remoteClientId, JSON.stringify({
+                'client_id': '{{ client_id }}',
+                'type': 'offer',
+                'sdp': localPC.localDescription.sdp
+              }));
+            }, writeErrorToConsole);
+          }, writeErrorToConsole);
+        });
+      }
+
+      function setupLocalPeer(onFinish) {
+        iceConfig = {"iceServers":[{
+          "url": document.getElementById('stunServerURL').value
+        }]};
+        localPC = new RTCPeerConnection(iceConfig, pcConstraints);
+
+        localPC.onaddstream = function(event) {
+          playMediaFromStream('remoteClientVideo', event.stream);
+        };
+
+        localPC.onicecandidate = function(event) {
+          if(event.candidate) {
+            sendDataToRemoteClient(remoteClientId, JSON.stringify({
+              'client_id': '{{ client_id }}',
+              'type': 'candidate',
+              'label': event.candidate.sdpMLineIndex,
+              'id': event.candidate.sdpMid,
+              'candidate': event.candidate.candidate
+            }));
+          } else {
+            console.log('onicencandidate fired with a null candidate');
+          }
+        };
+
+        localPC.ongatheringchange = function(event) {
+          console.log('ongatheringchange event fired');
+          console.log(event);
+        };
+
+        localPC.onicechange = function(event) {
+          console.log('onicechange event fired');
+          console.log(event);
+        };
+
+        localPC.oniceconnectionstatechange = function(event) {
+          console.log('oniceconnectionstatechange event fired');
+          console.log(event);
+        };
+
+        localPC.onnegotiationneeded = function(event) {
+          console.log('onnegotiationneeded event fired');
+          console.log(event);
+        };
+
+        localPC.onremovestream = function(event) {
+          console.log('onremotestream event fired');
+          console.log(event);
+        };
+
+        localPC.onsignalingstatechange = function(event) {
+          console.log('onsignalingstatechange event fired');
+          console.log(event);
+        };
+
+        addStream(onFinish);
+      }
+
+      function submitDCStringMessage() {
+        var message = document.getElementById('DCStringMessageContent').value;
+        console.log("Sending a string message");
+        console.log(message);
+        localDC.send(message);
+      }
+
+      function submitDCFile() {
+        var fileSelector = document.getElementById('DCFileContent');
+        console.log("Sending a file");
+        console.log(fileSelector.files[0]);
+        localDC.send(fileSelector.files[0]);
+      }
+
+      function addStream(onFinish) {
+        var cameraEnabled = document.getElementById('camera').checked;
+        var micEnabled = document.getElementById('microphone').checked;
+
+        getUserMedia({video: cameraEnabled, audio: micEnabled}, function(stream) {
+          localPC.addStream(stream);
+          onFinish();
+        }, function(e) {
+          console.log('getUserMedia failed with: ' + e);
+          onFinish();
+        });
+      }
+
+      function submitArrayBuffer() {
+        submitIntegerBuffer(function(buffer, intArray) {
+          localDC.send(buffer);
+        });
+      }
+
+      function submitArrayBufferView() {
+        submitIntegerBuffer(function(buffer, intArray) {
+          localDC.send(intArray);
+        });
+      }
+
+      function submitIntegerBuffer(sendFunction) {
+        var integerContent = document.getElementById('DCNumberContent').value;
+        var buffer = new ArrayBuffer(integerContent.length * 4);
+        var intArray = new Int32Array(buffer);
+
+        for(var i = 0; i < integerContent.length; i++) {
+          intArray[i] = parseInt(integerContent[i]);
+        }
+
+        sendFunction(buffer, intArray);
+      }
+
+      function initialize() {
+        openChannel('{{ token }}');
+
+        var localClientId = document.getElementById('localClientId');
+        localClientId.textContent = '{{ client_id }}'
+
+        dcStatus = document.getElementById('localDCStatus');
+        messagesReceived = document.getElementById('messagesReceived');
+
+        document.getElementById('remoteClientIdSubmit').onclick = submitRemoteClientId;
+        document.getElementById('DCSubmitStringMessage').onclick = submitDCStringMessage;
+        document.getElementById('DCFileSubmit').onclick = submitDCFile;
+        document.getElementById('DCSubmitArrayBuffer').onclick = submitArrayBuffer;
+        document.getElementById('DCSubmitArrayBufferView').onclick = submitArrayBufferView;
+      }
+
+      window.addEventListener("DOMContentLoaded", initialize);
+    </script>
+    <div id="container">
+      <div>
+        <h2>Local Client Status</h2>
+        <div>
+          <h3>Your Local Client Id</h3>
+          <p id="localClientId"></p>
+        </div>
+        <div>
+          <h3>Data Channel Status</h3>
+          <p id="localDCStatus"></p>
+        </div>
+      </div>
+      <div>
+        <h2>Local Client Operations</h2>
+        <div>
+          <h3>Send String Message</h3>
+          <input type="text" id="DCStringMessageContent">
+          <input type="submit" value="Send String Message" id="DCSubmitStringMessage">
+        </div>
+        <div>
+          <h3>Send Integer Buffer</h3>
+          <input type="text" id="DCNumberContent">
+          <input type="submit" value="Send Array Buffer" id="DCSubmitArrayBuffer">
+          <input type="submit" value="Send Array Buffer View" id="DCSubmitArrayBufferView">
+        </div>
+        <div>
+          <h3>Send File</h3>
+          <input type="file" id="DCFileContent">
+          <input type="submit" value="Send File" id="DCFileSubmit">
+        </div>
+      </div>
+      <div>
+        <h2>Peer Connection Setup</h2>
+        <div>
+          <div>
+            <h3>STUN Server</h3>
+            <select id="stunServerURL">
+              <option>stun:stun.l.google.com:19302</option>
+              <option>stun:stun1.l.google.com:19302</option>
+              <option>stun:stun2.l.google.com:19302</option>
+              <option>stun:stun3.l.google.com:19302</option>
+              <option>stun:stun4.l.google.com:19302</option>
+              <option>stun:stun01.sipphone.com</option>
+              <option>stun:stun.ekiga.net</option>
+              <option>stun:stun.fwdnet.net</option>
+              <option>stun:stun.ideasip.com</option>
+              <option>stun:stun.iptel.org</option>
+              <option>stun:stun.rixtelecom.se</option>
+              <option>stun:stun.schlund.de</option>
+              <option>stun:stunserver.org</option>
+              <option>stun:stun.softjoys.com</option>
+              <option>stun:stun.voiparound.com</option>
+              <option>stun:stun.voipbuster.com</option>
+              <option>stun:stun.voipstunt.com</option>
+              <option>stun:stun.voxgratia.org</option>
+              <option>stun:stun.xten.com</option>
+            </select>
+          </div>
+          <div>
+            <h3>Customize Data Channel</h3>
+            <div>
+              <input type="checkbox" id="allowDCCustomization">
+              <span>Allow Customization</span>
+            </div>
+            <div>
+              <input type="checkbox" id="ordered">
+              <span>Ordered</span>
+            </div>
+            <div>
+              <input type="text" id="maxRetransmitTime">
+              <span>Max Retransmit Time</span>
+            </div>
+            <div>
+              <input type="text" id="maxRetransmits">
+              <span>Max Retransmits</span>
+            </div>
+            <div>
+              <input type="text" id="protocol">
+              <span>Protocol</span>
+            </div>
+            <div>
+              <input type="checkbox" id="negotiated">
+              <span>Negotiated</span>
+            </div>
+            <div>
+              <input type="text" id="id">
+              <span>Id</span>
+            </div>
+          </div>
+          <div>
+            <h3>Enable Camera and/or Microphone</h3>
+            <div>
+              <input type="checkbox" id="camera">
+              <span>Camera</span>
+            </div>
+            <div>
+              <input type="checkbox" id="microphone">
+              <span>Microphone</span>
+            </div>
+          </div>
+          <div>
+            <h3>Remote Client Id</h3>
+            <input id="remoteClientIdRequested" type="text">
+          </div>
+          <div>
+            <h3>Submit Configuration</h3>
+            <input id="remoteClientIdSubmit" type="submit" value="Register">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Remote Client</h2>
+        <div>
+          <h3>Messages Received</h3>
+          <div id="messagesReceived">
+          </div>
+        </div>
+        <div>
+          <h3>Remote Video</h3>
+          <video id="remoteClientVideo" controls></video>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
