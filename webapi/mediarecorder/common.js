@@ -1,4 +1,5 @@
 ﻿var mediaRecorderList = [];
+var lastErrorEvtFired = null;
 var blobURLUI = null;
 
 function mediaRecorderAttributeDump(mediaRecorder) {
@@ -42,6 +43,7 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
       errorMsg.innerHTML = evt;
+      lastErrorEvtFired = evt;
     };
 
     mediaRecorder.onstop = function(evt) {
