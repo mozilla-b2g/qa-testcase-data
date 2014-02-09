@@ -149,7 +149,17 @@ function createMediaRecorderControls(index) {
   muteMediaStream.setAttribute('type', 'submit');
   muteMediaStream.setAttribute('value', 'Mute Media Stream');
   muteMediaStream.onclick = function() {
-    mediaRecorderList[index].stream.getAudioTracks()[0].enabled = false;
+    var audioTracks = mediaRecorderList[index].stream.getAudioTracks();
+    var videoTracks = mediaRecorderList[index].stream.getVideoTracks();
+
+    if(audioTracks.length > 0) {
+      audioTracks[0].enabled = false;
+    }
+
+    if(videoTracks.length > 0) {
+      videoTracks[0].enabled = false;
+    }
+
     mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
@@ -157,7 +167,17 @@ function createMediaRecorderControls(index) {
   unmuteMediaStream.setAttribute('type', 'submit');
   unmuteMediaStream.setAttribute('value', 'Unmute Media Stream');
   unmuteMediaStream.onclick = function() {
-    mediaRecorderList[index].stream.getAudioTracks()[0].enabled = true;
+    var audioTracks = mediaRecorderList[index].stream.getAudioTracks();
+    var videoTracks = mediaRecorderList[index].stream.getVideoTracks();
+
+    if(audioTracks.length > 0) {
+      audioTracks[0].enabled = true;
+    }
+
+    if(videoTracks.length > 0) {
+      videoTracks[0].enabled = true;
+    }
+
     mediaRecorderAttributeDump(mediaRecorderList[index]);
   };
 
