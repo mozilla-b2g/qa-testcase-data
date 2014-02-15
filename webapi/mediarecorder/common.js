@@ -50,7 +50,7 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
       console.log('onstop fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      updateBlobURLUI(new Blob(mediaRecorder.blobData, { 'type' : mimeType }));
+      updateBlobURLUI(new Blob(evt.target.blobData, { 'type' : mimeType }));
       evt.target.blobData = [];
     };
 
