@@ -12,13 +12,28 @@ function updateBlobURLUI(blob) {
   if(blobURLUI) {
     var blobURL = URL.createObjectURL(blob);
     var hrefElement = document.createElement('a');
-    var breakLine = document.createElement('br');
+    var breakLineOne = document.createElement('br');
+    var breakLineTwo = document.createElement('br');
 
     hrefElement.setAttribute('href', blobURL);
     hrefElement.textContent = 'Download Data Available';
 
+    var mediaElementType = null;
+
+    if (blob.mimeType.indexOf('audio') !== -1) {
+      mediaElementType = 'audio';
+    } else {
+      mediaElementType = 'video';
+    }
+
+    var mediaElement = document.createElement(mediaElementType);
+    mediaElement.src = blobURL;
+    mediaElement.setAttribute('controls', 'controls');
+
     blobURLUI.appendChild(hrefElement);
-    blobURLUI.appendChild(breakLine);
+    blobURLUI.appendChild(breakLineOne);
+    blobURLUI.appendChild(mediaElement);
+    blobURLUI.appendChild(breakLineTwo);
   }
 }
 
