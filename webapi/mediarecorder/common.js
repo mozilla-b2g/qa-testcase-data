@@ -20,7 +20,7 @@ function updateBlobURLUI(blob) {
 
     var mediaElementType = null;
 
-    if (blob.mimeType.indexOf('audio') !== -1) {
+    if (blob.type.indexOf('audio') !== -1) {
       mediaElementType = 'audio';
     } else {
       mediaElementType = 'video';
