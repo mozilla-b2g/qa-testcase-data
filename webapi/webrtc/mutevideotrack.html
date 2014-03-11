@@ -1,0 +1,11 @@
+﻿<audio id="testVideo" controls></audio>
+<script type="text/javascript">
+navigator.mozGetUserMedia({video: true, audio: true}, function(stream) {
+  stream.getVideoTracks()[0].enabled = false;
+  var testVideo = document.getElementById('testVideo');
+  testVideo.mozSrcObject = stream;
+  testVideo.play();
+}, function(err) {
+  console.log(err);
+});
+</script>
