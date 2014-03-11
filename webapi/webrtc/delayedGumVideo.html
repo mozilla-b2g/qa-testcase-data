@@ -1,0 +1,12 @@
+﻿<video id="testVideo" controls></video>
+<script type="text/javascript">
+setTimeout(function() {
+  navigator.mozGetUserMedia({video: true}, function(stream) {
+    var testVideo = document.getElementById('testVideo');
+    testVideo.mozSrcObject = stream;
+    testVideo.play();
+  }, function(err) {
+    console.log(err);
+  });
+}, 5000);
+</script>

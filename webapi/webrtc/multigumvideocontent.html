@@ -1,0 +1,19 @@
+﻿<video id="testVideo1" controls></video>
+<video id="testVideo2" controls></video>
+<script type="text/javascript">
+navigator.mozGetUserMedia({video: true}, function(stream1) {
+  var testVideo1 = document.getElementById('testVideo1');
+  testVideo1.mozSrcObject = stream1;
+  testVideo1.play();
+
+  navigator.mozGetUserMedia({video: true}, function(stream2) {
+    var testVideo2 = document.getElementById('testVideo2');
+    testVideo2.mozSrcObject = stream2;
+    testVideo2.play();
+  }, function(err) {
+    console.log(err);
+  });
+}, function(err) {
+  console.log(err);
+});
+</script>
