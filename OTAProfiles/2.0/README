@@ -1,0 +1,9 @@
+with terminal cd into this directory and execute push_Smoketest_profile.sh to push the smoketest profile needed for OTA testing.
+
+Device preparation:
+1. remote debugging enabled
+2. internal storage usb share disabled
+3. Display timeout set to never
+4. device unlocked & connected via usb
+
+After restart, launch every app to ensure the data has been pushed.
