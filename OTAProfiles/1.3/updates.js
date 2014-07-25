@@ -1,1 +1,1 @@
-pref("app.update.channel", "aurora");
+pref("app.update.channel", "nightly-b2g32");

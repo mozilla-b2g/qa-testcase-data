@@ -10,7 +10,7 @@
 
 user_pref("app.reportCrashes", true);
 user_pref("app.update.custom", "1527c697-6b9d-46a8-9e40-dd5d91a28305");
-user_pref("app.update.lastUpdateTime.background-update-timer", 1405467826);
+user_pref("app.update.lastUpdateTime.background-update-timer", 1406240615);
 user_pref("app.update.lastUpdateTime.user-agent-updates-timer", 1405467706);
 user_pref("app.update.url.override", "https://aus4.mozilla.org/update/3/B2G/32.0/20140709000201/flame/en-US/nightly/Boot2Gecko%202.1.0.0-prerelease/default/default/update.xml?force=1");
 user_pref("browser.cache.disk.capacity", 71508);
@@ -25,10 +25,10 @@ user_pref("dom.mozApps.maxLocalId", 1036);
 user_pref("dom.mozApps.used", true);
 user_pref("dom.sms.requestStatusReport", false);
 user_pref("dom.webapps.firstRunWithSIM", false);
-user_pref("gecko.buildID", "20140716000201");
+user_pref("gecko.buildID", "20140722000200");
 user_pref("gecko.mstone", "32.0a2");
 user_pref("general.useragent.updates.lastupdated", "1405467706761");
-user_pref("idle.lastDailyNotification", 1405467652);
+user_pref("idle.lastDailyNotification", 1406240732);
 user_pref("intl.accept_languages", "en-US, en");
 user_pref("layers.composer2d.enabled", true);
 user_pref("layers.simple-tiles", false);
@@ -42,4 +42,4 @@ user_pref("ril.mms.mmsproxy", "proxy.mobile.att.net");
 user_pref("ril.numRadioInterfaces", 2);
 user_pref("ril.radio.disabled", false);
 user_pref("storage.vacuum.last.index", 0);
-user_pref("toolkit.telemetry.previousBuildID", "20140716000201");
+user_pref("toolkit.telemetry.previousBuildID", "20140722000200");

@@ -573,7 +573,7 @@
       "manifestHash": "11b92b60a0fc3e86f109d68b44edf7a4",
       "etag": "\"ed2e516580c8fb5317a1d1378f02592dc64c69f0c822b52a1dc17601fdfbd2a7\""
     },
-    "lastCheckedUpdate": 1405529139572,
+    "lastCheckedUpdate": 1406304443047,
     "downloadAvailable": true,
     "downloadSize": 132261,
     "updateManifest": {
@@ -645,7 +645,7 @@
     "storeId": "",
     "storeVersion": 0,
     "role": "",
-    "lastCheckedUpdate": 1405529139611,
+    "lastCheckedUpdate": 1406304443156,
     "manifest": {
       "name": "Facebook",
       "description": "Facebook helps you connect and share with the people in your life.",
@@ -710,6 +710,6 @@
     "storeId": "https://marketplace.firefox.com#a22e0277-35bc-434d-9371-1568c75fc726",
     "storeVersion": 1513878,
     "role": "",
-    "lastCheckedUpdate": 1405529139584
+    "lastCheckedUpdate": 1406304443064
   }
 }
