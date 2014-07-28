@@ -1,0 +1,1 @@
+{"version":"1.0","name":"Calculator","description":"Calc / Scientific Calculator","icons":{"16":"/images/icon-16.png","48":"/images/icon-48.png","128":"/images/icon-128.png"},"developer":{"name":"IPJmedia","url":"http://scientific-calculator.appspot.com/"},"installs_allowed_from":["*"],"default_locale":"en"}

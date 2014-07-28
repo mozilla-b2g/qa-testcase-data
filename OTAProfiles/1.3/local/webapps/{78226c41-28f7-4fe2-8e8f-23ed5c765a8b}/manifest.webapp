@@ -1,0 +1,1 @@
+{"name":"Fix-It Felix","description":"Fix-It Felix","icons":{"30":"/Icon30.png","60":"/Icon60.png","128":"/Icon128.png"},"launch_path":"/index.html","developer":{"name":"Disney","url":"http://disney.com"},"orientation":["portrait"],"default_locale":"en","permissions":{"audio-channel-content":{"description":"Playing audio"}},"type":"web"}
