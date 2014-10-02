@@ -1,0 +1,17 @@
+    <video controls id="vvv" width="640" height="480"  src = 'onepiece.webm'></video>
+<script>
+  var a = document.getElementById('vvv');
+  var b;
+  var mBlob;
+  a.play();
+  b = a.mozCaptureStreamUntilEnded();
+  var mMediaRecorder;
+  setTimeout(function() {
+    mMediaRecorder = new MediaRecorder(b);
+    mMediaRecorder.onstop = function() { alert("mr stopped size = " + mBlob.size); }
+    mMediaRecorder.ondataavailable = function (e) {
+      mBlob = new Blob([mBlob, e.data], {type: e.data.type});
+    }
+    mMediaRecorder.start(1000);
+  }, 3000);
+</script>

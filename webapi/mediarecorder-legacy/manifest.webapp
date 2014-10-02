@@ -1,0 +1,17 @@
+﻿{
+  "version": "1.0",
+  "name": "Media Recorder Test",
+  "description": "A test app for testing media recording",
+  "launch_path": "/qa-testcase-data/webapi/mediarecorder/index.html",
+  "icons": {
+    "128": "/qa-testcase-data/webapi/notifications/qalogo.png"
+  },
+  "permissions": {
+    "audio-capture": {},
+		"video-capture": {}
+  },
+  "developer": {
+    "name": "Mozilla QA",
+    "url": "http://jasondanielsmith.wordpress.com/"
+  }
+}

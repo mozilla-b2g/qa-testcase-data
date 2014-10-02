@@ -1,0 +1,70 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>MediaRecorder Demo</title>
+
+    <style>
+    INPUT {
+      font-size: 20px;
+    }
+    button {
+      font-size: 40px;
+      width: 100%
+    }
+    </style>
+
+  </head>
+    <script type="text/javascript" src="MediaRecorder.js"></script>
+  <body>
+    <button id="install" hidden=true>installApp</button><br>
+    <audio id="audioelem"></audio>
+    <button id = 'WEBRTC'>WEBRTC</button>
+getMediaStream From<br>
+    <button id = 'getUserMedia'>GUM_A</button>
+    <button id = 'getAVUserMedia'>GUM_AV</button> <Br>
+    <button id = 'getVUserMedia'>GUM_V</button>
+    <button id = 'getFakeAVUserMedia'>GUM_AVF</button> <br>
+    <button id = 'getUserMedia2' hidden= true>GetUserMedia2</button>
+    <button id = 'getFakeUserMedia' hidden= true>GetFakeUserMedia</button>
+    <button id = 'getAudioContext' hidden= true>GetAudioContext</button>
+    <button id = 'get4chAudioContext' hidden= true>Get4chAudioContext</button>
+    <button id = 'getAudioTag' hidden= true>GetAudioTag</button>
+    <button id = 'getAudioTag2ch' hidden= true>GetAudioTag2ch</button>
+    <button id = 'getAudioTagNo'  hidden= true>GetAudioTagWrongSample</button>
+    <button id = 'Stopms'>StopMS</button><br>
+    MediaStream object status<INPUT id='mediastream' SIZE=20 value = 'null'><p>
+MediaRecorder Function<br>
+    <button id = 'Start'>Start</button>
+    <button id = 'StartI2 ' hidden= true>StartInst2</button>
+    <button id = 'StartOpt'>StartOpt</button>
+    <button id = 'SetNull' hidden= true>SetMRNUll</button>
+    <button id = 'Start0' hidden= true>Start(0)</button>
+    <button id = 'Stop'>Stop</button>
+    <button id = 'Pause'>Pause</button>
+    <button id = 'Resume'>Resume</button>
+    <button id = 'requestData' hidden= true>requestData</button>
+    <button id = 'Start0WithEvent' hidden= true>Start(0)WithRequestData</button>
+    <button id = 'Save' hidden= true>SaveToIndexDB</button><br>
+    <button id = 'SaveBlob'>SaveBlob</button><br>
+    <button id = 'SaveBlobSD'>SaveBlobSD</button><br>
+    Blob Size<INPUT id='size' SIZE=4 value = 0>
+    Blob Size2<INPUT id='size2' SIZE=4 value = 0 hidden= true><br>
+    Recorder status<INPUT id='status' SIZE=4 value = ''><p>
+   mime<INPUT id='mime' SIZE=4 value = ''><p>
+Playback Recording<br>
+    <button id = 'Playback'>PlayAudRec</button> <br>
+    <button id = 'PlaybackIDX' hidden= true>PlayBackFromIndexDB</button><br>
+    <button id = 'PlayVideo' hidden= true>PlayVideoFromFile</button>
+    <button id = 'PlayVideo2' hidden= true>PlayVideoFromFile2</button>
+    <button id = 'PlayVideo3' hidden= true>PlayVP9Video</button>
+    <button id = 'PlayVideo4' hidden= true>Play720pWebM</button>
+    <button id = 'PlayVideo5' hidden= true >Play352WebM</button>
+    <button id = 'PlayVideo6'>PlayAspect</button>
+    <button id = 'PlaybackVideo' >PlayVidRec</button><br>
+    <video id="videoelemsrc" width="640" height="480"></video>
+    <video id="videoelem" width="640" height="480"></video>
+  </body>
+
+</html>

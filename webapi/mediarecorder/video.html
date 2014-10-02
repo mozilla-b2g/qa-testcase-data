@@ -1,0 +1,35 @@
+
+    <video controls id="vvv" width="640" height="480"  src = 'onepiece.webm'></video>
+    <video controls id="videoelem" width="640" height="480"></video>
+----
+<script>
+  var videoReplay = document.getElementById("videoelem");
+function PlaybackVideo() {
+  _FReader = new FileReader();
+//bug...
+  _FReader.readAsDataURL(mBlob);
+  _FReader.onload = function (_FREvent) {
+    videoReplay.src = _FREvent.target.result;
+    videoReplay.play();
+  };
+}
+
+  var mBlob;
+  var a = document.getElementById('vvv');
+  var b;
+  a.play();
+
+  var mMediaRecorder;
+
+  setTimeout(function() {
+    b = a.mozCaptureStreamUntilEnded();
+    mMediaRecorder = new MediaRecorder(b);
+    mMediaRecorder.onstop = function() { alert("mr stopped size = " + mBlob.size); }
+    mMediaRecorder.ondataavailable = function (e) {
+      mBlob = new Blob([mBlob, e.data], {type: e.data.type});
+    }
+    mMediaRecorder.start(1000);
+  }, 3000);
+
+
+</script>

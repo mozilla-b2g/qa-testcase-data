@@ -1,0 +1,71 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>MediaRecorder Demo</title>
+
+    <style>
+    INPUT {
+      font-size: 20px;
+    }
+    button {
+      font-size: 20px;
+    }
+    </style>
+
+  </head>
+    <script type="text/javascript" src="MediaRecorder.js"></script>
+  <body>
+    <button id="install" hidden= true>installApp</button>
+    <a href="MediaRecorderB2G.html">==GOTOB2G==</a><br>
+    <audio id="audioelem"></audio>
+    <button id = 'WEBRTC'>WEBRTC</button> <br>
+getMediaStream From<br>
+    <button id = 'getUserMedia'>GetUserMedia1</button>
+    <button id = 'getUserMedia2'>GetUserMedia2</button>
+    <button id = 'getFakeUserMedia'>GetFakeUserMedia</button>
+    <button id = 'getAudioContext'>GetAudioContext</button>
+    <button id = 'get4chAudioContext'>Get4chAudioContext</button><br>
+    <button id = 'getAudioTag'>GetAudioTag</button>
+    <button id = 'getAudioTag2ch'>GetAudioTag2ch</button>
+    <button id = 'getAudioTagNo'>GetAudioTagWrongSample</button>
+    <button id = 'Stopms'>StopMediaStream1</button><br>
+    MediaStream object status<INPUT id='mediastream' SIZE=20 value = 'null'><p>
+MediaRecorder Function<br>
+    <button id = 'Start'>Start</button>
+    <button id = 'StartI2'>StartInst2</button>
+    <button id = 'StartOpt'>StartOpt</button>
+    <button id = 'SetNull'>SetMRNUll</button>
+    <button id = 'Start0'>Start(0)</button>
+    <button id = 'Stop'>Stop</button>
+    <button id = 'Pause'>Pause</button>
+    <button id = 'Resume'>Resume</button>
+    <button id = 'requestData'>requestData</button>
+    <button id = 'Start0WithEvent'>Start(0)WithRequestData</button>
+    <button id = 'Save'>SaveToIndexDB</button><br>
+    <button id = 'SaveBlob'>SaveBlob</button><br>
+    <button id = 'SaveBlobSD' hidden= true>SaveBlobSD</button><br>
+    Blob Size<INPUT id='size' SIZE=4 value = 0>
+    Blob Size2<INPUT id='size2' SIZE=4 value = 0>
+    Recorder status<INPUT id='status' SIZE=4 value = ''><p>
+    mime<INPUT id='mime' SIZE=10 value = 'audio/3gpp'><p>
+Playback Recording<br>
+    <button id = 'Playback'>PlayBackFromMemory</button>
+    <button id = 'PlaybackIDX'>PlayBackFromIndexDB</button><br>
+---- Video function --- <br>
+    <button id = 'getAVUserMedia'>GetAVUserMedia</button>
+    <button id = 'getVUserMedia'>GetVideoUserMedia</button>
+    <button id = 'getFakeAVUserMedia'>GetFakeAVUserMedia</button>
+    <button id = 'PlayVideo'>Plgizmo</button>
+    <button id = 'PlayVideo2'>PlayVideoFromFile2</button><br>
+    <button id = 'PlayVideo3'>PlayVP9Video</button>
+    <button id = 'PlayVideo4'>Play720pWebM</button>
+    <button id = 'PlayVideo5'>Play352WebM</button>
+    <button id = 'PlayVideo6'>PlayAspect</button>
+    <button id = 'PlaybackVideo'>PlayVideoBackFromMemory</button><br>
+    <video controls id="videoelemsrc" width="640" height="480"></video>
+    <video controls id="videoelem" width="640" height="480"></video>
+  </body>
+
+</html>

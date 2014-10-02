@@ -1,5 +1,4 @@
-﻿var mediaRecorderList = [];
-var lastErrorEvtFired = null;
+var mediaRecorderList = [];
 var blobURLUI = null;
 
 function mediaRecorderAttributeDump(mediaRecorder) {
@@ -12,28 +11,13 @@ function updateBlobURLUI(blob) {
   if(blobURLUI) {
     var blobURL = URL.createObjectURL(blob);
     var hrefElement = document.createElement('a');
-    var breakLineOne = document.createElement('br');
-    var breakLineTwo = document.createElement('br');
+    var breakLine = document.createElement('br');
 
     hrefElement.setAttribute('href', blobURL);
     hrefElement.textContent = 'Download Data Available';
 
-    var mediaElementType = null;
-
-    if (blob.type.indexOf('audio') !== -1) {
-      mediaElementType = 'audio';
-    } else {
-      mediaElementType = 'video';
-    }
-
-    var mediaElement = document.createElement(mediaElementType);
-    mediaElement.src = blobURL;
-    mediaElement.setAttribute('controls', 'controls');
-
     blobURLUI.appendChild(hrefElement);
-    blobURLUI.appendChild(breakLineOne);
-    blobURLUI.appendChild(mediaElement);
-    blobURLUI.appendChild(breakLineTwo);
+    blobURLUI.appendChild(breakLine);
   }
 }
 
@@ -44,29 +28,27 @@ function setupMediaRecorder(stream, numberOfRecorders, mimeType) {
 
   for(var i = 0; i < numberOfRecorders; i++){
     var mediaRecorder = new MediaRecorder(stream);
-    mediaRecorder.blobData = [];
+    var blobDataAvailable = [];
 
     mediaRecorder.ondataavailable = function(evt) {
       console.log('ondataavailable fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      evt.target.blobData.push(evt.data);
+      blobDataAvailable.push(evt.data);
     };
 
     mediaRecorder.onerror = function(evt) {
       console.log('onerror fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      errorMsg.innerHTML = evt;
-      lastErrorEvtFired = evt;
     };
 
     mediaRecorder.onstop = function(evt) {
       console.log('onstop fired');
       console.log(evt);
       console.log(mediaRecorderAttributeDump(evt.target));
-      updateBlobURLUI(new Blob(evt.target.blobData, { 'type' : mimeType }));
-      evt.target.blobData = [];
+      updateBlobURLUI(new Blob(blobDataAvailable, { 'type' : mimeType }));
+      blobDataAvailable = [];
     };
 
     mediaRecorder.onwarning = function(evt) {
@@ -93,3 +75,4 @@ function createGUMStream(constraints, numberOfRecorders, mimeType) {
     console.log(err);
   });
 }
+
