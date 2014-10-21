@@ -94,6 +94,33 @@
       "support_contacts": "attus/attus_support_contacts.json",
       "default_contacts": "attus/attus_contacts.json",
       "wallpaper": "attus/attus_wallpaper.png"
+    },
+    {
+      "id": "Taiwan Mobile",
+      "mcc-mnc": [
+        "466-097"
+      ],
+      "apps": [
+        {
+          "id": "Facebook",
+          "screen": 2,
+          "location": 0
+        },
+        {
+          "id": "Accuweather",
+          "screen": 1,
+          "location": 6
+        },
+        {
+          "id": "Poppit",
+          "screen": 1,
+          "location": 3
+        }
+      ],
+      "support_contacts": "twnmobile/twnmobile_support_contacts.json",
+      "default_contacts": "twnmobile/twnmobile_contacts.json",
+      "wallpaper": "twnmobile/twnmobile_wallpaper.png"
     }
+
   ]
 }

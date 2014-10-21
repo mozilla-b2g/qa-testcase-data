@@ -1,0 +1,30 @@
+[
+  {
+    "name": [
+      "466097 person"
+    ],
+    "givenName": [
+      "466097 person"
+    ],
+    "tel": [
+      {
+        "type": ["Other"],
+        "value": "4660970000"
+      }
+    ]
+  },
+  {
+    "name": [
+      "Inf 466097"
+    ],
+    "givenName": [
+      "Inf 466097"
+    ],
+    "tel": [
+      {
+        "type": ["Other"],
+        "value": "4660979999"
+      }
+    ]
+  }
+]
