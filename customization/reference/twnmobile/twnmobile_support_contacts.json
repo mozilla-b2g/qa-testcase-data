@@ -1,0 +1,14 @@
+{
+  "onlinesupport": {
+    "href": "http://www.twitter.com",
+    "title": "twitter"
+  },
+  "callsupport1": {
+    "href": "tel:466097111",
+    "title": "Dial 466097111"
+  },
+  "callsupport2": {
+    "href": "tel:466097222",
+    "title": "Dial 466097222"
+  }
+}
