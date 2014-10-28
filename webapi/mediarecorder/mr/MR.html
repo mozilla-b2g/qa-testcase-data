@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="expires" content="0"/>
+    <script src="detect.js"></script>
+    <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <title>MediaStream Recording Test Landing Page</title>
+  </head>
+  <body>
+  <div class="row">
+    <div class="hero-unit span12 offset2" style="text-align:center">
+      <h2>MediaStream Recording Test Landing Page</h2>
+      <p> This page demostrage the mozilla implementation of <a href="https://dvcs.w3.org/hg/dap/raw-file/tip/media-stream-capture/MediaRecorder.html">MediaRecorder</a> API </p>
+    </div>
+  </div>
+
+  <div class="row">
+  <div id="gum" class="span12 offset2 alert alert-error fade in" style="display: none;">
+  </div>
+  </div>
+  
+  <div class="row">
+  <div id="mr" class="span12 offset2 alert alert-error" style="display: none;">
+  </div>
+  </div>
+
+
+  <div class="row">
+  <div id="version" class="span12 offset2 alert" style="display: none;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Your Firefox is old.</h4>
+    You have an older version of Firefox that supports MediaRecorder but may have an incompatible API. For best results, please download the latest <a href="http://nightly.mozilla.org/">Nightly</a>!
+  </div>
+  
+  <div class="row offset2">
+      <div class="span6">
+      <div class="well">
+        <h3>Record live audio example</h3>
+        <p></p>
+        <p><a class="btn btn-large" href="gumaudio.html">Try Demo</a></p>
+      </div>
+      </div>
+    
+      <div class="span6">
+      <div class="well">
+        <h3>Record live video example</h3>
+        <p><a class="btn btn-large" href="gumvideo.html">Try Demo</a></p>
+      </div>
+      </div>
+  </div>
+  
+  <hr>
+  <br>
+  
+  <script>
+    if (!navigator.mozGetUserMedia) {
+      document.getElementById("gum").style.display = "block";
+    }
+
+    if (BrowserDetect.browser != "Firefox" ||
+        parseInt(BrowserDetect.version, 10) < 30) {
+      document.getElementById("version").style.display = "block";
+    }
+  </script>
+</

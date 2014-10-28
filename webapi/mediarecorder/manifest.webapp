@@ -1,17 +1,15 @@
-﻿{
+{
   "version": "1.0",
-  "name": "Media Recorder Test",
-  "description": "A test app for testing media recording",
-  "launch_path": "/qa-testcase-data/webapi/mediarecorder/index.html",
-  "icons": {
-    "128": "/qa-testcase-data/webapi/notifications/qalogo.png"
+  "name": "Record",
+  "description": "Web app Record",
+  "launch_path": "MediaRecorderB2G.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
   },
+  "type": "privileged",
   "permissions": {
     "audio-capture": {},
-		"video-capture": {}
-  },
-  "developer": {
-    "name": "Mozilla QA",
-    "url": "http://jasondanielsmith.wordpress.com/"
+    "device-storage:music":{ "access": "readcreate" }
   }
 }

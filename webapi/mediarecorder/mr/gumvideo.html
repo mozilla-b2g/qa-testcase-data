@@ -1,0 +1,16 @@
+<h2> Record Live Camera image into WebM</h2>
+<script type="text/javascript" src="common.js"></script>
+<h3> Run getUserMedia first then press start </h3>
+<button id = 'getUserMedia' onclick = 'gUMVideo()'>getUserMedia for video</button>
+<button id = 'Start' onclick = 'Start(1000)'>Start</button>
+<button id = 'Stop' onclick = 'Stop()'>Stop</button>
+<button id = 'Pause' onclick = 'Pause()'>Pause</button>
+<button id = 'Resume' onclick = 'Resume()'>Resume</button>
+<button id = 'Playback' onclick = 'PlaybackVideo()'>Playback result</button>
+<button id = 'SaveBlob' onclick = 'SaveBlob()'>SaveBlob</button><br>
+<br>
+Blob Size<INPUT id='size' SIZE=4 value = 0>
+Recorder status<INPUT id='status' SIZE=4 value = ''><br>
+
+<video id="videoelemsrc" controls></video>
+<video id="videoelem" controls></video>
