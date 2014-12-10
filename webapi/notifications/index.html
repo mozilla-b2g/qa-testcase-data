@@ -114,7 +114,7 @@
       };
 
       document.getElementById('installHostedAppWithPerms').onclick = function() {
-        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/notifications/manifest.webapp');
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/manifest.webapp');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -126,7 +126,7 @@
       };
 
       document.getElementById('installHostedAppWithoutPerms').onclick = function() {
-        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/notifications/nopermissions.webapp');
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/nopermissions.webapp');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -138,7 +138,7 @@
       };
 
       document.getElementById('installPackagedApp').onclick = function() {
-        var request = navigator.mozApps.installPackage('http://mozilla.github.io/qa-testcase-data/webapi/notifications/packaged.manifest');
+        var request = navigator.mozApps.installPackage('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/packaged.manifest');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -213,9 +213,9 @@
         <span>Icon</span>
         <select id="notificationIconURL">
           <option></option>
-          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/qalogo.png</option>
-          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/jpegsample.jpg</option>
-          <option>http://mozilla.github.io/qa-testcase-data/webapi/notifications/largeicon.png</option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/qalogo.png</option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/jpegsample.jpg</option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/largeicon.png</option>
           <option>/qa-testcase-data/webapi/notifications/qalogo.png</option>
           <option>/qa-testcase-data/webapi/notifications/smallicon.png</option>
           <option>/thisdoesnotexist.png</option>
