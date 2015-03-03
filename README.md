@@ -9,7 +9,7 @@ Developing Test Case Data
 
 To modify the test case data in this repository, follow these steps in you are a core contributor:
 
-1. Clone the repository by running "git clone https://github.com/mozilla/qa-testcase-data.git"
+1. Clone the repository by running "git clone https://github.com/mozilla-b2g/qa-testcase-data.git"
 2. Modify the test case data to your local copy of qa-testcase-data
  1. If you adding or modifying files, then run "git add" on those files
  2. If you removing files, then run "git rm" on those files
@@ -28,10 +28,10 @@ For non-core contributors, you will need to follow these steps:
 Using Test Case Data
 ====================
 
-Visit http://mozilla.github.io/qa-testcase-data/ with a relative path at the end of the URL that matches
+Visit http://mozilla-b2g.github.io/qa-testcase-data/ with a relative path at the end of the URL that matches
 the relative path of the test case data in this repository.
 
 Example:
 
-* **Github Location**: https://github.com/mozilla/qa-testcase-data/blob/gh-pages/Video/multi2.ogg
-* **Test Case Data URL**: http://mozilla.github.io/qa-testcase-data/Video/multi2.ogg
+* **Github Location**: https://github.com/mozilla-b2g/qa-testcase-data/blob/gh-pages/Video/multi2.ogg
+* **Test Case Data URL**: http://mozilla-b2g.github.io/qa-testcase-data/Video/multi2.ogg
