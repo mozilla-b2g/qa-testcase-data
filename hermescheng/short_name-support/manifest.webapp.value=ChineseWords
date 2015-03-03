@@ -1,0 +1,17 @@
+{
+  "name": "Manifest short_name Test for Chinese words",
+  "short_name": "中文字測試",
+  "description" : "short_name=Chinese words & package app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "short_name test for UNICODE+special characters",
+  "short_name": "\u0021\n\r\t\\\"\u0041\"",
+  "description" : "Manifest short_name Test for UNICODE+special characters & package app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

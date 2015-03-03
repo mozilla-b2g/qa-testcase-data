@@ -1,0 +1,17 @@
+{
+  "name": "Manifest short_name Test for NOT UTF-16 characters",
+  "short_name": "\uFFFG",
+  "description" : "short_name has NOT UTF-16 characters & package app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

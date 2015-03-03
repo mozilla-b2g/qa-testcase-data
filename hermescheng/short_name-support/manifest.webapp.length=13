@@ -1,0 +1,17 @@
+{
+  "name": "short_name test for short_name=13",
+  "short_name": "short name=13",
+  "description" : "short_name=13 (max length of name in Homescreen) & package app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}
