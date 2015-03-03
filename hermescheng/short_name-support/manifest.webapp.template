@@ -1,0 +1,17 @@
+{
+  "name": "Template for Manifest short_name Test",
+  "short_name": "Verify short_name behavior",
+  "description" : "test attr values, shown places, searchable, and other behaviors",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

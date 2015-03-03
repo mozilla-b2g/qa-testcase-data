@@ -1,0 +1,17 @@
+{
+  "name": "Manifest short_name Test for boolean",
+  "short_name": true,
+  "description" : "short_name=boolean & package app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

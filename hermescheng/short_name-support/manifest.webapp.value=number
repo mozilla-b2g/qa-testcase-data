@@ -1,0 +1,17 @@
+{
+  "name": "Manifest short_name Test for short_name=number",
+  "short_name": "1234567890",
+  "description" : "short_name=number & hosted app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "short_name>40",
+  "short_name": "Verify Length behavior abcdefghijklmnopqrstuvwxyz",
+  "description" : "short_name>40 & hosted app",
+  "launch_path": "/index.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "messages": [
+       { "notification": "/index.html" }
+  ],
+  "icons": {},
+  "permissions": {}
+}
