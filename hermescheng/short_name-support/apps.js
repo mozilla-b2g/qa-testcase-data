@@ -34,10 +34,12 @@ function handleAppRequest(request) {
 
 function installHostedApp(manifest) {
   var request = navigator.mozApps.install(BASE_PATH + manifest);
+  console.debug("request uri: " + request);
   handleAppRequest(request);
 }
 
 function installPackagedApp(manifest) {
   var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
+  console.debug("request uri: " + request);
   handleAppRequest(request);
 }
