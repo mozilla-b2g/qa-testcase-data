@@ -2,7 +2,7 @@
   "name": "Manifest short_name Test for boolean",
   "short_name": true,
   "description" : "short_name is boolean (true)",
-  "launch_path": "/test.html",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",

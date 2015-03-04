@@ -2,7 +2,7 @@
   "name": "short_name test for app version updated",
   "short_name": "version",
   "description" : "different version to verify short_name cannot be changed",
-  "launch_path": "/test.html",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",

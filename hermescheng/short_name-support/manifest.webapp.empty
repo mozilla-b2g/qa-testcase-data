@@ -2,7 +2,7 @@
   "name": "short_name value is empty",
   "short_name": "",
   "description" : "short_name=null",
-  "launch_path": "/test.html",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
