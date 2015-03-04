@@ -1,6 +1,5 @@
 ﻿var ORIGIN = window.location.protocol + '//' + window.location.host;
-//var BASE_PATH = ORIGIN + '/qa-testcase-data/hermescheng/short_name-support/';
-var BASE_PATH = ORIGIN + '/';
+var BASE_PATH = ORIGIN + '/qa-testcase-data/hermescheng/short_name-support/';
 console.log("Base path: " + BASE_PATH);
 
 function handleAppRequest(request) {
@@ -40,6 +39,7 @@ function installHostedApp(manifest) {
 }
 
 function installPackagedApp(manifest) {
+  console.log("manifest file name: " + manifest);
   var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
   handleAppRequest(request);
 }
