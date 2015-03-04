@@ -1,6 +1,7 @@
 ﻿var ORIGIN = window.location.protocol + '//' + window.location.host;
 //var BASE_PATH = ORIGIN + '/qa-testcase-data/hermescheng/short_name-support/';
 var BASE_PATH = ORIGIN + '/';
+console.log("Base path: " + BASE_PATH);
 
 function handleAppRequest(request) {
   request.onsuccess = function(e) {
@@ -33,13 +34,12 @@ function handleAppRequest(request) {
 }
 
 function installHostedApp(manifest) {
+  console.log("manifest file name: " + manifest);
   var request = navigator.mozApps.install(BASE_PATH + manifest);
-  console.log("request uri: " + BASE_PATH + manifest);
   handleAppRequest(request);
 }
 
 function installPackagedApp(manifest) {
   var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
-  console.log("request uri: " + BASE_PATH + manifest);
   handleAppRequest(request);
 }
