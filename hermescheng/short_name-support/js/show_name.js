@@ -1,2 +1,0 @@
-var short_name = "";
-

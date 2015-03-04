@@ -1,17 +1,14 @@
 {
   "name": "short_name value is empty",
   "short_name": "",
-  "description" : "short_name=null & package app",
-  "launch_path": "/index.html",
+  "description" : "short_name=/"/"",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }

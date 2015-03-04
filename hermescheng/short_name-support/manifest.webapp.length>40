@@ -1,12 +1,13 @@
 {
   "name": "short_name>40",
   "short_name": "Verify Length behavior abcdefghijklmnopqrstuvwxyz",
-  "description" : "short_name>40 & hosted app",
-  "launch_path": "/index.html",
+  "description" : "short_name>40 & packaged app",
+  "package_path" : "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support/apptest_longlength.zip",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
     "e-mail": "hcheng@mozilla.com"
   },
   "messages": [

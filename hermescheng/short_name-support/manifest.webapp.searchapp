@@ -1,17 +1,14 @@
 {
   "name": "long for search app",
   "short_name": "short name for search",
-  "description" : "Manifest short_name Test for search results of search app & package app",
-  "launch_path": "/index.html",
+  "description" : "Manifest short_name Test for search results of search app",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }

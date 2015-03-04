@@ -1,7 +1,8 @@
 {
-  "name": "short_name test for short_name=13",
-  "short_name": "short name=13",
-  "description" : "short_name=13 (max length of name in Homescreen)",
+  "name": "short_name version update Test",
+  "short_name": "webpage short name",
+  "description" : "test version update with different short_name",
+  "version" : 1.0,
   "launch_path": "/test.html",
   "type": "web",
   "developer": {

@@ -1,17 +1,14 @@
 {
   "name": "Manifest short_name Test for boolean",
   "short_name": true,
-  "description" : "short_name=boolean & package app",
-  "launch_path": "/index.html",
+  "description" : "short_name is boolean (true)",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }

@@ -1,17 +1,14 @@
 {
   "name": "Manifest short_name Test for json object",
   "short_name": {"Jason":"true", "Object":"true"},
-  "description" : "short_name=json object & package app",
-  "launch_path": "/index.html",
+  "description" : "short_name=json object",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }

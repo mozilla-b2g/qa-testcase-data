@@ -2,16 +2,13 @@
   "name": "short_name test for app version updated",
   "short_name": "version",
   "description" : "different version to verify short_name cannot be changed",
-  "launch_path": "/index.html",
+  "launch_path": "/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }
