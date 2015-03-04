@@ -1,17 +1,14 @@
 {
-  "name": "Manifest short_name Test for NOT UTF-16 characters",
+  "name": "Manifest short_name Test for invalid UTF characters",
   "short_name": "\uFFFG",
-  "description" : "short_name has NOT UTF-16 characters & package app",
-  "launch_path": "/index.html",
+  "description" : "short_name has NOT UTF-16 characters",
+  "launch_path": "http://mozilla-b2g.github.io/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }

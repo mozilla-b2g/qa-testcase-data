@@ -1,18 +1,14 @@
 {
   "name": "short_name test for short_name=1",
   "short_name": "H",
-  "description" : "short_name=1 & hosted app",
-  "package_path" : "http://<your server ip>:8080/application.zip",
-  "launch_path": "/index.html",
+  "description" : "short_name=1",
+  "launch_path": "http://mozilla-b2g.github.io/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/HermesCheng/fxos-testapp",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }
