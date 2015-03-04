@@ -21,7 +21,7 @@
       <input type="submit" value="Test - Value of short_name has Chinese Words" onclick="installHostedApp('manifest.webapp.value=ChineseWords')"><br>
       <input type="submit" value="Test - Value of short_name has an invalid UTF-16 character" onclick="installHostedApp('manifest.webapp.value=not_UTF16')"><br>
       <input type="submit" value="Test - Input characters in 'name' and 'short_name' to search this app" onclick="installHostedApp('manifest.webapp.searchapp')"><br>
-      <!--input type="submit" value="Test - Version update & different short_name value" onclick="installHostedApp('manifest.webapp.version_update')"--><br>
+      <!--input type="submit" value="Test - Version update & different short_name value" onclick="installHostedApp('manifest.webapp.version_update')"-->
     </div>
   </body>
 </html>
