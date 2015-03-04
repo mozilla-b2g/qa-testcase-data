@@ -2,7 +2,7 @@
   "name": "short_name>40",
   "short_name": "Verify Length behavior abcdefghijklmnopqrstuvwxyz",
   "description" : "short_name>40 & packaged app",
-  "package_path" : "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support/apptest_longlength.zip",
+  "package_path" : "hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/apptest_longlength.zip",
   "launch_path": "/test.html",
   "type": "web",
   "developer": {

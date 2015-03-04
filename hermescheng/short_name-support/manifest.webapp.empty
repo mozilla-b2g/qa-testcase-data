@@ -1,7 +1,7 @@
 {
   "name": "short_name value is empty",
   "short_name": "",
-  "description" : "short_name=/"/"",
+  "description" : "short_name=null",
   "launch_path": "/test.html",
   "type": "web",
   "developer": {
