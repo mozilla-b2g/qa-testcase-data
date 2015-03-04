@@ -3,7 +3,7 @@
   "short_name": "webpage short name",
   "description" : "test version update with different short_name",
   "version" : 1.0,
-  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "launch_path": "http://mozilla-b2g.github.io/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
