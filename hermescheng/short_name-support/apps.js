@@ -38,8 +38,8 @@ function installHostedApp(manifest) {
   handleAppRequest(request);
 }
 
-function installPackagedApp(manifest) {
-  console.log("manifest file name: " + manifest);
+function installPackagedApp(miniManifest) {
+  console.log("miniManifest file name: " + miniManifest);
   var request = navigator.mozApps.installPackage(BASE_PATH + miniManifest);
   handleAppRequest(request);
 }
