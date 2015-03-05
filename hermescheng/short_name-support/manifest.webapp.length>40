@@ -4,7 +4,6 @@
   "description" : "short_name>40 & packaged app",
   "package_path" : "/qa-testcase-data/hermescheng/short_name-support/apptest_longlength.zip",
   "size" : 1200,
-  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
