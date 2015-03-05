@@ -2,7 +2,8 @@
   "name": "short_name>40",
   "short_name": "Verify Length behavior abcdefghijklmnopqrstuvwxyz",
   "description" : "short_name>40 & packaged app",
-  "package_path" : "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/apptest_longlength.zip",
+  "package_path" : "/qa-testcase-data/hermescheng/short_name-support/apptest_longlength.zip",
+  "size" : 1200,
   "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
   "type": "web",
   "developer": {
@@ -10,9 +11,6 @@
     "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
     "e-mail": "hcheng@mozilla.com"
   },
-  "messages": [
-       { "notification": "/index.html" }
-  ],
   "icons": {},
   "permissions": {}
 }
