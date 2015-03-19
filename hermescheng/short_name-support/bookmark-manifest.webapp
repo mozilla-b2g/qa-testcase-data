@@ -1,0 +1,12 @@
+{
+  "name": "bookmark a website with manifest",
+  "short_name": "short name bookmark",
+  "description" : "short_name test for bookmark a website with manifest",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "icons": {},
+  "permissions": {}
+}
