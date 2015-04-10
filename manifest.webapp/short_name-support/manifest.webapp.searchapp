@@ -1,0 +1,14 @@
+{
+  "name": "long for search app",
+  "short_name": "short name for search",
+  "description" : "Manifest short_name Test for search results of search app",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "icons": {},
+  "permissions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Manifest short_name Test for short_name=number",
+  "short_name": "1234567890",
+  "description" : "short_name=number",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "icons": {},
+  "permissions": {}
+}

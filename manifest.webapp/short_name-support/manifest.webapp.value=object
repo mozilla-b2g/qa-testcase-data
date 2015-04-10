@@ -1,0 +1,14 @@
+{
+  "name": "Manifest short_name Test for json object",
+  "short_name": {"Jason":"true", "Object":"true"},
+  "description" : "short_name=json object",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "http://hermescheng.github.io/qa-testcase-data/hermescheng/short_name-support/",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "icons": {},
+  "permissions": {}
+}

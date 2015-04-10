@@ -1,0 +1,14 @@
+{
+  "name": "short_name test for short_name=13",
+  "short_name": "short name=13",
+  "description" : "short_name=13 (max length of name in Homescreen)",
+  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "type": "web",
+  "developer": {
+    "name": "hermesc",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
+    "e-mail": "hcheng@mozilla.com"
+  },
+  "icons": {},
+  "permissions": {}
+}
