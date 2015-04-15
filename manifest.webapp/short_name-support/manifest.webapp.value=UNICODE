@@ -2,11 +2,11 @@
   "name": "short_name test for UNICODE+special characters",
   "short_name": "\u0021\n\r\t\\\"\u0041\"",
   "description" : "Manifest short_name Test for UNICODE+special characters",
-  "launch_path": "/qa-testcase-data/hermescheng/short_name-support/test.html",
+  "launch_path": "/qa-testcase-data/manifest.webapp/short_name-support/test.html",
   "type": "web",
   "developer": {
     "name": "hermesc",
-    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/hermescheng/short_name-support",
+    "url": "https://github.com/mozilla-b2g/qa-testcase-data/tree/gh-pages/manifest.webapp/short_name-support",
     "e-mail": "hcheng@mozilla.com"
   },
   "icons": {},

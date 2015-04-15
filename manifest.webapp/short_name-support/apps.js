@@ -1,5 +1,5 @@
 ﻿var ORIGIN = window.location.protocol + '//' + window.location.host;
-var BASE_PATH = ORIGIN + '/qa-testcase-data/hermescheng/short_name-support/';
+var BASE_PATH = ORIGIN + '/qa-testcase-data/manifest.webapp/short_name-support/';
 console.log("Base path: " + BASE_PATH);
 
 function handleAppRequest(request) {
