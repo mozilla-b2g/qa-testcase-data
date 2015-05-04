@@ -1,0 +1,259 @@
+﻿<html>
+  <head>
+    <title>Web Notifications Test</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script type="text/javascript">
+
+    var notificationList = [];
+
+    function notificationAttributeDump(notification) {
+      console.log('Notification dir: ' + notification.dir);
+      console.log('Notification lang: ' + notification.lang);
+      console.log('Notification body: ' + notification.body);
+      console.log('Notification tag: ' + notification.tag);
+      console.log('Notification icon: ' + notification.icon);
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('notificationPermission').textContent = Notification.permission;
+
+      document.getElementById('authorize').onclick = function() {
+        Notification.requestPermission(function (permissionResult) {
+          document.getElementById('notificationPermission').textContent = Notification.permission;
+          document.getElementById('requestPermissionResult').textContent = permissionResult;
+        });
+      };
+      document.getElementById('show').onclick = function() {
+        var title = document.getElementById('notificationTitle').value;
+        var dir = document.getElementById('notificationDir').value;
+        var lang = document.getElementById('notificationLang').value;
+        var body = document.getElementById('notificationBody').value;
+        var tag = document.getElementById('notificationTag').value;
+        var icon = document.getElementById('notificationIconURL').value;
+
+        var notificationOptions = {};
+
+        if(dir) {
+          notificationOptions['dir'] = dir;
+        }
+
+        if(lang) {
+          notificationOptions['lang'] = lang;
+        }
+
+        if(body) {
+          notificationOptions['body'] = body;
+        }
+
+        if(tag) {
+          notificationOptions['tag'] = tag;
+        }
+
+        if(icon) {
+          notificationOptions['icon'] = icon;
+        }
+
+        var notification = new Notification(title, notificationOptions);
+
+        notification.onclick = function() {
+          console.log('onclick fired on title: ' + title);
+        };
+
+        notification.onshow = function() {
+          console.log('onshow fired on title: ' + title);
+        };
+
+        notification.onerror = function() {
+          console.log('onerror fired on title: ' + title);
+        };
+
+        notification.onclose = function() {
+          console.log('onclose fired on title: ' + title);
+        };
+
+        notificationList.push(notification);
+        console.log('Notification Added with Index: ' + (notificationList.length - 1));
+        notificationAttributeDump(notification);
+      };
+
+      document.getElementById('closeNotification').onclick = function() {
+        var notificationCloseID = parseInt(document.getElementById('notificationCloseId').value);
+
+        if(notificationCloseID < notificationList.length) {
+          notificationList[notificationCloseID].close();
+
+          console.log('Notification closed');
+          notificationAttributeDump(notificationList[notificationCloseID]);
+        }
+      };
+
+      document.getElementById('getNotification').onclick = function() {
+        var getOptions = {};
+        var notificationGetTag = document.getElementById('notificationGetTag').value;
+
+        if(notificationGetTag) {
+          getOptions['tag'] = notificationGetTag;
+        }
+
+        var notificationPromise = Notification.get(getOptions);
+
+        notificationPromise.then(function(getNotifications) {
+          console.log('Get Notification for tag ' + notificationGetTag);
+          console.log('Retrieved ' + getNotifications.length + ' notifications');
+
+          for(getNotification of getNotifications) {
+            notificationList.push(getNotification);
+            notificationAttributeDump(getNotification);
+          }
+        });
+      };
+
+      document.getElementById('dumpNotificationAttributes').onclick = function() {
+        var notificationIndex = document.getElementById('notificationDumpIndex').value;
+        notificationAttributeDump(notificationList[notificationIndex]);
+      };
+
+      document.getElementById('installHostedAppWithPerms').onclick = function() {
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/manifest.webapp');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+
+      document.getElementById('installHostedAppWithoutPerms').onclick = function() {
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/nopermissions.webapp');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+
+      document.getElementById('installPackagedApp').onclick = function() {
+        var request = navigator.mozApps.installPackage('http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/packaged.manifest');
+
+        request.onsuccess = function(e) {
+          console.log('Installed successfully');
+        };
+
+        request.onerror = function(err) {
+          console.log('Error: ' + err.target.error.name);
+        };
+      };
+    });
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h3>Install as Hosted App With Permissions</h3>
+        <input type="submit" value="Install" id="installHostedAppWithPerms">
+      </div>
+      <div>
+        <h3>Install as Hosted App Without Permissions</h3>
+        <input type="submit" value="Install" id="installHostedAppWithoutPerms">
+      </div>
+      <div>
+        <h3>Install as Packaged App</h3>
+        <input type="submit" value="Install" id="installPackagedApp">
+      </div>
+    </div>
+    <div>
+      <h3>Notification Setup</h3>
+      <div>
+        <h4>Request Permission</h4>
+        <input id="authorize" type="submit" value="Request">
+      </div>
+      <div>
+        <h4>Request Permission Result</h4>
+        <p id="requestPermissionResult"></p>
+      </div>
+      <div>
+        <h4>Current Permission Level</h4>
+        <p id="notificationPermission"></p>
+      </div>
+    </div>
+    <div>
+      <h3>Show Notification</h3>
+      <div>
+        <span>Title</span>
+        <input id="notificationTitle" type="text" value="Test Title">
+      </div>
+      <div>
+        <span>Dir</span>
+        <select id="notificationDir">
+          <option></option>
+          <option>ltr</option>
+          <option>rtl</option>
+          <option>auto</option>
+        </select>
+      </div>
+      <div>
+        <span>Lang</span>
+        <input id="notificationLang" type="text">
+      </div>
+      <div>
+        <span>Body</span>
+        <input id="notificationBody" type="text" value="Test Description">
+      </div>
+      <div>
+        <span>Tag</span>
+        <input id="notificationTag" type="text">
+      </div>
+      <div>
+        <span>Icon</span>
+        <select id="notificationIconURL">
+          <option></option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/qalogo.png</option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/jpegsample.jpg</option>
+          <option>http://mozilla-b2g.github.io/qa-testcase-data/webapi/notifications/largeicon.png</option>
+          <option>/qa-testcase-data/webapi/notifications/qalogo.png</option>
+          <option>/qa-testcase-data/webapi/notifications/smallicon.png</option>
+          <option>/thisdoesnotexist.png</option>
+        </select>
+      </div>
+      <div>
+        <input id="show" type="submit" value="Show Notification">
+      </div>
+    </div>
+    <div>
+      <h3>Close Notification</h3>
+      <div>
+        <span>Index</span>
+        <input id="notificationCloseId" type="text">
+      </div>
+      <div>
+        <input id="closeNotification" type="submit" value="Close">
+      </div>
+    </div>
+    <div>
+      <h3>Get Notification</h3>
+      <div>
+        <span>Tag</span>
+        <input id="notificationGetTag" type="text">
+      </div>
+      <div>
+        <input id="getNotification" type="submit" value="Get">
+      </div>
+    </div>
+    <div>
+      <h3>Dump Notification Attributes</h3>
+      <div>
+        <span>Index</span>
+        <input id="notificationDumpIndex" type="text">
+      </div>
+      <div>
+        <input id="dumpNotificationAttributes" type="submit" value="Dump">
+      </div>
+    </div>
+  </body>
+</html>

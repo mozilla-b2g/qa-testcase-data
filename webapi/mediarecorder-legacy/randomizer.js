@@ -44,7 +44,7 @@ function runMediaRecorderOp() {
 }
 
 function newTab() {
-  var newWindow = window.open('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/random.html', '_blank');
+  var newWindow = window.open('http://mozilla-b2g.github.io/qa-testcase-data/webapi/mediarecorder/random.html', '_blank');
   windowList.push(newWindow);
 }
 

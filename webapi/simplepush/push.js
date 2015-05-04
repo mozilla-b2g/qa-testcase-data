@@ -89,7 +89,7 @@ function updateCurrentRegistrations() {
 }
 
 function installAsApp() {
-  var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/simplepush/manifest.webapp');
+  var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/simplepush/manifest.webapp');
 
   request.onsuccess = function(e) {
     console.log('Installed successfully');

@@ -210,7 +210,7 @@ function createMediaRecorderControls(index) {
 }
 
 function installPackagedApp() {
-  var request = navigator.mozApps.installPackage('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/packaged.manifest');
+  var request = navigator.mozApps.installPackage('http://mozilla-b2g.github.io/qa-testcase-data/webapi/mediarecorder/packaged.manifest');
 
   request.onsuccess = function(e) {
     console.log('Installed successfully');
@@ -222,7 +222,7 @@ function installPackagedApp() {
 }
 
 function installHostedApp() {
-  var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/mediarecorder/manifest.webapp');
+  var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/mediarecorder/manifest.webapp');
 
   request.onsuccess = function(e) {
     console.log('Installed successfully');

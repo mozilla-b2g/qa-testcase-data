@@ -5,7 +5,7 @@
     <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('installAppWithPerms').onclick = function() {
-        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/webrtc/manifest.webapp');
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/webrtc/manifest.webapp');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -17,7 +17,7 @@
       };
 
       document.getElementById('installAppWithoutPerms').onclick = function() {
-        var request = navigator.mozApps.install('http://mozilla.github.io/qa-testcase-data/webapi/webrtc/nopermissions.webapp');
+        var request = navigator.mozApps.install('http://mozilla-b2g.github.io/qa-testcase-data/webapi/webrtc/nopermissions.webapp');
 
         request.onsuccess = function(e) {
           console.log('Installed successfully');
@@ -34,7 +34,7 @@
     <div>
       <h3>Test Pages</h3>
       <div>
-        <a href="http://mozilla.github.io/qa-testcase-data/webapi/webrtc/gum_test.html">getUserMedia Test Page</a>
+        <a href="http://mozilla-b2g.github.io/qa-testcase-data/webapi/webrtc/gum_test.html">getUserMedia Test Page</a>
 			</div>
 			<div>
 				<a href="http://テスト.mozqa.com/qa-testcase-data/webapi/webrtc/gum_test.html">UTF-8 getUserMedia Test Page</a>
