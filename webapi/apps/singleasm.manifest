@@ -10,5 +10,5 @@
     "name": "Mozilla QA",
     "url": "http://jasondanielsmith.wordpress.com/"
   },
-  "package_path": "http://mozilla.github.io/qa-testcase-data/webapi/apps/singleasm.zip"
+  "package_path": "http://mozilla-b2g.github.io/qa-testcase-data/webapi/apps/singleasm.zip"
 }
