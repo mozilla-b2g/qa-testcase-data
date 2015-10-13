@@ -1,0 +1,14 @@
+{
+  "name": "Test Addon 3 Example",
+  "description": "Make the title bar fo Messages app flash",
+  "version":"0.2",
+  "developer": {
+    "name": "Shing Lyu",
+    "url": "https://shinglyu.github.io/"
+  },
+  "type": "certified",
+  "package_path": "package.zip",
+  "icons": {
+    "128": "/icons/icon-128.png",
+  }
+}

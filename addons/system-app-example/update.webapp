@@ -1,0 +1,14 @@
+{
+  "name": "System App Example",
+  "description": "Add back button (and show window button) to the software home button bar (Based on Michael Henretty's work)",
+  "version": "0.1",
+  "developer": {
+    "name": "Shing Lyu",
+    "url": "https://shinglyu.github.io/"
+  },
+  "type": "certified",
+  "package_path": "package.zip",
+  "icons": {
+    "128": "/icons/icon-128.png",
+  }
+}

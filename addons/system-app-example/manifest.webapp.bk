@@ -1,0 +1,18 @@
+{
+  "name": "Back Button",
+  "description": "Add back button (and show window button) to the software home button bar (Based on Michael Henretty's work)",
+  "developer": {
+    "name": "Shing Lyu"
+  },
+  "package_path": "package.zip",
+  "role": "addon",
+  "type": "certified",
+  "customizations": [{
+    "filter": "system.gaiamobile.org",
+    "css": [],
+    "scripts": ["backbutton.js"]
+  }],
+  "icons": {
+    "128": "icons/icon.png"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "manifest_version":2,
+  "name": "Priviledged App Example",
+  "description": "Inject the test priviledged app, change the background color",
+  "version": "0.1",
+  "author": "Shing Lyu",
+  "content_scripts": [{
+    "matches": ["app://qa-addon-test.gaiamobile.org/index.html"],
+    "css": [],
+    "js": ["main.js"]
+  }],
+  "icons": {
+    "128": "icons/icon.png"
+  }
+}
