@@ -1,0 +1,15 @@
+{
+  "manifest_version":2,
+  "name": "Certified App Example",
+  "description": "Make the title bar of Messages app flash",
+  "version": "0.2",
+  "author": "Shing Lyu",
+  "content_scripts": [{
+    "matches": ["app://sms.gaiamobile.org/index.html"],
+    "css": [],
+    "js": ["main.js"]
+  }],
+  "icons": {
+    "128": "icons/icon.png"
+  }
+}
